@@ -9,9 +9,23 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "icon": "book-open-cover",
+          "href": "https://mintlify.com/docs"
+        },
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://mintlify.com/blog"
+        }
+      ]
+    },
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Support Docs",
         "groups": [
           {
             "group": "Getting started",
@@ -66,22 +80,14 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Integration docs"
+      },
+      {
+        "tab": "How to"
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/Logo Light.png",
