@@ -9,23 +9,9 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "icon": "book-open-cover",
-          "href": "https://mintlify.com/docs"
-        },
-        {
-          "anchor": "Blog",
-          "icon": "newspaper",
-          "href": "https://mintlify.com/blog"
-        }
-      ]
-    },
     "tabs": [
       {
-        "tab": "Support Docs",
+        "tab": "Guides",
         "groups": [
           {
             "group": "Getting started",
@@ -62,30 +48,175 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Support Docs",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Overview",
             "pages": [
-              "api-reference/introduction"
+              "support-docs/index"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Getting Started",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "support-docs/getting-started/index",
+              "support-docs/getting-started/welcome-to-oculon",
+              "support-docs/getting-started/profile-setup",
+              "support-docs/getting-started/navigating-oculon",
+              "support-docs/getting-started/core-concepts",
+              "support-docs/getting-started/oculon-glossary"
+            ]
+          },
+          {
+            "group": "Oculon Basics",
+            "pages": [
+              "support-docs/oculon-basics/index",
+              "support-docs/oculon-basics/boards",
+              "support-docs/oculon-basics/compare",
+              "support-docs/oculon-basics/currency-and-foreign-exchange-conversion",
+              "support-docs/oculon-basics/data-integrations",
+              "support-docs/oculon-basics/database",
+              "support-docs/oculon-basics/dimensions",
+              "support-docs/oculon-basics/models",
+              "support-docs/oculon-basics/navigation",
+              "support-docs/oculon-basics/scenario",
+              "support-docs/oculon-basics/time",
+              "support-docs/oculon-basics/variable",
+              "support-docs/oculon-basics/views"
+            ]
+          },
+          {
+            "group": "Formulas",
+            "pages": [
+              "support-docs/oculon-basics/formulas/index",
+              "support-docs/oculon-basics/formulas/creating-formulas",
+              "support-docs/oculon-basics/formulas/functions",
+              "support-docs/oculon-basics/formulas/helper-variables"
+            ]
+          },
+          {
+            "group": "Library",
+            "pages": [
+              "support-docs/oculon-basics/library/index",
+              "support-docs/oculon-basics/library/query-and-database"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "support-docs/guides/index",
+              "support-docs/guides/build-your-first-model",
+              "support-docs/guides/function-glossary",
+              "support-docs/guides/keyboard-shortcuts"
+            ]
+          },
+          {
+            "group": "Plan & Collaborate",
+            "pages": [
+              "support-docs/plan-and-collaborate/index",
+              "support-docs/plan-and-collaborate/scenario"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "support-docs/account/index",
+              "support-docs/account/profile",
+              "support-docs/account/preferences",
+              "support-docs/account/notifications",
+              "support-docs/account/access-and-security"
+            ]
+          },
+          {
+            "group": "Admin",
+            "pages": [
+              "support-docs/admin/index",
+              "support-docs/admin/workspace",
+              "support-docs/admin/teamspace",
+              "support-docs/admin/members-and-roles",
+              "support-docs/admin/security",
+              "support-docs/admin/billing-and-plans",
+              "support-docs/admin/audit-logs",
+              "support-docs/admin/login-methods",
+              "support-docs/admin/saml-scim",
+              "support-docs/admin/usage-limits"
             ]
           }
         ]
       },
       {
-        "tab": "Integration docs"
+        "tab": "Integration docs",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "integration-docs/index",
+              "integration-docs/quickstart",
+              "integration-docs/development"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "integration-docs/essentials/settings",
+              "integration-docs/essentials/navigation"
+            ]
+          },
+          {
+            "group": "Writing content",
+            "pages": [
+              "integration-docs/essentials/markdown",
+              "integration-docs/essentials/code",
+              "integration-docs/essentials/images",
+              "integration-docs/essentials/reusable-snippets"
+            ]
+          },
+          {
+            "group": "AI tools",
+            "pages": [
+              "integration-docs/ai-tools/cursor",
+              "integration-docs/ai-tools/claude-code",
+              "integration-docs/ai-tools/windsurf"
+            ]
+          }
+        ]
       },
       {
-        "tab": "How to"
+        "tab": "How to",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "how-to/index",
+              "how-to/quickstart",
+              "how-to/development"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "how-to/essentials/settings",
+              "how-to/essentials/navigation"
+            ]
+          },
+          {
+            "group": "Writing content",
+            "pages": [
+              "how-to/essentials/markdown",
+              "how-to/essentials/code",
+              "how-to/essentials/images",
+              "how-to/essentials/reusable-snippets"
+            ]
+          },
+          {
+            "group": "AI tools",
+            "pages": [
+              "how-to/ai-tools/cursor",
+              "how-to/ai-tools/claude-code",
+              "how-to/ai-tools/windsurf"
+            ]
+          }
+        ]
       }
     ]
   },
