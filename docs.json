@@ -103,14 +103,9 @@
       },
       {
         "tab": "Integration docs",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
+        "pages": [
               "integration-docs/index"
             ]
-          }
-        ]
       },
       {
         "tab": "How to",
@@ -134,7 +129,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hello@moculon.ai"
       }
     ],
     "primary": {
