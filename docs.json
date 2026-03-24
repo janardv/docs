@@ -3,92 +3,101 @@
   "theme": "aspen",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#F97518",
-    "light": "#FFB184",
-    "dark": "#F97518"
+    "primary": "#222222",
+    "light": "#FFFFFF",
+    "dark": "#222222"
   },
   "favicon": "/favicon-d.svg",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/support-docs/getting-started/welcome-to-oculon"
+    }
+  ],
   "navigation": {
     "tabs": [
       {
         "tab": "Support Docs",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "🚀 Getting Started",
             "pages": [
               "support-docs/getting-started/welcome-to-oculon",
               "support-docs/getting-started/profile-setup",
               "support-docs/getting-started/navigating-oculon",
               "support-docs/getting-started/core-concepts",
-              "support-docs/getting-started/oculon-glossary"
+              "support-docs/getting-started/oculon-glossary",
+              "support-docs/getting-started/oculon-glossary-2"
             ]
           },
           {
-            "group": "Oculon Basics",
+            "group": "🧱 Build & Model",
+            "pages": [
+              "support-docs/oculon-basics/variable",
+              "support-docs/oculon-basics/dimensions",
+              "support-docs/oculon-basics/time",
+              "support-docs/oculon-basics/database",
+              "support-docs/oculon-basics/library/query-and-database",
+              "support-docs/oculon-basics/data-integrations"
+            ]
+          },
+          {
+            "group": "📊 Analyze & Use",
             "pages": [
               "support-docs/oculon-basics/boards",
-              "support-docs/oculon-basics/compare",
-              "support-docs/oculon-basics/currency-and-foreign-exchange-conversion",
-              "support-docs/oculon-basics/data-integrations",
-              "support-docs/oculon-basics/database",
-              "support-docs/oculon-basics/dimensions",
-              "support-docs/oculon-basics/models",
-              "support-docs/oculon-basics/navigation",
-              "support-docs/oculon-basics/scenario",
-              "support-docs/oculon-basics/time",
-              "support-docs/oculon-basics/variable",
-              "support-docs/oculon-basics/views"
+              "support-docs/oculon-basics/views",
+              "support-docs/oculon-basics/compare"
             ]
           },
           {
-            "group": "Formulas",
+            "group": "🧮 Formulas & Logic",
             "pages": [
               "support-docs/oculon-basics/formulas/creating-formulas",
               "support-docs/oculon-basics/formulas/functions",
-              "support-docs/oculon-basics/formulas/helper-variables"
+              "support-docs/oculon-basics/formulas/helper-variables",
+              "support-docs/oculon-basics/currency-and-conversion"
             ]
           },
           {
-            "group": "Library",
-            "pages": [
-              "support-docs/oculon-basics/library/query-and-database"
-            ]
-          },
-          {
-            "group": "Guides",
-            "pages": [
-              "support-docs/guides/build-your-first-model",
-              "support-docs/guides/function-glossary",
-              "support-docs/guides/keyboard-shortcuts"
-            ]
-          },
-          {
-            "group": "Plan & Collaborate",
+            "group": "🤝 Plan & Collaborate",
             "pages": [
               "support-docs/plan-and-collaborate/scenario"
             ]
           },
           {
-            "group": "Account",
+            "group": "📚 Guides",
             "pages": [
-              "support-docs/account/profile",
-              "support-docs/account/preferences",
-              "support-docs/account/notifications",
-              "support-docs/account/access-and-security"
+              "support-docs/guides/build-your-first-model",
+              "support-docs/guides/keyboard-shortcuts",
+              "support-docs/guides/function-glossary"
             ]
           },
           {
-            "group": "Admin",
+            "group": "⚙️ Settings & Access",
             "pages": [
-              "support-docs/admin/workspace",
-              "support-docs/admin/teamspace",
-              "support-docs/admin/members-and-roles",
-              "support-docs/admin/security",
-              "support-docs/admin/billing-and-plans",
-              "support-docs/admin/audit-logs",
-              "support-docs/admin/login-methods",
-              "support-docs/admin/saml-scim",
-              "support-docs/admin/usage-limits"
+              {
+                "group": "Account",
+                "pages": [
+                  "support-docs/account/profile",
+                  "support-docs/account/preferences",
+                  "support-docs/account/notifications",
+                  "support-docs/account/access-and-security"
+                ]
+              },
+              {
+                "group": "Admin",
+                "pages": [
+                  "support-docs/admin/workspace",
+                  "support-docs/admin/teamspace",
+                  "support-docs/admin/members-and-roles",
+                  "support-docs/admin/security",
+                  "support-docs/admin/billing-and-plans",
+                  "support-docs/admin/audit-logs",
+                  "support-docs/admin/login-methods",
+                  "support-docs/admin/saml-scim",
+                  "support-docs/admin/usage-limits"
+                ]
+              }
             ]
           }
         ]
@@ -149,9 +158,10 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "linkedin": "https://linkedin.com/company/oculon-ai",
+      "x": "https://x.com/OculonHQ",
+      "youtube": "https://www.youtube.com/@OculonAI"
+   
     }
   }
 }
