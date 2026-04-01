@@ -1,0 +1,92 @@
+## Overview
+
+Helper variables are intermediate variables used within formulas to simplify complex calculations and improve model clarity.
+
+They allow you to break down logic into smaller steps and access commonly used contextual values such as time, cohort, or period-specific information.
+
+
+## What are helper variables
+
+Helper variables are system-provided or user-defined values that support calculations inside formulas.  
+
+They are typically used to:
+- Access time-based properties  
+- Work with cohorts or grouped data  
+- Handle period-specific logic  
+- Simplify repeated calculations  
+
+---
+
+## Types of helper variables
+
+### Cohort
+
+A cohort represents a group of data points that share a common starting point in time.
+
+It is commonly used to track behavior or performance over time relative to when an event occurred.
+
+**Example:**
+- Users acquired in January form one cohort  
+- Their activity is tracked across future periods  
+
+---
+
+### Days in Month
+
+Returns the number of days in a given time period (typically a month).
+
+This is useful for normalizing values or performing time-based calculations.
+
+**Example use cases:**
+- Daily revenue calculations  
+- Prorating monthly values  
+
+---
+
+### Time Index
+
+Represents the position of a time period relative to the start of the model.
+
+This helps in creating sequential or time-based logic.
+
+**Example:**
+- Month 1, Month 2, Month 3…  
+
+---
+
+### Current Period
+
+Refers to the active time period in the model during calculation.
+
+Useful for applying logic specific to the current context.
+
+---
+
+### Previous / Next Period
+
+Allows referencing values from adjacent time periods.
+
+**Example:**
+- Previous month revenue  
+- Next period projections  
+
+---
+
+## Why use helper variables
+
+Helper variables help you:
+
+- Simplify complex formulas  
+- Avoid repetitive logic  
+- Improve readability and structure  
+- Enable advanced time-based calculations  
+- Build more dynamic and flexible models  
+
+---
+
+## Example
+
+Instead of writing a complex formula:
+
+```text
+Revenue = (Monthly Price × Users × Days in Month) adjusted by cohort growth
