@@ -131,12 +131,7 @@
         "label": "Support",
         "href": "mailto:hello@moculon.ai"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
