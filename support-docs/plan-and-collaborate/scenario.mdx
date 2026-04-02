@@ -1,62 +1,137 @@
-A **scenario** represents a possible version or outcome of a financial model based on specific assumptions, variables, and conditions. Scenarios help you to analyze the potential impact of changes in key drivers (e.g., pricing, demand, costs) on business performance.
+Scenarios let you branch a model into named versions so you can try changes safely, compare outcomes, and merge approved changes back into Main Scenario.
 
 ![](/images/getting-started/scenario.png)
 
-Scenarios can vary from **best-case and worst-case projections** to simulations of external events like market fluctuations or policy changes.
+Use Scenarios when you need:
 
-**Benefits of Scenarios**
+- Safe experimentation without changing the live model
+- A locked baseline (budget, board plan, approved forecast)
+- A review workflow (draft → review → merge)
 
-1. **Enhanced Decision-Making**
-    - Scenarios allow businesses to evaluate multiple outcomes before committing to a decision, reducing risks and improving confidence in strategy.
-2. **Flexibility and Agility**
-    - By simulating different possibilities, businesses can quickly adapt to changes and build contingency plans.
-3. **Insightful Analysis**
-    - Scenarios provide detailed insights into how specific variables impact the overall model, aiding in targeted action.
-4. **Better Communication**
-    - Clear, data-backed scenarios make it easier to communicate strategies and decisions to stakeholders.
-5. **Scenario Comparison**
-    - Users can compare different scenarios side-by-side to identify the most favorable outcomes or detect potential risks.
+## Key concepts
 
-**Outcomes of Using Scenarios**
+- Main Scenario: the default “live” branch. It is always available and cannot be deleted.
+- Scenario: a branch derived from Main (or duplicated from another scenario).
+- Overrides: scenario-specific changes that differ from the inherited baseline.
+- Inheritance / auto-sync: when enabled, non-overridden values continue to follow Main Scenario.
+- Merge: directional operation that applies only overrides from a source scenario into a destination scenario.
 
-1. **Risk Mitigation**
-    - By planning for multiple possibilities, user can anticipate and mitigate risks effectively.
-2. **Optimized Resource Allocation**
-    - Scenarios reveal the best ways to allocate budgets, personnel, and other resources under different conditions.
-3. **Improved Financial Performance**
-    - Proactively preparing for changes leads to better financial management and improved profitability.
-4. **Future-Ready Strategies**
-    - Scenarios enable businesses to prepare for market trends and disruptions, making them resilient and competitive.
-5. **Stakeholder Confidence**
-    - Presenting well-thought-out scenarios reassures investors, partners, and employees about the business’s preparedness and direction.
+## Common tasks
 
-**Example in Oculon**
+### 1) Create a new scenario
 
-- You can create scenarios for different growth cases, visualize their impact on revenue and profit, and adjust assumptions to find the optimal pricing strategy as well as the Headcount and Hiring, Marketing strategy.
+1. Open the Scenario switcher (top bar).
+2. Select New Scenario.
+3. Give it a clear name (example: “FY26 Base – Draft” or “Headcount Cut – Alt”).
+4. You’ll land in the new scenario.
 
-**How to work with Scenario in Oculon?**
+Tips:
 
-You can create a or multiple scenario of a model from the Model Studio Page itself.
+- Use naming that encodes purpose and lifecycle (Draft/Review/Locked).
+- Avoid duplicates; if you need iterations, add a suffix (v2, Apr, etc.).
 
-1. To create a scenario Go to your model from Model Studio and access the "Scenario" button at top right.
-2. You an give a name to the Scenario to identify better:
+### 2) Switch scenarios
 
-Give your scenario a meaningful name to make it easy to identify later. Example: Growth Scenario, Worst Case Scenario
+1. Open the Scenario switcher.
+2. Pick a scenario from the list.
 
-1. Work with scenario
+Expected behavior:
 
-Once a scenario is created, you can:
+- The active scenario should be visible at all times.
+- Your editing context follows the active scenario.
 
-1. **Update Formulas**: Modify existing formulas to test different assumptions or conditions.
-2. **Edit Cells**: Change specific data points to see how adjustments impact the model.
-3. **Add Variables**: Introduce new variables to account for factors like inflation, seasonal demand, or operational changes.
-4. **Add Dimensions**: Expand the scope of analysis by including new dimensions such as regions, product lines, or departments.
+### 3) Make changes safely
 
-You can make changes to the scenario by updating the formula, cell, adding variable and dimensions.
+When you edit in a non-main scenario, changes should remain isolated to that scenario until you merge.
 
-1. Adding Multiple scenario
+If you’re unsure where you are:
 
-You can add multiple scenarios for a single model.
+- Check the active scenario label before editing.
+- If the product shows visual cues (badges/colors), treat them as authoritative.
 
-- You can create **multiple scenarios** for a single model to explore various possibilities side-by-side.
-- Each scenario operates independently, allowing you to compare outcomes without altering the base model.
+### 4) Compare scenarios
+
+Use Compare to review how a scenario differs from Main (or another baseline).
+
+Use cases:
+
+- “What changed vs Main?”
+- “What’s the variance vs our locked budget scenario?”
+
+### 5) Duplicate a scenario
+
+Duplicate creates a new scenario using the current effective state of an existing scenario.
+
+Use this when:
+
+- You want to continue planning from an approved baseline.
+- You want a new branch without disturbing the existing one.
+
+Expected behavior:
+
+- The duplicate should include the source’s effective values.
+- Identity fields (created by/time) are new for the duplicate.
+
+### 6) Merge changes
+
+Merge moves overrides from a source scenario into a destination scenario (often Main).
+
+Steps:
+
+1. In the source scenario, choose Merge Changes.
+2. Select the destination scenario.
+3. Confirm the merge.
+
+Expected behavior:
+
+- Merge is directional.
+- You cannot merge a scenario into itself.
+- Only overrides are merged (not a full snapshot).
+- A merge should create an audit/history event.
+
+## Scenario settings (how to interpret them)
+
+### Auto-sync from main
+
+- ON: your scenario keeps inheriting changes from Main, except where you’ve made overrides.
+- OFF: your scenario stops receiving new Main changes; it becomes more “frozen.”
+
+Good defaults:
+
+- Exploratory scenarios: Auto-sync ON
+- Baselines/approvals: Auto-sync OFF
+
+### Allow Changes (Editability)
+
+- ON: permitted users can edit the scenario.
+- OFF: scenario is read-only (locked).
+
+Enforcement expectations:
+
+- UI edits should be blocked when OFF.
+- API/import/job/agent writes should also be blocked.
+
+### Allow Merging (Mergeability)
+
+- ON: scenario can be used in merge flows per permissions.
+- OFF: merge should be disabled.
+
+Note: Some products interpret this as “can be a merge source.” If that’s the case, it controls merging from this scenario, not necessarily merging into it.
+
+### Who can view (Visibility)
+
+- All Members: visible to everyone in the workspace.
+- Only Admins: restricted visibility.
+
+Expected behavior:
+
+- Restricted scenarios should not appear in the switcher for unauthorized users.
+- Direct links must still enforce permissions.
+
+## Rules of thumb
+
+- Treat Main Scenario as the safe, default “truth” branch.
+- Use a dedicated scenario for risky experiments.
+- Lock scenarios that represent approved states.
+- Merge intentionally, and prefer merging small, understood override sets.
+
