@@ -1,36 +1,49 @@
-These are the tasks and actions can be performed with Time in Model, Dashboard, etc.
+Time settings define how your model handles date ranges, actuals, and time-based analysis. You can configure these from the model settings and directly within formulas.
 
-[image]
+## Accessing Time Settings
 
-1. **Set the Date Range –** Define the start and end date of your model.
-2. **Choose Time Granularity –** Select the level of detail for your model:
+You can access time settings from the **Model Settings** panel in the top-right of the model detail page.
 
-Daily
+![](/images/getting-started/model-settings.png)
 
-Weekly
+## Date Range
 
-Monthly (default & recommended)
+The **Model Date Range** defines the start and end of your model timeline.
 
-Quarterly
+- Sets the overall time horizon for planning and analysis  
+- Applies across all variables, charts, and reports  
 
-Yearly
 
-With the time granularity feature you can customize models for different reporting needs.
+## Last Actual Date
 
-1. **The Time Filter allows you to:**
+The **Last Actual Date** determines where actuals end and forecasts begin.
 
-Adjust the time period displayed in your model and dashboard. Filter charts, tables, and reports to focus on specific time periods. Use Time Filter to adjust views based on actuals and forecasts.
+- Separates historical data from projected values  
+- Ensures reports correctly distinguish actual vs forecast  
 
-[image]
 
-1. **Setting Last Actual Date:**
+## Time Filter in Formulas
 
-The Last Actual Date determines how the latest available actuals in the model and how forecasts and actuals are separated in reports.
+Time can also be controlled directly within formulas using the time filter.
 
-[image]
+![](/images/getting-started/time-filter.png)
 
-1. **Highlight Today**
+From the formula editor, you can:
 
-To track the current time step ("Today") in your **model.** From settings just enable Today Line by toggling "Highlight Today" to visually mark the current period.
+- Click on a formula 
+- Open the filter modal  
+- Select predefined ranges such as:
+  - This month  
+  - Previous month  
+  - Last 3 months  
+  - 1 year ago  
 
-[image]
+This allows dynamic control of calculations without changing model settings.
+
+
+## Best Practices
+
+- Set a clear **date range** before building your model  
+- Keep **last actual date updated** for accurate forecasting  
+- Use **monthly granularity** for most financial models  
+- Apply **time filters in formulas** for flexible analysis  

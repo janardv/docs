@@ -1,7 +1,55 @@
-**Week:** Returns the calendar week index (1–52)
+Helper variables are built-in functions that make it easier to work with time, conditions, and model logic. They help you write cleaner formulas without manually calculating common values like month, year, or number of time steps.
 
-**RollingAverage:** Returns the rolling average over a specified period
+### Cohort
 
-**PercentChange:** Calculates the percent change between two values
+- **`cohort`**  
+  Creates a cohort dimension for cohort-based modeling and analysis.
 
-**CurrencyRate:** Returns the currency exchange rate for a specific time step
+### Time & Calendar
+
+- **`month`**  
+  Returns the month index (Jan = 1, Feb = 2…). Useful for seasonality or month-based logic.
+
+- **`quarter`**  
+  Returns the quarter (1–4). Helps apply logic specific to quarters.
+
+- **`year`**  
+  Returns the calendar year of the current time step.
+
+- **`daysinmonth`**  
+  Returns the total number of days in the current month.
+
+- **`today`**  
+  Returns the current time step index based on today’s date.
+
+
+### Fiscal
+
+- **`fiscalmonth`**  
+  Returns the fiscal month (1–12), based on your fiscal year settings.
+
+- **`fiscalyear`**  
+  Returns the fiscal year of the current time step (requires fiscal year to be enabled).
+
+
+### Time Index & Model Scope
+
+- **`timestep`**  
+  Returns the index of the current time step (e.g., 0, 1, 2…).
+
+- **`date`**  
+  Alias of timestep; also returns the current time step index.
+
+- **`numtimesteps`**  
+  Returns the total number of time steps in the model.
+
+
+### Model Logic
+
+- **`lastActualDate`**  
+  Returns the index of the last actual date set in model settings. Useful for separating actuals vs forecast logic.
+
+- **`blank`**  
+  Represents an empty value. Commonly used in conditional formulas.
+
+
