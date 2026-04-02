@@ -1,81 +1,88 @@
-![](https://t9016375415.p.clickup-attachments.com/t9016375415/534f7fa4-6293-4de0-82e3-bcacb93a327b/Database%20List.png)
+Databases in Oculon help you bring in, organize, and work with data across your models.
 
-## **Creating a New Database:**
+You can create a database in two ways, depending on your workflow:
 
-Oculon allows you to create, manage, and work with databases seamlessly within your financial models. You can connect external data sources, configure settings, and collaborate effectively.
+- **Manual Database** → Create and manage a database directly within Oculon  
+- **From Integration (Query-based)** → Create a database by pulling data from an external source using a query  
 
-![](https://t9016375415.p.clickup-attachments.com/t9016375415/3480f880-f30b-4b02-9b53-6e5c86ff82c5/Create%20Database.png)
+Both approaches result in a database that can be used across models, dashboards, and analysis.
 
-o create a new database in Oculon:
+---
 
-1. Navigate to the **Database** section.
-2. Click on **“New Database”**.
-3. Enter a **name** and select the **data source**
-4. Configure the **columns, permissions**. (You can add, delete)
-5. Click **Create**, and your database is ready for use.
+## Creating a Database
 
-### **Other Actions:**
+### 1. Create Manually
 
-Connection Status:
+Use this when you want to define and manage your own data structure within Oculon.
 
-You can check whether your database is connected and syncing properly.
+![](/images/getting-started/database-list.png)
 
-- A **green indicator** means the connection is active.
-- A **red indicator** means there’s an issue—click to troubleshoot.
+1. Navigate to the **Database** section  
+2. Click **New Database**  
+3. Enter a **name**  
+4. Configure **columns and permissions** (add, edit, or remove fields)  
+5. Click **Create**  
 
-**Configure Connection:**
+---
 
-To modify the database Configure the Connection:
+### 2. Create from Integration (Query)
 
-- Go to the Configure Connection.
-- Edit connection details
-- Save changes to apply the configuration.
+Use this when your data comes from external tools like CRMs, warehouses, or spreadsheets.
 
-**View Data:**
+- Go to the **Integrations** section  
+- Create a **query** to fetch data  
+- Run the query  
 
-To access the stored data and view:
+A database is automatically created and appears in the **Database** section, ready to use.
 
-1. Open the database.
-2. Use options from Configure Connection to refine your view.
+---
 
-![](https://t9016375415.p.clickup-attachments.com/t9016375415/52b9373b-1a9b-48a3-ac98-8e4df663a703/View%20Data.png)
+## Managing Connections
 
-## **Grouping:**
+For databases created via integrations, you can monitor and manage the connection directly from the database view.
 
-You can group data within a specific field.
+### Connection Status
 
-Click on the Group By option.
+![](/images/getting-started/db-config-status.png)
 
-Select the rows to group data.
+The connection status is shown at the top of the database.
 
-The data will be organized accordingly.
+- 🟢 **Active (Green)** → Data is connected and syncing normally  
+- 🟡 **Warning (Yellow)** → Connected, but there may be sync issues or delays  
+- 🔴 **Disconnected (Red)** → Connection is broken and data is not syncing  
 
-[image]
+You can also see:
+- The **source** (e.g., HubSpot)  
+- The **last refreshed time**, indicating when data was last synced  
+- **Configure**  
+  Update connection details such as source settings, or query configuration  
 
-## **Create View:**
+- **Refresh Data**  
+  Manually trigger a sync to fetch the latest data from the source 
 
-Steps to Create a View:
+---
 
-Open the database. (Configure Connection)
+## Configure database
 
-Apply filters as needed.
+You can explore and work with your data configuration directly within the database.
 
-Click Save as View and give it a name.
+![](/images/getting-started/db-config.png)
 
-Access saved views anytime for quick insights.
+You can Open the configuration panel from the database detail page by Clicking the **source / connection status** at the top or use the **settings icon** in the top-right  
 
-[image]
 
-## **Share View:**
+### Configuration
 
-Steps to Share a View:
+Use the panel to control how your database works and how data is structured.
 
-Open the view you want to share.
+- **Integration & Query** → Select data source and query  
+- **Refresh Frequency** → Set how often data syncs  
+- **Preview** → Validate data before saving  
+- **Variables** → Define and map database columns  
+- **Date Column** → Enable time-based analysis  
+- **Segment By** → Map fields to dimensions for grouping  
 
-Click on **Share** and select the users or teams.
+Once updated:
 
-Set permissions (**View Only** or **Edit**).
-
-Copy the link and share securely.
-
-[image]
+- Click **Save** to apply changes  
+- Database refreshes with the new configuration  

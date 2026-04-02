@@ -1,20 +1,34 @@
-When working with numbers in Oculon, sometimes you’re dealing with different currencies—USD here, EUR there, maybe INR for that new market you’re entering. Oculon makes this simple by letting you set a currency for your variables and automatically converting foreign exchange (FX) rates.
+The currency selector lets you define how a variable is displayed when working with financial values. It ensures your data is clearly represented with the right currency symbol across the model.
 
-No manual calculations. No headaches. Just clean, consistent data.
+![](/images/getting-started/currency.png)
 
-[image]
+### Why it matters
 
-## **Setting Currency for Variables**
+Using the correct currency helps maintain clarity when working with multi-currency models or financial reports.
 
-1️⃣ **Pick a Currency**
+- Keeps values consistent across models and dashboards  
+- Helps distinguish between currencies (USD, INR, EUR, etc.)  
+- Improves readability in time-based tables and reports  
 
-When creating or editing a variable, switch its format to **Currency**.
 
-- Choose from popular currencies like **USD, GBP, EUR, or INR**.
-- Oculon will add the currency symbol (e.g., $, £, ₹) so you know exactly what you’re looking at.
+### How to change currency
 
-2️⃣ **Why Does This Matter?**
+You can update the currency directly from the variable settings:
 
-It’s not just for looks. Setting a currency gives a clear indication of what each number represents—so when your variable says ₹10,000, you know it’s in INR, not USD.
+1. Select the variable  
+2. Open **Format**  
+3. Choose the **Currency** dropdown  
+4. Select the desired currency (USD, INR, EUR, etc.)  
 
-[image]
+
+### What changes
+
+- The **currency symbol updates** across all time cells for that variable  
+- Applies consistently in **models, dashboards, and views**  
+- Does **not change the underlying values**, only how they are displayed  
+
+
+### Example
+
+If you change currency from **USD → INR**,  
+`$1,000` will be displayed as `₹1,000` across the model.
