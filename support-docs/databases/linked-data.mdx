@@ -4,10 +4,16 @@ description: Use linked data to connect source information across your Oculon se
 icon: link
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Linked data keeps source information connected to the parts of Oculon that need it.
 
-## What this page will cover
-- How linking works
-- When to link data
-- Operational considerations
+## Where linked data shows up
 
+You may link database fields into variables, use shared dimensions from imported data, or reuse the same database across several models and boards.
+
+## Why linked data is useful
+
+Linked data reduces duplicate maintenance. When the source updates, the connected planning logic can refresh from the same foundation instead of requiring manual re-entry.
+
+## What to watch
+
+If the source structure changes, linked logic can break quietly. Review mappings and dependent models whenever a source system changes field names, categories, or date behavior.

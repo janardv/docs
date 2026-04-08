@@ -4,10 +4,16 @@ description: Use scenario overrides to change values without modifying your base
 icon: sliders-horizontal
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+An override is a value or logic change that exists only inside the active scenario.
 
-## What this page will cover
-- How overrides work
-- When to use them
-- How overrides affect comparisons
+## When to use an override
 
+Use an override when you want to test a change to one assumption, one section, or one planning rule without rebuilding the whole model.
+
+## Keep overrides intentional
+
+Too many small overrides can turn a clean scenario into a hard-to-review branch. Group related changes together and document the reason for major scenario adjustments.
+
+## Review overrides before merging
+
+Before you merge a scenario back to a baseline, review which overrides are still meaningful. Merge only the changes you are ready to adopt broadly.

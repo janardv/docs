@@ -4,10 +4,20 @@ description: Review the settings that control model behavior and configuration.
 icon: settings
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Model settings define the rules the rest of the model depends on. They usually control time, actuals, structure defaults, and model-wide behavior.
 
-## What this page will cover
-- Available settings
-- When to update them
-- Operational impact
+## Settings to review early
 
+- model date range
+- time granularity
+- last actual date
+- fiscal year assumptions
+- naming and visibility defaults where applicable
+
+## Why settings are important
+
+Changing a model setting later can affect formulas, boards, and comparisons. Confirm the basics before you build deep logic or share the model widely.
+
+## Review after major changes
+
+If a model starts to behave unexpectedly, check the settings before you rewrite formulas. Many issues begin with a model-wide assumption that drifted over time.

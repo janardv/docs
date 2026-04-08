@@ -4,10 +4,16 @@ description: Configure the actions that custom agents can take in Oculon.
 icon: play
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Agent actions define what the agent is allowed to do beyond answering a question.
 
-## What this page will cover
-- Available action types
-- When to allow actions
-- Operational considerations
+## Examples of actions
 
+Depending on your setup, an agent may be allowed to retrieve information, guide a workflow, or trigger a controlled task. The right action set depends on the user's role and the level of review required.
+
+## Start with read-first behavior
+
+Begin with actions that retrieve or summarize information. Add higher-impact actions only when the workflow is understood and the guardrails are clear.
+
+## Tie actions to a business purpose
+
+Every allowed action should support a real use case. If an action has no clear owner or review path, leave it disabled.

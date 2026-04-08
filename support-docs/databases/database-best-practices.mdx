@@ -4,10 +4,16 @@ description: Apply practical guidance for keeping databases reliable and easy to
 icon: badge-check
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+A good database supports planning without becoming another source of confusion.
 
-## What this page will cover
-- Data hygiene
-- Governance patterns
-- Long-term maintenance tips
+## Recommended practices
 
+- Use stable field names and keep them business-readable.
+- Separate source cleaning from planning logic.
+- Add date and category fields deliberately when they support reporting.
+- Review sync status and refresh timing as part of regular operations.
+- Retire unused databases so teams do not rely on stale records.
+
+## Treat databases as shared infrastructure
+
+If several models depend on the same database, manage changes carefully. A small field update can have a wide effect.

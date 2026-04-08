@@ -4,10 +4,15 @@ description: Resolve the most common issues that affect custom agents and their 
 icon: bot
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Agent issues usually show up as weak answers, missing context, blocked actions, or behavior that no longer matches the intended workflow.
 
-## What this page will cover
-- Common agent problems
-- How to investigate them
-- How to improve reliability
+## Common causes
 
+- the agent has stale instructions
+- the context is too broad or too narrow
+- permissions or connections changed
+- the task is not specific enough for the current setup
+
+## What to review
+
+Start with the prompt, then check the agent context, scope, and allowed actions. Most agent problems become clear once you inspect those three layers together.

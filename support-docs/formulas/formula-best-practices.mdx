@@ -4,10 +4,16 @@ description: Write formulas that stay readable, stable, and easy to maintain.
 icon: badge-check
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Good formulas are not only correct. They are also easy for another person to read, review, and safely change.
 
-## What this page will cover
-- Readability guidance
-- Performance considerations
-- Testing and maintenance
+## Recommended practices
 
+- Write one business rule per formula when possible.
+- Use helper variables for repeated or layered logic.
+- Name inputs clearly so references read like plain language.
+- Check formulas at both detail and summary levels.
+- Review actuals, forecast, and aggregation behavior before you publish.
+
+## Optimize for maintenance
+
+A model usually lives longer than its first builder expects. If a formula is hard to understand now, it will be much harder to trust later.

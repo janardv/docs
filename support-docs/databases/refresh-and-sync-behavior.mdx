@@ -4,10 +4,16 @@ description: Understand how database refreshes and syncs affect your data and do
 icon: refresh-cw
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Refresh behavior determines when Oculon pulls the latest data from a source and how quickly dependent models should see the update.
 
-## What this page will cover
-- Refresh timing
-- Sync expectations
-- Troubleshooting sync issues
+## What to expect from a refresh
 
+A refresh should update the database records first. After that, models, views, and boards that depend on the data should reflect the new state according to their own calculation and cache behavior.
+
+## Manual and scheduled refreshes
+
+Use scheduled refreshes for repeatable operational data. Use manual refreshes when you need to validate a source change before the next normal sync window.
+
+## Check the source, not just the output
+
+If a board looks wrong after a sync, start by checking the database record set and connection status. It is easier to confirm the source data before debugging the model.

@@ -4,10 +4,16 @@ description: Understand how permissions inherit across related content and struc
 icon: git-branch
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Permission inheritance means access can flow from a parent container to the content inside it.
 
-## What this page will cover
-- Inheritance rules
-- How nested access works
-- Where to check effective permissions
+## Why inheritance matters
 
+Inheritance keeps permission management simple. Instead of managing each item separately, you can control access at the folder, teamspace, or shared structure level.
+
+## Where to be careful
+
+Inheritance is helpful until someone assumes a child item is private when it still inherits a broader rule. When you work with sensitive data, verify effective access instead of assuming it.
+
+## Review effective permissions
+
+Whenever a model or board is moved, shared broadly, or placed in a new teamspace, check whether inherited permissions changed.

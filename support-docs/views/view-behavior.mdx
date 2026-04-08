@@ -4,10 +4,17 @@ description: Review how views behave as data, permissions, and configuration cha
 icon: activity
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+A view is not a disconnected copy of a model. It reflects the current state of the source model through the filters and rules you saved.
 
-## What this page will cover
-- Update behavior
-- Interaction rules
-- Dependencies on source content
+## What changes a view
 
+A view can change when:
+
+- source variables or sections are updated
+- scenarios or time settings change
+- permissions change for the viewer
+- charts or filters referenced by the view are modified
+
+## Why this matters
+
+Because views stay connected to the source, they are powerful for collaboration. They also need clear ownership so people know who should update them when the underlying model evolves.

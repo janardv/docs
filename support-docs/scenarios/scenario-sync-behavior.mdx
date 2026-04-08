@@ -4,10 +4,16 @@ description: Understand how scenario changes sync across related models and view
 icon: refresh-cw
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Scenario sync behavior controls how much of the base model a scenario continues to inherit after you create it.
 
-## What this page will cover
-- What sync affects
-- Expected update behavior
-- Operational caveats
+## How inheritance usually works
 
+A scenario often starts as a copy of the current effective model state. After that, non-overridden values may continue to follow the baseline if auto-sync is enabled.
+
+## What overrides do
+
+Once you override a value in a scenario, that value becomes scenario-specific. Future baseline changes should not replace that override unless you explicitly remove or merge it.
+
+## Why this matters
+
+If you do not understand sync behavior, you can mistake inherited changes for manual edits. That is one of the most common reasons scenario comparisons feel confusing.

@@ -4,10 +4,20 @@ description: Understand how variables behave across time, dimensions, and calcul
 icon: activity
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+A variable does not behave the same way in every context. Its result depends on time, dimensions, formulas, aggregation rules, and whether the value is inherited or overridden.
 
-## What this page will cover
-- Stored values
-- Calculation behavior
-- Display and aggregation behavior
+## Across time
 
+Every variable is evaluated across the model's date range. A variable can contain historical values, forecast values, or a mix of both depending on the last actual date and the formula logic.
+
+## Across dimensions
+
+When you attach a dimension to a variable, Oculon evaluates the same variable for each dimension value. A formula set at the aggregate level can still drive all the detail rows if the structure supports it.
+
+## In calculations
+
+A variable can be an input, an intermediate step, or an output. If you use the same variable in several formulas, any change to that variable can affect multiple sections of the model.
+
+## In reporting
+
+Boards, views, and comparisons reflect the variable's current effective state. That includes formatting, active scenario, selected dimensions, and time aggregation.

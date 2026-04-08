@@ -4,10 +4,16 @@ description: Connect custom agents to the systems and sources they need to do us
 icon: plug
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Connections determine which systems or resources an agent can use while helping a user.
 
-## What this page will cover
-- Connection types
-- Authentication considerations
-- How connected context is used
+## Connect only what the workflow needs
 
+If an agent is meant to explain a board, it may only need access to the board and its source model. It usually does not need broad workspace-wide context.
+
+## Check connection ownership
+
+Every connection should have a business owner, an access model, and a review path. That is especially important when the connection reaches an external system.
+
+## Test the failure path
+
+Do not only test the happy path. Confirm what the agent does when a connected source is unavailable, outdated, or restricted.

@@ -4,10 +4,15 @@ description: Investigate data mismatches between sources, models, and views.
 icon: database
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+A data mismatch happens when the source record set, database output, and model result no longer agree.
 
-## What this page will cover
-- Where mismatches appear
-- How to trace the issue
-- How to correct the source of truth
+## Common causes
 
+- the source system changed
+- a refresh did not run when expected
+- a mapping field changed meaning
+- a board or view uses a different filter set than the source check
+
+## Where to start
+
+Check the database first. Confirm the incoming records, dates, and categories before you investigate the model formula.

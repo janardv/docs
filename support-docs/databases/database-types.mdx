@@ -4,10 +4,16 @@ description: Understand the database types available in Oculon and when to use e
 icon: list
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Teams usually work with two broad database patterns in Oculon.
 
-## What this page will cover
-- Available types
-- When to choose each type
-- Tradeoffs to consider
+## Manual databases
 
+Use a manual database when you want to define and maintain the structure directly in Oculon. This works well for planning support tables, reference lists, or controlled internal records.
+
+## Integration-backed databases
+
+Use an integration-backed database when records should come from an external system such as a CRM, data warehouse, spreadsheet, or business app.
+
+## How to choose
+
+If Oculon is the system of workflow for the records, create the database manually. If another system owns the data, connect that system and refresh it into Oculon.

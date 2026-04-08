@@ -4,10 +4,30 @@ description: Understand the main parts of Oculon and how they fit together.
 icon: waypoints
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Oculon is organized so you can move from source data to decision-ready reporting without rebuilding the same logic in multiple places. The main structure is workspace-level, and each layer has a clear purpose.
 
-## What this page will cover
-- Workspace structure
-- Primary product areas
-- How content and data connect
+## The main layers
 
+- **Workspace**: your top-level environment for people, permissions, and settings.
+- **Teamspaces or shared areas**: optional collaboration zones for teams or projects.
+- **Models**: where planning logic, variables, dimensions, and formulas live.
+- **Databases**: where imported or managed records are stored.
+- **Views**: filtered, saved ways to look at part of a model.
+- **Boards**: presentation surfaces for charts, tables, and KPI blocks.
+
+## How data moves through the product
+
+Data usually enters Oculon through integrations or databases. Models use that data to calculate metrics and forecasts. Views narrow the model to the right slice of information. Boards package the result so stakeholders can review it quickly.
+
+## Where collaboration happens
+
+Collaboration happens at several levels:
+
+- Workspace admins manage access and security.
+- Model builders own structure and formulas.
+- Collaborators review scenarios, comments, views, and boards.
+- Teams share only the level of detail each audience needs.
+
+## A practical way to think about the product
+
+If you are building logic, work in a model. If you are shaping a dataset, work in a database. If you are narrowing the audience view, use a view. If you are presenting insights, use a board.

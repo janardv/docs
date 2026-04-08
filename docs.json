@@ -202,14 +202,14 @@
                                                                              "icon":  "settings",
                                                                              "expanded":  false,
                                                                              "pages":  [
-                                                                                           "support-docs/admin/workspace-settings",
-                                                                                           "support-docs/admin/members-and-roles",
-                                                                                           "support-docs/admin/groups",
-                                                                                           "support-docs/admin/login-methods",
-                                                                                           "support-docs/admin/security",
-                                                                                           "support-docs/admin/audit-logs",
-                                                                                           "support-docs/admin/billing-and-plans",
-                                                                                           "support-docs/admin/usage-and-limits"
+                                                                                           "support-docs/admin-guide/workspace-settings",
+                                                                                           "support-docs/admin-guide/members-and-roles",
+                                                                                           "support-docs/admin-guide/groups",
+                                                                                           "support-docs/admin-guide/login-methods",
+                                                                                           "support-docs/admin-guide/security",
+                                                                                           "support-docs/admin-guide/audit-logs",
+                                                                                           "support-docs/admin-guide/billing-and-plans",
+                                                                                           "support-docs/admin-guide/usage-and-limits"
                                                                                        ]
                                                                          },
                                                                          {

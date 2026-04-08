@@ -4,10 +4,20 @@ description: Understand how models are organized and how their parts fit togethe
 icon: folder-tree
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+A clear model structure makes the model easier to build, test, and hand off.
 
-## What this page will cover
-- Model building blocks
-- Structural relationships
-- How organization affects usability
+## Common structural layers
 
+- sections for major business areas
+- variables inside each section
+- dimensions applied where detail is needed
+- helper lines that support larger outputs
+- summary lines or outputs that feed views and boards
+
+## A practical organization pattern
+
+Many teams organize a model in this order: assumptions, drivers, calculations, outputs. This keeps the logic readable and reduces circular editing between unrelated lines.
+
+## Why structure matters for scale
+
+A small model can survive weak structure. A shared model cannot. Once scenarios, linked models, and board reporting rely on the same logic, structure becomes a governance issue, not just a style choice.

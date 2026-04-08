@@ -4,10 +4,32 @@ description: Review the foundational concepts you need before you build in Oculo
 icon: blocks
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Most work in Oculon comes down to a small set of concepts that build on each other. Once you understand how they connect, the rest of the product is much easier to navigate.
 
-## What this page will cover
-- Variables, dimensions, and time
-- Models, databases, and scenarios
-- Views and boards
+## Variables
 
+Variables are the core lines in a model. They hold values, formulas, or both. A variable can represent a metric, a driver, an assumption, or a calculated result.
+
+## Dimensions
+
+Dimensions add structure to a variable. You use them to break the same metric into categories such as region, department, product, or customer segment.
+
+## Time
+
+Time gives the model a planning horizon. It defines the date range, granularity, and the point where actuals end and forecast values begin.
+
+## Formulas
+
+Formulas tell variables how to calculate. They can reference other variables, use helper logic, and respond to time and dimension context.
+
+## Models, databases, scenarios, views, and boards
+
+- **Models** hold the planning logic.
+- **Databases** hold source records and imported data.
+- **Scenarios** let you test changes safely.
+- **Views** save filtered slices of model content.
+- **Boards** present metrics visually.
+
+## A good mental model
+
+Think of Oculon as one connected system: databases provide data, models create logic, scenarios test change, views narrow the output, and boards communicate the result.

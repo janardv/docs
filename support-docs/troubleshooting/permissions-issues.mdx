@@ -4,10 +4,15 @@ description: Troubleshoot access problems caused by sharing rules, roles, or inh
 icon: shield
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Permission issues usually appear as missing content, edit restrictions, or unexpected visibility.
 
-## What this page will cover
-- Common permission failures
-- How to verify access
-- How to restore the right level of access
+## Common causes
 
+- a user has the wrong role
+- group membership is outdated
+- inherited permissions changed after content moved
+- the item was shared more narrowly than expected
+
+## How to resolve
+
+Check the effective access path from workspace role to group membership to item-level permission. The problem is usually in one of those three layers.

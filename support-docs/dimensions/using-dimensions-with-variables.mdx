@@ -4,10 +4,16 @@ description: Use dimensions with variables to build flexible model structures.
 icon: link
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Dimensions and variables work together. A variable defines the metric. The dimension defines how that metric is broken down.
 
-## What this page will cover
-- Dimension-variable relationships
-- Examples of dimensional modeling
-- How dimensionality changes calculations
+## Attach a dimension to a variable
 
+Attach a dimension when you want one variable to return separate values for each category. For example, one `Headcount` variable can expand into department-level rows.
+
+## Formulas usually belong at the aggregate level
+
+In many cases, you can define the formula once at the aggregate row and let Oculon apply the logic to each dimension value. This keeps the model compact and easier to maintain.
+
+## Watch the impact on reporting
+
+Once a variable is dimensioned, views and boards can filter and group by that dimension. This makes the model more powerful, but it also means naming and hierarchy choices matter more.

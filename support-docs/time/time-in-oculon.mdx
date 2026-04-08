@@ -4,10 +4,21 @@ description: Learn how Oculon handles time-based planning and reporting.
 icon: clock
 ---
 
-This page is being drafted as part of the Oculon support docs restructure.
+Time is a core modeling axis in Oculon. Every variable is evaluated over a date range, and the model uses that timeline to separate historical results from planned values.
 
-## What this page will cover
-- Time as a modeling axis
-- How time appears in workflows
-- Why time configuration matters
+## What time controls
 
+Time affects:
+
+- the start and end of the model
+- how many periods the model contains
+- how formulas behave across those periods
+- how reports aggregate and compare values
+
+## Why time setup matters early
+
+Time decisions influence nearly everything else in the model. If you change date range or granularity after formulas, boards, and scenarios are already built, you usually need additional cleanup.
+
+## What to confirm first
+
+Before you build, confirm the planning horizon, the reporting cadence, the fiscal assumptions, and the point where actuals should stop.
