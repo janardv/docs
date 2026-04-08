@@ -1,156 +1,248 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "aspen",
-  "name": "Oculon Docs",
-  "colors": {
-    "primary": "#222222",
-    "light": "#FFFFFF",
-    "dark": "#222222"
-  },
-  "favicon": "/favicon-d.svg",
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/support-docs/getting-started/welcome-to-oculon"
-    }
-  ],
-  "navigation": { 
-    "tabs": [
-      {
-        "tab": "Support Docs",
-        "groups": [
-          {
-            "group": "🚀 Getting Started",
-            "pages": [
-              "support-docs/getting-started/welcome-to-oculon",
-              "support-docs/getting-started/profile-setup",
-              "support-docs/getting-started/navigating-oculon",
-              "support-docs/getting-started/core-concepts",
-              "support-docs/getting-started/oculon-glossary"
-            ]
-          },
-          {
-            "group": "🧱 Build & Model",
-            "pages": [
-              "support-docs/oculon-basics/variable",
-              "support-docs/oculon-basics/dimensions",
-              "support-docs/oculon-basics/time",
-              "support-docs/oculon-basics/database",
-              "support-docs/oculon-basics/library/query-and-database",
-              "support-docs/oculon-basics/data-integrations"
-            ]
-          },
-          {
-            "group": "📊 Analyze & Use",
-            "pages": [
-              "support-docs/oculon-basics/boards",
-              "support-docs/oculon-basics/views",
-              "support-docs/oculon-basics/compare"
-            ]
-          },
-          {
-            "group": "🧮 Formulas & Logic",
-            "pages": [
-              "support-docs/oculon-basics/formulas/creating-formulas",
-              "support-docs/oculon-basics/formulas/functions",
-              "support-docs/oculon-basics/formulas/helper-variables",
-              "support-docs/oculon-basics/currency-and-conversion"
-            ]
-          },
-          {
-            "group": "🤝 Plan & Collaborate",
-            "pages": [
-              "support-docs/plan-and-collaborate/scenario"
-            ]
-          },
-          {
-            "group": "📚 Guides",
-            "pages": [
-              "support-docs/guides/build-your-first-model",
-              "support-docs/guides/keyboard-shortcuts",
-              "support-docs/guides/function-glossary"
-            ]
-          },
-          {
-            "group": "⚙️ Settings & Access",
-            "pages": [
-              {
-                "group": "Account",
-                "pages": [
-                  "support-docs/account/profile",
-                  "support-docs/account/preferences",
-                  "support-docs/account/notifications",
-                  "support-docs/account/access-and-security"
-                ]
-              },
-              {
-                "group": "Admin",
-                "pages": [
-                  "support-docs/admin/workspace",
-                  "support-docs/admin/teamspace",
-                  "support-docs/admin/members-and-roles",
-                  "support-docs/admin/security",
-                  "support-docs/admin/billing-and-plans",
-                  "support-docs/admin/audit-logs",
-                  "support-docs/admin/login-methods",
-                  "support-docs/admin/saml-scim",
-                  "support-docs/admin/usage-limits"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Integration docs",
-        "pages": [
-              "integration-docs/index"
-            ]
-      },
-      {
-        "tab": "How to",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "how-to/index"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/Logo Light.png",
-    "dark": "/logo/Logo Dark.png",
-    "href": "https://oculon.ai/"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hello@moculon.ai"
-      }
-    ]
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "linkedin": "https://linkedin.com/company/oculon-ai",
-      "x": "https://x.com/OculonHQ",
-      "youtube": "https://www.youtube.com/@OculonAI"
-   
-    }
-  }
+    "$schema":  "https://mintlify.com/docs.json",
+    "theme":  "aspen",
+    "name":  "Oculon Docs",
+    "colors":  {
+                   "primary":  "#222222",
+                   "light":  "#FFFFFF",
+                   "dark":  "#222222"
+               },
+    "favicon":  "/favicon-d.svg",
+    "redirects":  [
+                      {
+                          "source":  "/",
+                          "destination":  "/support-docs/getting-started/what-is-oculon"
+                      }
+                  ],
+    "navigation":  {
+                       "tabs":  [
+                                    {
+                                        "tab":  "Support Docs",
+                                        "groups":  [
+                                                       {
+                                                           "group":  "Getting started",
+                                                           "pages":  [
+                                                                         "support-docs/getting-started/what-is-oculon",
+                                                                         "support-docs/getting-started/how-oculon-is-organized",
+                                                                         "support-docs/getting-started/core-concepts-overview",
+                                                                         "support-docs/getting-started/glossary",
+                                                                         "support-docs/getting-started/keyboard-shortcuts"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Variables",
+                                                           "pages":  [
+                                                                         "support-docs/variables/what-is-a-variable",
+                                                                         "support-docs/variables/variable-types",
+                                                                         "support-docs/variables/create-and-edit-variables",
+                                                                         "support-docs/variables/variable-behavior",
+                                                                         "support-docs/variables/variable-references",
+                                                                         "support-docs/variables/variable-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Dimensions",
+                                                           "pages":  [
+                                                                         "support-docs/dimensions/what-is-a-dimension",
+                                                                         "support-docs/dimensions/dimension-values",
+                                                                         "support-docs/dimensions/using-dimensions-with-variables",
+                                                                         "support-docs/dimensions/dimension-operations",
+                                                                         "support-docs/dimensions/dimension-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Time",
+                                                           "pages":  [
+                                                                         "support-docs/time/time-in-oculon",
+                                                                         "support-docs/time/time-granularity",
+                                                                         "support-docs/time/actuals-and-forecast-boundary",
+                                                                         "support-docs/time/relative-time",
+                                                                         "support-docs/time/time-aggregation",
+                                                                         "support-docs/time/time-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Formulas",
+                                                           "pages":  [
+                                                                         "support-docs/formulas/formula-basics",
+                                                                         "support-docs/formulas/formula-editor",
+                                                                         "support-docs/formulas/functions",
+                                                                         "support-docs/formulas/helper-variables-and-modifiers",
+                                                                         "support-docs/formulas/common-formula-patterns",
+                                                                         "support-docs/formulas/formula-errors",
+                                                                         "support-docs/formulas/formula-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Models",
+                                                           "pages":  [
+                                                                         "support-docs/models/what-is-a-model",
+                                                                         "support-docs/models/model-structure",
+                                                                         "support-docs/models/linked-models",
+                                                                         "support-docs/models/model-settings",
+                                                                         "support-docs/models/cloning-and-versioning",
+                                                                         "support-docs/models/model-organization",
+                                                                         "support-docs/models/model-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Databases",
+                                                           "pages":  [
+                                                                         "support-docs/databases/what-is-a-database",
+                                                                         "support-docs/databases/database-types",
+                                                                         "support-docs/databases/database-structure",
+                                                                         "support-docs/databases/working-with-data",
+                                                                         "support-docs/databases/linked-data",
+                                                                         "support-docs/databases/refresh-and-sync-behavior",
+                                                                         "support-docs/databases/database-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Scenarios",
+                                                           "pages":  [
+                                                                         "support-docs/scenarios/what-is-a-scenario",
+                                                                         "support-docs/scenarios/create-and-manage-scenarios",
+                                                                         "support-docs/scenarios/scenario-sync-behavior",
+                                                                         "support-docs/scenarios/scenario-overrides",
+                                                                         "support-docs/scenarios/compare-scenarios",
+                                                                         "support-docs/scenarios/versioning-and-snapshots",
+                                                                         "support-docs/scenarios/scenario-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Views",
+                                                           "pages":  [
+                                                                         "support-docs/views/what-is-a-view",
+                                                                         "support-docs/views/filters-sorts-and-grouping",
+                                                                         "support-docs/views/compare-in-views",
+                                                                         "support-docs/views/private-vs-shared-views",
+                                                                         "support-docs/views/view-behavior",
+                                                                         "support-docs/views/view-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Boards",
+                                                           "pages":  [
+                                                                         "support-docs/boards/what-is-a-board",
+                                                                         "support-docs/boards/board-layout",
+                                                                         "support-docs/boards/charts",
+                                                                         "support-docs/boards/tables-on-boards",
+                                                                         "support-docs/boards/kpi-and-summary-blocks",
+                                                                         "support-docs/boards/board-interaction",
+                                                                         "support-docs/boards/sharing-boards",
+                                                                         "support-docs/boards/board-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Your sidebar",
+                                                           "pages":  [
+                                                                         "support-docs/your-sidebar/navigate-the-sidebar",
+                                                                         "support-docs/your-sidebar/organize-your-workspace",
+                                                                         "support-docs/your-sidebar/search-and-quick-access",
+                                                                         "support-docs/your-sidebar/sidebar-customization"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Sharing \u0026 permissions",
+                                                           "pages":  [
+                                                                         "support-docs/sharing-and-permissions/sharing-basics",
+                                                                         "support-docs/sharing-and-permissions/roles-and-permissions",
+                                                                         "support-docs/sharing-and-permissions/members-guests-and-groups",
+                                                                         "support-docs/sharing-and-permissions/permission-inheritance",
+                                                                         "support-docs/sharing-and-permissions/comments-and-collaboration",
+                                                                         "support-docs/sharing-and-permissions/sensitive-data-controls",
+                                                                         "support-docs/sharing-and-permissions/external-sharing-and-exports"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Custom agents",
+                                                           "pages":  [
+                                                                         "support-docs/custom-agents/what-are-custom-agents",
+                                                                         "support-docs/custom-agents/create-a-custom-agent",
+                                                                         "support-docs/custom-agents/agent-context-and-knowledge",
+                                                                         "support-docs/custom-agents/agent-actions",
+                                                                         "support-docs/custom-agents/agent-permissions",
+                                                                         "support-docs/custom-agents/agent-connections",
+                                                                         "support-docs/custom-agents/agent-safety-and-review",
+                                                                         "support-docs/custom-agents/agent-best-practices"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Admin",
+                                                           "pages":  [
+                                                                         "support-docs/admin/workspace-settings",
+                                                                         "support-docs/admin/members-and-roles",
+                                                                         "support-docs/admin/groups",
+                                                                         "support-docs/admin/login-methods",
+                                                                         "support-docs/admin/security",
+                                                                         "support-docs/admin/audit-logs",
+                                                                         "support-docs/admin/billing-and-plans",
+                                                                         "support-docs/admin/usage-and-limits"
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Troubleshooting",
+                                                           "pages":  [
+                                                                         "support-docs/troubleshooting/formula-issues",
+                                                                         "support-docs/troubleshooting/data-mismatches",
+                                                                         "support-docs/troubleshooting/scenario-issues",
+                                                                         "support-docs/troubleshooting/permissions-issues",
+                                                                         "support-docs/troubleshooting/agent-issues",
+                                                                         "support-docs/troubleshooting/performance-issues",
+                                                                         "support-docs/troubleshooting/common-errors"
+                                                                     ]
+                                                       }
+                                                   ]
+                                    },
+                                    {
+                                        "tab":  "Integration docs",
+                                        "pages":  [
+                                                      "integration-docs/index"
+                                                  ]
+                                    },
+                                    {
+                                        "tab":  "How to",
+                                        "groups":  [
+                                                       {
+                                                           "group":  "Overview",
+                                                           "pages":  [
+                                                                         "how-to/index"
+                                                                     ]
+                                                       }
+                                                   ]
+                                    }
+                                ]
+                   },
+    "logo":  {
+                 "light":  "/logo/Logo Light.png",
+                 "dark":  "/logo/Logo Dark.png",
+                 "href":  "https://oculon.ai/"
+             },
+    "navbar":  {
+                   "links":  [
+                                 {
+                                     "label":  "Support",
+                                     "href":  "mailto:hello@moculon.ai"
+                                 }
+                             ]
+               },
+    "contextual":  {
+                       "options":  [
+                                       "copy",
+                                       "view",
+                                       "chatgpt",
+                                       "claude",
+                                       "perplexity",
+                                       "mcp",
+                                       "cursor",
+                                       "vscode"
+                                   ]
+                   },
+    "footer":  {
+                   "socials":  {
+                                   "linkedin":  "https://linkedin.com/company/oculon-ai",
+                                   "x":  "https://x.com/OculonHQ",
+                                   "youtube":  "https://www.youtube.com/@OculonAI"
+                               }
+               }
 }
