@@ -203,30 +203,12 @@
                                                            "group":  "AI",
                                                            "pages":  [
                                                                          {
-                                                                             "group":  "AI in Oculon",
+                                                                             "group":  "Overview",
                                                                              "expanded":  false,
                                                                              "pages":  [
-                                                                                           "support-docs/ai/ai-in-oculon"
-                                                                                       ]
-                                                                         },
-                                                                         {
-                                                                             "group":  "Modeling with AI",
-                                                                             "expanded":  false,
-                                                                             "pages":  [
-                                                                                           "support-docs/ai/modeling-with-ai"
-                                                                                       ]
-                                                                         },
-                                                                         {
-                                                                             "group":  "Reporting with AI",
-                                                                             "expanded":  false,
-                                                                             "pages":  [
-                                                                                           "support-docs/ai/reporting-with-ai"
-                                                                                       ]
-                                                                         },
-                                                                         {
-                                                                             "group":  "Plan mode",
-                                                                             "expanded":  false,
-                                                                             "pages":  [
+                                                                                           "support-docs/ai/ai-in-oculon",
+                                                                                           "support-docs/ai/modeling-with-ai",
+                                                                                           "support-docs/ai/reporting-with-ai",
                                                                                            "support-docs/ai/plan-mode"
                                                                                        ]
                                                                          },
@@ -245,23 +227,11 @@
                                                                                        ]
                                                                          },
                                                                          {
-                                                                             "group":  "MCP",
+                                                                             "group":  "Context and connections",
                                                                              "expanded":  false,
                                                                              "pages":  [
-                                                                                           "support-docs/ai/mcp"
-                                                                                       ]
-                                                                         },
-                                                                         {
-                                                                             "group":  "Skills",
-                                                                             "expanded":  false,
-                                                                             "pages":  [
-                                                                                           "support-docs/ai/skills"
-                                                                                       ]
-                                                                         },
-                                                                         {
-                                                                             "group":  "Connectors",
-                                                                             "expanded":  false,
-                                                                             "pages":  [
+                                                                                           "support-docs/ai/mcp",
+                                                                                           "support-docs/ai/skills",
                                                                                            "support-docs/ai/connectors"
                                                                                        ]
                                                                          }
@@ -271,14 +241,26 @@
                                                            "group":  "Administration",
                                                            "pages":  [
                                                                          {
-                                                                             "group":  "Admin",
+                                                                             "group":  "Workspace setup",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "support-docs/admin-guide/workspace-settings",
+                                                                                           "support-docs/admin-guide/groups"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Access and security",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
                                                                                            "support-docs/admin-guide/members-and-roles",
-                                                                                           "support-docs/admin-guide/groups",
                                                                                            "support-docs/admin-guide/login-methods",
-                                                                                           "support-docs/admin-guide/security",
+                                                                                           "support-docs/admin-guide/security"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Oversight and billing",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
                                                                                            "support-docs/admin-guide/audit-logs",
                                                                                            "support-docs/admin-guide/billing-and-plans",
                                                                                            "support-docs/admin-guide/usage-and-limits"
