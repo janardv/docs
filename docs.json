@@ -460,7 +460,6 @@
                                                            "pages":  [
                                                                          {
                                                                              "group":  "Getting started",
-                                                                             "root":  "docs-new/getting-started/what-is-oculon",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/getting-started/what-is-oculon",
@@ -472,7 +471,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Workspace and organization",
-                                                                             "root":  "docs-new/workspace-and-organization/what-is-a-workspace",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/workspace-and-organization/what-is-a-workspace",
@@ -483,7 +481,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Your sidebar",
-                                                                             "root":  "docs-new/your-sidebar/navigate-the-sidebar",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/your-sidebar/navigate-the-sidebar",
@@ -499,7 +496,6 @@
                                                            "pages":  [
                                                                          {
                                                                              "group":  "Variables",
-                                                                             "root":  "docs-new/variables/what-is-a-variable",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/variables/what-is-a-variable",
@@ -512,7 +508,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Dimensions",
-                                                                             "root":  "docs-new/dimensions/what-is-a-dimension",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/dimensions/what-is-a-dimension",
@@ -524,7 +519,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Time",
-                                                                             "root":  "docs-new/time/time-in-oculon",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/time/time-in-oculon",
@@ -537,7 +531,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Formulas",
-                                                                             "root":  "docs-new/formulas/formula-basics",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/formulas/formula-basics",
@@ -551,7 +544,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Models",
-                                                                             "root":  "docs-new/models/what-is-a-model",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/models/what-is-a-model",
@@ -565,7 +557,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Databases",
-                                                                             "root":  "docs-new/databases/what-is-a-database",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/databases/what-is-a-database",
@@ -579,7 +570,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Scenarios",
-                                                                             "root":  "docs-new/scenarios/what-is-a-scenario",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/scenarios/what-is-a-scenario",
@@ -593,7 +583,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Views",
-                                                                             "root":  "docs-new/views/what-is-a-view",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/views/what-is-a-view",
@@ -606,7 +595,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Boards",
-                                                                             "root":  "docs-new/boards/what-is-a-board",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/boards/what-is-a-board",
@@ -621,7 +609,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Sharing \u0026 permissions",
-                                                                             "root":  "docs-new/sharing-and-permissions/sharing-basics",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/sharing-and-permissions/sharing-basics",
@@ -635,7 +622,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Troubleshooting",
-                                                                             "root":  "docs-new/troubleshooting/common-errors",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/troubleshooting/formula-issues",
@@ -654,7 +640,6 @@
                                                            "pages":  [
                                                                          {
                                                                              "group":  "Overview",
-                                                                             "root":  "docs-new/ai/ai-in-oculon",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/ai/ai-in-oculon",
@@ -665,7 +650,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Custom agents",
-                                                                             "root":  "docs-new/custom-agents/what-are-custom-agents",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/custom-agents/what-are-custom-agents",
@@ -680,7 +664,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Context and connections",
-                                                                             "root":  "docs-new/ai/mcp",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/ai/mcp",
@@ -695,7 +678,6 @@
                                                            "pages":  [
                                                                          {
                                                                              "group":  "Workspace setup",
-                                                                             "root":  "docs-new/admin-guide/workspace-settings",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/admin-guide/workspace-settings",
@@ -704,7 +686,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Access and security",
-                                                                             "root":  "docs-new/admin-guide/members-and-roles",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/admin-guide/members-and-roles",
@@ -714,7 +695,6 @@
                                                                          },
                                                                          {
                                                                              "group":  "Oversight and billing",
-                                                                             "root":  "docs-new/admin-guide/audit-logs",
                                                                              "expanded":  false,
                                                                              "pages":  [
                                                                                            "docs-new/admin-guide/audit-logs",

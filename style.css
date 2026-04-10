@@ -1,0 +1,32 @@
+#sidebar-content li[data-active] {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+#sidebar-content li[data-active] a,
+#sidebar-content li[data-active] span,
+#sidebar-content li[data-active] p {
+  color: #111111 !important;
+  font-weight: 700 !important;
+}
+
+#sidebar-content li[data-active] svg,
+#sidebar-content li[data-active] path {
+  color: #111111 !important;
+  stroke: #111111 !important;
+}
+
+sidebar-group[data-active] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+sidebar-group[data-active] sidebar-group-header,
+sidebar-group[data-active] sidebar-group-icon {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font-weight: 500 !important;
+}
