@@ -1,0 +1,19 @@
+---
+title: Database structure
+description: Review how databases are structured and how that structure affects analysis.
+icon: table
+---
+
+A useful database starts with a clean structure. Rows represent records. Columns define the fields Oculon can filter, group, and map into models.
+
+## Design the structure for the downstream use case
+
+Before you add fields, decide how the data will be used. A database meant to power time analysis may need a date field. A database meant to segment planning logic may need a clean category field that can map to a dimension.
+
+## Keep structure stable
+
+Once a database is feeding models and boards, structural changes can affect several downstream surfaces. Add fields carefully and rename them only when the value is clear.
+
+## Prefer clear, typed columns
+
+A well-typed, well-named field is easier to map, filter, and explain than a catch-all text column with mixed content.

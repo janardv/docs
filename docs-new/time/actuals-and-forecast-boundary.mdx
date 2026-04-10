@@ -1,0 +1,21 @@
+---
+title: Actuals and forecast boundary
+description: Understand how Oculon separates actuals from forecast periods.
+icon: split
+---
+
+The actuals and forecast boundary is the point where historical values stop and planning logic starts. In Oculon, this is usually controlled by the last actual date.
+
+## Why the boundary matters
+
+A clear boundary helps you avoid mixing observed results with projected values. It also makes scenario comparisons easier because everyone is working from the same baseline.
+
+## What should happen at the boundary
+
+- periods before the boundary should remain actuals
+- periods after the boundary should follow forecast logic
+- formulas that depend on actuals should respond consistently around the cutoff
+
+## Review it regularly
+
+Update the boundary when a new actual period closes. If you forget, forecasts may continue too far into history or actuals may fail to flow into the model.

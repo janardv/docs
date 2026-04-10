@@ -11,7 +11,443 @@
     "redirects":  [
                       {
                           "source":  "/",
-                          "destination":  "/support-docs/getting-started/what-is-oculon"
+                          "destination":  "/docs-new/getting-started/what-is-oculon"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/audit-logs",
+                          "destination":  "/docs-new/admin-guide/audit-logs"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/billing-and-plans",
+                          "destination":  "/docs-new/admin-guide/billing-and-plans"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/groups",
+                          "destination":  "/docs-new/admin-guide/groups"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/login-methods",
+                          "destination":  "/docs-new/admin-guide/login-methods"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/members-and-roles",
+                          "destination":  "/docs-new/admin-guide/members-and-roles"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/security",
+                          "destination":  "/docs-new/admin-guide/security"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/usage-and-limits",
+                          "destination":  "/docs-new/admin-guide/usage-and-limits"
+                      },
+                      {
+                          "source":  "/support-docs/admin-guide/workspace-settings",
+                          "destination":  "/docs-new/admin-guide/workspace-settings"
+                      },
+                      {
+                          "source":  "/support-docs/ai/ai-in-oculon",
+                          "destination":  "/docs-new/ai/ai-in-oculon"
+                      },
+                      {
+                          "source":  "/support-docs/ai/connectors",
+                          "destination":  "/docs-new/ai/connectors"
+                      },
+                      {
+                          "source":  "/support-docs/ai/mcp",
+                          "destination":  "/docs-new/ai/mcp"
+                      },
+                      {
+                          "source":  "/support-docs/ai/modeling-with-ai",
+                          "destination":  "/docs-new/ai/modeling-with-ai"
+                      },
+                      {
+                          "source":  "/support-docs/ai/plan-mode",
+                          "destination":  "/docs-new/ai/plan-mode"
+                      },
+                      {
+                          "source":  "/support-docs/ai/reporting-with-ai",
+                          "destination":  "/docs-new/ai/reporting-with-ai"
+                      },
+                      {
+                          "source":  "/support-docs/ai/skills",
+                          "destination":  "/docs-new/ai/skills"
+                      },
+                      {
+                          "source":  "/support-docs/boards/board-best-practices",
+                          "destination":  "/docs-new/boards/board-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/boards/board-interaction",
+                          "destination":  "/docs-new/boards/board-interaction"
+                      },
+                      {
+                          "source":  "/support-docs/boards/board-layout",
+                          "destination":  "/docs-new/boards/board-layout"
+                      },
+                      {
+                          "source":  "/support-docs/boards/charts",
+                          "destination":  "/docs-new/boards/charts"
+                      },
+                      {
+                          "source":  "/support-docs/boards/kpi-and-summary-blocks",
+                          "destination":  "/docs-new/boards/kpi-and-summary-blocks"
+                      },
+                      {
+                          "source":  "/support-docs/boards/sharing-boards",
+                          "destination":  "/docs-new/boards/sharing-boards"
+                      },
+                      {
+                          "source":  "/support-docs/boards/tables-on-boards",
+                          "destination":  "/docs-new/boards/tables-on-boards"
+                      },
+                      {
+                          "source":  "/support-docs/boards/what-is-a-board",
+                          "destination":  "/docs-new/boards/what-is-a-board"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/agent-actions",
+                          "destination":  "/docs-new/custom-agents/agent-actions"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/agent-best-practices",
+                          "destination":  "/docs-new/custom-agents/agent-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/agent-connections",
+                          "destination":  "/docs-new/custom-agents/agent-connections"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/agent-context-and-knowledge",
+                          "destination":  "/docs-new/custom-agents/agent-context-and-knowledge"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/agent-permissions",
+                          "destination":  "/docs-new/custom-agents/agent-permissions"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/agent-safety-and-review",
+                          "destination":  "/docs-new/custom-agents/agent-safety-and-review"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/create-a-custom-agent",
+                          "destination":  "/docs-new/custom-agents/create-a-custom-agent"
+                      },
+                      {
+                          "source":  "/support-docs/custom-agents/what-are-custom-agents",
+                          "destination":  "/docs-new/custom-agents/what-are-custom-agents"
+                      },
+                      {
+                          "source":  "/support-docs/databases/database-best-practices",
+                          "destination":  "/docs-new/databases/database-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/databases/database-structure",
+                          "destination":  "/docs-new/databases/database-structure"
+                      },
+                      {
+                          "source":  "/support-docs/databases/database-types",
+                          "destination":  "/docs-new/databases/database-types"
+                      },
+                      {
+                          "source":  "/support-docs/databases/linked-data",
+                          "destination":  "/docs-new/databases/linked-data"
+                      },
+                      {
+                          "source":  "/support-docs/databases/refresh-and-sync-behavior",
+                          "destination":  "/docs-new/databases/refresh-and-sync-behavior"
+                      },
+                      {
+                          "source":  "/support-docs/databases/what-is-a-database",
+                          "destination":  "/docs-new/databases/what-is-a-database"
+                      },
+                      {
+                          "source":  "/support-docs/databases/working-with-data",
+                          "destination":  "/docs-new/databases/working-with-data"
+                      },
+                      {
+                          "source":  "/support-docs/dimensions/dimension-best-practices",
+                          "destination":  "/docs-new/dimensions/dimension-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/dimensions/dimension-operations",
+                          "destination":  "/docs-new/dimensions/dimension-operations"
+                      },
+                      {
+                          "source":  "/support-docs/dimensions/dimension-values",
+                          "destination":  "/docs-new/dimensions/dimension-values"
+                      },
+                      {
+                          "source":  "/support-docs/dimensions/using-dimensions-with-variables",
+                          "destination":  "/docs-new/dimensions/using-dimensions-with-variables"
+                      },
+                      {
+                          "source":  "/support-docs/dimensions/what-is-a-dimension",
+                          "destination":  "/docs-new/dimensions/what-is-a-dimension"
+                      },
+                      {
+                          "source":  "/support-docs/formulas/common-formula-patterns",
+                          "destination":  "/docs-new/formulas/common-formula-patterns"
+                      },
+                      {
+                          "source":  "/support-docs/formulas/formula-basics",
+                          "destination":  "/docs-new/formulas/formula-basics"
+                      },
+                      {
+                          "source":  "/support-docs/formulas/formula-best-practices",
+                          "destination":  "/docs-new/formulas/formula-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/formulas/formula-editor",
+                          "destination":  "/docs-new/formulas/formula-editor"
+                      },
+                      {
+                          "source":  "/support-docs/formulas/formula-errors",
+                          "destination":  "/docs-new/formulas/formula-errors"
+                      },
+                      {
+                          "source":  "/support-docs/formulas/functions",
+                          "destination":  "/docs-new/formulas/functions"
+                      },
+                      {
+                          "source":  "/support-docs/formulas/helper-variables-and-modifiers",
+                          "destination":  "/docs-new/formulas/helper-variables-and-modifiers"
+                      },
+                      {
+                          "source":  "/support-docs/getting-started/core-concepts-overview",
+                          "destination":  "/docs-new/getting-started/core-concepts-overview"
+                      },
+                      {
+                          "source":  "/support-docs/getting-started/glossary",
+                          "destination":  "/docs-new/getting-started/glossary"
+                      },
+                      {
+                          "source":  "/support-docs/getting-started/how-oculon-is-organized",
+                          "destination":  "/docs-new/getting-started/how-oculon-is-organized"
+                      },
+                      {
+                          "source":  "/support-docs/getting-started/keyboard-shortcuts",
+                          "destination":  "/docs-new/getting-started/keyboard-shortcuts"
+                      },
+                      {
+                          "source":  "/support-docs/getting-started/what-is-oculon",
+                          "destination":  "/docs-new/getting-started/what-is-oculon"
+                      },
+                      {
+                          "source":  "/support-docs/models/cloning-and-versioning",
+                          "destination":  "/docs-new/models/cloning-and-versioning"
+                      },
+                      {
+                          "source":  "/support-docs/models/linked-models",
+                          "destination":  "/docs-new/models/linked-models"
+                      },
+                      {
+                          "source":  "/support-docs/models/model-best-practices",
+                          "destination":  "/docs-new/models/model-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/models/model-organization",
+                          "destination":  "/docs-new/models/model-organization"
+                      },
+                      {
+                          "source":  "/support-docs/models/model-settings",
+                          "destination":  "/docs-new/models/model-settings"
+                      },
+                      {
+                          "source":  "/support-docs/models/model-structure",
+                          "destination":  "/docs-new/models/model-structure"
+                      },
+                      {
+                          "source":  "/support-docs/models/what-is-a-model",
+                          "destination":  "/docs-new/models/what-is-a-model"
+                      },
+                      {
+                          "source":  "/support-docs/scenarios/compare-scenarios",
+                          "destination":  "/docs-new/scenarios/compare-scenarios"
+                      },
+                      {
+                          "source":  "/support-docs/scenarios/create-and-manage-scenarios",
+                          "destination":  "/docs-new/scenarios/create-and-manage-scenarios"
+                      },
+                      {
+                          "source":  "/support-docs/scenarios/scenario-best-practices",
+                          "destination":  "/docs-new/scenarios/scenario-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/scenarios/scenario-overrides",
+                          "destination":  "/docs-new/scenarios/scenario-overrides"
+                      },
+                      {
+                          "source":  "/support-docs/scenarios/scenario-sync-behavior",
+                          "destination":  "/docs-new/scenarios/scenario-sync-behavior"
+                      },
+                      {
+                          "source":  "/support-docs/scenarios/versioning-and-snapshots",
+                          "destination":  "/docs-new/scenarios/versioning-and-snapshots"
+                      },
+                      {
+                          "source":  "/support-docs/scenarios/what-is-a-scenario",
+                          "destination":  "/docs-new/scenarios/what-is-a-scenario"
+                      },
+                      {
+                          "source":  "/support-docs/sharing-and-permissions/comments-and-collaboration",
+                          "destination":  "/docs-new/sharing-and-permissions/comments-and-collaboration"
+                      },
+                      {
+                          "source":  "/support-docs/sharing-and-permissions/external-sharing-and-exports",
+                          "destination":  "/docs-new/sharing-and-permissions/external-sharing-and-exports"
+                      },
+                      {
+                          "source":  "/support-docs/sharing-and-permissions/members-guests-and-groups",
+                          "destination":  "/docs-new/sharing-and-permissions/members-guests-and-groups"
+                      },
+                      {
+                          "source":  "/support-docs/sharing-and-permissions/permission-inheritance",
+                          "destination":  "/docs-new/sharing-and-permissions/permission-inheritance"
+                      },
+                      {
+                          "source":  "/support-docs/sharing-and-permissions/roles-and-permissions",
+                          "destination":  "/docs-new/sharing-and-permissions/roles-and-permissions"
+                      },
+                      {
+                          "source":  "/support-docs/sharing-and-permissions/sensitive-data-controls",
+                          "destination":  "/docs-new/sharing-and-permissions/sensitive-data-controls"
+                      },
+                      {
+                          "source":  "/support-docs/sharing-and-permissions/sharing-basics",
+                          "destination":  "/docs-new/sharing-and-permissions/sharing-basics"
+                      },
+                      {
+                          "source":  "/support-docs/time/actuals-and-forecast-boundary",
+                          "destination":  "/docs-new/time/actuals-and-forecast-boundary"
+                      },
+                      {
+                          "source":  "/support-docs/time/relative-time",
+                          "destination":  "/docs-new/time/relative-time"
+                      },
+                      {
+                          "source":  "/support-docs/time/time-aggregation",
+                          "destination":  "/docs-new/time/time-aggregation"
+                      },
+                      {
+                          "source":  "/support-docs/time/time-best-practices",
+                          "destination":  "/docs-new/time/time-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/time/time-granularity",
+                          "destination":  "/docs-new/time/time-granularity"
+                      },
+                      {
+                          "source":  "/support-docs/time/time-in-oculon",
+                          "destination":  "/docs-new/time/time-in-oculon"
+                      },
+                      {
+                          "source":  "/support-docs/troubleshooting/agent-issues",
+                          "destination":  "/docs-new/troubleshooting/agent-issues"
+                      },
+                      {
+                          "source":  "/support-docs/troubleshooting/common-errors",
+                          "destination":  "/docs-new/troubleshooting/common-errors"
+                      },
+                      {
+                          "source":  "/support-docs/troubleshooting/data-mismatches",
+                          "destination":  "/docs-new/troubleshooting/data-mismatches"
+                      },
+                      {
+                          "source":  "/support-docs/troubleshooting/formula-issues",
+                          "destination":  "/docs-new/troubleshooting/formula-issues"
+                      },
+                      {
+                          "source":  "/support-docs/troubleshooting/performance-issues",
+                          "destination":  "/docs-new/troubleshooting/performance-issues"
+                      },
+                      {
+                          "source":  "/support-docs/troubleshooting/permissions-issues",
+                          "destination":  "/docs-new/troubleshooting/permissions-issues"
+                      },
+                      {
+                          "source":  "/support-docs/troubleshooting/scenario-issues",
+                          "destination":  "/docs-new/troubleshooting/scenario-issues"
+                      },
+                      {
+                          "source":  "/support-docs/variables/create-and-edit-variables",
+                          "destination":  "/docs-new/variables/create-and-edit-variables"
+                      },
+                      {
+                          "source":  "/support-docs/variables/variable-behavior",
+                          "destination":  "/docs-new/variables/variable-behavior"
+                      },
+                      {
+                          "source":  "/support-docs/variables/variable-best-practices",
+                          "destination":  "/docs-new/variables/variable-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/variables/variable-references",
+                          "destination":  "/docs-new/variables/variable-references"
+                      },
+                      {
+                          "source":  "/support-docs/variables/variable-types",
+                          "destination":  "/docs-new/variables/variable-types"
+                      },
+                      {
+                          "source":  "/support-docs/variables/what-is-a-variable",
+                          "destination":  "/docs-new/variables/what-is-a-variable"
+                      },
+                      {
+                          "source":  "/support-docs/views/compare-in-views",
+                          "destination":  "/docs-new/views/compare-in-views"
+                      },
+                      {
+                          "source":  "/support-docs/views/filters-sorts-and-grouping",
+                          "destination":  "/docs-new/views/filters-sorts-and-grouping"
+                      },
+                      {
+                          "source":  "/support-docs/views/private-vs-shared-views",
+                          "destination":  "/docs-new/views/private-vs-shared-views"
+                      },
+                      {
+                          "source":  "/support-docs/views/view-behavior",
+                          "destination":  "/docs-new/views/view-behavior"
+                      },
+                      {
+                          "source":  "/support-docs/views/view-best-practices",
+                          "destination":  "/docs-new/views/view-best-practices"
+                      },
+                      {
+                          "source":  "/support-docs/views/what-is-a-view",
+                          "destination":  "/docs-new/views/what-is-a-view"
+                      },
+                      {
+                          "source":  "/support-docs/workspace-and-organization/profile-and-preferences",
+                          "destination":  "/docs-new/workspace-and-organization/profile-and-preferences"
+                      },
+                      {
+                          "source":  "/support-docs/workspace-and-organization/teamspaces-and-organization",
+                          "destination":  "/docs-new/workspace-and-organization/teamspaces-and-organization"
+                      },
+                      {
+                          "source":  "/support-docs/workspace-and-organization/what-is-a-workspace",
+                          "destination":  "/docs-new/workspace-and-organization/what-is-a-workspace"
+                      },
+                      {
+                          "source":  "/support-docs/workspace-and-organization/workspace-access-and-visibility",
+                          "destination":  "/docs-new/workspace-and-organization/workspace-access-and-visibility"
+                      },
+                      {
+                          "source":  "/support-docs/your-sidebar/navigate-the-sidebar",
+                          "destination":  "/docs-new/your-sidebar/navigate-the-sidebar"
+                      },
+                      {
+                          "source":  "/support-docs/your-sidebar/organize-your-workspace",
+                          "destination":  "/docs-new/your-sidebar/organize-your-workspace"
+                      },
+                      {
+                          "source":  "/support-docs/your-sidebar/search-and-quick-access",
+                          "destination":  "/docs-new/your-sidebar/search-and-quick-access"
+                      },
+                      {
+                          "source":  "/support-docs/your-sidebar/sidebar-customization",
+                          "destination":  "/docs-new/your-sidebar/sidebar-customization"
                       }
                   ],
     "navigation":  {
@@ -288,6 +724,284 @@
                                                                                            "support-docs/admin-guide/audit-logs",
                                                                                            "support-docs/admin-guide/billing-and-plans",
                                                                                            "support-docs/admin-guide/usage-and-limits"
+                                                                                       ]
+                                                                         }
+                                                                     ]
+                                                       }
+                                                   ]
+                                    },
+                                    {
+                                        "tab":  "Docs new",
+                                        "groups":  [
+                                                       {
+                                                           "group":  "Start here",
+                                                           "root":  "docs-new/getting-started/what-is-oculon",
+                                                           "pages":  [
+                                                                         {
+                                                                             "group":  "Getting started",
+                                                                             "root":  "docs-new/getting-started/what-is-oculon",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/getting-started/what-is-oculon",
+                                                                                           "docs-new/getting-started/how-oculon-is-organized",
+                                                                                           "docs-new/getting-started/core-concepts-overview",
+                                                                                           "docs-new/getting-started/glossary",
+                                                                                           "docs-new/getting-started/keyboard-shortcuts"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Workspace and organization",
+                                                                             "root":  "docs-new/workspace-and-organization/what-is-a-workspace",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/workspace-and-organization/what-is-a-workspace",
+                                                                                           "docs-new/workspace-and-organization/teamspaces-and-organization",
+                                                                                           "docs-new/workspace-and-organization/profile-and-preferences",
+                                                                                           "docs-new/workspace-and-organization/workspace-access-and-visibility"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Your sidebar",
+                                                                             "root":  "docs-new/your-sidebar/navigate-the-sidebar",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/your-sidebar/navigate-the-sidebar",
+                                                                                           "docs-new/your-sidebar/organize-your-workspace",
+                                                                                           "docs-new/your-sidebar/search-and-quick-access",
+                                                                                           "docs-new/your-sidebar/sidebar-customization"
+                                                                                       ]
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Planning and analysis",
+                                                           "root":  "docs-new/variables/what-is-a-variable",
+                                                           "pages":  [
+                                                                         {
+                                                                             "group":  "Variables",
+                                                                             "root":  "docs-new/variables/what-is-a-variable",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/variables/what-is-a-variable",
+                                                                                           "docs-new/variables/variable-types",
+                                                                                           "docs-new/variables/create-and-edit-variables",
+                                                                                           "docs-new/variables/variable-behavior",
+                                                                                           "docs-new/variables/variable-references",
+                                                                                           "docs-new/variables/variable-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Dimensions",
+                                                                             "root":  "docs-new/dimensions/what-is-a-dimension",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/dimensions/what-is-a-dimension",
+                                                                                           "docs-new/dimensions/dimension-values",
+                                                                                           "docs-new/dimensions/using-dimensions-with-variables",
+                                                                                           "docs-new/dimensions/dimension-operations",
+                                                                                           "docs-new/dimensions/dimension-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Time",
+                                                                             "root":  "docs-new/time/time-in-oculon",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/time/time-in-oculon",
+                                                                                           "docs-new/time/time-granularity",
+                                                                                           "docs-new/time/actuals-and-forecast-boundary",
+                                                                                           "docs-new/time/relative-time",
+                                                                                           "docs-new/time/time-aggregation",
+                                                                                           "docs-new/time/time-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Formulas",
+                                                                             "root":  "docs-new/formulas/formula-basics",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/formulas/formula-basics",
+                                                                                           "docs-new/formulas/formula-editor",
+                                                                                           "docs-new/formulas/functions",
+                                                                                           "docs-new/formulas/helper-variables-and-modifiers",
+                                                                                           "docs-new/formulas/common-formula-patterns",
+                                                                                           "docs-new/formulas/formula-errors",
+                                                                                           "docs-new/formulas/formula-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Models",
+                                                                             "root":  "docs-new/models/what-is-a-model",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/models/what-is-a-model",
+                                                                                           "docs-new/models/model-structure",
+                                                                                           "docs-new/models/linked-models",
+                                                                                           "docs-new/models/model-settings",
+                                                                                           "docs-new/models/cloning-and-versioning",
+                                                                                           "docs-new/models/model-organization",
+                                                                                           "docs-new/models/model-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Databases",
+                                                                             "root":  "docs-new/databases/what-is-a-database",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/databases/what-is-a-database",
+                                                                                           "docs-new/databases/database-types",
+                                                                                           "docs-new/databases/database-structure",
+                                                                                           "docs-new/databases/working-with-data",
+                                                                                           "docs-new/databases/linked-data",
+                                                                                           "docs-new/databases/refresh-and-sync-behavior",
+                                                                                           "docs-new/databases/database-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Scenarios",
+                                                                             "root":  "docs-new/scenarios/what-is-a-scenario",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/scenarios/what-is-a-scenario",
+                                                                                           "docs-new/scenarios/create-and-manage-scenarios",
+                                                                                           "docs-new/scenarios/scenario-sync-behavior",
+                                                                                           "docs-new/scenarios/scenario-overrides",
+                                                                                           "docs-new/scenarios/compare-scenarios",
+                                                                                           "docs-new/scenarios/versioning-and-snapshots",
+                                                                                           "docs-new/scenarios/scenario-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Views",
+                                                                             "root":  "docs-new/views/what-is-a-view",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/views/what-is-a-view",
+                                                                                           "docs-new/views/filters-sorts-and-grouping",
+                                                                                           "docs-new/views/compare-in-views",
+                                                                                           "docs-new/views/private-vs-shared-views",
+                                                                                           "docs-new/views/view-behavior",
+                                                                                           "docs-new/views/view-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Boards",
+                                                                             "root":  "docs-new/boards/what-is-a-board",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/boards/what-is-a-board",
+                                                                                           "docs-new/boards/board-layout",
+                                                                                           "docs-new/boards/charts",
+                                                                                           "docs-new/boards/tables-on-boards",
+                                                                                           "docs-new/boards/kpi-and-summary-blocks",
+                                                                                           "docs-new/boards/board-interaction",
+                                                                                           "docs-new/boards/sharing-boards",
+                                                                                           "docs-new/boards/board-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Sharing \u0026 permissions",
+                                                                             "root":  "docs-new/sharing-and-permissions/sharing-basics",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/sharing-and-permissions/sharing-basics",
+                                                                                           "docs-new/sharing-and-permissions/roles-and-permissions",
+                                                                                           "docs-new/sharing-and-permissions/members-guests-and-groups",
+                                                                                           "docs-new/sharing-and-permissions/permission-inheritance",
+                                                                                           "docs-new/sharing-and-permissions/comments-and-collaboration",
+                                                                                           "docs-new/sharing-and-permissions/sensitive-data-controls",
+                                                                                           "docs-new/sharing-and-permissions/external-sharing-and-exports"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Troubleshooting",
+                                                                             "root":  "docs-new/troubleshooting/common-errors",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/troubleshooting/formula-issues",
+                                                                                           "docs-new/troubleshooting/data-mismatches",
+                                                                                           "docs-new/troubleshooting/scenario-issues",
+                                                                                           "docs-new/troubleshooting/permissions-issues",
+                                                                                           "docs-new/troubleshooting/agent-issues",
+                                                                                           "docs-new/troubleshooting/performance-issues",
+                                                                                           "docs-new/troubleshooting/common-errors"
+                                                                                       ]
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "AI",
+                                                           "root":  "docs-new/ai/ai-in-oculon",
+                                                           "pages":  [
+                                                                         {
+                                                                             "group":  "Overview",
+                                                                             "root":  "docs-new/ai/ai-in-oculon",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/ai/ai-in-oculon",
+                                                                                           "docs-new/ai/modeling-with-ai",
+                                                                                           "docs-new/ai/reporting-with-ai",
+                                                                                           "docs-new/ai/plan-mode"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Custom agents",
+                                                                             "root":  "docs-new/custom-agents/what-are-custom-agents",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/custom-agents/what-are-custom-agents",
+                                                                                           "docs-new/custom-agents/create-a-custom-agent",
+                                                                                           "docs-new/custom-agents/agent-context-and-knowledge",
+                                                                                           "docs-new/custom-agents/agent-actions",
+                                                                                           "docs-new/custom-agents/agent-permissions",
+                                                                                           "docs-new/custom-agents/agent-connections",
+                                                                                           "docs-new/custom-agents/agent-safety-and-review",
+                                                                                           "docs-new/custom-agents/agent-best-practices"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Context and connections",
+                                                                             "root":  "docs-new/ai/mcp",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/ai/mcp",
+                                                                                           "docs-new/ai/skills",
+                                                                                           "docs-new/ai/connectors"
+                                                                                       ]
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "group":  "Administration",
+                                                           "root":  "docs-new/admin-guide/workspace-settings",
+                                                           "pages":  [
+                                                                         {
+                                                                             "group":  "Workspace setup",
+                                                                             "root":  "docs-new/admin-guide/workspace-settings",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/admin-guide/workspace-settings",
+                                                                                           "docs-new/admin-guide/groups"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Access and security",
+                                                                             "root":  "docs-new/admin-guide/members-and-roles",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/admin-guide/members-and-roles",
+                                                                                           "docs-new/admin-guide/login-methods",
+                                                                                           "docs-new/admin-guide/security"
+                                                                                       ]
+                                                                         },
+                                                                         {
+                                                                             "group":  "Oversight and billing",
+                                                                             "root":  "docs-new/admin-guide/audit-logs",
+                                                                             "expanded":  false,
+                                                                             "pages":  [
+                                                                                           "docs-new/admin-guide/audit-logs",
+                                                                                           "docs-new/admin-guide/billing-and-plans",
+                                                                                           "docs-new/admin-guide/usage-and-limits"
                                                                                        ]
                                                                          }
                                                                      ]
