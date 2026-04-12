@@ -12,13 +12,45 @@ A helper variable is an intermediate line that supports a larger calculation. Us
 
 ## Modifiers and context helpers
 
-Model builders often use helpers for:
+Built-in keywords you can use in formulas for time, fiscal periods, cohorts, and model context. They help you avoid hand-rolling common values like month index, quarter, or time step.
 
-- current period logic
-- fiscal month or fiscal year logic
-- last actual date checks
-- blank or fallback behavior
-- cohort or time-step behavior
+### Cohort
+
+| Keyword | Description |
+| --- | --- |
+| `cohort` | Creates a cohort dimension for cohort-based modeling and analysis. |
+
+### Time and calendar
+
+| Keyword | Description |
+| --- | --- |
+| `month` | Returns the month index (Jan = 1, Feb = 2…). Useful for seasonality or month-based logic. |
+| `quarter` | Returns the quarter (1–4). Helps apply logic specific to quarters. |
+| `year` | Returns the calendar year of the current time step. |
+| `daysinmonth` | Returns the total number of days in the current month. |
+| `today` | Returns the current time step index based on today’s date. |
+
+### Fiscal
+
+| Keyword | Description |
+| --- | --- |
+| `fiscalmonth` | Returns the fiscal month (1–12), based on your fiscal year settings. |
+| `fiscalyear` | Returns the fiscal year of the current time step (requires fiscal year to be enabled). |
+
+### Time index and model scope
+
+| Keyword | Description |
+| --- | --- |
+| `timestep` | Returns the index of the current time step (e.g., 0, 1, 2…). |
+| `date` | Alias of `timestep`; also returns the current time step index. |
+| `numtimesteps` | Returns the total number of time steps in the model. |
+
+### Model logic
+
+| Keyword | Description |
+| --- | --- |
+| `lastActualDate` | Returns the index of the last actual date set in model settings. Useful for separating actuals vs forecast logic. |
+| `blank` | Represents an empty value. Commonly used in conditional formulas. |
 
 ## Why this matters
 
