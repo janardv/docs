@@ -1,0 +1,30 @@
+---
+title: Formula basics
+description: Learn the foundations of writing and understanding formulas in Oculon.
+icon: circle-help
+---
+
+Formulas tell Oculon how a variable should calculate. You can use them for simple arithmetic, time-aware logic, driver-based planning, and reusable model patterns.
+
+## What a formula does
+
+A formula can:
+
+- reference other variables
+- react to time and dimension context
+- separate actuals from forecast logic
+- return a value that feeds other formulas, views, and boards
+
+## Where formulas live
+
+Formulas are usually written directly on variables inside a model. The formula becomes part of the model structure, so other people can review and reuse it.
+
+## Start simple
+
+Begin with the clearest version of the calculation. If the formula becomes hard to read, break it into helper variables instead of adding more nested logic.
+
+## Common examples
+
+- `Revenue = Price * Volume`
+- `Gross margin = Revenue - Cost of sales`
+- `Forecast value = IF(time > last actual date, planned logic, actual value)`
