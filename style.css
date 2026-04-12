@@ -1,3 +1,13 @@
+/* Slightly wider main column than default Aspen max-w-6xl (~72rem). */
+#content-container {
+  max-width: 78rem;
+}
+
+@media (min-width: 1024px) {
+  #content-container {
+    padding-left: 3rem;
+    padding-right: 2.25rem;
+  }
 #sidebar-content li,
 #sidebar-content li a,
 #sidebar-content li span,

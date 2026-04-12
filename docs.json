@@ -498,12 +498,13 @@
                                                                              "group":  "Variables",
                                                                              "expanded":  false,
                                                                              "pages":  [
-                                                                                           "docs-new/variables/what-is-a-variable",
-                                                                                           "docs-new/variables/variable-types",
-                                                                                           "docs-new/variables/create-and-edit-variables",
-                                                                                           "docs-new/variables/variable-behavior",
-                                                                                           "docs-new/variables/variable-references",
-                                                                                           "docs-new/variables/variable-best-practices"
+                                                                                           "support-docs/variables/what-is-a-variable",
+                                                                                           "support-docs/variables/variable-types",
+                                                                                           "support-docs/variables/create-and-edit-variables",
+                                                                                           "support-docs/variables/variable-formatting",
+                                                                                           "support-docs/variables/variable-behavior",
+                                                                                           "support-docs/variables/variable-references",
+                                                                                           "support-docs/variables/variable-best-practices"
                                                                                        ]
                                                                          },
                                                                          {
