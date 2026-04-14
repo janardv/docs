@@ -12,10 +12,10 @@ A variable is the basic building block of a model in Oculon. It represents a met
 
 A variable can hold:
 
-- entered values
-- calculated results from a formula
-- values broken down by one or more dimensions
-- formatting rules such as currency or percentage display
+- Entered values
+- Calculated results from a formula
+- Values broken down by one or more dimensions
+- Formatting rules such as currency or percentage display
 
 ## Where variables are used
 
@@ -28,3 +28,31 @@ Variables give your model structure. If you name and organize them well, you mak
 ## A simple example
 
 A revenue model might include variables such as `Price`, `Volume`, `Discount`, and `Net revenue`. Some of those values are entered directly. Others are calculated from the rest.
+
+## Parts of a variable
+
+Every variable in Oculon is made up of several properties that together define how it behaves, how it is calculated, and how its values are displayed across time.
+
+### Variable type
+
+The variable type determines what kind of data a variable holds and how it is displayed across the model. It controls formatting such as symbol, rounding, and alignment in views and reports.
+
+### Variable name
+
+The variable name is the label used to identify it across formulas, views, and reports. A clear, consistent name makes the model easier to read and collaborate on.
+
+### Trend
+
+The trend is a visual sparkline shown alongside each variable, giving a quick view of how its values move across time. It helps you spot growth, decline, or seasonality at a glance without reading each period individually.
+
+### Actual formula
+
+The actual formula defines how a variable's historical values are calculated or sourced. It is evaluated for time periods that fall within the actuals range of the model.
+
+### Planned formula
+
+The planned formula defines how a variable's future values are calculated for budgets and forecasts. It is evaluated for time periods that fall beyond the actuals cutoff, into the forecast horizon.
+
+### Time values
+
+Each variable holds a value for every period within the model's time range, typically stored monthly or quarterly. This lets you track performance over time, compare actuals against plan, and analyze trends across the full planning horizon.
