@@ -319,7 +319,11 @@
         },
         {
             "source": "/support-docs/time/actuals-and-forecast-boundary",
-            "destination": "/docs-new/time/actuals-and-forecast-boundary"
+            "destination": "/docs-new/time/last-actual-date"
+        },
+        {
+            "source": "/docs-new/time/actuals-and-forecast-boundary",
+            "destination": "/docs-new/time/last-actual-date"
         },
         {
             "source": "/support-docs/time/relative-time",
@@ -524,9 +528,10 @@
                                 "pages": [
                                     "docs-new/time/time-in-oculon",
                                     "docs-new/time/time-granularity",
-                                    "docs-new/time/actuals-and-forecast-boundary",
+                                    "docs-new/time/last-actual-date",
                                     "docs-new/time/relative-time",
                                     "docs-new/time/time-aggregation",
+                                    "docs-new/time/time-rollups",
                                     "docs-new/time/time-best-practices"
                                 ]
                             },

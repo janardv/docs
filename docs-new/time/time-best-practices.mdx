@@ -1,19 +1,89 @@
 ---
 title: Time best practices
-description: Apply practical guidance for time setup, granularity, and forecast design.
+description: Use practical guidance to keep time settings consistent, reviewable, and easy to maintain.
 icon: badge-check
 ---
 
-A clean time setup makes every other part of the model more reliable.
+Time settings are easy to overlook when you are focused on formulas, inputs, and board design. In practice, they are part of the model's operating system. A clean time setup makes the rest of the model easier to trust.
 
-## Recommended practices
+## Set time rules before you build deep logic
 
-- Set the model date range before you write complex formulas.
-- Use one primary granularity for the model and keep it consistent.
-- Update the last actual date as part of the close process.
-- Use relative time for reusable logic instead of hard-coded month references.
-- Review how key metrics aggregate to quarter and year.
+Confirm the date range, granularity, `Last actual date`, and fiscal year assumptions before you build complex formulas or share the model widely.
 
-## Keep governance simple
+Late changes to these settings are expensive because they affect formulas, reporting, and review workflows all at once.
 
-Document the time assumptions that matter most, especially fiscal year rules and the forecast cutoff. Teams move faster when those defaults are obvious.
+## Standardize your core terms
+
+Use one shared language across the team:
+
+- `Last actual date` for the actuals cutoff
+- `Actual formula` for historical logic
+- `Planned formula` for forward-looking logic
+- `Relative time` for dynamic period references
+- `Time aggregation` for metric meaning at higher periods
+- `Time rollups` for how lower-level periods are grouped
+
+Consistent wording reduces confusion during reviews and handoffs.
+
+## Make close repeatable
+
+Treat the `Last actual date` as part of your regular close workflow.
+
+A simple pattern works well:
+
+1. refresh the relevant source data
+2. update the `Last actual date`
+3. review the first actual period and the first planned period
+4. confirm key quarter and year summaries
+
+When the same steps happen every cycle, the model stays easier to audit.
+
+## Prefer reusable time logic
+
+Use [`Relative time`](/docs-new/time/relative-time) instead of hard-coded month references when the logic should keep working after each close.
+
+This matters most in:
+
+- rolling forecasts
+- recurring board filters
+- month-over-month and quarter-over-quarter comparisons
+- formulas that behave differently around the actuals cutoff
+
+## Validate summaries before you publish
+
+Do not stop at the monthly view. Review quarter and year summaries before you publish the model or use it in leadership reporting.
+
+That check catches:
+
+- the wrong aggregation meaning
+- rollup assumptions that do not match the fiscal calendar
+- formulas that behave differently than expected after the `Last actual date`
+
+## Common failure modes
+
+The most common time-related problems come from a small set of habits:
+
+- changing granularity after the model is already in use
+- leaving hard-coded dates inside formulas
+- treating a balance metric like a summed flow metric
+- updating the `Last actual date` without rechecking the first forecast period
+- assuming fiscal and calendar groupings are interchangeable
+
+## Before you publish a model
+
+Use this checklist before you hand a model to other users:
+
+- confirm the date range still matches the planning horizon
+- confirm the chosen granularity still matches the reporting cadence
+- confirm the `Last actual date` is current
+- confirm quarter and year summaries behave as expected
+- confirm business-critical formulas use readable relative time logic
+- confirm the main time assumptions are documented
+
+## Related pages
+
+- [Time in Oculon](/docs-new/time/time-in-oculon)
+- [Last actual date](/docs-new/time/last-actual-date)
+- [Relative time](/docs-new/time/relative-time)
+- [Time aggregation](/docs-new/time/time-aggregation)
+- [Time rollups](/docs-new/time/time-rollups)

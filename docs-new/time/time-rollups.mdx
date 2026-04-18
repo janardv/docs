@@ -1,0 +1,78 @@
+---
+title: Time rollups
+description: Understand how Oculon groups lower-level periods into quarter and year summaries.
+icon: merge
+---
+
+Time rollups explain how Oculon groups lower-level periods into a higher-level time view. If you move from month to quarter or from quarter to year, rollups define which periods belong together before any aggregation logic is applied.
+
+## Why rollups matter
+
+Users often look at quarter and year views first. If the grouped periods do not match the intended calendar or fiscal structure, the summary will feel wrong even when each lower-level value is correct.
+
+Rollups matter anywhere you review a model above its base granularity.
+
+## How rollups work in Oculon
+
+Oculon groups lower-level periods into higher-level periods based on the model's time structure and fiscal year assumptions.
+
+In the current docs set, the common rollup paths are:
+
+- months into quarters
+- months into years
+- quarters into years
+
+This grouping step answers one question only: which periods belong in the same summary bucket?
+
+## Common rollup paths
+
+### Monthly to quarterly
+
+Three monthly periods are grouped into one quarter based on the model calendar and fiscal year setup.
+
+### Monthly to yearly
+
+All months in the fiscal year are grouped into the same yearly summary.
+
+### Quarterly to yearly
+
+Quarterly models still need yearly summaries. In that case, the yearly result groups the quarters that belong to the same fiscal year.
+
+## Rollups versus aggregation
+
+Rollups and aggregation are closely related, but they are not the same thing.
+
+- `Rollups` decide which periods are grouped together.
+- [`Time aggregation`](/docs-new/time/time-aggregation) decides what number should represent that group.
+
+Example:
+
+- A quarterly revenue view rolls up January, February, and March into one quarter.
+- Aggregation then decides that the quarter should show the sum of those months.
+
+For headcount, the same quarter might use the end-of-period value instead of a sum. The rollup is the same. The aggregation meaning is different.
+
+## What to review if rollups look wrong
+
+If quarter or year groupings do not match expectations, check:
+
+- the model granularity
+- the model date range
+- fiscal year assumptions
+- whether the view is showing calendar or fiscal expectations
+- whether the issue is really aggregation rather than grouping
+
+## Keep assumptions explicit
+
+If the business uses a fiscal calendar that differs from the calendar year, document that assumption clearly. Reviewers should not have to guess why a period appears in one quarter instead of another.
+
+## A note on finer-grained distribution
+
+This page focuses on rolling values up to a coarser period for reporting and review. If your workflow moves values between models with different granularities, validate the receiving model with a simple test case before you rely on the result broadly.
+
+## Related pages
+
+- [Time granularity](/docs-new/time/time-granularity)
+- [Time aggregation](/docs-new/time/time-aggregation)
+- [Time in Oculon](/docs-new/time/time-in-oculon)
+- [Time best practices](/docs-new/time/time-best-practices)
