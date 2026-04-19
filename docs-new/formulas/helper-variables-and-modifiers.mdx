@@ -1,63 +1,92 @@
 ---
 title: Helper variables and modifiers
-description: Use helper variables and modifiers to simplify complex formula logic.
+description: Use helper variables and built-in context modifiers to keep formulas readable in Oculon.
 icon: workflow
 ---
 
-Helper variables and modifiers let you turn complex logic into smaller, readable steps.
+Helper variables and modifiers both make formulas easier to work with, but they are not the same thing.
 
-## Helper variables
+- A `helper variable` is a variable you create to break one larger business rule into smaller steps.
+- A `modifier` or built-in context helper is a keyword that exposes model context such as time, fiscal period, or blank handling.
 
-A helper variable is an intermediate line that supports a larger calculation. Use one when the same logic appears more than once or when the main formula is becoming too long to review safely.
+Use both together when you want formulas that stay readable as the model grows.
 
-## Modifiers and context helpers
+## Use helper variables to simplify business logic
 
-Built-in keywords you can use in formulas for time, fiscal periods, cohorts, and model context. They help you avoid hand-rolling common values like month index, quarter, or time step.
+Helper variables are best for business rules you want to name, review, and reuse.
 
-### Cohort
+They work especially well when:
 
-| Keyword | Description |
-| --- | --- |
-| `cohort` | Creates a cohort dimension for cohort-based modeling and analysis. |
+- one formula is doing too many jobs
+- the same condition appears in several places
+- you need separate helpers for actuals, seasonality, and overrides
+- the final formula should read like a summary of the logic, not the full implementation
 
-### Time and calendar
+## Use built-in modifiers to read model context
 
-| Keyword | Description |
-| --- | --- |
-| `month` | Returns the month index (`Jan = 1`, `Feb = 2`, and so on). Useful for seasonality or month-based logic. |
-| `quarter` | Returns the quarter (`1-4`). Helps apply logic specific to quarters. |
-| `year` | Returns the calendar year of the current time step. |
-| `daysinmonth` | Returns the total number of days in the current month. |
-| `today` | Returns the current time step index based on today's date. |
+Built-in modifiers and context helpers expose values the model already knows, such as the current month, quarter, fiscal year, or actuals cutoff.
 
-### Fiscal
+### Model logic helpers
 
-| Keyword | Description |
-| --- | --- |
-| `fiscalmonth` | Returns the fiscal month (`1-12`), based on your fiscal year settings. |
-| `fiscalyear` | Returns the fiscal year of the current time step (requires fiscal year to be enabled). |
+| Keyword | What it tells you | Common use |
+| --- | --- | --- |
+| `lastActualDate` | The index of the [Last actual date](/docs-new/time/last-actual-date) | split `actual formula` and `planned formula` behavior |
+| `blank` | An empty value | handle missing values and fallback logic |
 
-### Time index and model scope
+### Time and calendar modifiers
 
-| Keyword | Description |
-| --- | --- |
-| `timestep` | Returns the index of the current time step (for example, `0`, `1`, `2`). |
-| `date` | Alias of `timestep`; also returns the current time step index. |
-| `numtimesteps` | Returns the total number of time steps in the model. |
+| Keyword | What it tells you | Common use |
+| --- | --- | --- |
+| `month` | The current month index | monthly seasonality and month-based checks |
+| `quarter` | The current quarter | quarter-specific rules |
+| `year` | The current calendar year | year-based conditions |
+| `timestep` | The current time-step index | rolling logic and cutoff checks |
+| `date` | Alias of `timestep` | formulas that use time-step index logic |
+| `numtimesteps` | The total number of time steps in the model | horizon-aware formulas |
 
-### Model logic
+### Fiscal and cohort modifiers
 
-| Keyword | Description |
-| --- | --- |
-| `lastActualDate` | Returns the index of the [Last actual date](/docs-new/time/last-actual-date) set in model settings. Useful for separating actuals versus planned logic. |
-| `blank` | Represents an empty value. Commonly used in conditional formulas. |
+| Keyword | What it tells you | Common use |
+| --- | --- | --- |
+| `fiscalmonth` | The current fiscal month | fiscal seasonality and fiscal comparisons |
+| `fiscalyear` | The current fiscal year | fiscal-year logic |
+| `cohort` | The cohort context for the current record or calculation | cohort-based planning and retention logic |
 
-## Why this matters
+## Use time helpers instead of hard-coded periods
 
-Breaking logic into smaller parts makes reviews faster. It also reduces the risk that one formula change creates several hidden side effects elsewhere in the model.
+These built-in helpers are most valuable when the formula needs to keep working as the model moves forward.
 
-These helpers are especially useful when you build [Relative time](/docs-new/time/relative-time) logic or formulas that react to the [Last actual date](/docs-new/time/last-actual-date).
+```text
+if timestep <= lastActualDate then Actual demand else Planned demand
+if month in [11, 12, 1, 2] then Peak season factor else Base factor
+```
 
-## A good pattern
+This pattern is more durable than hard-coding one month or quarter into the formula.
 
-Instead of one long formula that handles seasonality, actuals, and overrides at once, create one helper for each concern and let the final variable reference those helpers.
+## Know when to use a helper variable instead of a modifier
+
+Use a modifier when you need model context.
+
+Use a helper variable when you need business meaning.
+
+For example:
+
+- `month` tells you where you are in the year
+- `Peak season flag` explains why the formula behaves differently
+
+That distinction makes reviews faster and handoffs safer.
+
+## Keep formula intent readable
+
+A good pattern is:
+
+1. use modifiers to detect context
+2. turn important logic into clearly named helper variables
+3. use one final variable to assemble the result
+
+## Related pages
+
+- [Relative time](/docs-new/time/relative-time)
+- [Last actual date](/docs-new/time/last-actual-date)
+- [Conditional logic](/docs-new/formulas/conditional-logic)
+- [Formula best practices](/docs-new/formulas/formula-best-practices)

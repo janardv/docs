@@ -1,23 +1,73 @@
 ---
 title: Working with data
-description: Import, manage, and work with data inside Oculon databases.
+description: Create, configure, maintain, and operate databases inside Oculon.
 icon: table
 ---
 
-Working with data in Oculon is usually a cycle of loading, reviewing, mapping, and refreshing.
+Working with data in Oculon is usually a cycle of creating the database, confirming the structure, reviewing the incoming records, and keeping the dataset usable as the source changes.
+
+![Database configuration panel in Oculon showing source and field settings](/images/getting-started/db-config.png)
 
 ## A practical workflow
 
-1. Create or connect the database.
-2. Confirm the incoming fields and records.
-3. Review data quality before you link it to a model.
-4. Map the fields you need for time, dimensions, or planning inputs.
-5. Refresh and validate as the source changes.
+Most database work follows this pattern:
 
-## Keep data quality visible
+1. create the database manually or from a query
+2. confirm the incoming fields and record shape
+3. review data quality before you connect the database to a model
+4. adjust columns, mappings, and structure where needed
+5. refresh and recheck the data as the source changes
 
-A database is only useful if people trust it. Review null values, duplicates, date formats, and category spelling before you publish a board or rely on the data in planning logic.
+## Create and configure the database
 
-## Separate raw and modeled logic
+If the data is managed in Oculon, create the database manually and define the columns directly.
 
-Use the database to store and clean the records. Use the model to decide how those records should affect planning outputs.
+If the data comes from an external source, create the query first and then create the database from that query-backed workflow.
+
+After the database exists, review the configuration carefully. This is usually where you confirm source settings, field selection, and how the structure should behave downstream.
+
+## Add and edit rows and columns intentionally
+
+When you add or change data directly in a database, think beyond the current table view.
+
+Review:
+
+- whether the new field has one clear meaning
+- whether the column name will still make sense in a model or board
+- whether a row-level edit changes an important downstream mapping
+- whether the database still has one consistent grain
+
+## Rename with care
+
+Renaming a database or one of its fields can improve clarity, but it can also create confusion if other teams already rely on the current name.
+
+Rename when the improvement is meaningful, not just cosmetic.
+
+## Export and review
+
+Exports are useful when you need an offline review, a handoff, or a quick comparison against another source.
+
+Before you export:
+
+- confirm the active filters and grouping
+- confirm the dataset is current
+- confirm the audience needs raw records rather than modeled output
+
+## Delete only when you are sure it is unused
+
+Deleting a database is a bigger decision than hiding one from a workflow.
+
+Review dependent models, boards, or team processes first. A stale database should usually be retired deliberately, not removed casually.
+
+## Keep raw and modeled logic separate
+
+Use the database to store and organize the records.
+
+Use the model to decide what those records mean for planning, forecasting, and reporting. That split makes changes easier to review later.
+
+## Related pages
+
+- [Database structure](/docs-new/databases/database-structure)
+- [Filters, sorts, and grouping](/docs-new/databases/filters-sorts-and-grouping)
+- [Refresh and sync behavior](/docs-new/databases/refresh-and-sync-behavior)
+- [Data mismatches](/docs-new/troubleshooting/data-mismatches)

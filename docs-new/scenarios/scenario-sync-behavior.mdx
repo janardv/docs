@@ -1,19 +1,72 @@
 ---
 title: Scenario sync behavior
-description: Understand how scenario changes sync across related models and views.
+description: Understand how inheritance and auto-sync from main affect scenario values in Oculon.
 icon: refresh-cw
 ---
 
-Scenario sync behavior controls how much of the base model a scenario continues to inherit after you create it.
+Scenario sync behavior controls how much of `Main Scenario` a branch continues to inherit after you create it. In practice, this is the difference between an exploratory scenario that stays aligned with the baseline and a scenario that becomes a more frozen checkpoint.
 
-## How inheritance usually works
+![Placeholder image for future Oculon screenshot showing auto-sync from main and inherited versus overridden values](/images/scenarios/scenario-sync-placeholder.svg)
 
-A scenario often starts as a copy of the current effective model state. After that, non-overridden values may continue to follow the baseline if auto-sync is enabled.
+## How inheritance works
 
-## What overrides do
+A scenario starts from an effective baseline. After that, untouched values can continue to inherit from `Main Scenario` while overridden values stay scenario-specific.
 
-Once you override a value in a scenario, that value becomes scenario-specific. Future baseline changes should not replace that override unless you explicitly remove or merge it.
+That distinction is the foundation of the feature:
 
-## Why this matters
+- inherited values continue following the baseline
+- overridden values belong only to the active scenario
 
-If you do not understand sync behavior, you can mistake inherited changes for manual edits. That is one of the most common reasons scenario comparisons feel confusing.
+## Auto-sync from main
+
+`auto-sync from main` controls whether a scenario should continue receiving new `Main Scenario` changes for values that have not been overridden locally.
+
+- When it is `ON`, untouched values keep following `Main Scenario`.
+- When it is `OFF`, the scenario stops receiving future upstream changes and behaves like a more frozen branch.
+
+In both cases, local overrides should continue to win over inherited values.
+
+## When to keep auto-sync on
+
+Auto-sync usually makes sense for exploratory scenarios that are still early or still dependent on a moving baseline.
+
+Common examples:
+
+- a working draft that is still evolving
+- an early scenario created before `Main Scenario` has stabilized
+- a branch where only a small set of assumptions have changed locally
+
+## When to turn auto-sync off
+
+Turn auto-sync off when the scenario should behave more like a stable reference point.
+
+That usually fits:
+
+- approved baselines
+- reviewed planning cases
+- scenarios used as checkpoints for future comparison
+
+Turning it off should stop future propagation. It should not erase the values the scenario is already showing.
+
+## Overrides change the inheritance story
+
+Once a value is overridden in a scenario, `Main Scenario` should no longer replace that specific value through sync behavior.
+
+If the override is later removed through a reset action, the value should return to inherited behavior again. That is why sync and override behavior must be understood together, not separately.
+
+## Why sync behavior matters
+
+If users do not understand inheritance, they can mistake upstream changes for manual edits or assume a branch is frozen when it is still following `Main Scenario`.
+
+That confusion usually shows up during:
+
+- comparison reviews
+- merge decisions
+- baseline sign-off
+
+## Related pages
+
+- [Scenario overrides](/docs-new/scenarios/scenario-overrides)
+- [Merge scenarios](/docs-new/scenarios/merge-scenarios)
+- [What is a scenario](/docs-new/scenarios/what-is-a-scenario)
+- [Scenario governance and access](/docs-new/scenarios/scenario-governance-and-access)

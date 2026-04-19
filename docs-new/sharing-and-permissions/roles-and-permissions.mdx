@@ -4,16 +4,55 @@ description: Understand how roles and permissions control access across Oculon.
 icon: shield
 ---
 
-Roles and permissions control who can view, edit, manage, or administer content in Oculon.
+Roles and permissions work together in Oculon, but they do different jobs.
 
-## Roles define default responsibility
+## Start with two layers
 
-A role usually describes a person's broad level of responsibility in the workspace, such as builder, collaborator, or admin.
+Space and governance controls decide who can discover or manage a shared area. Item-level permissions decide what a person can do on a specific model, board, page, or view.
 
-## Permissions define access on a resource
+That means two people can sit in the same workspace or teamspace but still have different access to the exact same planning asset.
 
-Permissions decide what a user can do on a specific model, board, database, or shared area. Two people can have the same workspace role but different access to a specific planning surface.
+## Use one item-level access model
 
-## Keep responsibility clear
+Oculon item access is easiest to understand when you use three levels:
 
-The easiest permission model to manage is the one with clear owners, a small number of admins, and as much group-based access as possible.
+| Access level | What it means |
+| --- | --- |
+| `View` | Read-only access. The person can open what is shared and use what is already exposed, but cannot make changes. |
+| `Edit` | Can change inputs or content without taking over governance. This level does not include permission management or other admin-style controls. |
+| `Full access` | Can make structural changes, manage sharing, move content, and control permission settings on that item. |
+
+## How this applies to models
+
+- `View`: Open the model and review visible data.
+- `Edit`: Change inputs and create draft changes.
+- `Full access`: Publish structural changes, manage formulas and relationships, move the model into a teamspace, and manage access.
+
+Use model access carefully. It affects the planning surface directly, not just the presented output.
+
+## How this applies to boards and pages
+
+- `View`: Open the board or page and use what is already exposed.
+- `Edit`: Change layout, blocks, and local filters, and share the board or page directly with people or groups.
+- `Full access`: Manage permission settings and link sharing, align dependency access, and publish or move the item into a teamspace.
+
+Boards and pages do not raise source permissions on their own. If the underlying sources are restricted, the audience may still see limited results. For more on that behavior, review `Sharing basics`.
+
+## How this applies to views
+
+- `View`: Open the saved slice and review the data already exposed through that view.
+- `Edit`: Work within the visible slice when editing is allowed.
+- `Full access`: Change the saved view definition and manage view sharing.
+
+A view can narrow what someone sees, but it does not widen access to the underlying source. For the current collaboration workflow, review `Sharing views`.
+
+## Keep governance and access aligned
+
+Clear ownership still matters. Keep the number of people with `Full access` small, prefer group-based sharing where it fits, and review inherited access whenever content moves between shared areas.
+
+Related guides:
+
+- `Members, guests, and groups`
+- `Permission inheritance`
+- `Workspace access and visibility`
+- `Permissions issues`

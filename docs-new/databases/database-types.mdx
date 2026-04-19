@@ -1,19 +1,69 @@
 ---
 title: Database types
-description: Understand the database types available in Oculon and when to use each one.
+description: Understand the main database patterns in Oculon and when each one fits best.
 icon: list
 ---
 
-Teams usually work with two broad database patterns in Oculon.
+A database can start from different ownership models. In Oculon, the most common choice is between a database you manage directly and one that is created from a query or integration workflow.
+
+![Placeholder image for future Oculon screenshot showing manual and query-backed database creation options](/images/databases/database-types-placeholder.svg)
 
 ## Manual databases
 
-Use a manual database when you want to define and maintain the structure directly in Oculon. This works well for planning support tables, reference lists, or controlled internal records.
+Use a manual database when your team wants to define and maintain the structure directly in Oculon.
 
-## Integration-backed databases
+This works well for:
 
-Use an integration-backed database when records should come from an external system such as a CRM, data warehouse, spreadsheet, or business app.
+- planning support tables
+- controlled reference lists
+- operational records that do not need an external source system
+- shared tables that a team updates directly in the app
+
+## Query-backed databases
+
+Use a query-backed database when the data should come from an external source through an integration.
+
+This works well when:
+
+- another system owns the records
+- refresh timing matters
+- the same source should feed several downstream workflows
+- you want a repeatable import path instead of manual updates
+
+In the older Oculon docs, this appears as creating a database from an integration query.
 
 ## How to choose
 
-If Oculon is the system of workflow for the records, create the database manually. If another system owns the data, connect that system and refresh it into Oculon.
+Choose the database type based on ownership first.
+
+- If Oculon is the system where the team maintains the records, use a manual database.
+- If another system owns the records, use a query-backed database.
+
+That choice usually matters more than convenience because it affects refresh behavior, change control, and who is responsible for data quality.
+
+## Mixed workflows are common
+
+Many teams use both patterns in the same workspace.
+
+For example:
+
+- a query-backed database for CRM opportunity data
+- a manual database for planning assumptions or mapping tables
+
+That is often a healthy setup as long as each database has a clear owner.
+
+## What to review before you create one
+
+Before you choose a type, confirm:
+
+- where the source of truth should live
+- how often the records change
+- who is allowed to edit the records
+- whether the database will later feed models or dimensions
+
+## Related pages
+
+- [What is a database](/docs-new/databases/what-is-a-database)
+- [Working with data](/docs-new/databases/working-with-data)
+- [Refresh and sync behavior](/docs-new/databases/refresh-and-sync-behavior)
+- [Database best practices](/docs-new/databases/database-best-practices)

@@ -1,19 +1,84 @@
 ---
 title: Database best practices
-description: Apply practical guidance for keeping databases reliable and easy to maintain.
+description: Use practical habits to keep databases reliable, reviewable, and safe to reuse in Oculon.
 icon: badge-check
 ---
 
-A good database supports planning without becoming another source of confusion.
+Good databases support planning without becoming another source of confusion. The best ones stay simple enough to trust and structured enough to reuse across several downstream workflows.
 
-## Recommended practices
+![Placeholder image for future Oculon screenshot showing database review checklist and governance controls](/images/databases/database-best-practices-placeholder.svg)
 
-- Use stable field names and keep them business-readable.
-- Separate source cleaning from planning logic.
-- Add date and category fields deliberately when they support reporting.
-- Review sync status and refresh timing as part of regular operations.
-- Retire unused databases so teams do not rely on stale records.
+## Start with the smallest useful structure
 
-## Treat databases as shared infrastructure
+Do not add more fields, categories, or granularity than the workflow actually needs.
 
-If several models depend on the same database, manage changes carefully. A small field update can have a wide effect.
+The smallest useful structure is often easier to maintain, easier to review, and easier to map into models later.
+
+## Keep raw and modeled logic separate
+
+Use the database to store records, source values, and row-level logic that belongs to the data itself.
+
+Use the model for:
+
+- planning assumptions
+- scenario logic
+- business rules that span several records
+- outputs designed for decision-making
+
+That split makes both layers easier to change safely.
+
+## Use stable names and clear field meaning
+
+A database becomes harder to trust when field names drift or a single column starts carrying several meanings.
+
+Prefer:
+
+- business-readable field names
+- one clear meaning per column
+- clean date and category fields when they matter downstream
+- controlled structural changes instead of ad hoc edits
+
+## Govern change like shared infrastructure
+
+If several models or boards depend on the same database, manage changes carefully.
+
+Review schema changes before you:
+
+- rename important fields
+- remove columns
+- change category meanings
+- alter the effective grain of the dataset
+
+## Make sync ownership explicit
+
+Every important database should have a clear owner for:
+
+- refresh timing
+- source query review
+- connection issues
+- downstream change communication
+
+That ownership matters just as much as the technical setup.
+
+## Retire stale databases deliberately
+
+Unused or outdated databases create risk when teams assume they are still current.
+
+Archive or retire stale datasets deliberately so people do not build new work on top of old records.
+
+## Before you rely on a database broadly
+
+Use this checklist before you publish or reuse a database widely:
+
+- confirm the structure matches the intended workflow
+- confirm the grain is clear
+- confirm key fields are typed and named clearly
+- confirm refresh ownership is clear
+- confirm linked models, boards, or mappings still behave as expected
+
+## Related pages
+
+- [Database structure](/docs-new/databases/database-structure)
+- [Refresh and sync behavior](/docs-new/databases/refresh-and-sync-behavior)
+- [Data mismatches](/docs-new/troubleshooting/data-mismatches)
+- [Model best practices](/docs-new/models/model-best-practices)

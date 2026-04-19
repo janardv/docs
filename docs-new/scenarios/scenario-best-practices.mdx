@@ -1,19 +1,69 @@
 ---
 title: Scenario best practices
-description: Apply practical guidance for scenario design, governance, and comparison.
+description: Use practical habits to keep scenario work safe, reviewable, and easy to explain in Oculon.
 icon: badge-check
 ---
 
-Good scenario hygiene keeps experimentation fast and review trustworthy.
+Good scenario hygiene keeps experimentation fast and review trustworthy. The best scenarios are easy to explain, easy to compare, and hard to confuse with the wrong branch.
 
-## Recommended practices
+## Keep active context obvious
 
-- Keep scenario names explicit and consistent.
-- Create scenarios for decisions, not for every minor edit.
-- Lock or archive approved scenarios.
-- Review overrides before you merge.
-- Compare focused cases instead of broad, mixed drafts.
+Before you edit anything, confirm the active scenario.
 
-## Treat scenarios as communication tools
+This is the fastest way to avoid one of the most expensive mistakes in scenario workflows: editing the wrong branch and not realizing it until comparison or merge time.
 
-A strong scenario is easy for another person to explain. If nobody can summarize the point of the scenario in one sentence, it probably needs cleanup.
+## Name scenarios for humans
+
+Scenario names should help another person understand:
+
+- what the branch is testing
+- whether it is still a draft or already a stable baseline
+- how it differs from nearby scenarios
+
+If a name does not help someone else interpret the branch quickly, improve it.
+
+## Limit override sprawl
+
+Scenarios become hard to trust when they contain too many unrelated overrides.
+
+Prefer:
+
+- one clear purpose per scenario
+- a manageable set of local changes
+- deliberate cleanup through reset override when a local change is no longer needed
+
+## Lock approved baselines
+
+If a scenario represents an approved state, treat it like one.
+
+Use governance controls so the scenario can stay visible and comparable without remaining casually editable.
+
+## Merge intentionally
+
+Do not treat merge as the first step after editing.
+
+A safer pattern is:
+
+1. keep the scenario focused
+2. compare it against the right baseline
+3. confirm the overrides still reflect the intended decision
+4. then run `Merge Changes`
+
+That process keeps the result easier to audit and easier to explain later.
+
+## Keep governance clear
+
+Scenario workflows move faster when users understand the difference between:
+
+- visibility
+- editability
+- mergeability
+
+Those are different controls, and the docs should help teams keep them separate in practice too.
+
+## Related pages
+
+- [Scenario overrides](/docs-new/scenarios/scenario-overrides)
+- [Merge scenarios](/docs-new/scenarios/merge-scenarios)
+- [Scenario governance and access](/docs-new/scenarios/scenario-governance-and-access)
+- [Compare scenarios](/docs-new/scenarios/compare-scenarios)

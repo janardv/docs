@@ -1,0 +1,34 @@
+---
+title: Using views on boards
+description: Embed model or database views on boards when the saved slice should stay reusable in reporting.
+icon: layout-dashboard
+---
+
+A board can include a model view or database view when the saved slice itself is part of the reporting workflow.
+
+## When embedding a view helps
+
+Embed a view on a board when:
+
+- the same filtered slice is reused in more than one place
+- the audience may need to open the underlying detail from the board
+- the filtering and grouping rules should stay defined in one source
+- a board section should stay aligned with a named review surface
+
+## When a board-native element is better
+
+Use a board-native KPI, chart, or table when:
+
+- you only need one metric or one visual summary
+- the logic is specific to that board and does not need a reusable standalone view
+- the audience needs presentation first and raw detail second
+
+## Remember the board stays tied to the source
+
+An embedded view is still connected to the source definition. If the source view changes, the board changes too. Recheck important boards after model structure changes, database schema changes, or view updates.
+
+## Related pages
+
+- [What is a view](/docs-new/views/what-is-a-view)
+- [Board interaction](/docs-new/boards/board-interaction)
+- [Tables on boards](/docs-new/boards/tables-on-boards)

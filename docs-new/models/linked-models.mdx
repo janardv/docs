@@ -4,22 +4,34 @@ description: Use linked models to connect planning logic across related business
 icon: git-branch
 ---
 
-Linked models let you reuse logic and outputs across separate planning areas without duplicating the same work.
+Linked models let you reuse planning logic across separate models without duplicating the same work.
 
-![](/images/getting-started/fr-linked-items.png)
+![Linked items panel in Oculon](/images/getting-started/fr-linked-items.png)
 
 ## When to link models
 
 Link models when:
 
 - one team owns a source plan that another team depends on
-- shared drivers should stay centrally controlled
-- you need a modular planning setup instead of one oversized model
+- a shared driver should stay centrally controlled
+- you want a modular planning setup instead of one oversized model
 
 ## What good linking looks like
 
-Keep ownership clear. The source model should own the metric. The receiving model should consume it, not redefine it in a slightly different way.
+Keep ownership clear. The source model should own the metric. The receiving model should consume it, not redefine it with slightly different logic.
 
-## Review dependencies regularly
+## What to review after a change
 
-A linked model setup is powerful, but it also creates dependencies. Review critical links after structural changes, major scenario work, or model version updates.
+A linked model setup is powerful, but it also creates dependencies. Recheck critical links after:
+
+- structural changes in the source model
+- changes to model settings that affect time behavior
+- major scenario work or version restores
+
+If a downstream result looks wrong, confirm the link before rewriting formulas.
+
+## Related pages
+
+- [Model structure](/docs-new/models/model-structure)
+- [Versioning](/docs-new/models/versioning)
+- [Variable references](/docs-new/variables/variable-references)

@@ -1,0 +1,71 @@
+---
+title: Merge scenarios
+description: Use Merge Changes to move approved scenario overrides into another scenario safely in Oculon.
+icon: git-merge
+---
+
+`Merge Changes` is the workflow that turns a reviewed scenario into adopted change. In the current Oculon model, merge is explicit, directional, and meant to move scenario-local overrides from a source scenario into a destination scenario.
+
+![Placeholder image for future Oculon screenshot showing the Merge Changes dialog with source and destination scenarios](/images/scenarios/merge-scenarios-placeholder.svg)
+
+## What merge means in Oculon
+
+Merge does not treat the whole visible scenario as a full snapshot to copy somewhere else.
+
+Instead, the current product model is:
+
+- merge is directional
+- the source and destination must be explicit
+- a scenario cannot merge into itself
+- only scenario-local overrides should be merged
+
+That is why merge is different from duplication. Duplication creates a new branch. Merge moves approved local differences into another branch.
+
+## Source versus destination
+
+In most workflows, the current scenario acts as the source and `Main Scenario` is the destination.
+
+That is the most common path because teams often explore changes in a branch and then adopt approved changes back into the shared baseline.
+
+Other valid destinations may exist, but the same rules should hold:
+
+- the destination must be writable
+- the user must have access to both scenarios
+- invalid options should be blocked before confirm
+
+## Allow Merging is source-side governance
+
+`Allow Merging` is a governance control on whether a scenario is eligible to act as a merge source.
+
+If the current scenario is not allowed to merge, `Merge Changes` should not behave like an available action. This keeps editability and mergeability separate.
+
+## Why merge should feel explicit
+
+Merge is one of the highest-trust actions in the scenario workflow.
+
+Users should understand:
+
+- where changes are coming from
+- where they are going
+- that only overrides are being moved
+- that the action should be auditable
+
+If merge feels casual or ambiguous, users will either avoid it or stop trusting the result.
+
+## Compare before you merge
+
+The safest merge workflow is usually:
+
+1. isolate the scenario changes clearly
+2. compare the scenario against the right baseline
+3. confirm the scenario is still the intended source
+4. run `Merge Changes`
+
+This keeps the merge focused and easier to explain later.
+
+## Related pages
+
+- [Compare scenarios](/docs-new/scenarios/compare-scenarios)
+- [Scenario governance and access](/docs-new/scenarios/scenario-governance-and-access)
+- [Scenario overrides](/docs-new/scenarios/scenario-overrides)
+- [Scenario best practices](/docs-new/scenarios/scenario-best-practices)

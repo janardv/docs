@@ -4,18 +4,48 @@ description: Learn the basics of sharing content in Oculon with the right audien
 icon: share-2
 ---
 
-Sharing in Oculon works best when you match the audience to the right level of detail.
+Sharing in Oculon works best when you choose the smallest surface that still supports the work.
 
-![](/images/getting-started/fr-share.png)
+## Choose the right thing to share
 
-## What you can share
+Different audiences need different levels of access.
 
-Teams typically share models, views, boards, and workspace resources. The right choice depends on whether the audience needs the full planning surface or only the outcome.
+- Share a model when someone needs to work with inputs, drafts, or planning logic.
+- Share a view when someone needs a filtered slice of a model or database.
+- Share a board or page when someone needs a decision-ready presentation layer.
 
-## Start with the narrowest useful surface
+If stakeholders only need filtered detail, start with a view. If they mainly need curated presentation, start with a board or page. Share the full model only when they also need the underlying planning surface.
 
-If stakeholders only need the result, share a board or a view. Share the full model only when the audience also needs to inspect or edit the planning logic.
+## Understand what sharing does not change
 
-## Confirm permissions before you send
+Sharing an item does not automatically expand access to everything behind it.
 
-Always review whether the audience can access the underlying content. A shared link is only useful if the viewer can actually open the required data.
+- A view is its own shareable object, but it narrows access. It does not widen underlying source permissions.
+- A board or page can present data from several sources, but it does not elevate access to those sources.
+- Effective access is the minimum of the page access, source access, and view access that apply to the person opening it.
+
+That is why a shared link can still open to limited data if the recipient does not already have the required source access.
+
+## Validate the share before you send it
+
+Use the same review flow each time:
+
+1. Confirm the person can access the workspace or teamspace where the item lives. Review the companion page `Workspace access and visibility` if you need the workspace-level rules first.
+2. Confirm the item is shared at the right level for that audience. If you are deciding between direct people access and broader patterns, review the companion page `Members, guests, and groups`.
+3. Check whether the item depends on restricted models, databases, views, or other sources.
+4. Confirm what the recipient will actually be able to do after opening it: view, edit, or manage.
+
+## Watch for dependency gaps
+
+Missing source access usually shows up quickly.
+
+- A board or page may load with hidden blocks or incomplete data.
+- A linked view may show only the slice the person is allowed to see.
+- The recipient may see a placeholder or a request-access state instead of the expected result.
+
+If that happens, review both the shared item and the underlying sources before you resend the link. The fastest companion pages to check are `Permission inheritance` and `Permissions issues`.
+
+## Related guides
+
+- Use `Sharing boards` when the audience only needs a board-level presentation.
+- Use `Sharing views` when the audience needs a shared filtered slice of a model or database.

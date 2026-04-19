@@ -1,21 +1,60 @@
 ---
 title: Refresh and sync behavior
-description: Understand how database refreshes and syncs affect your data and downstream models.
+description: Understand how database refreshes and syncs affect your source data and downstream work in Oculon.
 icon: refresh-cw
 ---
 
-Refresh behavior determines when Oculon pulls the latest data from a source and how quickly dependent models should see the update.
+Refresh behavior determines when Oculon pulls the latest data from a source and how quickly dependent workflows should reflect that change. For query-backed databases, this is part of the operating rhythm, not just a technical detail.
 
-![](/images/getting-started/fr-connection-status.png)
+![Connection status area in Oculon showing database refresh state and source status](/images/getting-started/fr-connection-status.png)
 
-## What to expect from a refresh
+## What a refresh should do
 
-A refresh should update the database records first. After that, models, views, and boards that depend on the data should reflect the new state according to their own calculation and cache behavior.
+A refresh should update the database records first. After that, dependent models, views, and boards should reflect the new state according to their own calculation and display behavior.
+
+That is why source-first validation is so important. If the database itself is not current, downstream review will usually waste time.
 
 ## Manual and scheduled refreshes
 
-Use scheduled refreshes for repeatable operational data. Use manual refreshes when you need to validate a source change before the next normal sync window.
+Both refresh patterns are useful:
 
-## Check the source, not just the output
+- `Scheduled refreshes` help keep operational data current without manual effort.
+- `Manual refreshes` help when you need to validate a source change immediately or confirm a fix before the next normal cycle.
 
-If a board looks wrong after a sync, start by checking the database record set and connection status. It is easier to confirm the source data before debugging the model.
+The right choice depends on how often the source changes and how sensitive the downstream workflows are to stale data.
+
+## Check the source before the output
+
+If a board or model looks wrong after a sync, start with the database record set and the connection status.
+
+Review:
+
+- whether the refresh actually completed
+- whether the expected records arrived
+- whether the source query changed
+- whether a mapping broke after the refresh
+
+## Keep refresh ownership clear
+
+Teams move faster when everyone knows:
+
+- who owns the source connection
+- who checks refresh failures
+- which databases require scheduled monitoring
+- which downstream workflows are most sensitive to stale data
+
+## Common failure modes
+
+The most common sync problems come from:
+
+- source schema changes
+- delayed refresh timing
+- missing records after a query change
+- teams checking the modeled output before checking the source
+
+## Related pages
+
+- [Working with data](/docs-new/databases/working-with-data)
+- [Linked data](/docs-new/databases/linked-data)
+- [Data mismatches](/docs-new/troubleshooting/data-mismatches)
+- [Database best practices](/docs-new/databases/database-best-practices)

@@ -1,23 +1,86 @@
 ---
 title: Common formula patterns
-description: Apply common formula patterns for planning, allocation, and analysis workflows.
+description: Reuse common Oculon formula patterns for planning, allocation, and model maintenance.
 icon: workflow
 ---
 
-Most planning models reuse the same small set of formula patterns. Once you know these patterns, you can build faster and keep models easier to review.
+Most planning models reuse the same formula shapes. When you standardize those shapes, you make the model easier to build, review, and hand off to another planner.
 
-## Common patterns
+## Actual-to-planned switch
 
-- **Driver-based growth**: calculate an output from one or more input drivers.
-- **Actuals-to-forecast switch**: use actual values before the cutoff and planned logic after it.
-- **Allocation**: distribute a total across dimension values based on a driver.
-- **Run-rate extrapolation**: project a recent trend into future periods.
-- **Variance logic**: compare actual, budget, and forecast values in a controlled way.
+This is one of the most important patterns in Oculon.
 
-## Use patterns consistently
+Use it when the variable should behave one way for closed periods and another way for forecast periods.
 
-If your team uses the same approach for headcount planning, revenue build, and cost allocation across models, reviews get much easier. The formula does not need to look identical every time, but the intent should be recognizable.
+```text
+if timestep <= lastActualDate then Actual revenue else Price * Volume
+```
 
-## Document unusual logic
+Tie the switch to the [`Last actual date`](/docs-new/time/last-actual-date), not to a hard-coded month.
 
-If a formula pattern is specific to one business process, add a short note or use a clearly named helper variable so the next editor can follow the reasoning.
+## Driver-based formulas
+
+Driver-based formulas turn a small set of assumptions into a reusable output.
+
+Common examples include:
+
+- `Revenue = Price * Volume`
+- `Payroll tax = Headcount cost * Tax rate`
+- `Marketing spend = Pipeline target * Spend ratio`
+
+These formulas work best when each input variable has a clear business name.
+
+## Headcount logic
+
+Headcount formulas often use conditional logic to identify active periods.
+
+```text
+if timestep >= Start date and (timestep <= End date or End date = blank) then 1 else 0
+```
+
+This pattern is useful when you need monthly active headcount, hiring plans, or employee-based allocations.
+
+## Seasonality with relative time
+
+Seasonality usually depends on time context, not on one fixed date.
+
+```text
+if month in [11, 12, 1, 2] then Base demand * Winter factor else Base demand
+```
+
+Use [Relative time](/docs-new/time/relative-time) and time helpers when the pattern should still work after each close.
+
+## Cohort-based patterns
+
+Cohort logic is easier to maintain when you keep each part of the pattern separate:
+
+- acquisition or starting population
+- retention or decay logic
+- expansion or revenue logic
+
+Do not force all of that into one formula. Use helper variables so each step stays reviewable.
+
+## Simple allocations
+
+Allocation formulas distribute one total across dimension values using a share or driver.
+
+```text
+Allocated overhead = Total overhead * Allocation share
+```
+
+This works best when:
+
+- the source total is clearly owned
+- the allocation share is reviewed separately
+- you check the result at both detail and total level
+
+## Pattern discipline matters
+
+The formula does not need to look identical in every model, but the intent should stay recognizable. If your team uses the same pattern for revenue builds, staffing plans, and allocations, reviews move much faster.
+
+## Related pages
+
+- [Formula basics](/docs-new/formulas/formula-basics)
+- [Conditional logic](/docs-new/formulas/conditional-logic)
+- [Helper variables and modifiers](/docs-new/formulas/helper-variables-and-modifiers)
+- [Formula best practices](/docs-new/formulas/formula-best-practices)

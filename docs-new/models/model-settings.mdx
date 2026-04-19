@@ -1,27 +1,41 @@
 ---
 title: Model settings
-description: Review the settings that control model behavior and configuration.
+description: Review the settings that define how the rest of the model behaves.
 icon: settings
 ---
 
-Model settings define the rules the rest of the model depends on. They usually control time, actuals, structure defaults, and model-wide behavior.
+Model settings define the rules the rest of the model depends on. They control the planning horizon, the time structure, and the model-wide assumptions other logic inherits.
 
 ![Last actual date and time settings in Oculon](/images/getting-started/fr-last-actual.png)
 
-## Settings to review early
+## Core settings to confirm early
 
 - model date range
 - [Time granularity](/docs-new/time/time-granularity)
 - [Last actual date](/docs-new/time/last-actual-date)
 - fiscal year assumptions
-- naming and visibility defaults where applicable
 
-## Why settings are important
+These settings should be stable before you build deep logic, publish boards, or compare scenarios widely.
 
-Changing a model setting later can affect formulas, boards, and comparisons. Confirm the basics before you build deep logic or share the model widely.
+## Why these settings matter
 
-## Review after major changes
+Changing a model setting later can affect formulas, views, boards, and comparisons. For example:
 
-If a model starts to behave unexpectedly, check the settings before you rewrite formulas. Many issues begin with a model-wide assumption that drifted over time.
+- the date range changes which periods exist in the model
+- the granularity changes how often values are stored and reviewed
+- the `Last actual date` changes where `actual formula` and `planned formula` behavior split
+- fiscal year assumptions affect quarter and year summaries
 
-For time-related behavior, start with [Time in Oculon](/docs-new/time/time-in-oculon) and then review the specific pages for granularity, actuals cutoff, aggregation, and rollups.
+## Use this page as the hub, not the deep dive
+
+For time-related behavior, start with [Time in Oculon](/docs-new/time/time-in-oculon) and then review the specific pages for:
+
+- [Time granularity](/docs-new/time/time-granularity)
+- [Last actual date](/docs-new/time/last-actual-date)
+- [Relative time](/docs-new/time/relative-time)
+- [Time aggregation](/docs-new/time/time-aggregation)
+- [Time rollups](/docs-new/time/time-rollups)
+
+## What to check when a model behaves unexpectedly
+
+If a model starts to behave unexpectedly, check the settings before you rewrite formulas. Many issues start with a model-wide assumption that changed quietly over time.

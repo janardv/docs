@@ -235,7 +235,11 @@
         },
         {
             "source": "/support-docs/models/cloning-and-versioning",
-            "destination": "/docs-new/models/cloning-and-versioning"
+            "destination": "/docs-new/models/versioning"
+        },
+        {
+            "source": "/docs-new/models/cloning-and-versioning",
+            "destination": "/docs-new/models/versioning"
         },
         {
             "source": "/support-docs/models/linked-models",
@@ -247,7 +251,11 @@
         },
         {
             "source": "/support-docs/models/model-organization",
-            "destination": "/docs-new/models/model-organization"
+            "destination": "/docs-new/models/model-best-practices"
+        },
+        {
+            "source": "/docs-new/models/model-organization",
+            "destination": "/docs-new/models/model-best-practices"
         },
         {
             "source": "/support-docs/models/model-settings",
@@ -407,11 +415,19 @@
         },
         {
             "source": "/support-docs/views/private-vs-shared-views",
-            "destination": "/docs-new/views/private-vs-shared-views"
+            "destination": "/docs-new/views/sharing-views"
+        },
+        {
+            "source": "/docs-new/views/private-vs-shared-views",
+            "destination": "/docs-new/views/sharing-views"
         },
         {
             "source": "/support-docs/views/view-behavior",
-            "destination": "/docs-new/views/view-behavior"
+            "destination": "/docs-new/views/what-is-a-view"
+        },
+        {
+            "source": "/docs-new/views/view-behavior",
+            "destination": "/docs-new/views/what-is-a-view"
         },
         {
             "source": "/support-docs/views/view-best-practices",
@@ -541,6 +557,7 @@
                                 "pages": [
                                     "docs-new/formulas/formula-basics",
                                     "docs-new/formulas/formula-editor",
+                                    "docs-new/formulas/conditional-logic",
                                     "docs-new/formulas/functions",
                                     "docs-new/formulas/helper-variables-and-modifiers",
                                     "docs-new/formulas/common-formula-patterns",
@@ -556,8 +573,7 @@
                                     "docs-new/models/model-structure",
                                     "docs-new/models/linked-models",
                                     "docs-new/models/model-settings",
-                                    "docs-new/models/cloning-and-versioning",
-                                    "docs-new/models/model-organization",
+                                    "docs-new/models/versioning",
                                     "docs-new/models/model-best-practices"
                                 ]
                             },
@@ -569,6 +585,8 @@
                                     "docs-new/databases/database-types",
                                     "docs-new/databases/database-structure",
                                     "docs-new/databases/working-with-data",
+                                    "docs-new/databases/filters-sorts-and-grouping",
+                                    "docs-new/databases/database-formulas",
                                     "docs-new/databases/linked-data",
                                     "docs-new/databases/refresh-and-sync-behavior",
                                     "docs-new/databases/database-best-practices"
@@ -582,7 +600,9 @@
                                     "docs-new/scenarios/create-and-manage-scenarios",
                                     "docs-new/scenarios/scenario-sync-behavior",
                                     "docs-new/scenarios/scenario-overrides",
+                                    "docs-new/scenarios/merge-scenarios",
                                     "docs-new/scenarios/compare-scenarios",
+                                    "docs-new/scenarios/scenario-governance-and-access",
                                     "docs-new/scenarios/versioning-and-snapshots",
                                     "docs-new/scenarios/scenario-best-practices"
                                 ]
@@ -592,10 +612,11 @@
                                 "expanded": false,
                                 "pages": [
                                     "docs-new/views/what-is-a-view",
+                                    "docs-new/views/creating-and-configuring-views",
                                     "docs-new/views/filters-sorts-and-grouping",
                                     "docs-new/views/compare-in-views",
-                                    "docs-new/views/private-vs-shared-views",
-                                    "docs-new/views/view-behavior",
+                                    "docs-new/views/sharing-views",
+                                    "docs-new/views/using-views-on-boards",
                                     "docs-new/views/view-best-practices"
                                 ]
                             },

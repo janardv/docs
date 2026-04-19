@@ -1,19 +1,51 @@
 ---
 title: Versioning and snapshots
-description: Track planning changes with scenario versioning and snapshots.
+description: Preserve approved reference states so scenario reviews and handoffs stay understandable over time.
 icon: history
 ---
 
-Versioning and snapshots help you preserve a planning state before the next round of changes begins.
+Versioning and snapshots are useful when a team needs a stable reference point before the next round of scenario work begins. In the scenarios section, they matter most as supporting lifecycle tools, not as the main current-scope workflow.
 
-## When to create a snapshot
+## When to preserve a state
 
-Create a snapshot when you reach a milestone such as budget submission, executive review, or forecast sign-off.
+Preserve a reference state when you reach a milestone such as:
+
+- budget submission
+- executive review
+- forecast sign-off
+- a scenario that should remain stable for later comparison
+
+That reference point helps keep future comparisons honest.
 
 ## Why snapshots are useful
 
-They give you a clean point of reference for comparison, audit, and discussion. Without snapshots, teams often argue about which version of the truth they are reviewing.
+Snapshots and versioning help teams answer:
 
-## Snapshot versus scenario
+- which state are we treating as approved
+- what changed after that point
+- which branch should act as the comparison baseline
 
-A scenario is for active what-if work. A snapshot is for preserving a state so you can return to it or compare against it later.
+Without a preserved reference, teams often end up debating the baseline instead of the decision.
+
+## Snapshot versus active scenario
+
+An active scenario is for ongoing what-if work.
+
+A preserved state is for:
+
+- keeping an approved baseline stable
+- supporting later comparison
+- making handoffs easier during review cycles
+
+That is why this topic belongs in scenarios, but as a lighter supporting concept rather than the center of the feature.
+
+## What may come next
+
+Near-term lifecycle improvements may eventually make this area more explicit through ideas like scenario status or approval flow. For now, the safer docs story is to treat snapshots and versioning as ways to preserve trusted reference points while the rest of the scenario workflow continues elsewhere.
+
+## Related pages
+
+- [What is a scenario](/docs-new/scenarios/what-is-a-scenario)
+- [Compare scenarios](/docs-new/scenarios/compare-scenarios)
+- [Scenario governance and access](/docs-new/scenarios/scenario-governance-and-access)
+- [Scenario best practices](/docs-new/scenarios/scenario-best-practices)

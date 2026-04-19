@@ -1,19 +1,85 @@
 ---
 title: Database structure
-description: Review how databases are structured and how that structure affects analysis.
+description: Design database structure in Oculon so the records stay usable across models, analysis, and reporting.
 icon: table
 ---
 
-A useful database starts with a clean structure. Rows represent records. Columns define the fields Oculon can filter, group, and map into models.
+Database structure determines how easy the records are to review, map, and reuse later. A clean structure reduces downstream cleanup. A weak structure creates friction in every model or board that depends on it.
 
-## Design the structure for the downstream use case
+![Placeholder image for future Oculon screenshot showing database rows, typed columns, date fields, and segmented data](/images/databases/database-structure-placeholder.svg)
 
-Before you add fields, decide how the data will be used. A database meant to power time analysis may need a date field. A database meant to segment planning logic may need a clean category field that can map to a dimension.
+## Start with the downstream use case
 
-## Keep structure stable
+Before you add fields, decide how the database will be used.
 
-Once a database is feeding models and boards, structural changes can affect several downstream surfaces. Add fields carefully and rename them only when the value is clear.
+Common questions include:
 
-## Prefer clear, typed columns
+- Will the records feed a model?
+- Will users filter or group the data directly?
+- Does the dataset need a date field for time-based review?
+- Should one or more fields later map to dimensions or categories?
 
-A well-typed, well-named field is easier to map, filter, and explain than a catch-all text column with mixed content.
+Those answers usually matter more than the raw source shape.
+
+## Rows and columns
+
+In most databases:
+
+- each row represents one record
+- each column represents one field on that record
+
+That sounds simple, but the record grain matters. A database becomes much harder to trust when one row mixes several business events or several time periods together.
+
+## Choose the right granularity
+
+Granularity is the level of detail each row represents.
+
+A useful database usually keeps one clear grain, such as:
+
+- one transaction per row
+- one customer per row
+- one employee per row
+- one opportunity snapshot per row
+
+If the grain is unclear, filters, formulas, and model mappings become harder to validate.
+
+## Add date and category fields deliberately
+
+Date and category fields often carry more downstream value than teams expect.
+
+They help with:
+
+- time-based review
+- sorting and filtering
+- grouping records into useful slices
+- mapping database fields into models and dimensions
+
+If you need time-aware analysis later, include a clean date field now instead of rebuilding the structure later.
+
+## Keep column types readable
+
+A well-typed, well-named field is easier to review than a catch-all text field with mixed content.
+
+Prefer:
+
+- one meaning per column
+- stable, business-readable names
+- separate numeric, text, date, and category fields where possible
+
+## Treat structural changes carefully
+
+Once a database feeds models, views, or boards, structural changes can have a wide effect.
+
+Be especially careful with:
+
+- renaming columns
+- removing fields
+- changing the meaning of a category
+- changing the effective grain of the records
+
+## Related pages
+
+- [Working with data](/docs-new/databases/working-with-data)
+- [Linked data](/docs-new/databases/linked-data)
+- [Using dimensions with variables](/docs-new/dimensions/using-dimensions-with-variables)
+- [Database best practices](/docs-new/databases/database-best-practices)
