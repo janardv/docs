@@ -1,0 +1,33 @@
+---
+title: "Variable breakdown"
+description: "Learn how to define the dimensionality of your variables to slice and dice data."
+icon: diagram-cells
+---
+
+The variable breakdown defines the dimensionality of a variable, allowing you to slice and dice its data by categories like department, location, or product line. This provides a multi-dimensional view of your metrics beyond a single total value.
+
+![Variable Breakdown](/images/getting-started/fr-breakdown.png)
+
+## Why use breakdowns
+
+In FP&A, metrics are rarely just a single number. You often need to see how revenue is split across regions, or how headcount is distributed among departments. Breakdowns allow you to:
+
+- **Analyze performance**: Identify which segments are driving growth or falling behind.
+- **Maintain granularity**: Keep detailed data within a single variable instead of creating dozens of separate ones.
+- **Simplify formulas**: Write logic once and have it apply across all dimensions automatically.
+
+## How it works
+
+When you add a breakdown to a variable, you choose one or more [dimensions](/docs-new/dimensions/what-is-a-dimension) to apply. Oculon then creates a value slot for every combination of those dimension members.
+
+For example, if you break down `Salaries` by `Department`, you can enter or calculate different salary figures for Sales, Engineering, and Marketing.
+
+## Multi-dimensional breakdowns
+
+![](/images/getting-started/fr-multi-dim-breakdown.png)
+
+Variables can be broken down by multiple dimensions simultaneously. For instance, breaking down `Travel Expense` by both `Department` and `Region` allows you to track spending for "Sales in EMEA" separately from "Sales in APAC".
+
+## Totals and rollups
+
+Oculon automatically handles the aggregation of breakdown values. You can view the individual segments or the consolidated total at any time, ensuring that your reports always stay in sync with the underlying details. You can also change the aggreagation from the variable formatting option.

@@ -8,14 +8,6 @@ A variable is the basic building block of a model in Oculon. It represents a met
 
 ![](/images/getting-started/fr-variable.png)
 
-## What a variable can hold
-
-A variable can hold:
-
-- Entered values
-- Calculated results from a formula
-- Values broken down by one or more dimensions
-- Formatting rules such as currency or percentage display
 
 ## Where variables are used
 
@@ -41,6 +33,10 @@ The variable type determines what kind of data a variable holds and how it is di
 
 The variable name is the label used to identify it across formulas, views, and reports. A clear, consistent name makes the model easier to read and collaborate on.
 
+### Variable breakdown
+
+The variable breakdown defines the dimensionality of a variable, allowing you to slice and dice its data by categories like department, location, or product line. This provides a multi-dimensional view of your metrics beyond a single total value.
+
 ### Trend
 
 The trend is a visual sparkline shown alongside each variable, giving a quick view of how its values move across time. It helps you spot growth, decline, or seasonality at a glance without reading each period individually.
@@ -56,3 +52,5 @@ The planned formula defines how a variable's future values are calculated for bu
 ### Time values
 
 Each variable holds a value for every period within the model's time range, typically stored monthly or quarterly. This lets you track performance over time, compare actuals against plan, and analyze trends across the full planning horizon.
+
+Values of these are calculated from the formula. Users can click on these time values to **override** the formula. Overriding cells is often necessary to adjust baseline projections with specific expectations (like a planned one-off expense, a specific sales target, or a contract adjustment) without altering the underlying formula logic for other periods.
