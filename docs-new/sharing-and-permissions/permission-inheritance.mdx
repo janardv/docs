@@ -4,16 +4,44 @@ description: Understand how permissions inherit across related content and struc
 icon: git-branch
 ---
 
-Permission inheritance means access can flow from a parent container to the content inside it.
+Permission inheritance means access can flow from a broader container to the content inside it.
 
-## Why inheritance matters
+## Why inheritance exists
 
-Inheritance keeps permission management simple. Instead of managing each item separately, you can control access at the folder, teamspace, or shared structure level.
+Inheritance keeps permission management scalable. Instead of setting access on every item one by one, you can apply access at a higher level and let related content follow that rule.
 
-## Where to be careful
+That is useful when several pages, boards, or models belong in the same shared area.
 
-Inheritance is helpful until someone assumes a child item is private when it still inherits a broader rule. When you work with sensitive data, verify effective access instead of assuming it.
+## Where inheritance usually helps
 
-## Review effective permissions
+Inheritance is usually the right default when:
 
-Whenever a model or board is moved, shared broadly, or placed in a new teamspace, check whether inherited permissions changed.
+- a teamspace owns a set of related content
+- a shared area should stay consistent for the same audience
+- you want fewer manual permission updates as content grows
+
+Used well, inheritance reduces drift between what people expect to see and what they can actually open.
+
+## Where inheritance creates mistakes
+
+Inheritance becomes risky when someone assumes a child item is private even though it still inherits a broader rule.
+
+That risk usually appears when:
+
+- content is moved into a new teamspace or shared area
+- a board starts pulling from more restricted sources
+- ownership changes and no one rechecks effective access
+- sensitive content is reorganized quickly
+
+When the stakes are high, verify effective access instead of assuming the child item behaves differently from its container.
+
+## Recheck after structural changes
+
+Review effective permissions whenever a model, board, page, or shared structure is:
+
+- moved
+- shared more broadly
+- placed in a different teamspace
+- reorganized under a new owner or audience
+
+Inheritance is not a problem by itself. The problem is forgetting that it is still in effect.
