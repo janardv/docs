@@ -1,33 +1,27 @@
 ---
 title: "What is a compare"
-description: "Learn how to define the dimensionality of your variables to slice and dice data."
-icon: diagram-cells
+description: "Learn how to use comparisons to analyze data across time and scenarios."
+icon: compare-horizontal
 ---
 
-The variable breakdown defines the dimensionality of a variable, allowing you to slice and dice its data by categories like department, location, or product line. This provides a multi-dimensional view of your metrics beyond a single total value.
+Comparison tools in Oculon allow you to evaluate your data across different dimensions of time and planning states. Whether you are looking at year-over-year growth or comparing your budget to your actuals, comparisons provide the context needed to make informed decisions.
 
-![Variable Breakdown](/images/getting-started/fr-breakdown.png)
+## Types of comparisons
 
-## Why use breakdowns
+Oculon offers two main ways to compare your data:
 
-In FP&A, metrics are rarely just a single number. You often need to see how revenue is split across regions, or how headcount is distributed among departments. Breakdowns allow you to:
+- **[Time Compare](/docs-new/compare/time-compare)**: Analyze your data across different periods, such as current month vs. previous month.
+- **[Scenario Compare](/docs-new/compare/scenario-compare)**: Compare different versions of your data, such as your "Base Case" vs. an "Aggressive Growth" scenario.
 
-- **Analyze performance**: Identify which segments are driving growth or falling behind.
-- **Maintain granularity**: Keep detailed data within a single variable instead of creating dozens of separate ones.
-- **Simplify formulas**: Write logic once and have it apply across all dimensions automatically.
+## Key features
 
-## How it works
+- **Dynamic Variances**: Automatically calculate absolute and percentage variances between comparison points.
+- **Multi-period/Scenario Support**: Compare your current view with one or more other periods or scenarios simultaneously.
+- **Consistent Visuals**: Comparisons work seamlessly across models and boards, maintaining a consistent experience.
 
-When you add a breakdown to a variable, you choose one or more [dimensions](/docs-new/dimensions/what-is-a-dimension) to apply. Oculon then creates a value slot for every combination of those dimension members.
+## Why use comparisons
 
-For example, if you break down `Salaries` by `Department`, you can enter or calculate different salary figures for Sales, Engineering, and Marketing.
-
-## Multi-dimensional breakdowns
-
-![](/images/getting-started/fr-multi-dim-breakdown.png)
-
-Variables can be broken down by multiple dimensions simultaneously. For instance, breaking down `Travel Expense` by both `Department` and `Region` allows you to track spending for "Sales in EMEA" separately from "Sales in APAC".
-
-## Totals and rollups
-
-Oculon automatically handles the aggregation of breakdown values. You can view the individual segments or the consolidated total at any time, ensuring that your reports always stay in sync with the underlying details. You can also change the aggreagation from the variable formatting option.
+In FP&A, data is most valuable when viewed in context. Comparisons allow you to:
+- **Identify Trends**: See if performance is improving or declining over time.
+- **Manage Risk**: Evaluate the potential impact of different scenarios.
+- **Explain Variances**: Quickly pinpoint the cause of differences between expected and actual results.

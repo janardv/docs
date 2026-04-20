@@ -600,7 +600,9 @@
                                 "group": "Compare",
                                 "expanded": false,
                                 "pages": [
-                                    "docs-new/compare/what-is-a-compare"
+                                    "docs-new/compare/what-is-a-compare",
+                                    "docs-new/compare/time-compare",
+                                    "docs-new/compare/scenario-compare"
                                 ]
                             },
                             {
