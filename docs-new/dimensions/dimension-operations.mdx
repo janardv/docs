@@ -6,13 +6,47 @@ icon: settings
 
 Dimension operations are the actions you use to keep a dimension clean, accurate, and useful over time.
 
-## Common operations
+## Adding and Editing Dimension Values
 
-- create a new dimension
-- add or rename values
-- reorder or regroup values
-- attach or remove a dimension from a variable
-- review how formulas aggregate across the dimension
+![](/images/getting-started/fr-add-dim-val.png)
+
+You can manage the items within a dimension directly in the dimension view.
+
+- **Add Values**: Create a new row at the bottom of the list or insert one in between existing items to add a new dimension value.
+- **Edit Values**: Click directly into any cell to rename a dimension value or update its properties.
+
+## Linking Dimensions
+
+![](/images/getting-started/fr-add-dim-col.png)
+
+Dimensions can be connected to build more complex structures and relationships using columns.
+
+- **Create Links**: You can add other dimensions as columns within a base dimension. This establishes a link between them.
+- **Example**: If you have an **Employee** dimension, you can add a **Department** dimension as a column. This allows you to assign each employee to a specific department.
+
+## Dimension Lookups
+
+![](/images/getting-started/fr-add-dim-map.png)
+
+Dimension lookups allow for automatic data updates based on the relationships established between dimensions.
+
+- **Chain Links**: You can create lookup columns that span multiple links. For example, if **Employee** is linked to **Department**, and **Department** is linked to **Entity**, the Employee dimension can have a lookup column that pulls the **Entity** value automatically based on the linked department.
+- **Automatic Sync**: When an employee's department is updated, any associated lookup columns (like Entity) reflect those changes immediately across your model.
+
+## Multiple Dimension Values and Relationships
+
+![](/images/getting-started/fr-mul-dim-val.png)
+
+Dimensions support various relationship types to handle complex business structures. Depending on the dimension configuration, you can assign values to map items in different ways:
+
+- **Many-to-One**: Multiple items in one dimension map to a single item in another. This is the most common relationship.
+    - *Example*: Mapping multiple **Sales Reps** to a single **Sales Region**.
+- **One-to-One**: A unique relationship where one item maps strictly to one other item.
+    - *Example*: Mapping an **Employee ID** uniquely to a **Cost Center**.
+- **One-to-Many**: A single item maps to multiple values, allowing for complex data breakdowns.
+    - *Example*: A single **Marketing Campaign** that spans multiple **Advertising Channels**.
+
+---
 
 ## Edit with caution
 
