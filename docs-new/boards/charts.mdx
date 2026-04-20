@@ -1,21 +1,74 @@
 ---
 title: Charts
 description: Use charts on boards to visualize trends, comparisons, and performance.
-icon: bar-chart-3
+icon: chart-line
 ---
 
-Charts help people see patterns faster than a raw grid can.
+Charts help people see patterns faster than a raw grid can. Oculon supports three primary chart types for data visualization:
+
+- **Bar Charts**: Used for comparing discrete categories or distinct metrics.
+- **Line Charts**: Best for visualizing trends and movements over continuous time periods.
+- **Metric Charts**: Ideal for highlighting key KPIs with high density.
+
+
+## Adding a Chart
+
+![](/images/getting-started/fr-chart-config.png)
+
+To add a chart to your board, click the **+ icon** within the canvas and select **Chart** from the items list.
+
+Once added:
+1. A **full-width empty card** is placed on the canvas.
+2. The **configuration panel** opens on the right side of the interface, allowing you to build and customize your visual.
+
+## Configuration: Setup Tab
+
+The **Setup** tab is where you define the data and primary structure of your chart.
+
+- **Chart Type & Theme**: Choose between a **Bar** or **Line** chart and select a color theme that fits your reporting style.
+- **Variables**: Select one or more variables from your models to populate the chart data.
+- **Breakdowns (Dimensions)**: Add a dimension to the chart to "break down" the data, splitting the bars or lines into detailed categorical slices.
+- **Filters (Dimensions & Scenarios)**:
+  - Add filters for specific Dimensions or Scenarios directly to the chart card. 
+  - For **Scenarios**, you can filter to view specific scenarios (one at a time) to compare performance.
+  - Adding a filter creates a control component on the chart card where users can toggle between values to update the data instantly.
+- **Time Filter**: Add a time-based filter to the chart. This places a date range component on the chart card, allowing users to choose specific date ranges to narrow the visual analysis.
+
+## Configuration: Display Tab
+
+![](/images/getting-started/fr-board-display.png)
+
+The **Display** tab controls the visual behavior and data formatting of your chart.
+
+### Chart Display Type
+Use these toggles to refine how data is presented:
+
+| Setting | Description |
+| :--- | :--- |
+| **Show Today Line** | Displays a vertical line indicating the current date on time-based charts. |
+| **Show Stacked Charts** | Combines broken-down dimension values into a single stacked visual per period. |
+| **Show Value** | Displays the numerical data labels directly on the chart elements. |
+| **Show Growth Rate** | Adds a secondary visual indicator for period-over-period growth percentages. |
+
+### Axes Configuration
+Customize the scale and limits for your data:
+- **Left and Right Axis**: Enable or disable axes independently.
+- **Axis Limits**: Set custom **Lower** and **Upper** limits to control the zoom and focus of your data range.
+
+### Number Formatting
+Control how numbers appear in labels and tooltips, ensuring they match your organization's standards:
+
+| Option | Description |
+| :--- | :--- |
+| **Precision** | Set the number of decimal places for labels and tooltips. |
+| **Magnitude** | Scale numbers to thousands (k), millions (M), or other units. |
+| **Negatives** | Define visual indicators for negative values (e.g., using parentheses). |
+| **Zero Format** | Choose whether to display zero as `0` or as a dash (`-`). |
+| **Large Numbers** | Configure short or long formats for significant figures. |
+
+---
+
 
 ## When to use a chart
 
-Use a chart when the decision depends on movement, comparison, or composition. Common examples include growth trends, scenario deltas, and category mix.
-
-## Choose the chart for the question
-
-- line charts for time trends
-- bar charts for category comparison
-- summary visuals for KPI monitoring
-
-## Keep charts trustworthy
-
-A good chart has clear labels, obvious units, and a time range the viewer can explain. Avoid styling choices that make small changes look larger than they are.
+Use a chart when the decision depends on movement, comparison, or composition. Common examples include growth trends, scenario deltas, and category mix. Avoid styling choices that make small changes look larger than they are.
