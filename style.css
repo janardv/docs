@@ -8,41 +8,42 @@
     padding-left: 3rem;
     padding-right: 2.25rem;
   }
-#sidebar-content li,
-#sidebar-content li a,
-#sidebar-content li span,
-#sidebar-content li p {
-  color: inherit !important;
-  font-weight: 400 !important;
-}
 
-#sidebar-content li[data-active] {
-  color: inherit !important;
-  font-weight: inherit !important;
-}
+  #sidebar-content li,
+  #sidebar-content li a,
+  #sidebar-content li span,
+  #sidebar-content li p {
+    color: inherit !important;
+    font-weight: 400 !important;
+  }
 
-#sidebar-content li[data-active] a,
-#sidebar-content li[data-active] span,
-#sidebar-content li[data-active] p {
-  color: inherit !important;
-  font-weight: inherit !important;
-}
+  #sidebar-content li[data-active] {
+    color: inherit !important;
+    font-weight: inherit !important;
+  }
 
-#sidebar-content li[data-active] svg,
-#sidebar-content li[data-active] path {
-  color: inherit !important;
-  stroke: currentColor !important;
-}
+  #sidebar-content li[data-active] a,
+  #sidebar-content li[data-active] span,
+  #sidebar-content li[data-active] p {
+    color: inherit !important;
+    font-weight: inherit !important;
+  }
 
-sidebar-group[data-active] {
-  background: transparent !important;
-  box-shadow: none !important;
-}
+  #sidebar-content li[data-active] svg,
+  #sidebar-content li[data-active] path {
+    color: inherit !important;
+    stroke: currentColor !important;
+  }
 
-sidebar-group[data-active] sidebar-group-header,
-sidebar-group[data-active] sidebar-group-icon {
-  background: transparent !important;
-  box-shadow: none !important;
-  color: inherit !important;
-  font-weight: 500 !important;
-}
+  sidebar-group[data-active] {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  sidebar-group[data-active] sidebar-group-header,
+  sidebar-group[data-active] sidebar-group-icon {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    font-weight: 500 !important;
+  }
