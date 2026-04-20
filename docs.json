@@ -521,6 +521,7 @@
                                     "docs-new/variables/what-is-a-variable",
                                     "docs-new/variables/variable-types",
                                     "docs-new/variables/create-and-edit-variables",
+                                    "docs-new/variables/variable-breakdown",
                                     "docs-new/variables/variable-formatting",
                                     "docs-new/variables/variable-behavior",
                                     "docs-new/variables/variable-references",
@@ -532,6 +533,7 @@
                                 "expanded": false,
                                 "pages": [
                                     "docs-new/dimensions/what-is-a-dimension",
+                                    "docs-new/dimensions/create-and-edit-dimension",
                                     "docs-new/dimensions/dimension-values",
                                     "docs-new/dimensions/using-dimensions-with-variables",
                                     "docs-new/dimensions/dimension-operations",
@@ -618,6 +620,13 @@
                                     "docs-new/views/sharing-views",
                                     "docs-new/views/using-views-on-boards",
                                     "docs-new/views/view-best-practices"
+                                ]
+                            },
+                            {
+                                "group": "Compare",
+                                "expanded": false,
+                                "pages": [
+                                    "docs-new/compare/what-is-a-compare"
                                 ]
                             },
                             {
