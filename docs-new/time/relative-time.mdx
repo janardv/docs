@@ -1,25 +1,73 @@
 ---
 title: Relative time
-description: Use relative time logic to build dynamic reporting and planning views.
+description: Use dynamic time references so formulas and reporting keep working as periods move forward.
 icon: refresh-cw
 ---
 
-Relative time lets you define logic without hard-coding a fixed month or quarter. That makes models and reports easier to reuse as time moves forward.
+Relative time lets you define periods in relation to the current model context instead of hard-coding one fixed month, quarter, or year. It keeps formulas, filters, and reporting views reusable as time moves forward.
 
-## Common relative time patterns
+![Relative time options in Oculon](/images/getting-started/fr-relative-time.png)
 
-- this month
-- previous month
-- next quarter
-- last 12 months
-- month 1, month 2, and similar rolling references
+## Why it matters
 
-## Where relative time helps
+Hard-coded dates create extra maintenance. Relative time helps you avoid rewriting formulas and filters every time the model advances by one period.
 
-![](/images/getting-started/fr-relative-time.png)
+Use it when the same business rule should keep working in each close cycle, forecast update, or recurring report.
 
-Use relative time in formulas, views, and board filters when the same logic should keep working after each month-end close.
+## How relative time works in Oculon
 
-## Keep it understandable
+In Oculon, relative time usually shows up through helper variables, modifiers, and time-aware formulas. Instead of saying "March 2026," you define the logic relative to the current period, the selected window, or the `Last actual date`.
 
-Relative time is powerful, but it can confuse readers if the rule is hidden. Name related variables clearly and explain the time logic in shared models when it is business-critical.
+This is especially useful when:
+
+- the report should always show the current month or quarter
+- a formula should look back one period
+- a rolling window should keep moving forward
+- a forecast should react differently before and after the [`Last actual date`](/docs-new/time/last-actual-date)
+
+## Common patterns
+
+Common relative time patterns include:
+
+- `this month` or `this quarter`
+- `previous month` or `previous quarter`
+- `next quarter`
+- `last 3`, `last 6`, or `last 12` periods
+- `month 1`, `month 2`, and similar rolling references inside forecast logic
+
+You do not need every model to use every pattern. The goal is to make repeated logic durable, not abstract for its own sake.
+
+## Where to use it
+
+Relative time is most helpful in:
+
+- formulas that should stay valid after each close
+- views and saved filters that should always show the latest relevant periods
+- boards and comparisons that use rolling windows or current-period context
+
+If the same time rule needs to work next month without manual edits, relative time is usually the better choice.
+
+## Keep it readable
+
+Relative time is powerful, but hidden offsets can be hard to review. To keep it understandable:
+
+- use clear variable names
+- keep helper variables small and focused
+- explain business-critical time logic in the model description or related docs
+- link users to [`Helper variables and modifiers`](/docs-new/formulas/helper-variables-and-modifiers) when the logic depends on built-in time helpers
+
+## Common pitfalls
+
+Watch for these issues:
+
+- mixing hard-coded dates with rolling logic in the same formula
+- assuming calendar time and fiscal time mean the same thing
+- using a rolling window without labeling it clearly in a board or saved view
+- hiding important cutoff logic instead of making the relationship to `Last actual date` explicit
+
+## Related pages
+
+- [Last actual date](/docs-new/time/last-actual-date)
+- [Helper variables and modifiers](/docs-new/formulas/helper-variables-and-modifiers)
+- [Time granularity](/docs-new/time/time-granularity)
+- [Time best practices](/docs-new/time/time-best-practices)

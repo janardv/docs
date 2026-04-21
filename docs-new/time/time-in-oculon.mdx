@@ -1,24 +1,87 @@
 ---
 title: Time in Oculon
-description: Learn how Oculon handles time-based planning and reporting.
+description: Understand how time settings shape formulas, reporting, and planning behavior in Oculon.
 icon: clock
 ---
 
-Time is a core modeling axis in Oculon. Every variable is evaluated over a date range, and the model uses that timeline to separate historical results from planned values.
+Time is one of the core systems that defines how a model behaves in Oculon. It sets the planning horizon, controls when actual logic stops, and determines how results are grouped when you review them at month, quarter, or year level.
 
-## What time controls
+![Model settings in Oculon with time controls](/images/getting-started/model-settings.png)
 
-Time affects:
+## Why time matters
 
-- the start and end of the model
-- how many periods the model contains
-- how formulas behave across those periods
-- how reports aggregate and compare values
+Time decisions affect the whole model, not just one report. They influence:
 
-## Why time setup matters early
+- how far your model runs
+- how often values are stored and reviewed
+- where the model switches from historical logic to planned logic
+- how quarterly and yearly summaries are calculated
+- how reusable your formulas and views stay over time
 
-Time decisions influence nearly everything else in the model. If you change date range or granularity after formulas, boards, and scenarios are already built, you usually need additional cleanup.
+If you change the time setup after you build formulas, boards, and scenarios, you often need to recheck several downstream outputs.
 
-## What to confirm first
+## Model-level time settings
 
-Before you build, confirm the planning horizon, the reporting cadence, the fiscal assumptions, and the point where actuals should stop.
+The model settings define the time rules the rest of the model inherits.
+
+- `Model date range` sets the first and last period in the model.
+- [`Time granularity`](/docs-new/time/time-granularity) defines whether the model runs monthly, quarterly, or yearly.
+- [`Last actual date`](/docs-new/time/last-actual-date) marks the cutoff between actual and planned behavior.
+- `Fiscal year assumptions` define how Oculon groups periods into fiscal quarters and fiscal years.
+
+These settings should be stable before you build deeper logic.
+
+## Time inside formulas and reporting
+
+Time also appears in the way variables, formulas, and reports behave day to day.
+
+- `Actual formula` logic applies to periods on the actuals side of the [`Last actual date`](/docs-new/time/last-actual-date).
+- `Planned formula` logic applies to periods after that cutoff.
+- [`Relative time`](/docs-new/time/relative-time) lets you build rules that move forward with the model instead of hard-coding one month or quarter.
+- [`Time aggregation`](/docs-new/time/time-aggregation) defines what a metric should mean when you review it at quarter or year level.
+- [`Time rollups`](/docs-new/time/time-rollups) define how lower-level periods are grouped into higher-level periods.
+
+In practice, rollups answer which periods belong together. Aggregation answers what number should represent that group.
+
+## How the pieces work together
+
+You can think about the time system in four steps:
+
+1. Set the model date range and granularity.
+2. Set the `Last actual date` so Oculon knows where actual behavior ends.
+3. Write actual and planned formulas that behave correctly on each side of that cutoff.
+4. Review quarterly and yearly outputs to confirm rollups and aggregation still match the business meaning of the metric.
+
+## Common scenarios
+
+### Monthly operating model
+
+Most FP&A models work best at monthly granularity. You can use monthly actuals, monthly forecast logic, and then roll those periods up into quarter and year views for reporting.
+
+### Quarterly strategic model
+
+If the model is meant for long-range planning instead of operational tracking, quarterly granularity can keep the model smaller and easier to maintain.
+
+### Executive reporting
+
+Even when the model runs monthly, executives often consume quarter and year summaries. That makes aggregation and rollup behavior just as important as the base formula.
+
+## What to decide before you build
+
+Use this checklist before you start deeper modeling work:
+
+- confirm the planning horizon
+- choose the lowest level of detail you need
+- decide who updates the `Last actual date` during close
+- confirm fiscal year assumptions
+- identify which metrics should sum and which should behave like end-of-period values
+- use relative time instead of hard-coded dates where possible
+
+## Related pages
+
+- [Time granularity](/docs-new/time/time-granularity)
+- [Last actual date](/docs-new/time/last-actual-date)
+- [Relative time](/docs-new/time/relative-time)
+- [Time aggregation](/docs-new/time/time-aggregation)
+- [Time rollups](/docs-new/time/time-rollups)
+- [Time best practices](/docs-new/time/time-best-practices)

@@ -1,26 +1,70 @@
 ---
 title: Compare scenarios
-description: Compare scenarios to evaluate different planning assumptions and outcomes.
+description: Compare scenarios to understand what changed, why it changed, and which branch should guide the next decision.
 icon: split
 ---
 
-Scenario comparison helps you answer one question clearly: what changed, and how much does it matter?
+Scenario comparison helps you answer one question clearly: what changed, and how much does it matter? In Oculon, compare should be treated as a first-class review workflow, not just a secondary reporting feature.
 
-![](/images/getting-started/fr-scenario-compare.png)
+![Scenario comparison view in Oculon showing scenario-to-scenario differences](/images/getting-started/fr-scenario-compare.png)
 
-## What to compare
+## What compare is for
 
-Teams usually compare:
+Compare is most useful when it supports an actual decision.
+
+Common examples include:
 
 - current forecast versus approved budget
-- draft case versus main scenario
-- optimistic case versus downside case
-- one department assumption versus another
+- working scenario versus `Main Scenario`
+- a draft case versus a locked baseline
+- one departmental assumption versus another
 
-## How to compare well
+## Start with the right baseline
 
-Start with the few metrics that drive the decision. Then check the key dimensions, time periods, and outputs that explain the variance.
+A comparison only feels useful when the baseline is clear.
 
-## Avoid noisy comparisons
+In most cases, the right starting points are:
 
-If you compare too many changes at once, the result is hard to interpret. Keep scenarios focused so the difference tells a clear story.
+- `Main Scenario` as the shared default branch
+- a locked or approved scenario used as a stable checkpoint
+
+If the baseline itself is unclear, the comparison quickly becomes noisy.
+
+## Compare across the right surfaces
+
+The current scenario story assumes comparison should behave consistently across:
+
+- tables
+- charts
+- boards
+
+That consistency matters because users often review the same scenario question in more than one surface. The explanation should not change just because the visualization changed.
+
+## Keep the comparison focused
+
+Good comparisons stay narrow enough to tell a story.
+
+Start with:
+
+- the few metrics that drive the decision
+- the time periods that matter
+- the dimensions that explain the variance
+
+If too many unrelated changes are mixed together, the result becomes hard to interpret and harder to merge safely later.
+
+## Compare before governance actions
+
+Compare is especially helpful before:
+
+- merging a scenario
+- locking a scenario as an approved baseline
+- deleting or retiring an older branch
+
+That is often the last moment to confirm the branch still means what the team thinks it means.
+
+## Related pages
+
+- [Merge scenarios](/docs-new/scenarios/merge-scenarios)
+- [Scenario best practices](/docs-new/scenarios/scenario-best-practices)
+- [What is a scenario](/docs-new/scenarios/what-is-a-scenario)
+- [Compare in views](/docs-new/views/compare-in-views)

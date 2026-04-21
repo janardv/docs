@@ -1,25 +1,40 @@
 ---
 title: Model structure
-description: Understand how models are organized and how their parts fit together.
+description: Understand how the main parts of a model fit together.
 icon: folder-tree
 ---
 
-A clear model structure makes the model easier to build, test, and hand off.
+A clear model structure makes a model easier to build, review, and maintain.
 
-![](/images/getting-started/fr-model-breakdown.png)
+![Model breakdown view in Oculon](/images/getting-started/fr-model-breakdown.png)
 
 ## Common structural layers
 
 - sections for major business areas
 - variables inside each section
-- dimensions applied where detail is needed
-- helper lines that support larger outputs
-- summary lines or outputs that feed views and boards
+- helper logic that supports larger calculations
+- dimensions applied where extra detail is needed
+- outputs that feed views, boards, and scenario review
 
-## A practical organization pattern
+## A practical structure pattern
 
-Many teams organize a model in this order: assumptions, drivers, calculations, outputs. This keeps the logic readable and reduces circular editing between unrelated lines.
+Many teams structure a model in this order: assumptions, drivers, calculations, outputs. This keeps the logic readable and makes it easier to trace how an output is built.
 
-## Why structure matters for scale
+## What good structure helps you do
 
-A small model can survive weak structure. A shared model cannot. Once scenarios, linked models, and board reporting rely on the same logic, structure becomes a governance issue, not just a style choice.
+Good structure helps you:
+
+- review formulas without scanning unrelated lines
+- separate inputs from calculated logic
+- keep helper variables close to the outputs they support
+- make scenario changes easier to test
+
+## Keep the model readable as it grows
+
+A small model can tolerate loose structure. A shared model cannot. Once scenarios, linked models, and board reporting rely on the same logic, structure becomes a maintenance issue, not just a style preference.
+
+## Related pages
+
+- [What is a model](/docs-new/models/what-is-a-model)
+- [Model best practices](/docs-new/models/model-best-practices)
+- [Using dimensions with variables](/docs-new/dimensions/using-dimensions-with-variables)

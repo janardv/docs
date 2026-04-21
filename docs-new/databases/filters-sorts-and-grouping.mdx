@@ -1,0 +1,76 @@
+---
+title: Filters, sorts, and grouping
+description: Use database controls to review the right slice of records without changing the underlying data.
+icon: funnel
+---
+
+Filters, sorting, and grouping help you turn a large database into something you can actually review. They do not change the source records. They change how you inspect the dataset.
+
+![Placeholder image for future Oculon screenshot showing database filters, sorting controls, and grouped records](/images/databases/filters-sorts-grouping-placeholder.svg)
+
+## Why these controls matter
+
+A database becomes more useful when you can answer practical questions quickly, such as:
+
+- which records belong to one region or owner
+- which items are newest or highest value
+- which categories contain the most records
+- which rows need cleanup before the data feeds a model
+
+These controls make that review possible without changing the structure.
+
+## Use filters to narrow the record set
+
+Filters help you review only the rows that matter to the current question.
+
+Common examples include:
+
+- one business unit
+- one status
+- one date window
+- records missing a required field
+
+Filters are especially useful when you are checking data quality before the records flow into a model.
+
+## Use sorting to surface priority
+
+Sorting makes the database easier to scan.
+
+You might sort by:
+
+- newest first
+- largest values first
+- alphabetical category order
+- records most likely to need cleanup
+
+Use a sort order that matches the review goal. A useful sort should help the next decision happen faster.
+
+## Use grouping to review structure
+
+Grouping is useful when the same dataset needs to be reviewed by category, owner, status, or another shared field.
+
+This helps when you want to:
+
+- compare the size of different groups
+- check whether categories are used consistently
+- spot missing mappings or outliers
+- confirm that the structure will make sense in downstream reporting
+
+## Review time-aware data carefully
+
+If the database contains time fields, always confirm which time slice you are reviewing before you assume the records are wrong.
+
+A time-aware dataset can look inconsistent when the filter or grouping does not match the intended period.
+
+## Keep review logic readable
+
+Too many hidden filters or layers of grouping can make a database hard to trust.
+
+If people need several hidden rules to understand the table, the structure may need cleanup or the review should move into a more purpose-built view.
+
+## Related pages
+
+- [Working with data](/docs-new/databases/working-with-data)
+- [Database structure](/docs-new/databases/database-structure)
+- [Data mismatches](/docs-new/troubleshooting/data-mismatches)
+- [Views: Filters, sorts, and grouping](/docs-new/views/filters-sorts-and-grouping)

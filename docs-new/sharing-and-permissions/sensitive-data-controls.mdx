@@ -4,20 +4,51 @@ description: Protect sensitive content with the right access and visibility cont
 icon: lock
 ---
 
-Sensitive planning data needs more than a private link. It needs controlled access, predictable sharing rules, and a review habit that keeps exposure low.
+Sensitive planning data needs more than a private link. It needs narrow sharing, predictable visibility rules, and repeatable review.
 
-## Useful controls
+## Start with least privilege
+
+The safest default is simple: give people the smallest access scope that still lets them do their job.
+
+That usually means:
+
+- sharing the summary surface before the underlying model
+- limiting access to the exact audience that needs it
+- keeping `Full access` restricted to a small set of accountable owners
+
+If someone only needs the outcome, do not start by giving access to the full planning surface.
+
+## Use the right controls together
+
+Sensitive data protection usually depends on several controls working together:
 
 - least-privilege permissions
 - restricted teamspaces or groups
-- limited sharing of underlying models
-- preference or UI controls that hide values during screen sharing
-- audit and review processes for high-risk content
+- limited sharing of underlying models and source data
+- visibility controls that reduce exposure during screen sharing or live review
+- audit and review habits for high-risk content
+
+One control is rarely enough on its own.
 
 ## Design for the audience
 
-Not everyone needs the same level of detail. Share the highest-value summary surface first, then widen access only if the audience also needs the underlying model.
+Not everyone needs the same level of detail.
 
-## Recheck after reorganization
+- Share a board or page when the audience needs a decision-ready summary.
+- Share a view when the audience needs one controlled slice.
+- Share the full model only when the audience also needs to inspect or edit the planning logic.
 
-When content moves between folders, teamspaces, or owners, review security assumptions again. Sensitive data risk often appears during reorganization, not during first creation.
+This keeps sensitive data from spreading more broadly than the workflow requires.
+
+## Recheck after changes
+
+Sensitive-data risk often appears after the original setup.
+
+Review your assumptions again when:
+
+- content moves between teamspaces or owners
+- new groups are added
+- a board starts pulling from additional sources
+- an executive or external review process begins
+
+The biggest mistakes usually happen during reorganization, not during first creation.

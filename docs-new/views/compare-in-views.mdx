@@ -1,22 +1,34 @@
 ---
 title: Compare in views
-description: Compare data directly in views to evaluate changes across dimensions or scenarios.
+description: Compare data in a view to evaluate changes across scenarios, time, or business slices.
 icon: split
 ---
 
 Views are often the easiest place to compare outputs because they let you narrow the data before you ask for a variance.
 
-## Good comparison use cases
+## Start with model views
+
+Model views are usually the best place for comparisons such as:
 
 - scenario versus scenario
 - actual versus forecast
-- current month versus prior month
+- current period versus prior period
 - one dimension slice versus another
 
-## How to keep comparisons useful
+## Use database views only when the slice is clear
 
-Compare one business question at a time. If the view is already filtered to the right variables and time periods, the difference becomes much easier to explain.
+A database view can still support comparison when the structure already gives you a clean slice to review, such as one category versus another or one filtered record set versus another. Do not assume a database view supports model-style scenario comparison.
 
-## Check context first
+## Keep the context stable
 
-If a comparison looks wrong, confirm the active scenario, time aggregation, and dimension filters before you assume the formula is incorrect.
+Compare one business question at a time. Lock the right filters, grouping, and time context before you interpret the result.
+
+## Check the source before you debug
+
+If a comparison looks wrong, confirm the active scenario, [Time aggregation](/docs-new/time/time-aggregation), [Time rollups](/docs-new/time/time-rollups), and filters before you assume the formula or data is incorrect.
+
+## Related pages
+
+- [Filters, sorts, and grouping](/docs-new/views/filters-sorts-and-grouping)
+- [Compare scenarios](/docs-new/scenarios/compare-scenarios)
+- [Using views on boards](/docs-new/views/using-views-on-boards)

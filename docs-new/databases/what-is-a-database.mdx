@@ -1,22 +1,70 @@
 ---
 title: What is a database
-description: Learn what a database is in Oculon and how it supports planning workflows.
+description: Learn what a database is in Oculon and how databases support models, analysis, and reporting.
 icon: circle-help
 ---
 
-A database in Oculon stores structured records that can be reviewed directly or used as model inputs. It gives you a stable place to manage operational or imported data without rebuilding it inside each model.
+A database in Oculon stores structured records that can be reviewed directly or used as source data across models, views, and boards. It gives you a stable place to manage operational data without rebuilding that data inside each model.
 
-![](/images/getting-started/fr-db.png)
+![Database detail view in Oculon showing structured source records](/images/getting-started/fr-db.png)
 
-## How databases support planning
+## Why databases matter
 
 Databases help you:
 
 - centralize source records
-- map fields into model logic
-- refresh data from integrations
-- keep reporting inputs consistent across teams
+- keep raw data separate from planning logic
+- refresh data from integrations and queries
+- reuse the same source data across several downstream workflows
+- reduce manual re-entry when multiple teams rely on the same records
+
+## Where databases fit in Oculon
+
+Think of databases as the source layer in the Oculon workflow:
+
+- `Databases` hold source records and imported data.
+- `Models` apply calculations, assumptions, and planning logic.
+- `Views` and `Boards` help teams review the result.
+
+This separation matters because source data and planning logic usually need different owners and different change controls.
+
+## Common ways to create a database
+
+The current Oculon docs show two common creation paths:
+
+- `Manual database`: create and manage the structure directly in Oculon
+- `Query-backed database`: create a database from an integration query so the source can refresh over time
+
+Both approaches create a database that can later support models, reporting, and review workflows.
 
 ## Database versus model
 
-Use a database for source records and row-level detail. Use a model for planning logic, calculations, scenarios, and business rules.
+Use a database when you need row-level records, imported source data, or operational detail.
+
+Use a model when you need:
+
+- calculations and formulas
+- scenarios and planning assumptions
+- time-aware logic
+- outputs designed for planning and decision-making
+
+A database gives the model a clean starting point. The model gives the database business meaning.
+
+## What databases usually feed
+
+A well-structured database can later feed:
+
+- model inputs
+- dimension mappings
+- linked records and shared reporting inputs
+- board tables and supporting analysis
+
+This is why structure decisions inside a database often matter outside the database itself.
+
+## Related pages
+
+- [Database types](/docs-new/databases/database-types)
+- [Database structure](/docs-new/databases/database-structure)
+- [Working with data](/docs-new/databases/working-with-data)
+- [Linked data](/docs-new/databases/linked-data)
+- [Core concepts overview](/docs-new/getting-started/core-concepts-overview)

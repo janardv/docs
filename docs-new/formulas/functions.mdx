@@ -1,23 +1,91 @@
 ---
 title: Functions
-description: Explore the core functions available in Oculon formulas.
+description: Understand the main function and operator categories used in Oculon formulas.
 icon: sigma
 ---
 
-Functions help you express common logic without rewriting the same pattern each time. Oculon formulas usually combine standard math with planning-specific helpers.
+Functions and operators help you express business logic without rewriting the same pattern every time. In Oculon, the best formulas usually combine a small number of readable functions with clear references and context-aware logic.
 
-## Common function categories
+## Operators come first
 
-- **Math**: sum, round, absolute value, powers, and related numeric logic.
-- **Logical**: conditional branches such as `IF`, `AND`, and `OR`.
-- **Time**: functions that inspect month, quarter, year, or period relationships.
-- **Financial**: functions for cash flow, return, and planning-style calculations.
-- **Statistical**: averages, counts, rank, and spread measures.
+Operators handle the basic structure of most formulas.
 
-## How to choose the right function
+| Category | Common operators | Typical use |
+| --- | --- | --- |
+| Arithmetic | `+`, `-`, `*`, `/`, `^` | combine values and calculate outputs |
+| Comparison | `=`, `!=`, `>`, `<`, `>=`, `<=` | compare values and create conditions |
+| Logical | `and`, `or` | combine several checks in one branch |
 
-Use the simplest function that matches the business question. A short, obvious formula is easier to audit than a clever one that only one model builder understands.
+Use operators when the business rule is simple. Add functions only when they make the formula easier to read.
 
-## Read functions in context
+## Logical functions and branches
 
-A function that works at the aggregate level may behave differently when a variable is dimensioned or filtered by time. Always review the output in the exact context where the result will be used.
+Logical functions help a formula react to conditions.
+
+Common uses include:
+
+- switching behavior before and after the [`Last actual date`](/docs-new/time/last-actual-date)
+- returning flags such as `1` and `0`
+- routing one variable to different outputs depending on context
+
+The most common logical pattern is:
+
+```text
+if timestep <= lastActualDate then Actual value else Planned value
+```
+
+For more branch patterns, see [Conditional logic](/docs-new/formulas/conditional-logic).
+
+## Math and statistical helpers
+
+Math and statistical functions keep formulas shorter and easier to audit.
+
+Common examples include:
+
+- `sum()` for totals
+- `avg()` for average values
+- `round()` for display-ready outputs
+- `abs()` for absolute values
+- `min()` and `max()` for bounds and thresholds
+
+These functions are useful, but they still depend on context. A result can change when the formula is evaluated at a different dimension value or aggregation level.
+
+## Time-aware helpers inside formulas
+
+Some of the most important formula inputs are time-aware. These include values such as `month`, `quarter`, `year`, `timestep`, and `lastActualDate`.
+
+Use them when the business rule depends on:
+
+- seasonality
+- period cutoffs
+- fiscal period behavior
+- rolling logic that should keep working after each close
+
+If the same time rule should still work next month, use [Relative time](/docs-new/time/relative-time) or built-in time helpers instead of hard-coded dates.
+
+## Financial-style calculations
+
+Oculon formulas often support financial-style logic such as rate-based planning, cash flow behavior, return logic, or forecast ramps. Even when those formulas are advanced, the same rule applies: keep the business meaning obvious.
+
+In practice, this usually means:
+
+- separate the input drivers from the final output
+- use helper variables for intermediate steps
+- review the result at both detail level and summary level
+
+## Choose the smallest useful function
+
+A short, obvious formula is usually better than a clever one.
+
+Prefer this approach:
+
+1. start with direct arithmetic if it expresses the rule clearly
+2. add a function when it removes repetition or ambiguity
+3. move complex logic into helper variables before the formula becomes hard to review
+
+## Related pages
+
+- [Formula basics](/docs-new/formulas/formula-basics)
+- [Conditional logic](/docs-new/formulas/conditional-logic)
+- [Helper variables and modifiers](/docs-new/formulas/helper-variables-and-modifiers)
+- [Common formula patterns](/docs-new/formulas/common-formula-patterns)

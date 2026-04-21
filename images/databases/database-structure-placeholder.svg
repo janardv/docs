@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F7F7F5"/>
+  <rect x="80" y="80" width="1440" height="740" rx="24" fill="#FFFFFF" stroke="#D6D6D1" stroke-width="4" stroke-dasharray="16 12"/>
+  <text x="130" y="180" fill="#222222" font-family="Arial, sans-serif" font-size="44" font-weight="700">Placeholder: database structure</text>
+  <text x="130" y="240" fill="#555555" font-family="Arial, sans-serif" font-size="26">Replace with a future Oculon screenshot showing rows, typed columns, date fields, and segmented data.</text>
+  <rect x="130" y="320" width="1340" height="360" rx="18" fill="#F5F6F8" stroke="#CFCFD4" stroke-width="3"/>
+  <line x1="130" y1="390" x2="1470" y2="390" stroke="#CFCFD4" stroke-width="3"/>
+  <line x1="330" y1="320" x2="330" y2="680" stroke="#CFCFD4" stroke-width="3"/>
+  <line x1="610" y1="320" x2="610" y2="680" stroke="#CFCFD4" stroke-width="3"/>
+  <line x1="980" y1="320" x2="980" y2="680" stroke="#CFCFD4" stroke-width="3"/>
+  <text x="170" y="368" fill="#222222" font-family="Arial, sans-serif" font-size="28" font-weight="700">Record</text>
+  <text x="380" y="368" fill="#222222" font-family="Arial, sans-serif" font-size="28" font-weight="700">Date field</text>
+  <text x="670" y="368" fill="#222222" font-family="Arial, sans-serif" font-size="28" font-weight="700">Category / segment</text>
+  <text x="1040" y="368" fill="#222222" font-family="Arial, sans-serif" font-size="28" font-weight="700">Numeric fields</text>
+  <text x="170" y="470" fill="#666666" font-family="Arial, sans-serif" font-size="24">One row per record</text>
+  <text x="380" y="470" fill="#666666" font-family="Arial, sans-serif" font-size="24">Time-aware review</text>
+  <text x="670" y="470" fill="#666666" font-family="Arial, sans-serif" font-size="24">Grouping and mapping</text>
+  <text x="1040" y="470" fill="#666666" font-family="Arial, sans-serif" font-size="24">Downstream inputs</text>
+  <text x="130" y="760" fill="#7A7A73" font-family="Arial, sans-serif" font-size="22">Stable path for screenshot replacement: /images/databases/database-structure-placeholder.svg</text>
+</svg>

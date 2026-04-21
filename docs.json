@@ -717,156 +717,398 @@
                         ]
                     }
                 ]
-            },
-            {
-                "tab": "Integration docs",
+              },
+              {
+                "group": "Your sidebar",
+                "expanded": false,
                 "pages": [
-                    "integration-docs/index"
+                  "docs-new/your-sidebar/navigate-the-sidebar",
+                  "docs-new/your-sidebar/organize-your-workspace",
+                  "docs-new/your-sidebar/search-and-quick-access",
+                  "docs-new/your-sidebar/sidebar-customization"
                 ]
-            },
-            {
-                "tab": "How to",
-                "groups": [
-                    {
-                        "group": "Overview",
-                        "pages": [
-                            "how-to/index"
-                        ]
-                    }
+              }
+            ]
+          },
+          {
+            "group": "Planning and analysis",
+            "pages": [
+              {
+                "group": "Variables",
+                "expanded": false,
+                "pages": [
+                  "docs-new/variables/what-is-a-variable",
+                  "docs-new/variables/variable-types",
+                  "docs-new/variables/create-and-edit-variables",
+                  "docs-new/variables/variable-formatting",
+                  "docs-new/variables/variable-behavior",
+                  "docs-new/variables/variable-references",
+                  "docs-new/variables/variable-best-practices",
+                  "docs-new/variables/variable-breakdown"
                 ]
-            },
-            {
-                "tab": "Old docs",
-                "groups": [
-                    {
-                        "group": "Getting Started",
-                        "expanded": true,
-                        "pages": [
-                            "support-docs/getting-started/welcome-to-oculon",
-                            "support-docs/getting-started/profile-setup",
-                            "support-docs/getting-started/navigating-oculon",
-                            "support-docs/getting-started/core-concepts",
-                            "support-docs/getting-started/oculon-glossary"
-                        ]
-                    },
-                    {
-                        "group": "Build \u0026 Model",
-                        "expanded": true,
-                        "pages": [
-                            "support-docs/oculon-basics/variable",
-                            "support-docs/oculon-basics/dimensions",
-                            "support-docs/oculon-basics/time",
-                            "support-docs/oculon-basics/database",
-                            "support-docs/oculon-basics/library/query-and-database",
-                            "support-docs/oculon-basics/data-integrations"
-                        ]
-                    },
-                    {
-                        "group": "Analyze \u0026 Use",
-                        "expanded": true,
-                        "pages": [
-                            "support-docs/oculon-basics/boards",
-                            "support-docs/oculon-basics/views",
-                            "support-docs/oculon-basics/compare"
-                        ]
-                    },
-                    {
-                        "group": "Formulas \u0026 Logic",
-                        "expanded": true,
-                        "pages": [
-                            "support-docs/oculon-basics/formulas/creating-formulas",
-                            "support-docs/oculon-basics/formulas/functions",
-                            "support-docs/oculon-basics/formulas/helper-variables",
-                            "support-docs/oculon-basics/currency-and-conversion"
-                        ]
-                    },
-                    {
-                        "group": "Plan \u0026 Collaborate",
-                        "expanded": true,
-                        "pages": [
-                            "support-docs/plan-and-collaborate/scenario"
-                        ]
-                    },
-                    {
-                        "group": "Guides",
-                        "expanded": true,
-                        "pages": [
-                            "support-docs/guides/build-your-first-model",
-                            "support-docs/guides/keyboard-shortcuts",
-                            "support-docs/guides/function-glossary"
-                        ]
-                    },
-                    {
-                        "group": "Settings \u0026 Access",
-                        "expanded": true,
-                        "pages": [
-                            {
-                                "group": "Account",
-                                "expanded": true,
-                                "pages": [
-                                    "support-docs/account/profile",
-                                    "support-docs/account/preferences",
-                                    "support-docs/account/notifications",
-                                    "support-docs/account/access-and-security"
-                                ]
-                            },
-                            {
-                                "group": "Admin",
-                                "expanded": true,
-                                "pages": [
-                                    "support-docs/admin/workspace",
-                                    "support-docs/admin/teamspace",
-                                    "support-docs/admin/members-and-roles",
-                                    "support-docs/admin/security",
-                                    "support-docs/admin/billing-and-plans",
-                                    "support-docs/admin/audit-logs",
-                                    "support-docs/admin/login-methods",
-                                    "support-docs/admin/saml-scim",
-                                    "support-docs/admin/usage-limits"
-                                ]
-                            }
-                        ]
-                    }
+              },
+              {
+                "group": "Dimensions",
+                "expanded": false,
+                "pages": [
+                  "docs-new/dimensions/what-is-a-dimension",
+                  "docs-new/dimensions/dimension-values",
+                  "docs-new/dimensions/using-dimensions-with-variables",
+                  "docs-new/dimensions/dimension-operations",
+                  "docs-new/dimensions/dimension-best-practices",
+                  "docs-new/dimensions/create-and-edit-dimension"
                 ]
-            }
+              },
+              {
+                "group": "Time",
+                "expanded": false,
+                "pages": [
+                  "docs-new/time/time-in-oculon",
+                  "docs-new/time/time-granularity",
+                  "docs-new/time/last-actual-date",
+                  "docs-new/time/relative-time",
+                  "docs-new/time/time-aggregation",
+                  "docs-new/time/time-rollups",
+                  "docs-new/time/time-best-practices"
+                ]
+              },
+              {
+                "group": "Formulas",
+                "expanded": false,
+                "pages": [
+                  "docs-new/formulas/formula-basics",
+                  "docs-new/formulas/formula-editor",
+                  "docs-new/formulas/conditional-logic",
+                  "docs-new/formulas/functions",
+                  "docs-new/formulas/helper-variables-and-modifiers",
+                  "docs-new/formulas/common-formula-patterns",
+                  "docs-new/formulas/formula-errors",
+                  "docs-new/formulas/formula-best-practices"
+                ]
+              },
+              {
+                "group": "Models",
+                "expanded": false,
+                "pages": [
+                  "docs-new/models/what-is-a-model",
+                  "docs-new/models/model-structure",
+                  "docs-new/models/linked-models",
+                  "docs-new/models/model-settings",
+                  "docs-new/models/versioning",
+                  "docs-new/models/model-best-practices"
+                ]
+              },
+              {
+                "group": "Databases",
+                "expanded": false,
+                "pages": [
+                  "docs-new/databases/what-is-a-database",
+                  "docs-new/databases/database-types",
+                  "docs-new/databases/database-structure",
+                  "docs-new/databases/working-with-data",
+                  "docs-new/databases/filters-sorts-and-grouping",
+                  "docs-new/databases/database-formulas",
+                  "docs-new/databases/linked-data",
+                  "docs-new/databases/refresh-and-sync-behavior",
+                  "docs-new/databases/database-best-practices"
+                ]
+              },
+              {
+                "group": "Scenarios",
+                "expanded": false,
+                "pages": [
+                  "docs-new/scenarios/what-is-a-scenario",
+                  "docs-new/scenarios/create-and-manage-scenarios",
+                  "docs-new/scenarios/scenario-sync-behavior",
+                  "docs-new/scenarios/scenario-overrides",
+                  "docs-new/scenarios/merge-scenarios",
+                  "docs-new/scenarios/compare-scenarios",
+                  "docs-new/scenarios/scenario-governance-and-access",
+                  "docs-new/scenarios/versioning-and-snapshots",
+                  "docs-new/scenarios/scenario-best-practices"
+                ]
+              },
+              {
+                "group": "Views",
+                "expanded": false,
+                "pages": [
+                  "docs-new/views/what-is-a-view",
+                  "docs-new/views/creating-and-configuring-views",
+                  "docs-new/views/filters-sorts-and-grouping",
+                  "docs-new/views/compare-in-views",
+                  "docs-new/views/sharing-views",
+                  "docs-new/views/using-views-on-boards",
+                  "docs-new/views/view-best-practices"
+                ]
+              },
+              {
+                "group": "Boards",
+                "expanded": false,
+                "pages": [
+                  "docs-new/boards/what-is-a-board",
+                  "docs-new/boards/board-layout",
+                  "docs-new/boards/charts",
+                  "docs-new/boards/tables-on-boards",
+                  "docs-new/boards/kpi-and-summary-blocks",
+                  "docs-new/boards/board-interaction",
+                  "docs-new/boards/sharing-boards",
+                  "docs-new/boards/board-best-practices"
+                ]
+              },
+              {
+                "group": "Sharing & permissions",
+                "expanded": false,
+                "pages": [
+                  "docs-new/sharing-and-permissions/sharing-basics",
+                  "docs-new/sharing-and-permissions/roles-and-permissions",
+                  "docs-new/sharing-and-permissions/members-guests-and-groups",
+                  "docs-new/sharing-and-permissions/permission-inheritance",
+                  "docs-new/sharing-and-permissions/comments-and-collaboration",
+                  "docs-new/sharing-and-permissions/sensitive-data-controls",
+                  "docs-new/sharing-and-permissions/external-sharing-and-exports"
+                ]
+              },
+              {
+                "group": "Troubleshooting",
+                "expanded": false,
+                "pages": [
+                  "docs-new/troubleshooting/formula-issues",
+                  "docs-new/troubleshooting/data-mismatches",
+                  "docs-new/troubleshooting/scenario-issues",
+                  "docs-new/troubleshooting/permissions-issues",
+                  "docs-new/troubleshooting/performance-issues",
+                  "docs-new/troubleshooting/common-errors"
+                ]
+              },
+              {
+                "group": "Compare",
+                "expanded": false,
+                "pages": [
+                  "docs-new/compare/what-is-a-compare"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "AI",
+            "pages": [
+              {
+                "group": "Overview",
+                "expanded": false,
+                "pages": [
+                  "docs-new/ai/ai-in-oculon",
+                  "docs-new/ai/modeling-with-ai",
+                  "docs-new/ai/reporting-with-ai",
+                  "docs-new/ai/plan-mode"
+                ]
+              },
+              {
+                "group": "Custom agents",
+                "expanded": false,
+                "pages": [
+                  "docs-new/custom-agents/what-are-custom-agents",
+                  "docs-new/custom-agents/create-a-custom-agent",
+                  "docs-new/custom-agents/agent-context-and-knowledge",
+                  "docs-new/custom-agents/agent-actions",
+                  "docs-new/custom-agents/agent-permissions",
+                  "docs-new/custom-agents/agent-connections",
+                  "docs-new/custom-agents/agent-safety-and-review",
+                  "docs-new/custom-agents/agent-best-practices"
+                ]
+              },
+              {
+                "group": "Context and connections",
+                "expanded": false,
+                "pages": [
+                  "docs-new/ai/mcp",
+                  "docs-new/ai/skills",
+                  "docs-new/ai/connectors"
+                ]
+              },
+              "docs-new/troubleshooting/agent-issues"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              {
+                "group": "Workspace setup",
+                "expanded": false,
+                "pages": [
+                  "docs-new/admin-guide/workspace-settings",
+                  "docs-new/admin-guide/groups"
+                ]
+              },
+              {
+                "group": "Access and security",
+                "expanded": false,
+                "pages": [
+                  "docs-new/admin-guide/members-and-roles",
+                  "docs-new/admin-guide/login-methods",
+                  "docs-new/admin-guide/security",
+                  "docs-new/admin-guide/audit-logs"
+                ]
+              },
+              {
+                "group": "Billing and usage",
+                "pages": [
+                  "docs-new/admin-guide/billing-and-plans",
+                  "docs-new/admin-guide/usage-and-limits"
+                ]
+              }
+            ]
+          }
         ]
-    },
-    "logo": {
-        "light": "/logo/Logo Light.png",
-        "dark": "/logo/Logo Dark.png",
-        "href": "https://oculon.ai/"
-    },
-    "navbar": {
-        "links": [
-            {
-                "label": "Support",
-                "href": "mailto:hello@moculon.ai"
-            }
+      },
+      {
+        "tab": "Integration docs",
+        "pages": [
+          "integration-docs/index"
         ]
-    },
-    "contextual": {
-        "options": [
-            "copy",
-            "view",
-            "chatgpt",
-            "claude",
-            "perplexity",
-            "mcp",
-            "cursor",
-            "vscode"
+      },
+      {
+        "tab": "How to",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "how-to/index"
+            ]
+          }
         ]
-    },
-    "footer": {
-        "socials": {
-            "linkedin": "https://linkedin.com/company/oculon-ai",
-            "x": "https://x.com/OculonHQ",
-            "youtube": "https://www.youtube.com/@OculonAI"
-        }
-    },
-    "icons": {
-        "library": "lucide"
-    },
-    "interaction": {
-        "drilldown": false
+      },
+      {
+        "tab": "Old docs",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "expanded": true,
+            "pages": [
+              "support-docs/getting-started/welcome-to-oculon",
+              "support-docs/getting-started/profile-setup",
+              "support-docs/getting-started/navigating-oculon",
+              "support-docs/getting-started/core-concepts",
+              "support-docs/getting-started/oculon-glossary"
+            ]
+          },
+          {
+            "group": "Build & Model",
+            "expanded": true,
+            "pages": [
+              "support-docs/oculon-basics/variable",
+              "support-docs/oculon-basics/dimensions",
+              "support-docs/oculon-basics/time",
+              "support-docs/oculon-basics/database",
+              "support-docs/oculon-basics/library/query-and-database",
+              "support-docs/oculon-basics/data-integrations"
+            ]
+          },
+          {
+            "group": "Analyze & Use",
+            "expanded": true,
+            "pages": [
+              "support-docs/oculon-basics/boards",
+              "support-docs/oculon-basics/views",
+              "support-docs/oculon-basics/compare"
+            ]
+          },
+          {
+            "group": "Formulas & Logic",
+            "expanded": true,
+            "pages": [
+              "support-docs/oculon-basics/formulas/creating-formulas",
+              "support-docs/oculon-basics/formulas/functions",
+              "support-docs/oculon-basics/formulas/helper-variables",
+              "support-docs/oculon-basics/currency-and-conversion"
+            ]
+          },
+          {
+            "group": "Plan & Collaborate",
+            "expanded": true,
+            "pages": [
+              "support-docs/plan-and-collaborate/scenario"
+            ]
+          },
+          {
+            "group": "Guides",
+            "expanded": true,
+            "pages": [
+              "support-docs/guides/build-your-first-model",
+              "support-docs/guides/keyboard-shortcuts",
+              "support-docs/guides/function-glossary"
+            ]
+          },
+          {
+            "group": "Settings & Access",
+            "expanded": true,
+            "pages": [
+              {
+                "group": "Account",
+                "expanded": true,
+                "pages": [
+                  "support-docs/account/profile",
+                  "support-docs/account/preferences",
+                  "support-docs/account/notifications",
+                  "support-docs/account/access-and-security"
+                ]
+              },
+              {
+                "group": "Admin",
+                "expanded": true,
+                "pages": [
+                  "support-docs/admin/workspace",
+                  "support-docs/admin/teamspace",
+                  "support-docs/admin/members-and-roles",
+                  "support-docs/admin/security",
+                  "support-docs/admin/billing-and-plans",
+                  "support-docs/admin/audit-logs",
+                  "support-docs/admin/login-methods",
+                  "support-docs/admin/saml-scim",
+                  "support-docs/admin/usage-limits"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/Logo Light.png",
+    "dark": "/logo/Logo Dark.png",
+    "href": "https://oculon.ai/"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hello@moculon.ai"
+      }
+    ]
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/oculon-ai",
+      "x": "https://x.com/OculonHQ",
+      "youtube": "https://www.youtube.com/@OculonAI"
     }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "interaction": {
+    "drilldown": false
+  }
 }

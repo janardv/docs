@@ -1,0 +1,96 @@
+---
+title: Database formulas
+description: Use formulas in databases to keep row-level logic readable and consistent in Oculon.
+icon: sigma
+---
+
+Database formulas let you define logic close to the records they describe. This is useful when a database field should follow a shared rule and only certain rows or segments need exceptions.
+
+![Placeholder image for future Oculon screenshot showing default database formulas, overrides, and actual versus planned logic](/images/databases/database-formulas-placeholder.svg)
+
+## When database formulas help
+
+Use database formulas when you want the logic to live with the dataset itself rather than only in a downstream model.
+
+Common uses include:
+
+- calculated fields derived from other database columns
+- default row logic shared across many records
+- controlled exceptions for one row or one segment
+- time-aware record logic that needs both `actual formula` and `planned formula` behavior
+
+## Start with the default formula
+
+A good default formula gives most records one shared rule.
+
+That helps because:
+
+- the logic stays consistent
+- new records inherit the intended behavior
+- reviewers can tell what is standard versus what is an exception
+
+If most rows should calculate the same way, start there before you introduce overrides.
+
+## Override only where the business rule changes
+
+Some datasets need one-off logic for a specific row, category, or segment. Use that sparingly.
+
+Overrides are helpful when:
+
+- a single record has a justified exception
+- one segment follows a different business rule
+- the default logic is still correct for most of the database
+
+If overrides become common, the structure or the base formula may need to be redesigned.
+
+## Keep actual and planned behavior explicit
+
+If a database formula behaves differently across historical and forward-looking periods, make that split intentional.
+
+Use:
+
+- `actual formula` for historical logic
+- `planned formula` for forward-looking logic
+
+If the cutoff matters, make the relationship to the [`Last actual date`](/docs-new/time/last-actual-date) readable instead of hiding it in a hard-to-review expression.
+
+## Inherited logic should stay easy to review
+
+The biggest risk with database formulas is hidden complexity.
+
+Reviewers should be able to tell:
+
+- which logic is the default
+- which rows are exceptions
+- whether a result is inherited or explicit
+- whether a formula belongs in the database or should move into a model instead
+
+## Database formula versus model formula
+
+Use a database formula when the logic belongs to the record itself.
+
+Use a model formula when the logic belongs to:
+
+- planning assumptions
+- cross-record calculations
+- scenario behavior
+- model-wide business rules
+
+That boundary keeps databases cleaner and models easier to govern.
+
+## A practical review workflow
+
+When a database formula looks wrong:
+
+1. check the raw record values first
+2. review the default formula
+3. confirm whether the row is inheriting that default or using an override
+4. check whether the issue is on the `actual formula` or `planned formula` side
+5. confirm the result still behaves correctly downstream
+
+## Related pages
+
+- [Formula basics](/docs-new/formulas/formula-basics)
+- [Formula best practices](/docs-new/formulas/formula-best-practices)
+- [Working with data](/docs-new/databases/working-with-data)
+- [Last actual date](/docs-new/time/last-actual-date)

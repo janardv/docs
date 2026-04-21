@@ -1,22 +1,77 @@
 ---
 title: Time granularity
-description: Choose the right time granularity for planning, reporting, and aggregation.
+description: Choose the right level of time detail for planning, reporting, and model maintenance.
 icon: calendar
 ---
 
-Time granularity defines the level of detail used for each period in the model. Most planning models use monthly granularity, but the right choice depends on the decisions you need to support.
+Time granularity defines how often Oculon stores and evaluates each period in a model. It is one of the first decisions you should make because it affects formulas, reporting cadence, and how much model maintenance you take on later.
 
+## Why granularity matters
 
-## Common granularity choices
+Granularity changes more than the column headers in a table. It affects:
 
-- **Monthly**: best for most FP&A workflows and rolling forecasts.
-- **Quarterly**: useful for higher-level planning or executive reporting.
-- **Yearly**: useful for long-range planning with low operational detail.
+- how much detail you can model
+- how often users review and update values
+- how much relative time logic you need
+- how important [`Time rollups`](/docs-new/time/time-rollups) become in reporting
+- how much model complexity you carry over time
 
-## How to choose
+## Supported granularities in Oculon
 
-Use the most detailed level that still supports how the business reviews performance. If the business works month by month, start there. If the model is strategic only, quarterly may be enough.
+The current docs assume these supported model granularities in Oculon:
 
-## The tradeoff
+- **Monthly**: best for most operating plans, rolling forecasts, and management reporting.
+- **Quarterly**: useful when teams plan at a higher level and do not need month-by-month operational detail.
+- **Yearly**: useful for long-range planning, target setting, or simple strategic models.
 
-More detail gives you finer control, but it also increases model size and maintenance. Choose a granularity that helps decisions, not just one that feels more precise.
+## How to choose the right granularity
+
+Choose the most detailed level that the business will actually use.
+
+Start with these questions:
+
+- Do you review performance every month, quarter, or year?
+- Do formulas depend on seasonality or month-end timing?
+- Will users make forecast changes period by period?
+- Do you need detailed budget versus actual analysis during close?
+
+If the answer to most of those questions is monthly, start with a monthly model. If the model is mostly strategic, quarterly may be enough.
+
+## Examples
+
+### Monthly model
+
+Use monthly granularity when you need rolling forecasts, monthly close reviews, hiring plans, spend analysis, or detailed budget versus actual comparisons.
+
+### Quarterly model
+
+Use quarterly granularity when the business mainly reviews performance at quarter level and the extra detail of monthly planning would add maintenance without changing decisions.
+
+### Yearly model
+
+Use yearly granularity when the goal is long-range planning, scenario framing, or target setting rather than operational forecasting.
+
+## How granularity affects other time features
+
+Granularity is closely tied to the rest of the Time section:
+
+- It changes how [`Relative time`](/docs-new/time/relative-time) references behave.
+- It influences how often actual and planned formulas are evaluated.
+- It determines which period groups appear in [`Time rollups`](/docs-new/time/time-rollups).
+- It shapes how important [`Time aggregation`](/docs-new/time/time-aggregation) becomes when you summarize a metric.
+
+## Common mistakes
+
+Watch for these issues:
+
+- choosing monthly detail just because it feels safer, even when nobody reviews that level
+- choosing quarterly detail for a model that still needs monthly close and forecast updates
+- changing granularity after formulas, scenarios, and boards are already in use
+- assuming a coarser model will automatically solve problems that are really about formula design or governance
+
+## Related pages
+
+- [Time in Oculon](/docs-new/time/time-in-oculon)
+- [Time rollups](/docs-new/time/time-rollups)
+- [Time aggregation](/docs-new/time/time-aggregation)
+- [Time best practices](/docs-new/time/time-best-practices)

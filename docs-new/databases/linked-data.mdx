@@ -1,19 +1,66 @@
 ---
 title: Linked data
-description: Use linked data to connect source information across your Oculon setup.
+description: Use linked database data across models, dimensions, and reporting in Oculon.
 icon: link
 ---
 
-Linked data keeps source information connected to the parts of Oculon that need it.
+Linked data keeps database records connected to the parts of Oculon that need them. That makes the data more reusable, but it also means source changes can have wider downstream effects.
+
+![Placeholder image for future Oculon screenshot showing database fields linked into models, dimensions, and boards](/images/databases/linked-data-placeholder.svg)
 
 ## Where linked data shows up
 
-You may link database fields into variables, use shared dimensions from imported data, or reuse the same database across several models and boards.
+Database data may later be used in:
 
-## Why linked data is useful
+- models and model inputs
+- dimension mappings
+- shared reporting views
+- boards that depend on the same underlying records
 
-Linked data reduces duplicate maintenance. When the source updates, the connected planning logic can refresh from the same foundation instead of requiring manual re-entry.
+This is why a database should not be treated as isolated infrastructure once it is in active use.
 
-## What to watch
+## Why linked data is valuable
 
-If the source structure changes, linked logic can break quietly. Review mappings and dependent models whenever a source system changes field names, categories, or date behavior.
+Linked data reduces duplicate maintenance.
+
+When the source updates cleanly:
+
+- the same database can support several workflows
+- teams do not need to rebuild the same dataset repeatedly
+- source-level cleanup improves several downstream outputs at once
+
+## What breaks when the source changes
+
+Linked workflows become fragile when the source structure changes without review.
+
+Common risks include:
+
+- renamed fields
+- changed category values
+- inconsistent date behavior
+- missing records after a refresh
+- structural changes that no longer match downstream mappings
+
+## Review dependencies after change
+
+If the database changes, review the linked workflows before you assume everything still behaves correctly.
+
+Start with:
+
+- the mapped fields
+- any dependent dimensions
+- downstream models
+- key boards or tables used by other teams
+
+## Keep ownership visible
+
+Linked data works best when the source database has a clear owner and the downstream consumers understand what they are inheriting.
+
+That reduces the chance that one team quietly changes a source structure that several other teams depend on.
+
+## Related pages
+
+- [What is a database](/docs-new/databases/what-is-a-database)
+- [Database structure](/docs-new/databases/database-structure)
+- [Working with data](/docs-new/databases/working-with-data)
+- [Linked models](/docs-new/models/linked-models)

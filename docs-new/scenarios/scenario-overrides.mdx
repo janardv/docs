@@ -1,19 +1,66 @@
 ---
 title: Scenario overrides
-description: Use scenario overrides to change values without modifying your base setup.
+description: Use overrides to make scenario-specific changes without breaking inheritance unnecessarily.
 icon: sliders-horizontal
 ---
 
-An override is a value or logic change that exists only inside the active scenario.
+An override is a value or logic change that exists only inside the active scenario. Overrides are what let a branch behave differently without rebuilding the whole model.
 
-## When to use an override
+![Placeholder image for future Oculon screenshot showing highlighted overridden cells and the reset override flow](/images/scenarios/scenario-overrides-placeholder.svg)
 
-Use an override when you want to test a change to one assumption, one section, or one planning rule without rebuilding the whole model.
+## What an override does
+
+When you override a value in a scenario, that value stops behaving like the inherited baseline for that branch.
+
+This is useful because it lets you:
+
+- test one assumption without changing `Main Scenario`
+- isolate one row or cell from the inherited baseline
+- compare a targeted local change against the shared reference state
 
 ## Keep overrides intentional
 
-Too many small overrides can turn a clean scenario into a hard-to-review branch. Group related changes together and document the reason for major scenario adjustments.
+Overrides are powerful, but too many small overrides can make a scenario hard to review.
 
-## Review overrides before merging
+A clean scenario usually has:
 
-Before you merge a scenario back to a baseline, review which overrides are still meaningful. Merge only the changes you are ready to adopt broadly.
+- a clear purpose
+- a manageable set of local changes
+- a reviewer who can explain why those changes exist
+
+If a scenario becomes a patchwork of unrelated overrides, it is usually time to clean it up or split the work into separate branches.
+
+## Inherited versus overridden values
+
+The current feature model assumes users should be able to understand whether a value is inherited or overridden.
+
+That matters because:
+
+- inherited values may still change if `auto-sync from main` is on
+- overridden values are local to the scenario
+- merge decisions should be based on overrides, not on the full visible state
+
+## Reset override
+
+`Reset override` removes the scenario-local change and returns the value to inherited behavior.
+
+After a reset:
+
+- the local override should no longer apply
+- the value should match the inherited source again
+- future upstream changes should flow through again if `auto-sync from main` is still on
+
+This is one of the most important cleanup actions in the feature because it lets users undo local divergence without rewriting the baseline.
+
+## Overrides and read-only scenarios
+
+If a scenario is read-only, users may still need to understand what was overridden, but they should not be able to create or reset overrides there.
+
+That distinction helps keep approved baselines reviewable without making them mutable again by accident.
+
+## Related pages
+
+- [Scenario sync behavior](/docs-new/scenarios/scenario-sync-behavior)
+- [Merge scenarios](/docs-new/scenarios/merge-scenarios)
+- [Scenario governance and access](/docs-new/scenarios/scenario-governance-and-access)
+- [Scenario best practices](/docs-new/scenarios/scenario-best-practices)

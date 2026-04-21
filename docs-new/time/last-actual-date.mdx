@@ -1,0 +1,92 @@
+---
+title: Last actual date
+description: Understand how Oculon separates historical and planned behavior across a model.
+icon: split
+---
+
+The `Last actual date` is the model setting that tells Oculon where actual behavior ends and planned behavior begins. It is one of the most important controls in any model that combines historicals with forecast logic.
+
+![Last actual date control in Oculon](/images/getting-started/fr-last-actual.png)
+
+## Why it matters
+
+A clear cutoff helps you avoid mixing observed results with forward-looking assumptions. It also gives teams one shared reference point for close, forecast updates, and scenario reviews.
+
+## How it works
+
+Oculon uses the `Last actual date` to decide which logic should apply in each period:
+
+- periods up to and including the `Last actual date` should behave like actuals
+- periods after that cutoff should follow planned behavior
+- variables can use different `actual formula` and `planned formula` logic on each side of the cutoff
+- boards, views, and comparisons should read that split consistently when they show actual versus plan output
+
+This is why the setting matters even when the formulas themselves do not change. The same variable may calculate differently depending on which side of the cutoff you are reviewing.
+
+## When to update it
+
+You usually update the `Last actual date` as part of the regular close cycle.
+
+Common triggers include:
+
+- a new month or quarter has closed
+- you have refreshed source data and want the newly closed period treated as actuals
+- you need to move the cutoff back because a period is not final yet
+
+Keep the timing consistent. Teams move faster when everyone knows who updates the cutoff and when that change happens.
+
+## What happens when you move it forward
+
+When you move the `Last actual date` forward:
+
+- one more period moves onto the actuals side of the model
+- the `actual formula` becomes the active logic for that period
+- the `planned formula` starts one period later
+- reports that separate actuals from plan should reflect the new cutoff
+
+After you change it, review the key views, charts, and board summaries that leadership depends on.
+
+## What happens when you move it back
+
+When you move the `Last actual date` back:
+
+- later periods return to planned behavior
+- period comparisons can change because the baseline changed
+- any close review that depended on the newer cutoff needs to be rechecked
+
+Moving the cutoff back is useful when you need to reopen a period, correct source data, or pause a close workflow that moved too early.
+
+## What to review during close
+
+Use this checklist after you update the `Last actual date`:
+
+- confirm the new period is truly closed
+- refresh any source data the model depends on
+- review the first period before and after the cutoff
+- recheck executive charts and summary tables
+- confirm that scenario comparisons still use the intended baseline
+
+## FAQ
+
+### What if actual data is missing before the last actual date?
+
+Oculon still evaluates the actuals side of the model using the logic you defined there. If the `actual formula` depends on missing source data, review the result carefully before you publish the model.
+
+### Why does a number change when I move the last actual date?
+
+The active logic may have changed. A period that previously used the `planned formula` may now use the `actual formula`, or the other way around.
+
+### Who should update the last actual date?
+
+Use a clear owner. In most teams, the person who manages close or owns the model should make the change so everyone works from the same baseline.
+
+### What should I review first if the cutoff looks wrong?
+
+Start with the model settings, then review the first period before and after the cutoff. That usually shows whether the issue is with the setting itself, the source data, or the actual versus planned formulas.
+
+## Related pages
+
+- [Time in Oculon](/docs-new/time/time-in-oculon)
+- [Relative time](/docs-new/time/relative-time)
+- [Model settings](/docs-new/models/model-settings)
+- [Helper variables and modifiers](/docs-new/formulas/helper-variables-and-modifiers)

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F7F7F5"/>
+  <rect x="80" y="80" width="1440" height="740" rx="24" fill="#FFFFFF" stroke="#D6D6D1" stroke-width="4" stroke-dasharray="16 12"/>
+  <text x="130" y="180" fill="#222222" font-family="Arial, sans-serif" font-size="44" font-weight="700">Placeholder: filters, sorts, and grouping</text>
+  <text x="130" y="240" fill="#555555" font-family="Arial, sans-serif" font-size="26">Replace with a future Oculon screenshot showing database review controls and grouped records.</text>
+  <rect x="130" y="320" width="220" height="56" rx="28" fill="#EEF2FF"/>
+  <rect x="380" y="320" width="220" height="56" rx="28" fill="#EEF2FF"/>
+  <rect x="630" y="320" width="260" height="56" rx="28" fill="#EEF2FF"/>
+  <text x="180" y="356" fill="#3F4F9D" font-family="Arial, sans-serif" font-size="24" font-weight="700">Filter</text>
+  <text x="438" y="356" fill="#3F4F9D" font-family="Arial, sans-serif" font-size="24" font-weight="700">Sort</text>
+  <text x="702" y="356" fill="#3F4F9D" font-family="Arial, sans-serif" font-size="24" font-weight="700">Group by</text>
+  <rect x="130" y="430" width="1340" height="270" rx="18" fill="#F5F6F8" stroke="#CFCFD4" stroke-width="3"/>
+  <text x="180" y="500" fill="#222222" font-family="Arial, sans-serif" font-size="30" font-weight="700">Region: North</text>
+  <text x="180" y="560" fill="#666666" font-family="Arial, sans-serif" font-size="24">Grouped records would appear here in the future product screenshot.</text>
+  <text x="180" y="620" fill="#666666" font-family="Arial, sans-serif" font-size="24">Use this placeholder path until the final app image is ready.</text>
+  <text x="130" y="760" fill="#7A7A73" font-family="Arial, sans-serif" font-size="22">Stable path for screenshot replacement: /images/databases/filters-sorts-grouping-placeholder.svg</text>
+</svg>

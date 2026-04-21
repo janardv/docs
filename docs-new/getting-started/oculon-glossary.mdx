@@ -6,11 +6,11 @@ A variable is a named value that represents a metric, assumption, or calculation
 ## Helper Variables
 Helper variables are intermediate variables used to simplify complex formulas by breaking them into smaller, reusable steps.
 
-## Actual Formuala
+## Actual formula
 An actual formula defines how values are calculated using real, observed data within the model.
 
-## Plan Formuala
-A plan formula defines how future or projected values are calculated based on formula, assumptions, drivers, or scenarios.
+## Planned formula
+A planned formula defines how future or projected values are calculated based on assumptions, drivers, or scenarios.
 
 ## Time Cell values
 A time value represents the value of a variable for a specific time period (e.g., a month or quarter) within the model.
@@ -53,6 +53,12 @@ Integrations are connections to external data sources that allow you to import, 
 ## Granularity
 Granularity determines the time interval at which data is represented in the model, such as monthly, quarterly, or yearly.
 
+## Time aggregation
+Time aggregation defines what a metric should mean when it is shown at quarter or year level.
+
+## Time rollups
+Time rollups define how lower-level periods are grouped into higher-level periods, such as months into quarters.
+
 ## Scenarios
 A variable is a named value that represents a metric, assumption, or calculation used to build and drive your financial model.
 
@@ -74,11 +80,11 @@ A workspace is the top-level environment that contains all your spaces, models, 
 ## Model Date Range
 The model date range defines the start and end periods over which the model is built and analyzed.
 
-## Last Actual Date
-The last actual date marks the most recent period for which real (actual) data is available, separating actuals from planned values.
+## Last actual date
+The last actual date marks the most recent period for which real data is available, separating actuals from planned values.
 
-## Relative Date
-Relative date allows time periods to adjust dynamically based on the current date instead of fixed calendar dates.(Month 1, Month 2,..)
+## Relative time
+Relative time allows periods to adjust dynamically based on the current context instead of fixed calendar dates, such as `this month`, `last quarter`, or `month 1`.
 
 ## Pages(Linked Items)
 A variable is a named value that represents a metric, assumption, or calculation used to build and drive your financial model.

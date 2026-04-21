@@ -1,27 +1,113 @@
 ---
 title: Formula errors
-description: Understand the most common formula errors and how to resolve them.
+description: Diagnose common formula errors and unexpected outputs in Oculon.
 icon: triangle-alert
 ---
 
-When a formula returns an unexpected value, start with structure before you assume the math is wrong.
+Formula issues usually become visible as wrong numbers, blanks where a value should exist, or logic that changes unexpectedly across time or dimensions. When that happens, start with the formula itself before you assume the problem is in a board or report.
 
-## Common causes
+## Start at the source variable
 
-- a referenced variable was renamed or moved
-- the formula is using the wrong scenario or time context
-- a dimensioned variable is being used without the expected breakdown
-- a helper variable returns blank when the main formula expects a number
-- the output is aggregating differently than you assumed
+The fastest debugging path is usually:
 
-## A practical debugging order
+1. open the source variable
+2. review the exact formula text
+3. confirm the references still point to the intended variables
+4. check time and dimension context
+5. review the result at both detail level and summary level
 
-1. Open the source variable.
-2. Check the exact formula text.
-3. Confirm referenced variables resolve correctly.
-4. Review time and dimension context.
-5. Compare the output in a simple view before checking a board.
+This keeps the investigation focused on the place where the logic actually lives.
+
+## Wrong number of arguments
+
+Some errors come from calling a function with too many or too few inputs.
+
+Check:
+
+- whether the function expects one value or several
+- whether you accidentally left out a closing value in a conditional branch
+- whether the formula became malformed during editing
+
+If the formula is difficult to parse, simplify it before you debug it further.
+
+## Bad or stale references
+
+References can break when variables are renamed, moved, or replaced.
+
+Review:
+
+- the exact variable names in the formula
+- whether linked or referenced variables still exist
+- whether the formula now points to a broader or narrower variable than you intended
+
+When references are unclear, use [Variable references](/docs-new/variables/variable-references) to reset the formula to the smallest reliable building block.
+
+## Aggregation mismatches
+
+Sometimes the base formula is correct, but the summary meaning is wrong.
+
+Common signs include:
+
+- a total that looks too high because the metric is being summed
+- a quarter or year view that does not match the intended business meaning
+- a formula that behaves correctly by month but not in a higher-level review
+
+When this happens, review the formula together with [Time aggregation](/docs-new/time/time-aggregation).
+
+## Dimension and context issues
+
+Formulas can behave differently when a variable is dimensioned.
+
+Check whether:
+
+- the formula expects a single dimension value or an aggregated result
+- the result is being reviewed on the correct row or item
+- the formula should live on the aggregate row instead of being copied into detail rows
+
+If the model structure changed recently, review [Using dimensions with variables](/docs-new/dimensions/using-dimensions-with-variables) before rewriting the formula.
+
+## Blanks and fallback behavior
+
+Blank handling is easy to miss.
+
+Review:
+
+- whether the formula can return `blank`
+- whether downstream math expects a number instead
+- whether a date or driver input is still empty
+
+Keep the fallback rule explicit. Do not assume a blank value will always behave the way you want at every step in the model.
+
+## Cutoff mistakes around the Last actual date
+
+Many formula issues appear right at the boundary between actuals and plan.
+
+Check:
+
+- whether the `actual formula` and `planned formula` are both defined correctly
+- whether the formula is using [`lastActualDate`](/docs-new/formulas/helper-variables-and-modifiers) intentionally
+- whether the first planned period behaves differently than expected after close
+
+If the problem appeared after a close update, review the [`Last actual date`](/docs-new/time/last-actual-date) before changing the formula.
+
+## When to use broader troubleshooting
+
+If the formula itself looks correct, the issue may be elsewhere.
+
+Move to [Formula issues](/docs-new/troubleshooting/formula-issues) when you need to investigate:
+
+- source data problems
+- scenario context outside the variable
+- downstream board or view behavior
+- model-wide issues that are not caused by the formula text itself
 
 ## Prevent repeat issues
 
-Most formula issues come from hidden complexity. Shorter formulas, stable naming, and helper variables reduce the chance of a repeated error.
+Most recurring formula errors come from hidden complexity. Shorter formulas, stable naming, explicit cutoff logic, and helper variables reduce the chance that the same issue returns later.
+
+## Related pages
+
+- [Formula editor](/docs-new/formulas/formula-editor)
+- [Conditional logic](/docs-new/formulas/conditional-logic)
+- [Helper variables and modifiers](/docs-new/formulas/helper-variables-and-modifiers)
+- [Formula issues](/docs-new/troubleshooting/formula-issues)

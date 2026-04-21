@@ -1,10 +1,10 @@
 ---
 title: Model best practices
-description: Apply practical guidance for designing models that remain clear and scalable.
+description: Apply practical guidance for designing models that stay clear, scalable, and easy to hand off.
 icon: badge-check
 ---
 
-A scalable model is one that remains understandable after more people start using it.
+A strong model stays understandable after more people start using it.
 
 ## Recommended practices
 
@@ -14,6 +14,22 @@ A scalable model is one that remains understandable after more people start usin
 - Use scenarios for experiments, not hidden manual copies.
 - Review boards and views as part of model QA, not only the grid.
 
+## Keep ownership visible
+
+Use clear model names, clear owners, and clear audiences. Teams move faster when people can tell which model is active, who maintains it, and which outputs others should trust.
+
+## Avoid stale or duplicated logic
+
+Duplicate logic creates drift. Retire models that are no longer active, and avoid creating parallel versions of the same planning logic unless there is a clear reason.
+
+If the structure stays the same and you need a checkpoint, use [Versioning](/docs-new/models/versioning) instead of treating every milestone like a separate working model.
+
 ## Build for handoff
 
-Assume another planner will inherit the model later. Clean naming, helper variables, and consistent structure are what make that handoff successful.
+Assume another planner will inherit the model later. Clean naming, helper variables, consistent structure, and visible ownership are what make that handoff successful.
+
+## Related pages
+
+- [Model structure](/docs-new/models/model-structure)
+- [Linked models](/docs-new/models/linked-models)
+- [Scenario best practices](/docs-new/scenarios/scenario-best-practices)

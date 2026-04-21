@@ -1,0 +1,82 @@
+---
+title: Scenario governance and access
+description: Control who can view, edit, merge, and remove scenarios safely in Oculon.
+icon: shield-check
+---
+
+Scenario governance keeps experimentation safe and approved states trustworthy. In Oculon, the most important controls separate three questions clearly: who can see a scenario, who can change it, and which scenarios are allowed to push changes out through merge.
+
+![Placeholder image for future Oculon screenshot showing scenario governance controls such as Allow Changes, Allow Merging, and Who can view](/images/scenarios/scenario-governance-placeholder.svg)
+
+## Why governance matters
+
+Without clear scenario controls, teams can accidentally:
+
+- edit a scenario that should be locked
+- merge from a branch that was never meant to become baseline
+- expose sensitive scenario work to the wrong audience
+- delete a branch that others still depend on
+
+Governance is what makes scenarios usable in both exploratory planning and controlled planning.
+
+## Allow Changes controls editability
+
+`Allow Changes` answers whether the scenario is editable.
+
+- When it is `ON`, permitted users can edit the scenario.
+- When it is `OFF`, the scenario behaves like a read-only or locked branch.
+
+This is the control that protects approved baselines from casual mutation.
+
+## Allow Merging controls source-side mergeability
+
+`Allow Merging` is separate from editability.
+
+It answers whether the scenario can act as a merge source in `Merge Changes`.
+
+That distinction matters because a scenario may still be useful for review or comparison even if it should not be allowed to push changes into another branch yet.
+
+## Who can view controls visibility
+
+`Who can view` determines which users are allowed to see and access a scenario.
+
+The main expectations are:
+
+- unauthorized users should not see restricted scenarios in the switcher
+- direct links should still re-check permissions
+- compare and merge flows should respect the same visibility rules
+
+Visibility is not the same as edit rights. A scenario can be visible but read-only.
+
+## Delete should be deliberate
+
+Deleting a scenario is a governance action, not routine cleanup.
+
+Current expectations should remain simple:
+
+- `Main Scenario` cannot be deleted
+- delete should require a deliberate confirmation path
+- deletion should be treated as auditable and high-trust
+
+If a scenario still matters as a baseline, it is usually safer to lock or preserve it before considering deletion.
+
+## Direct links and permissions still matter
+
+Links should preserve scenario context, but they should never bypass access rules.
+
+If a user opens a direct link to a scenario they cannot access, the product should show a clear unavailable or permission state rather than silently falling back to another branch.
+
+## What comes next
+
+The near-term product direction may add lighter lifecycle tools such as scenario status or approval flow. Those ideas can help summarize governance more clearly later, but the current user story still starts with the existing controls:
+
+- `Allow Changes`
+- `Allow Merging`
+- `Who can view`
+
+## Related pages
+
+- [Create and manage scenarios](/docs-new/scenarios/create-and-manage-scenarios)
+- [Merge scenarios](/docs-new/scenarios/merge-scenarios)
+- [Versioning and snapshots](/docs-new/scenarios/versioning-and-snapshots)
+- [Roles and permissions](/docs-new/sharing-and-permissions/roles-and-permissions)
