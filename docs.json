@@ -453,7 +453,7 @@
     "navigation": {
         "tabs": [
             {
-                "tab": "Docs new",
+                "tab": "Concepts",
                 "groups": [
                     {
                         "group": "Start here",
@@ -719,13 +719,7 @@
                 ]
             },
             {
-                "tab": "Integration docs",
-        "pages": [
-          "integration-docs/index"
-        ]
-      },
-      {
-        "tab": "How to",
+        "tab": "How to guides",
         "groups": [
           {
             "group": "Overview",
@@ -733,6 +727,12 @@
               "how-to/index"
             ]
           }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "pages": [
+          "integration-docs/index"
         ]
       },
       {
@@ -827,7 +827,8 @@
               }
             ]
           }
-        ]
+        ],
+        "hidden": true
       }
     ]
   },
