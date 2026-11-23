@@ -1,0 +1,99 @@
+---
+title: Create and manage scenarios
+description: Create scenarios, switch context safely, and keep scenario branches organized in Oculon.
+icon: pencil
+sidebarTitle: Create and manage
+---
+
+Scenario management is the day-to-day workflow of branching, naming, switching, duplicating, and sharing scenario context. The goal is simple: make it obvious which scenario you are in and keep edits isolated to the right branch.
+
+<Frame caption="Scenario switcher">
+  <img
+    src="/images/getting-started/fr-scenario.png"
+    alt="Scenario switcher and active scenario context in Oculon"
+  />
+</Frame>
+
+## Start from the scenario switcher
+
+In the current Oculon workflow, the scenario switcher is the main entry point for scenario work.
+
+From there, users should be able to:
+
+- see the active scenario clearly
+- switch to another scenario
+- create a new scenario
+- avoid editing the wrong branch by mistake
+
+## Create a new scenario
+
+Create a scenario when you want to test a new case without changing `Default Scenario`.
+
+A practical workflow looks like this:
+
+1. Open the scenario switcher.
+2. Choose **New Scenario**.
+3. Give it a clear name.
+4. Land directly inside the new scenario.
+5. Make only the changes needed for that case.
+
+In the current product model, a new scenario usually starts from `Default Scenario` unless the user is intentionally duplicating another branch.
+
+## Keep active scenario context obvious
+
+Active scenario context is one of the most important safeguards in the feature.
+
+Users should always be able to tell:
+
+- which scenario is active
+- whether they are working in `Default Scenario` or a derived scenario
+- whether the current branch is meant for exploration or review
+
+If there is any doubt about where you are, stop and confirm the active scenario before editing.
+
+## Duplicate when you want to branch from an existing scenario
+
+Use duplication when you want to continue from a scenario that already contains useful effective values.
+
+This is especially helpful when:
+
+- an approved baseline should remain intact
+- you want a new draft from a reviewed branch
+- the next planning cycle should begin from an existing scenario instead of `Default Scenario`
+
+The duplicate should behave like a new branch, not a shared live object.
+
+## Name scenarios like communication tools
+
+Good scenario names help other people understand purpose and lifecycle quickly.
+
+Names usually work best when they encode:
+
+- the planning question
+- the audience or review state
+- the lifecycle stage when relevant
+
+Examples:
+
+- `FY26 hiring plan - draft`
+- `Board baseline - locked`
+- `Downside case - review`
+
+## Copy links carefully
+
+Scenario links are most useful when they preserve scenario context for the person opening them.
+
+That means the link should point someone to the intended scenario, not just to the model generally. Permissions should still be enforced when the link opens.
+
+## Keep the list clean
+
+Scenario lists become hard to trust when every experiment survives forever.
+
+Retire, lock, or delete scenarios deliberately once they are no longer active. A smaller, better-labeled set of scenarios is easier to compare and safer to navigate.
+
+## Related pages
+
+- [What is a scenario](/concepts/modeling/scenarios/what-is-a-scenario)
+- [Scenario governance and access](/concepts/modeling/scenarios/scenario-governance-and-access)
+- [Merge scenarios](/concepts/modeling/scenarios/merge-scenarios)
+- [Scenario best practices](/concepts/modeling/scenarios/scenario-best-practices)

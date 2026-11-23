@@ -1,0 +1,57 @@
+---
+title: Scenario sync behavior
+description: Understand how scenarios inherit values from Default Scenario until you create local overrides.
+icon: refresh-cw
+sidebarTitle: Sync behavior
+---
+
+Scenario sync behavior is about inheritance: how much of **Default Scenario** a branch continues to follow after you create it. In practice, this is the difference between an exploratory scenario that stays aligned with the baseline and a scenario that diverges through local overrides.
+
+<Note>
+Screenshot pending for inherited versus overridden values in the current product UI.
+</Note>
+
+## How inheritance works
+
+A scenario starts from an effective baseline. After that:
+
+- Untouched values continue to inherit from **Default Scenario**.
+- Overridden values belong only to the active scenario.
+
+That distinction is the foundation of scenario work. The model structure stays shared. The branch differs where you make local changes.
+
+## Overrides change the inheritance story
+
+Once a value is overridden in a scenario, **Default Scenario** no longer replaces that specific value through inheritance.
+
+If you later reset or revert the override (for example **Revert to original** on an overridden cell), the value returns to inherited behavior again. Sync and override behavior must be understood together.
+
+See [Scenario overrides](/concepts/modeling/scenarios/scenario-overrides).
+
+## Locked baselines versus exploratory branches
+
+Use governance controls when a branch should stay stable:
+
+- Turn **Allow Changes** off to lock a scenario so reviewers can still open it without casually editing it.
+- Use **Allow Merging** when a scenario should be allowed to act as a merge source in **Merge Changes**.
+
+These controls are separate from inheritance. Locking a scenario does not erase the values it already shows.
+
+See [Scenario governance and access](/concepts/modeling/scenarios/scenario-governance-and-access) for the fuller control model.
+
+## Why inheritance matters
+
+If users do not understand inheritance, they can mistake upstream baseline changes for manual edits, or assume a branch is frozen when untouched cells still follow **Default Scenario**.
+
+That confusion usually shows up during:
+
+- comparison reviews
+- merge decisions
+- baseline sign-off
+
+## Related pages
+
+- [Scenario overrides](/concepts/modeling/scenarios/scenario-overrides)
+- [Merge scenarios](/concepts/modeling/scenarios/merge-scenarios)
+- [What is a scenario](/concepts/modeling/scenarios/what-is-a-scenario)
+- [Scenario governance and access](/concepts/modeling/scenarios/scenario-governance-and-access)

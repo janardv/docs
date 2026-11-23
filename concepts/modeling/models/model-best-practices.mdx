@@ -1,0 +1,36 @@
+---
+title: Model best practices
+description: Apply practical guidance for designing models that stay clear, scalable, and easy to hand off.
+icon: badge-check
+sidebarTitle: Best practices
+---
+
+A strong model stays understandable after more people start using it.
+
+## Recommended practices
+
+- Decide the time setup before writing advanced formulas.
+- Keep sections small enough to review comfortably.
+- Reuse shared dimensions and linked logic instead of duplicating them.
+- Use scenarios for experiments, not hidden manual copies.
+- Review boards and views as part of model QA, not only the grid.
+
+## Keep ownership visible
+
+Use clear model names, clear owners, and clear audiences. Teams move faster when people can tell which model is active, who maintains it, and which outputs others should trust.
+
+## Avoid stale or duplicated logic
+
+Duplicate logic creates drift. Retire models that are no longer active, and avoid creating parallel versions of the same planning logic unless there is a clear reason.
+
+If the structure stays the same and you need a checkpoint, use [Versioning](/concepts/modeling/models/model-history) instead of treating every milestone like a separate working model.
+
+## Build for handoff
+
+Assume another planner will inherit the model later. Clean naming, helper variables, consistent structure, and visible ownership are what make that handoff successful.
+
+## Related pages
+
+- [Model structure](/concepts/modeling/models/model-structure)
+- [Linked models](/concepts/modeling/models/linked-models)
+- [Scenario best practices](/concepts/modeling/scenarios/scenario-best-practices)

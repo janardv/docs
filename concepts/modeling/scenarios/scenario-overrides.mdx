@@ -1,0 +1,69 @@
+---
+title: Scenario overrides
+description: Use overrides to make scenario-specific changes without breaking inheritance unnecessarily.
+icon: sliders-horizontal
+sidebarTitle: Overrides
+---
+
+An override is a value or logic change that exists only inside the active scenario. Overrides are what let a branch behave differently without rebuilding the whole model.
+
+<Note>
+Screenshot pending for this workflow in the current product UI.
+</Note>
+
+## What an override does
+
+When you override a value in a scenario, that value stops behaving like the inherited baseline for that branch.
+
+This is useful because it lets you:
+
+- test one assumption without changing `Default Scenario`
+- isolate one row or cell from the inherited baseline
+- compare a targeted local change against the shared reference state
+
+## Keep overrides intentional
+
+Overrides are powerful, but too many small overrides can make a scenario hard to review.
+
+A clean scenario usually has:
+
+- a clear purpose
+- a manageable set of local changes
+- a reviewer who can explain why those changes exist
+
+If a scenario becomes a patchwork of unrelated overrides, it is usually time to clean it up or split the work into separate branches.
+
+## Inherited versus overridden values
+
+The current feature model assumes users should be able to understand whether a value is inherited or overridden.
+
+That matters because:
+
+- inherited values continue to follow `Default Scenario` until you override them
+- overridden values are local to the scenario
+- merge decisions should be based on overrides, not on the full visible state
+
+## Reset override
+
+Reset or revert the override (for example **Revert to original** on an overridden cell) to remove the scenario-local change and return the value to inherited behavior.
+
+After a reset:
+
+- the local override should no longer apply
+- the value should match the inherited source again
+- future upstream changes from `Default Scenario` can flow through again for that cell
+
+This is one of the most important cleanup actions in the feature because it lets users undo local divergence without rewriting the baseline.
+
+## Overrides and locked scenarios
+
+If **Allow Changes** is off (the scenario is locked), users may still review overridden values, but they should not create or reset overrides there.
+
+That distinction helps keep approved baselines reviewable without making them mutable again by accident.
+
+## Related pages
+
+- [Scenario sync behavior](/concepts/modeling/scenarios/scenario-sync-behavior)
+- [Merge scenarios](/concepts/modeling/scenarios/merge-scenarios)
+- [Scenario governance and access](/concepts/modeling/scenarios/scenario-governance-and-access)
+- [Scenario best practices](/concepts/modeling/scenarios/scenario-best-practices)

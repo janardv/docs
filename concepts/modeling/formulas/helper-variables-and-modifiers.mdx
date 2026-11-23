@@ -1,0 +1,93 @@
+---
+title: Helper variables and modifiers
+description: Use helper variables and built-in context modifiers to keep formulas readable in Oculon.
+icon: workflow
+sidebarTitle: Helpers
+---
+
+Helper variables and modifiers both make formulas easier to work with, but they are not the same thing.
+
+- A `helper variable` is a variable you create to break one larger business rule into smaller steps.
+- A `modifier` or built-in context helper is a keyword that exposes model context such as time, fiscal period, or blank handling.
+
+Use both together when you want formulas that stay readable as the model grows.
+
+## Use helper variables to simplify business logic
+
+Helper variables are best for business rules you want to name, review, and reuse.
+
+They work especially well when:
+
+- one formula is doing too many jobs
+- the same condition appears in several places
+- you need separate helpers for actuals, seasonality, and overrides
+- the final formula should read like a summary of the logic, not the full implementation
+
+## Use built-in modifiers to read model context
+
+Built-in modifiers and context helpers expose values the model already knows, such as the current month, quarter, fiscal year, or actuals cutoff.
+
+### Model logic helpers
+
+| Keyword | What it tells you | Common use |
+| --- | --- | --- |
+| `lastActualDate` | The index of the [Last actual date](/concepts/data-and-structure/time/last-actual-date) | split `actual formula` and `planned formula` behavior |
+| `blank` | An empty value | handle missing values and fallback logic |
+
+### Time and calendar modifiers
+
+| Keyword | What it tells you | Common use |
+| --- | --- | --- |
+| `month` | The current month index | monthly seasonality and month-based checks |
+| `quarter` | The current quarter | quarter-specific rules |
+| `year` | The current calendar year | year-based conditions |
+| `timestep` | The current time-step index | rolling logic and cutoff checks |
+| `date` | Alias of `timestep` | formulas that use time-step index logic |
+| `numtimesteps` | The total number of time steps in the model | horizon-aware formulas |
+
+### Fiscal and cohort modifiers
+
+| Keyword | What it tells you | Common use |
+| --- | --- | --- |
+| `fiscalmonth` | The current fiscal month | fiscal seasonality and fiscal comparisons |
+| `fiscalyear` | The current fiscal year | fiscal-year logic |
+| `cohort` | The cohort context for the current record or calculation | cohort-based planning and retention logic |
+
+## Use time helpers instead of hard-coded periods
+
+These built-in helpers are most valuable when the formula needs to keep working as the model moves forward.
+
+```text
+if timestep <= lastActualDate then Actual demand else Planned demand
+if month in [11, 12, 1, 2] then Peak season factor else Base factor
+```
+
+This pattern is more durable than hard-coding one month or quarter into the formula.
+
+## Know when to use a helper variable instead of a modifier
+
+Use a modifier when you need model context.
+
+Use a helper variable when you need business meaning.
+
+For example:
+
+- `month` tells you where you are in the year
+- `Peak season flag` explains why the formula behaves differently
+
+That distinction makes reviews faster and handoffs safer.
+
+## Keep formula intent readable
+
+A good pattern is:
+
+1. use modifiers to detect context
+2. turn important logic into clearly named helper variables
+3. use one final variable to assemble the result
+
+## Related pages
+
+- [Relative time](/concepts/data-and-structure/time/relative-time)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- [Conditional logic](/concepts/modeling/formulas/conditional-logic)
+- [Formula best practices](/concepts/modeling/formulas/formula-best-practices)

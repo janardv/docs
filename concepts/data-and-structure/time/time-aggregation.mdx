@@ -1,0 +1,78 @@
+---
+title: Time aggregation
+description: Understand what a metric should mean when you review it at quarter or year level.
+icon: workflow
+sidebarTitle: Aggregation
+---
+
+Time aggregation defines how a metric should behave when you review it at a coarser time level. It answers a business question: once several periods are grouped together, what number should represent that group?
+
+## Why it matters
+
+Not every metric should behave the same way in a quarter or year summary.
+
+- A revenue line often needs a summed total.
+- A headcount line often needs an end-of-period view.
+- A percentage or rate often needs to be recalculated or weighted, not summed.
+
+If the higher-level value is wrong, users lose trust quickly even when the monthly data is correct.
+
+## Aggregation versus rollups
+
+It helps to separate two related concepts:
+
+- [`Time rollups`](/concepts/data-and-structure/time/time-aggregation) decide which lower-level periods belong together.
+- `Time aggregation` decides what value should represent that grouped result.
+
+For example, a quarter may roll up three months. Aggregation decides whether the quarter should show the sum of those months, the ending value, or another business-appropriate interpretation.
+
+## Common aggregation patterns
+
+Use the business meaning of the metric to guide the rule:
+
+- `Flow metrics` such as revenue, expense, and units sold often make sense as sums.
+- `Point-in-time metrics` such as end-of-month headcount, cash balance, or open pipeline often make more sense as an ending value.
+- `Rates and percentages` often need a weighted or recomputed result instead of a simple period sum.
+
+The right answer is not "the default." The right answer is the one a finance reviewer would expect to see in the summary.
+
+## How to choose the right behavior
+
+Ask these questions for each important metric:
+
+- Is this metric additive across time?
+- Is this metric a balance at a point in time?
+- Would a reviewer expect a period-end number or a blended number?
+- Does the quarter or year view tell the same story as the monthly view?
+
+If you cannot explain the quarter total in plain language, the aggregation approach probably needs more work.
+
+## Examples
+
+### Revenue
+
+Revenue is usually a flow metric, so quarter and year views typically sum the lower-level periods.
+
+### Headcount
+
+Headcount often behaves like an end-of-period metric. A yearly summary usually needs to show the closing value or another clearly defined business interpretation, not the sum of all months.
+
+### Margin percentage
+
+A margin percentage usually should not be summed across periods. Review whether the summary should be recalculated from the underlying values instead.
+
+## Troubleshooting a wrong quarter or year total
+
+If a higher-level value looks wrong, check these in order:
+
+1. confirm the metric's business meaning
+2. confirm the grouped periods are correct in the rollup
+3. review whether the actual and planned formulas behave differently around the cutoff
+4. recheck any dimensions or filters applied in the view
+
+## Related pages
+
+- [Time rollups](/concepts/data-and-structure/time/time-aggregation)
+- [Time granularity](/concepts/data-and-structure/time/time-granularity)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- [Time best practices](/concepts/data-and-structure/time/time-best-practices)

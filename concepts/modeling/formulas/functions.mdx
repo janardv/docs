@@ -1,0 +1,92 @@
+---
+title: Functions
+description: Understand the main function and operator categories used in Oculon formulas.
+icon: sigma
+sidebarTitle: Functions
+---
+
+Functions and operators help you express business logic without rewriting the same pattern every time. In Oculon, the best formulas usually combine a small number of readable functions with clear references and context-aware logic.
+
+## Operators come first
+
+Operators handle the basic structure of most formulas.
+
+| Category | Common operators | Typical use |
+| --- | --- | --- |
+| Arithmetic | `+`, `-`, `*`, `/`, `^` | combine values and calculate outputs |
+| Comparison | `=`, `!=`, `>`, `<`, `>=`, `<=` | compare values and create conditions |
+| Logical | `and`, `or` | combine several checks in one branch |
+
+Use operators when the business rule is simple. Add functions only when they make the formula easier to read.
+
+## Logical functions and branches
+
+Logical functions help a formula react to conditions.
+
+Common uses include:
+
+- switching behavior before and after the [`Last actual date`](/concepts/data-and-structure/time/last-actual-date)
+- returning flags such as `1` and `0`
+- routing one variable to different outputs depending on context
+
+The most common logical pattern is:
+
+```text
+if timestep <= lastActualDate then Actual value else Planned value
+```
+
+For more branch patterns, see [Conditional logic](/concepts/modeling/formulas/conditional-logic).
+
+## Math and statistical helpers
+
+Math and statistical functions keep formulas shorter and easier to audit.
+
+Common examples include:
+
+- `sum()` for totals
+- `avg()` for average values
+- `round()` for display-ready outputs
+- `abs()` for absolute values
+- `min()` and `max()` for bounds and thresholds
+
+These functions are useful, but they still depend on context. A result can change when the formula is evaluated at a different dimension value or aggregation level.
+
+## Time-aware helpers inside formulas
+
+Some of the most important formula inputs are time-aware. These include values such as `month`, `quarter`, `year`, `timestep`, and `lastActualDate`.
+
+Use them when the business rule depends on:
+
+- seasonality
+- period cutoffs
+- fiscal period behavior
+- rolling logic that should keep working after each close
+
+If the same time rule should still work next month, use [Relative time](/concepts/data-and-structure/time/relative-time) or built-in time helpers instead of hard-coded dates.
+
+## Financial-style calculations
+
+Oculon formulas often support financial-style logic such as rate-based planning, cash flow behavior, return logic, or forecast ramps. Even when those formulas are advanced, the same rule applies: keep the business meaning obvious.
+
+In practice, this usually means:
+
+- separate the input drivers from the final output
+- use helper variables for intermediate steps
+- review the result at both detail level and summary level
+
+## Choose the smallest useful function
+
+A short, obvious formula is usually better than a clever one.
+
+Prefer this approach:
+
+1. start with direct arithmetic if it expresses the rule clearly
+2. add a function when it removes repetition or ambiguity
+3. move complex logic into helper variables before the formula becomes hard to review
+
+## Related pages
+
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Conditional logic](/concepts/modeling/formulas/conditional-logic)
+- [Helper variables and modifiers](/concepts/modeling/formulas/helper-variables-and-modifiers)
+- [Common formula patterns](/concepts/modeling/formulas/common-formula-patterns)

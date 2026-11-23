@@ -1,0 +1,88 @@
+---
+title: Formula basics
+description: Learn what formulas do in Oculon and how they behave across time, dimensions, and model context.
+icon: circle-help
+sidebarTitle: Basics
+---
+
+Formulas tell Oculon how a variable should calculate. They connect inputs, assumptions, and business rules so the model can update results consistently across time and dimension context.
+
+<Frame caption="Formula editor">
+  <img
+    src="/images/getting-started/fr-formula.png"
+    alt="Formula editor in Oculon showing formula text on a model variable"
+  />
+</Frame>
+
+## Why formulas matter
+
+Formulas let you:
+
+- turn manual inputs into reusable logic
+- reference other variables instead of duplicating values
+- react to time, dimensions, and aggregation context
+- separate historical behavior from forward-looking planning logic
+- feed consistent outputs into views, boards, and scenarios
+
+## Where formulas live
+
+In Oculon, formulas usually live on variables inside a model. A variable can hold entered values, calculated values, or a mix of both depending on how you set it up.
+
+This is why formulas are part of model structure, not just reporting. If a core variable changes, the formulas that depend on it can change downstream outputs across the model.
+
+## Actual formula versus planned formula
+
+Most planning models need different logic on each side of the cutoff.
+
+- The `actual formula` applies to periods up to and including the [`Last actual date`](/concepts/data-and-structure/time/last-actual-date).
+- The `planned formula` applies to periods after that cutoff.
+- Both formulas belong to the same variable, but they can behave differently when the model moves from closed periods into forecast periods.
+
+This split keeps historical logic clear and makes forecast logic easier to review during each close cycle.
+
+## The three building blocks of formulas
+
+Every formula is usually made from three core parts:
+
+### Operators
+
+Operators handle arithmetic and comparisons such as `+`, `-`, `*`, `/`, `=`, `!=`, `>`, and `<`.
+
+### Functions
+
+Functions help you express repeated logic more clearly. Common examples include conditional logic, rounding, sums, and averages. See [Functions](/concepts/modeling/formulas/functions) for the main categories.
+
+### References
+
+References connect one variable to another. Good references keep formulas readable and reduce duplicate logic. See [Variable references](/concepts/data-and-structure/variables/variable-references) for reference patterns and review tips.
+
+## Formula context matters
+
+The same formula can return a different result depending on the context where Oculon evaluates it.
+
+Common context shifts include:
+
+- the active time period
+- the current dimension value
+- whether the model is on the actuals side or planned side of the cutoff
+- whether the result is being reviewed at detail level or summary level
+
+This is why a formula that looks correct in one row or month can still behave unexpectedly in a board or summary view.
+
+## Start with simple formulas
+
+Use the clearest version of the business rule first. If the logic starts to branch across time, dimensions, or conditions, split it into helper variables instead of building one long expression.
+
+```text
+Revenue = Price * Volume
+Gross margin = Revenue - Cost of sales
+if timestep <= lastActualDate then Actual revenue else Price * Volume
+```
+
+## Related pages
+
+- [Formula editor](/concepts/modeling/formulas/formula-editor)
+- [Conditional logic](/concepts/modeling/formulas/conditional-logic)
+- [Functions](/concepts/modeling/formulas/functions)
+- [Helper variables and modifiers](/concepts/modeling/formulas/helper-variables-and-modifiers)
+- [Variable references](/concepts/data-and-structure/variables/variable-references)

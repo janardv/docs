@@ -1,0 +1,44 @@
+---
+title: How data flows through Oculon
+description: Follow source data from Transactions through models, views, and boards in Oculon.
+icon: workflow
+---
+
+Data usually enters Oculon as structured records, becomes planning logic in a model, then reaches stakeholders through focused views and boards.
+
+## Typical path
+
+1. **Ingest or create source records** in [Transactions](/concepts/data-and-structure/transactions) (manually or through integrations).
+2. **Connect that data into a [model](/concepts/modeling/models)** with [variables](/concepts/data-and-structure/variables), [dimensions](/concepts/data-and-structure/dimensions), [time](/concepts/data-and-structure/time), and [formulas](/concepts/modeling/formulas).
+3. **Separate actuals from plan** with the [Last actual date](/concepts/data-and-structure/time/last-actual-date).
+4. **Test alternatives** in [scenarios](/concepts/modeling/scenarios) without replacing the baseline.
+5. **Narrow the result** with [views](/concepts/analysis-and-reporting/views) and explain differences with [Compare](/concepts/analysis-and-reporting/compare).
+6. **Present the decision** on a [board](/concepts/analysis-and-reporting/boards).
+
+## What stays separate on purpose
+
+| Keep here | Do not confuse with |
+| :--- | :--- |
+| Transactions | Model formulas and scenario branches |
+| Spaces | Projects (work management when enabled) |
+| Views | Boards (presentation) |
+| AI assistant help | Source-of-truth model logic |
+| Sharing a board or view | Automatic access to every underlying source |
+
+## Where AI fits
+
+[AI](/concepts/ai-and-agents/ai-overview) can help you build, explain, and report inside this flow. It still respects workspace policy, sharing, and the same objects above.
+
+## Where to go next
+
+- New to the product → [What is Oculon](/concepts/core-concepts/what-is-oculon)
+- Need object definitions → [Core concepts overview](/concepts/core-concepts/core-concepts-overview) or the [Glossary](/concepts/core-concepts/glossary)
+- Building the model → [Models](/concepts/modeling/models), [Formulas](/concepts/modeling/formulas), [Scenarios](/concepts/modeling/scenarios)
+- Reporting → [Views](/concepts/analysis-and-reporting/views), [Boards](/concepts/analysis-and-reporting/boards)
+
+## Related pages
+
+- [How Oculon is organized](/concepts/core-concepts/how-oculon-is-organized)
+- [Transactions](/concepts/data-and-structure/transactions)
+- [Models](/concepts/modeling/models)
+- [Boards](/concepts/analysis-and-reporting/boards)

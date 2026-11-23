@@ -1,0 +1,80 @@
+---
+title: Formula best practices
+description: Use practical habits to keep formulas readable, stable, and easy to review in Oculon.
+icon: badge-check
+sidebarTitle: Best practices
+---
+
+Good formulas are not only correct. They are also easy for another person to read, review, and safely change. A formula section that only one model builder understands becomes a risk as the model grows.
+
+## Write one business rule at a time
+
+Keep each formula focused on one clear job when possible.
+
+If a variable needs to handle seasonality, cutoff behavior, overrides, and allocation logic, split that work into helper variables before you write the final output formula.
+
+## Standardize names and core terms
+
+Use stable names so formulas read like plain language.
+
+Use the same shared terms across the team:
+
+- `Last actual date` for the actuals cutoff
+- `actual formula` for historical logic
+- `planned formula` for forward-looking logic
+- `relative time` for moving time references
+
+Consistent wording reduces mistakes during reviews and handoffs.
+
+## Separate actual and planned logic intentionally
+
+If historical and forward-looking behavior differ, make that split obvious.
+
+Do not hide the cutoff inside a hard-coded date or an unclear nested expression. Tie the rule directly to the [`Last actual date`](/concepts/data-and-structure/time/last-actual-date) or to clearly named helper variables.
+
+## Prefer helper variables over deep nesting
+
+Use [Helper variables and modifiers](/concepts/modeling/formulas/helper-variables-and-modifiers) when:
+
+- the same condition appears more than once
+- a formula needs several branches
+- the final output should summarize logic rather than contain every detail
+- a reviewer needs business labels, not raw implementation steps
+
+Shorter formulas are easier to audit and safer to change.
+
+## Validate at detail and summary level
+
+Do not stop after one cell looks correct.
+
+Review formulas at:
+
+- the source variable
+- the relevant dimension detail
+- the first period before and after the cutoff
+- quarter and year summaries where applicable
+
+That is often where aggregation or context issues become visible.
+
+## Avoid hard-coded time logic
+
+Use [`Relative time`](/concepts/data-and-structure/time/relative-time) and built-in time helpers when the business rule should continue to work after the model moves forward.
+
+Hard-coded periods create maintenance work and make close cycles riskier.
+
+## Before you publish a model
+
+Use this checklist before you hand the model to other users:
+
+- confirm the key formulas still match the business rule
+- confirm the `actual formula` and `planned formula` behave correctly around the cutoff
+- confirm quarter and year summaries still make sense
+- confirm important formulas use readable helper variables where needed
+- confirm unusual logic is easy to explain to another planner
+
+## Related pages
+
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Formula errors](/concepts/modeling/formulas/formula-errors)
+- [Time best practices](/concepts/data-and-structure/time/time-best-practices)
+- [Model best practices](/concepts/modeling/models/model-best-practices)

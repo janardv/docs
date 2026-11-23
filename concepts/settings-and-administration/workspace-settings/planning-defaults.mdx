@@ -1,0 +1,48 @@
+---
+title: Planning defaults
+description: Set workspace Planning defaults for period, frequency, fiscal year, scenario, and currency in Oculon.
+icon: calendar
+---
+
+**Planning** settings live under Admin → **Planning**. They define workspace defaults for planning period, forecast frequency, fiscal year, default scenario, and currency.
+
+These defaults are distinct from:
+
+- Per-model [time settings](/concepts/data-and-structure/time) and [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- AI [Plan mode](/concepts/ai-and-agents/ai-assistant) (assistant planning, not Admin Planning)
+- Per-variable currency formatting in [Currency and conversion](/concepts/data-and-structure/variables/currency-and-conversion)
+
+## Defaults tab
+
+Confirmed controls include:
+
+| Setting | Purpose |
+| :--- | :--- |
+| **Default Planning Period** | Default planning horizon posture for the workspace |
+| **Default Forecast Frequency** | Default forecast cadence |
+| **Fiscal Year Start** | When the fiscal year begins for planning defaults |
+| **Default Scenario** | Default scenario preference for planning context |
+
+Exact option lists can vary by workspace configuration. Treat these as defaults, not as a replacement for model-level time settings.
+
+## Currency tab
+
+Confirmed controls include:
+
+| Setting | Purpose |
+| :--- | :--- |
+| **Default Currency** | Workspace default currency for planning context |
+| **Default Exchange Rate Aggregation** | How exchange rates aggregate by default |
+
+Variable-level display currency can still be set on individual variables. See [Currency and conversion](/concepts/data-and-structure/variables/currency-and-conversion).
+
+## Who can change Planning
+
+**Workspace Owners** open Planning from Admin settings. Members do not administer these defaults.
+
+## Related pages
+
+- [Workspace settings](/concepts/settings-and-administration/workspace-settings)
+- [Time](/concepts/data-and-structure/time)
+- [Scenarios](/concepts/modeling/scenarios)
+- [Currency and conversion](/concepts/data-and-structure/variables/currency-and-conversion)

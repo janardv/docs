@@ -1,0 +1,87 @@
+---
+title: Common formula patterns
+description: Reuse common Oculon formula patterns for planning, allocation, and model maintenance.
+icon: workflow
+sidebarTitle: Patterns
+---
+
+Most planning models reuse the same formula shapes. When you standardize those shapes, you make the model easier to build, review, and hand off to another planner.
+
+## Actual-to-planned switch
+
+This is one of the most important patterns in Oculon.
+
+Use it when the variable should behave one way for closed periods and another way for forecast periods.
+
+```text
+if timestep <= lastActualDate then Actual revenue else Price * Volume
+```
+
+Tie the switch to the [`Last actual date`](/concepts/data-and-structure/time/last-actual-date), not to a hard-coded month.
+
+## Driver-based formulas
+
+Driver-based formulas turn a small set of assumptions into a reusable output.
+
+Common examples include:
+
+- `Revenue = Price * Volume`
+- `Payroll tax = Headcount cost * Tax rate`
+- `Marketing spend = Pipeline target * Spend ratio`
+
+These formulas work best when each input variable has a clear business name.
+
+## Headcount logic
+
+Headcount formulas often use conditional logic to identify active periods.
+
+```text
+if timestep >= Start date and (timestep <= End date or End date = blank) then 1 else 0
+```
+
+This pattern is useful when you need monthly active headcount, hiring plans, or employee-based allocations.
+
+## Seasonality with relative time
+
+Seasonality usually depends on time context, not on one fixed date.
+
+```text
+if month in [11, 12, 1, 2] then Base demand * Winter factor else Base demand
+```
+
+Use [Relative time](/concepts/data-and-structure/time/relative-time) and time helpers when the pattern should still work after each close.
+
+## Cohort-based patterns
+
+Cohort logic is easier to maintain when you keep each part of the pattern separate:
+
+- acquisition or starting population
+- retention or decay logic
+- expansion or revenue logic
+
+Do not force all of that into one formula. Use helper variables so each step stays reviewable.
+
+## Simple allocations
+
+Allocation formulas distribute one total across dimension values using a share or driver.
+
+```text
+Allocated overhead = Total overhead * Allocation share
+```
+
+This works best when:
+
+- the source total is clearly owned
+- the allocation share is reviewed separately
+- you check the result at both detail and total level
+
+## Pattern discipline matters
+
+The formula does not need to look identical in every model, but the intent should stay recognizable. If your team uses the same pattern for revenue builds, staffing plans, and allocations, reviews move much faster.
+
+## Related pages
+
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Conditional logic](/concepts/modeling/formulas/conditional-logic)
+- [Helper variables and modifiers](/concepts/modeling/formulas/helper-variables-and-modifiers)
+- [Formula best practices](/concepts/modeling/formulas/formula-best-practices)

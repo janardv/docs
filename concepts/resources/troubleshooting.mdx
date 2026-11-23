@@ -1,0 +1,95 @@
+---
+title: Troubleshooting
+description: Diagnose common Oculon issues by product area and jump to the right Concepts guidance.
+icon: life-buoy
+---
+
+Use this hub when something looks wrong. Start with the triage checklist, then open the product-area section that matches the symptom. Prefer Concepts links for how the product works; keep deep operational runbooks for How-to Guides later.
+
+## Triage checklist
+
+1. Confirm you are in the right **workspace**, **Space**, **scenario**, and **time** context.
+2. Confirm you can see and open the source object (model, Transactions set, view, or board).
+3. Check **permissions** and sharing before assuming a product bug.
+4. Check whether the issue is **data**, **formula**, **view/filter**, or **presentation**.
+5. Note what changed recently (formula, share, join rule, connection, or refresh).
+
+## Models and calculations
+
+| Symptom | What to check | Concepts |
+| :--- | :--- | :--- |
+| Wrong or blank values | Formula text, referenced variables, time and scenario context | [Formulas](/concepts/modeling/formulas), [Variables](/concepts/data-and-structure/variables) |
+| Totals disagree with detail | Aggregation, dimensions, and rollups | [Dimensions](/concepts/data-and-structure/dimensions), [Time](/concepts/data-and-structure/time) |
+| Actuals vs plan look off | Last actual date and planned/actual formulas | [Last actual date](/concepts/data-and-structure/time/last-actual-date) |
+| Unexpected scenario result | Active scenario, overrides, sync, merge direction | [Scenarios](/concepts/modeling/scenarios) |
+
+Debug at the model line first. If the source variable is wrong, fix it before chasing board or view formatting.
+
+## Transactions / data
+
+| Symptom | What to check | Concepts |
+| :--- | :--- | :--- |
+| Missing or unexpected records | Source filters, mappings, and refresh/sync status | [Transactions](/concepts/data-and-structure/transactions) |
+| Model and source disagree | Confirm Transactions output before model formulas | [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon) |
+| View of Transactions looks wrong | Saved filters, sorts, and grouping on the view | [Views](/concepts/analysis-and-reporting/views) |
+
+## Integrations and connections
+
+| Symptom | What to check | Concepts |
+| :--- | :--- | :--- |
+| Connector or MCP content missing | Connection status, allowed scope, and workspace AI policy | [Context and connections](/concepts/ai-and-agents/context-and-connections), [Workspace AI](/concepts/ai-and-agents/workspace-ai) |
+| Agent cannot use a connection | Agent permissions and allowed actions | [Custom agents](/concepts/ai-and-agents/custom-agents) |
+
+## Views and boards
+
+| Symptom | What to check | Concepts |
+| :--- | :--- | :--- |
+| View shows the wrong slice | Filters, compare settings, and underlying model scenario | [Views](/concepts/analysis-and-reporting/views), [Compare](/concepts/analysis-and-reporting/compare) |
+| Board chart or KPI looks wrong | Source view/model, filters, and board card configuration | [Boards](/concepts/analysis-and-reporting/boards) |
+| Cannot edit a board or view | Item permission vs workspace role | [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions) |
+
+## Sharing and permissions
+
+| Symptom | What to check | Concepts |
+| :--- | :--- | :--- |
+| Item missing from sidebar or search | Workspace membership, Space membership, item share | [Workspace access and visibility](/concepts/workspace-and-collaboration/workspace-access-and-visibility), [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions) |
+| Can view but not edit | Item role (View / Edit / Full Access) and inheritance | [Roles and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions/roles-and-permissions), [Permission inheritance](/concepts/workspace-and-collaboration/sharing-and-permissions/permission-inheritance) |
+| Group access wrong | Group membership under Users & Groups | [Roles and access](/concepts/settings-and-administration/roles-and-access) |
+
+## AI and agents
+
+| Symptom | What to check | Concepts |
+| :--- | :--- | :--- |
+| Weak or generic answers | Prompt specificity, available context, knowledge | [AI assistant](/concepts/ai-and-agents/ai-assistant), [Knowledge and memory](/concepts/ai-and-agents/knowledge-and-memory) |
+| Agent blocked or unexpected | Agent instructions, scope, permissions, connections | [Custom agents](/concepts/ai-and-agents/custom-agents) |
+| AI features unavailable | Workspace AI settings and plan/usage | [Workspace AI](/concepts/ai-and-agents/workspace-ai), [Billing and usage](/concepts/settings-and-administration/billing-and-usage) |
+
+## Workspace and account
+
+| Symptom | What to check | Concepts |
+| :--- | :--- | :--- |
+| Cannot join or find a workspace | Join rules, invite, domain settings | [Workspace settings](/concepts/settings-and-administration/workspace-settings), [Security](/concepts/settings-and-administration/security) |
+| Sign-in or 2FA problems | Personal Security and workspace 2FA requirement | [Login methods](/concepts/settings-and-administration/security/login-methods) |
+| Preference or notification issues | My Account preferences and notifications | [Personal settings](/concepts/settings-and-administration/personal-settings) |
+| Capacity or plan limits | Cells Used and AI Credits | [Usage and limits](/concepts/settings-and-administration/billing-and-usage/usage-and-limits) |
+
+## Performance
+
+Large models, wide dimensions, heavy boards, and slow upstream refreshes are common pressure points. Simplify the model or board before adding workarounds. See [Models](/concepts/modeling/models) and [Boards](/concepts/analysis-and-reporting/boards).
+
+## When to escalate
+
+If triage still fails, capture:
+
+- Workspace and object names
+- Scenario and time context
+- Whether others with the same access see the issue
+- Recent formula, share, or connection changes
+
+Do not use Concepts for internal debugging, feature-flag admin, or implementation traces.
+
+## Related pages
+
+- [Keyboard shortcuts](/concepts/resources/keyboard-shortcuts)
+- [Sidebar and search](/concepts/resources/sidebar-and-search)
+- [Glossary](/concepts/core-concepts/glossary)

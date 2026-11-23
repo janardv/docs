@@ -1,0 +1,94 @@
+---
+title: Last actual date
+description: Understand how Oculon separates historical and planned behavior across a model.
+icon: split
+---
+
+The **Last actual date** is the model setting that tells Oculon where actual behavior ends and planned behavior begins. It is one of the most important controls in any model that combines historicals with forecast logic.
+
+<Frame caption="Last actual date">
+  <img
+    src="/images/getting-started/fr-last-actual.png"
+    alt="Last actual date control in model settings"
+  />
+</Frame>
+
+## Why it matters
+
+A clear cutoff helps you avoid mixing observed results with forward-looking assumptions. It also gives teams one shared reference point for close, forecast updates, and scenario reviews.
+
+## How it works
+
+Oculon uses the **Last actual date** to decide which logic should apply in each period:
+
+- Periods up to and including the Last actual date behave like actuals
+- Periods after that cutoff follow planned behavior
+- Variables can use different **actual formula** and **planned formula** logic on each side of the cutoff
+- Boards, views, and comparisons should read that split consistently when they show actual versus plan output
+
+The same variable may calculate differently depending on which side of the cutoff you are reviewing.
+
+## When to update it
+
+Update the Last actual date as part of the regular close cycle.
+
+Common triggers include:
+
+- A new month or quarter has closed
+- You refreshed source data and want the newly closed period treated as actuals
+- You need to move the cutoff back because a period is not final yet
+
+Keep ownership clear so the whole team works from the same baseline.
+
+## What happens when you move it forward
+
+When you move the Last actual date forward:
+
+- One more period moves onto the actuals side of the model
+- The actual formula becomes the active logic for that period
+- The planned formula starts one period later
+- Reports that separate actuals from plan should reflect the new cutoff
+
+After you change it, review the key views, charts, and board summaries leadership depends on.
+
+## What happens when you move it back
+
+When you move the Last actual date back:
+
+- Later periods return to planned behavior
+- Period comparisons can change because the baseline changed
+- Any close review that depended on the newer cutoff needs to be rechecked
+
+Moving the cutoff back is useful when you reopen a period, correct source data, or pause a close that moved too early.
+
+## What to review during close
+
+After you update the Last actual date:
+
+1. Confirm the new period is truly closed
+2. Refresh any source data the model depends on
+3. Review the first period before and after the cutoff
+4. Recheck executive charts and summary tables
+5. Confirm scenario comparisons still use the intended baseline
+
+## FAQ
+
+### What if actual data is missing before the Last actual date?
+
+Oculon still evaluates the actuals side using the logic you defined there. If the actual formula depends on missing source data, review the result carefully before you publish or share the model.
+
+### Why does a number change when I move the Last actual date?
+
+The active logic may have changed. A period that previously used the planned formula may now use the actual formula, or the other way around.
+
+### Who should update the Last actual date?
+
+Use a clear owner. In most teams, the person who manages close or owns the model should make the change.
+
+## Related pages
+
+- [Time in Oculon](/concepts/data-and-structure/time/time-in-oculon)
+- [Relative time](/concepts/data-and-structure/time/relative-time)
+- [Variable behavior](/concepts/data-and-structure/variables/variable-behavior)
+- [Model settings](/concepts/modeling/models/model-settings)
+- [Conditional logic](/concepts/modeling/formulas/conditional-logic)

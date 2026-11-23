@@ -1,0 +1,77 @@
+---
+title: Sharing and permissions
+description: Learn how sharing works in Oculon and how to give people the right access to the right surface.
+icon: share-2
+---
+
+Sharing in Oculon works best when you choose the smallest surface that still supports the work.
+
+Item sharing is separate from workspace membership and from Space organization. Someone can be in the workspace and still need explicit access to a model, board, view, or other resource.
+
+## In this section
+
+<Columns cols={2}>
+  <Card title="Roles and permissions" icon="shield" href="/concepts/workspace-and-collaboration/sharing-and-permissions/roles-and-permissions">
+    Item access levels across models, boards, and views.
+  </Card>
+  <Card title="Permission inheritance" icon="git-branch" href="/concepts/workspace-and-collaboration/sharing-and-permissions/permission-inheritance">
+    How access can flow from Spaces and shared areas.
+  </Card>
+  <Card title="Comments and collaboration" icon="message-square" href="/concepts/workspace-and-collaboration/sharing-and-permissions/comments-and-collaboration">
+    Keep review discussion attached to the work.
+  </Card>
+  <Card title="Publishing" icon="external-link" href="/concepts/workspace-and-collaboration/sharing-and-permissions/publishing">
+    Share live external links when available.
+  </Card>
+  <Card title="Exports" icon="download" href="/concepts/workspace-and-collaboration/sharing-and-permissions/exports">
+    Hand off fixed outputs outside Oculon.
+  </Card>
+</Columns>
+
+## Choose the right thing to share
+
+- Share a **model** when someone needs inputs, drafts, or planning logic.
+- Share a **view** when someone needs a filtered slice of a model or Transactions.
+- Share a **board** when someone needs a decision-ready presentation.
+
+If stakeholders only need filtered detail, start with a view. If they mainly need curated presentation, start with a board. Share the full model only when they also need the underlying planning surface.
+
+## Item access levels
+
+Oculon item access commonly uses:
+
+| Access level | Meaning |
+| :--- | :--- |
+| **View** | Read-only access to what is shared |
+| **Edit** | Change content without taking over permission management |
+| **Full Access** | Structural changes, sharing, and permission settings on that item |
+| **No Access** | Explicitly remove access |
+
+For deeper role tables and inheritance explanations, see [Roles and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions/roles-and-permissions) and [Permission inheritance](/concepts/workspace-and-collaboration/sharing-and-permissions/permission-inheritance).
+
+## What sharing does not change
+
+Sharing an item does not automatically expand access to everything behind it.
+
+- A view narrows access. It does not widen underlying source permissions.
+- A board can present data from several sources without elevating access to those sources.
+- Effective access is the minimum of the shared item access and the source access the person already has.
+
+## Validate the share before you send it
+
+1. Confirm the person can access the workspace and Space where the item lives.
+2. Confirm the item is shared at the right level for that audience.
+3. Check whether the item depends on restricted models, Transactions, views, or other sources.
+4. Confirm what the recipient can do after opening it: view, edit, or manage.
+
+## Watch for dependency gaps
+
+Missing source access usually shows up as hidden blocks, incomplete data, or a request-access state. Review both the shared item and the underlying sources before you resend the link.
+
+## Related pages
+
+- [Comments and collaboration](/concepts/workspace-and-collaboration/sharing-and-permissions/comments-and-collaboration)
+- [Sharing boards](/concepts/analysis-and-reporting/boards/sharing-boards)
+- [Sharing views](/concepts/analysis-and-reporting/views/sharing-views)
+- [Workspace access and visibility](/concepts/workspace-and-collaboration/workspace-access-and-visibility)
+- [Users, guests and invitations](/concepts/settings-and-administration/users-guests-and-invitations)

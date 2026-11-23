@@ -1,0 +1,53 @@
+---
+title: How Oculon is organized
+description: Understand the main parts of Oculon and how they fit together.
+icon: waypoints
+---
+
+Oculon is organized so you can move from source data to decision-ready reporting without rebuilding the same logic in multiple places. The structure is workspace-level, and each layer has a clear purpose.
+
+## The main layers
+
+| Layer | Purpose |
+| :--- | :--- |
+| [**Workspace**](/concepts/workspace-and-collaboration/workspaces) | Top-level environment for people, permissions, and settings |
+| [**Spaces**](/concepts/workspace-and-collaboration/teamspaces-and-private-space) | Shared teamspaces and a Private Space that organize content |
+| [**Transactions**](/concepts/data-and-structure/transactions) | Structured source records (older docs said Databases) |
+| [**Models**](/concepts/modeling/models) | Planning logic, variables, dimensions, formulas, and time |
+| [**Scenarios**](/concepts/modeling/scenarios) | Safe branches for testing changes |
+| [**Views**](/concepts/analysis-and-reporting/views) | Saved ways to review a model or Transactions slice |
+| [**Compare**](/concepts/analysis-and-reporting/compare) | Side-by-side differences across time or scenarios |
+| [**Boards**](/concepts/analysis-and-reporting/boards) | Charts, tables, KPIs, and presentation layouts |
+| [**AI and agents**](/concepts/ai-and-agents/ai-overview) | Assistant help, Workspace AI policy, and custom agents |
+| [**Projects**](/concepts/workspace-and-collaboration/projects-and-tasks) | Task and activity coordination when Projects is enabled |
+
+## How the pieces relate
+
+- **Workspace** decides who can enter the environment. See [Workspace access and visibility](/concepts/workspace-and-collaboration/workspace-access-and-visibility).
+- **Spaces** organize where content lives. They are not the same as Projects.
+- **Transactions** hold records. **Models** turn those records and assumptions into planning logic.
+- **Views** and **Compare** help you review. **Boards** help you present.
+- **AI** works inside this structure. It does not replace models, sharing, or permissions.
+- **Projects** (when available) coordinate work around tasks and activity. They do not replace Spaces.
+
+## Where you work day to day
+
+The sidebar is the usual entry point. From there you open Library content (models, Transactions, boards, and related resources), Spaces, AI chat, and—when enabled—Projects and Feed.
+
+For navigation chrome, see [Sidebar and search](/concepts/resources/sidebar-and-search). The sidebar finds objects; the Concepts modules below explain what those objects mean.
+
+## A practical way to choose a surface
+
+- Building logic → **model**
+- Shaping source records → **Transactions**
+- Narrowing a slice → **view**
+- Explaining variance → **Compare**
+- Presenting insights → **board**
+- Coordinating owned work → **Projects** (when enabled)
+
+## Related pages
+
+- [What is Oculon](/concepts/core-concepts/what-is-oculon)
+- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)
+- [Core concepts overview](/concepts/core-concepts/core-concepts-overview)
+- [Workspaces](/concepts/workspace-and-collaboration/workspaces)

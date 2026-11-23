@@ -1,0 +1,97 @@
+---
+title: Conditional logic
+description: Use conditional logic to make formulas respond to time, context, and business rules in Oculon.
+icon: git-branch
+---
+
+Conditional logic lets a variable return different values when conditions change. Use it for cutoffs, seasonality, status flags, and exception cases inside a model.
+
+## Start with the core pattern
+
+In Oculon, conditional logic follows this pattern:
+
+```text
+if condition then value_if_true else value_if_false
+```
+
+Every branch should be intentional. If the business rule has two outcomes, make both outcomes explicit.
+
+## Common uses
+
+Conditional logic is especially useful when you need to:
+
+- Switch behavior around the [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- Apply different logic to different months or quarters
+- Return flags such as `1` and `0` for active or inactive states
+- Protect a formula from blank or missing values
+- Handle exceptions without rewriting the full formula
+
+## Combine conditions with and and or
+
+Use `and` when multiple conditions must all be true. Use `or` when any one of the listed conditions should trigger the branch.
+
+```text
+if timestep > lastActualDate and Volume > 0 then Price * Volume else Revenue
+if Region = North or Region = West then Regional target else Standard target
+```
+
+Keep combined conditions readable. If a branch needs too many checks, move the checks into helper variables first.
+
+## Use in and not in for list-based rules
+
+Use `in` and `not in` when one formula should react to a defined list of values.
+
+```text
+if month in [11, 12, 1, 2] then Winter demand else Base demand
+if quarter not in [1, 4] then Midyear plan else Seasonal plan
+```
+
+This pattern works well for seasonality, fiscal gates, and grouped exception logic.
+
+## Handle nested conditions carefully
+
+Nested conditions are valid, but they become difficult to review quickly.
+
+```text
+if timestep <= lastActualDate then Actual revenue
+else if month in [11, 12] then Holiday forecast
+else Baseline forecast
+```
+
+Keep each branch tied to one clear business rule.
+
+## Use conditional logic around the Last actual date
+
+One of the most common formula patterns is a cutoff-based switch.
+
+```text
+if timestep <= lastActualDate then Actual bookings else Planned bookings
+```
+
+Prefer tying the cutoff to the [Last actual date](/concepts/data-and-structure/time/last-actual-date) instead of a hard-coded month. Many models also use separate **actual formula** and **planned formula** fields; see [Variable behavior](/concepts/data-and-structure/variables/variable-behavior).
+
+## When to move branches into helper variables
+
+Use a helper variable when:
+
+- The same condition appears in more than one formula
+- The formula mixes business logic and exception handling
+- A reviewer would need to read the line twice to understand it
+- The condition is important enough to deserve a clear name
+
+## Common mistakes
+
+Watch for these issues:
+
+- Hiding cutoff logic inside a long nested expression
+- Mixing hard-coded dates with [relative time](/concepts/data-and-structure/time/relative-time) logic
+- Using many branches when one helper variable would be clearer
+- Returning blanks or text values when the downstream formula expects a number
+
+## Related pages
+
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Functions](/concepts/modeling/formulas/functions)
+- [Helper variables and modifiers](/concepts/modeling/formulas/helper-variables-and-modifiers)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- [Common formula patterns](/concepts/modeling/formulas/common-formula-patterns)

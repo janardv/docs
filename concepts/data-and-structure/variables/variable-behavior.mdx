@@ -1,0 +1,44 @@
+---
+title: Variable behavior
+description: Understand how variables behave across time, dimensions, calculations, and the Last actual date cutoff.
+icon: activity
+sidebarTitle: Behavior
+---
+
+A variable does not behave the same way in every context. Its result depends on time, dimensions, formulas, aggregation rules, and whether a cell value is calculated or overridden.
+
+## Across time and the Last actual date
+
+Every variable is evaluated across the model's date range. Historical periods and forecast periods can use different logic.
+
+The [Last actual date](/concepts/data-and-structure/time/last-actual-date) is the model setting that marks where actual behavior ends and planned behavior begins:
+
+- Periods up to and including the Last actual date use the variable's **actual formula**.
+- Periods after that cutoff use the variable's **planned formula**.
+- Boards, views, and comparisons should reflect that split when they separate actuals from plan.
+
+Update the Last actual date as part of close. After you move it, review the first period before and after the cutoff, then confirm key summaries still match the business rule.
+
+See [Time in Oculon](/concepts/data-and-structure/time/time-in-oculon) for the broader time setup, and [Formula basics](/concepts/modeling/formulas/formula-basics) for how actual and planned formulas work together.
+
+## Overrides
+
+Time cells can be calculated from a formula or **overridden** with a specific value. Overrides are useful for one-off adjustments (for example a planned expense or sales target) without changing the formula for other periods. Treat overrides as intentional exceptions and review them when you move the Last actual date.
+
+## Across dimensions
+
+When you attach a dimension to a variable, Oculon evaluates the same variable for each dimension value. A formula set at the aggregate level can still drive the detail rows when the structure supports it. See [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables) and [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown).
+
+## In calculations
+
+A variable can be an input, an intermediate step, or an output. If you use the same variable in several formulas, any change to that variable can affect multiple sections of the model. Prefer stable names and clear ownership for shared drivers. See [Variable references](/concepts/data-and-structure/variables/variable-references).
+
+## In reporting
+
+Boards, views, and comparisons reflect the variable's current effective state. That includes formatting, active scenario, selected dimensions, and time aggregation. If a summary looks wrong, check both the formula and [Time aggregation](/concepts/data-and-structure/time/time-aggregation).
+
+## Related
+
+- [What is a variable](/concepts/data-and-structure/variables/what-is-a-variable)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- [Formula basics](/concepts/modeling/formulas/formula-basics)

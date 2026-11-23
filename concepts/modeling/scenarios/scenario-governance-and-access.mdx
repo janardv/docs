@@ -1,0 +1,74 @@
+---
+title: Scenario governance and access
+description: Control who can see, edit, merge, and delete scenarios in Oculon.
+icon: shield-check
+---
+
+Scenario governance keeps experimentation safe while approved branches stay trustworthy. Open governance controls from **Manage Scenario** on a scenario in the model scenario switcher.
+
+Use these controls to answer three different questions:
+
+- Who can see this scenario?
+- Who can edit it?
+- Can it push overrides into another scenario through **Merge Changes**?
+
+For workspace membership and generic share roles (**View**, **Edit**, **Full access**), see [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions) and [Roles and access](/concepts/settings-and-administration/roles-and-access).
+
+## Allow Changes
+
+**Allow Changes** controls whether a scenario is editable.
+
+- On: permitted users can edit the scenario.
+- Off: the scenario is locked. Reviewers can still open it, but casual edits should not apply.
+
+**Allow Changes** is available on non-default scenarios when you have **Full access**. It is not shown on **Default Scenario**.
+
+When a scenario is locked, delete is also blocked until you turn **Allow Changes** back on.
+
+## Allow Merging
+
+**Allow Merging** controls whether a scenario can act as a merge source in **Merge Changes**.
+
+This is separate from editability. A scenario can stay useful for review or comparison even when it should not push changes into another branch yet.
+
+**Allow Merging** appears on non-default scenarios when you have edit access. It is disabled while the scenario is locked (**Allow Changes** off). It is not shown on **Default Scenario**.
+
+See [Merge scenarios](/concepts/modeling/scenarios/merge-scenarios).
+
+## Share and visibility
+
+Non-default scenarios with **Full access** can use **Share** to manage who can access that scenario. **Default Scenario** does not show **Share** in Manage Scenario.
+
+**Copy Link** is available so people can open the intended scenario context. Opening a link still respects permissions. If someone cannot access the scenario, they should see an unavailable or permission state rather than silently landing on another branch.
+
+Visibility is not the same as edit rights. A scenario can be shared for viewing while remaining locked.
+
+## Delete safeguards
+
+Deleting a scenario is deliberate, not routine cleanup.
+
+Confirmed product rules:
+
+- **Default Scenario** cannot be deleted
+- Delete requires **Full access** on a non-default scenario
+- Locked scenarios cannot be deleted until unlocked
+- Confirm before delete
+
+If a branch still matters as a baseline, lock it with **Allow Changes** off instead of deleting it.
+
+## Default Scenario special cases
+
+**Default Scenario** is the shared baseline. Manage Scenario for it hides **Share**, **Allow Changes**, **Allow Merging**, **Merge changes**, and **Delete**. You can still **Copy Link** and use other baseline workflows.
+
+## What this page does not claim
+
+- A separate product control labeled **Who can view** (use **Share**)
+- A formal reviewed or approved scenario state machine
+- Future approval-flow tooling
+
+## Related pages
+
+- [Create and manage scenarios](/concepts/modeling/scenarios/create-and-manage-scenarios)
+- [Merge scenarios](/concepts/modeling/scenarios/merge-scenarios)
+- [Scenario overrides](/concepts/modeling/scenarios/scenario-overrides)
+- [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions)

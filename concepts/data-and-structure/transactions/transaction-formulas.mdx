@@ -1,0 +1,69 @@
+---
+title: Transaction formulas
+description: Use formulas in Transactions to keep row-level and column logic readable in Oculon.
+icon: sigma
+---
+
+Transactions can carry calculated logic close to the records they describe. Use that when a field should follow a shared rule and only certain rows need exceptions.
+
+Older documentation called this surface **Databases**. In Concepts and product UI, the public name is **Transactions**.
+
+## When Transaction formulas help
+
+Use formula logic on Transactions when you want the calculation to live with the dataset itself rather than only in a downstream model.
+
+Common uses include:
+
+- Calculated Variable columns derived from other Transactions fields
+- Default row or cell logic shared across many records
+- Controlled exceptions for one row or segment
+
+Transactions add columns such as **Variable** and **Dimension**. Planning-wide assumptions, scenario behavior, and cross-record model rules usually belong in [model formulas](/concepts/modeling/formulas) instead.
+
+## Start with a shared rule
+
+A good default gives most records one shared rule.
+
+That helps because:
+
+- The logic stays consistent
+- New records inherit the intended behavior
+- Reviewers can tell what is standard versus what is an exception
+
+If most rows should calculate the same way, start there before you introduce one-off overrides.
+
+## Override only where the business rule changes
+
+Some datasets need one-off logic for a specific row, category, or segment. Use that sparingly.
+
+If overrides become common, the structure or the base formula may need to be redesigned.
+
+## Keep time-aware behavior explicit
+
+If a Transactions calculation behaves differently across historical and forward-looking periods, make that split intentional.
+
+Prefer clear **actual formula** and **planned formula** intent where the field supports it, and keep the relationship to the [Last actual date](/concepts/data-and-structure/time/last-actual-date) readable. Deep planning cutoff patterns are covered under [Conditional logic](/concepts/modeling/formulas/conditional-logic) and [Variable behavior](/concepts/data-and-structure/variables/variable-behavior).
+
+## Transaction formula versus model formula
+
+| Prefer Transactions logic when | Prefer model formulas when |
+| :--- | :--- |
+| The rule belongs to the record itself | The rule is a planning assumption |
+| Reviewers need to see calculated fields next to source rows | Logic spans scenarios, linked models, or model-wide rules |
+| Exceptions are rare and justifiable | Cross-record allocation or forecast structure drives the result |
+
+## A practical review workflow
+
+When a Transactions formula looks wrong:
+
+1. Check the raw record values first
+2. Review the shared rule or Variable formula
+3. Confirm whether the row is inheriting that rule or using an exception
+4. Confirm the result still behaves correctly downstream in models, views, or boards
+
+## Related pages
+
+- [Working with data](/concepts/data-and-structure/transactions/working-with-data)
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Formula best practices](/concepts/modeling/formulas/formula-best-practices)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)

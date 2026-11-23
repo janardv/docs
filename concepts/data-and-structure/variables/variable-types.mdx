@@ -1,0 +1,37 @@
+---
+title: Variable types
+description: Understand the different variable types and when to use each one.
+icon: "list"
+sidebarTitle: Types
+---
+
+Variable types control how Oculon displays and interprets values. Choosing the right type makes the model easier to read and helps downstream reports behave consistently.
+
+<Frame caption="Variable types">
+  <img
+    src="/images/getting-started/fr-variable-type.png"
+    alt="Variable type selector in Oculon"
+  />
+</Frame>
+
+## Common variable types
+
+| Type | Use Case |
+| --- | --- |
+| **Number** | Use for counts, units, and general numeric values. |
+| **Currency** | Use for revenue, cost, cash flow, and other monetary values. |
+| **Percent** | Use for margin, conversion rate, growth rate, and share metrics. |
+| **Date** | Use when the output is a date or a date-based marker. |
+| **Boolean** | Use for true or false logic in formulas or workflow flags. |
+
+## What the type changes
+
+The type affects formatting, not just appearance. Currency and percent variables can carry different default display expectations from plain numbers. Date and boolean fields also communicate different intent to collaborators.
+
+## How to choose
+
+Pick the type that matches the question you want the model to answer. If the same line is being used to make a financial decision, make the format obvious to the reader.
+
+## Keep formats consistent
+
+Within the same section of a model, use the same type and precision rules for similar variables. Consistency reduces review errors and makes comparisons easier.

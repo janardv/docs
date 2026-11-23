@@ -1,0 +1,79 @@
+---
+title: What is a transaction
+description: Learn what Transactions are in Oculon and how they support models, analysis, and reporting.
+icon: circle-help
+sidebarTitle: Overview
+---
+
+Transactions store structured records that you can review directly or use as source data across models, views, and boards. They give you a stable place to manage operational data without rebuilding that data inside each model.
+
+Older docs referred to this concept as a **database**. The product label and Concepts term is **Transactions**.
+
+<Frame caption="Transactions detail view">
+  <img
+    src="/images/getting-started/fr-db.png"
+    alt="Transactions detail view in Oculon showing structured source records"
+  />
+</Frame>
+
+## Why Transactions matter
+
+Transactions help you:
+
+- centralize source records
+- keep raw data separate from planning logic
+- refresh data from integrations and queries
+- reuse the same source data across several downstream workflows
+- reduce manual re-entry when multiple teams rely on the same records
+
+## Where Transactions fit in Oculon
+
+Think of Transactions as the source layer in the Oculon workflow:
+
+- **Transactions** hold source records and imported data.
+- **Models** apply calculations, assumptions, and planning logic.
+- **Views** and **Boards** help teams review the result.
+
+This separation matters because source data and planning logic usually need different owners and different change controls.
+
+You open existing Transactions from the Library **Transactions** tab. You create new ones with **Create Transactions** (or from an integration when the source should refresh from an external system).
+
+## Common ways to create Transactions
+
+Two common creation paths:
+
+- **Manual Transactions** — create and manage the structure directly in Oculon (Library **Create Transactions**)
+- **Integration-backed Transactions** — create from an integration workflow so the source can refresh over time (including **Create Transactions** from an integration)
+
+Both approaches create Transactions that can later support models, reporting, and review workflows.
+
+## Transactions versus models
+
+Use Transactions when you need row-level records, imported source data, or operational detail.
+
+Use a [model](/concepts/modeling/models/what-is-a-model) when you need:
+
+- calculations and formulas
+- scenarios and planning assumptions
+- time-aware logic
+- outputs designed for planning and decision-making
+
+Transactions give the model a clean starting point. The model gives those records business meaning.
+
+## What Transactions usually feed
+
+Well-structured Transactions can later feed:
+
+- model inputs
+- dimension mappings
+- linked records and shared reporting inputs
+- board tables and supporting analysis
+
+Structure decisions inside Transactions often matter outside the grid itself.
+
+## Related pages
+
+- [Transaction types](/concepts/data-and-structure/transactions/transaction-types)
+- [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure)
+- [Working with data](/concepts/data-and-structure/transactions/working-with-data)
+- [Linked data](/concepts/data-and-structure/transactions/linked-data)

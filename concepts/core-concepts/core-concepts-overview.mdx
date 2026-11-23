@@ -1,0 +1,52 @@
+---
+title: Core concepts overview
+description: Review the foundational concepts you need before you build in Oculon.
+icon: blocks
+---
+
+Most work in Oculon comes down to a small set of concepts that build on each other. Once you understand how they connect, the rest of the product is easier to navigate.
+
+## Variables
+
+[Variables](/concepts/data-and-structure/variables) are the core lines in a model. They hold values, formulas, or both. A variable can represent a metric, a driver, an assumption, or a calculated result.
+
+## Dimensions
+
+[Dimensions](/concepts/data-and-structure/dimensions) add structure to a variable. Use them to break the same metric into categories such as region, department, product, or customer segment.
+
+## Time
+
+[Time](/concepts/data-and-structure/time) gives the model a planning horizon. It defines the date range, granularity, and the [Last actual date](/concepts/data-and-structure/time/last-actual-date) where actuals end and planned values begin.
+
+## Formulas
+
+[Formulas](/concepts/modeling/formulas) tell variables how to calculate. They can reference other variables, use helpers, and respond to time and dimension context. See also [conditional logic](/concepts/modeling/formulas/conditional-logic).
+
+## Models, Transactions, scenarios, views, and boards
+
+| Concept | Role |
+| :--- | :--- |
+| [Models](/concepts/modeling/models) | Hold planning logic |
+| [Transactions](/concepts/data-and-structure/transactions) | Hold source records (formerly Databases) |
+| [Scenarios](/concepts/modeling/scenarios) | Let you test changes safely |
+| [Views](/concepts/analysis-and-reporting/views) | Save filtered slices of model or Transactions content |
+| [Boards](/concepts/analysis-and-reporting/boards) | Present metrics and can embed views or other blocks |
+
+## A good mental model
+
+Think of Oculon as one connected system:
+
+1. **Transactions** provide data
+2. **Models** create logic
+3. **Scenarios** test change
+4. **Views** and **Compare** narrow and explain
+5. **Boards** communicate the result
+
+For the end-to-end path, see [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon). For term definitions, see the [Glossary](/concepts/core-concepts/glossary).
+
+## Related pages
+
+- [What is Oculon](/concepts/core-concepts/what-is-oculon)
+- [How Oculon is organized](/concepts/core-concepts/how-oculon-is-organized)
+- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)
+- [Glossary](/concepts/core-concepts/glossary)

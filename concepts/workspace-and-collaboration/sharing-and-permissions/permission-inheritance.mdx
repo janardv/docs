@@ -1,0 +1,62 @@
+---
+title: Permission inheritance
+description: Understand how permissions can inherit across related content and Spaces in Oculon.
+icon: git-branch
+---
+
+Permission inheritance means access can flow from a broader container to the content inside it.
+
+## Why inheritance exists
+
+Inheritance keeps permission management scalable. Instead of setting access on every item one by one, you can apply access at a higher level and let related content follow that rule.
+
+That is useful when several boards, models, or Transactions datasets belong in the same Space or shared area.
+
+## Where inheritance usually helps
+
+Inheritance is usually the right default when:
+
+- A Space owns a set of related content
+- A shared area should stay consistent for the same audience
+- You want fewer manual permission updates as content grows
+
+Used well, inheritance reduces drift between what people expect to see and what they can actually open.
+
+## Where inheritance creates mistakes
+
+Inheritance becomes risky when someone assumes a child item is private even though it still inherits a broader rule.
+
+That risk usually appears when:
+
+- Content is moved into a new Space or shared area
+- A board starts pulling from more restricted sources
+- Ownership changes and no one rechecks effective access
+- Sensitive content is reorganized quickly
+
+When the stakes are high, verify effective access instead of assuming the child item behaves differently from its container.
+
+## Recheck after structural changes
+
+Review effective permissions whenever a model, board, Transactions dataset, or shared structure is:
+
+- Moved
+- Shared more broadly
+- Placed in a different Space
+- Reorganized under a new owner or audience
+
+Inheritance is not a problem by itself. The problem is forgetting that it is still in effect.
+
+## Keep layers separate
+
+| Concept | Where to read more |
+| :--- | :--- |
+| Workspace membership | [Workspace access and visibility](/concepts/workspace-and-collaboration/workspace-access-and-visibility) |
+| Item access levels | [Roles and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions/roles-and-permissions) |
+| How to share a specific item | [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions) |
+| Admin users and groups | [Users, guests and invitations](/concepts/settings-and-administration/users-guests-and-invitations) |
+
+## Related pages
+
+- [Roles and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions/roles-and-permissions)
+- [Teamspaces and private space](/concepts/workspace-and-collaboration/teamspaces-and-private-space)
+- [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions)
