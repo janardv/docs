@@ -51,7 +51,7 @@
         },
         {
             "source": "/docs-new/ai/connectors",
-            "destination": "/concepts/ai-and-agents/context-and-connections"
+            "destination": "/concepts/ai-and-agents/context-and-connections/plugins-and-connectors"
         },
         {
             "source": "/docs-new/ai/mcp",
@@ -63,7 +63,7 @@
         },
         {
             "source": "/docs-new/ai/plan-mode",
-            "destination": "/concepts/ai-and-agents/ai-assistant"
+            "destination": "/concepts/ai-and-agents/ai-assistant/plan-mode"
         },
         {
             "source": "/docs-new/ai/reporting-with-ai",
@@ -71,7 +71,7 @@
         },
         {
             "source": "/docs-new/ai/skills",
-            "destination": "/concepts/ai-and-agents/ai-assistant"
+            "destination": "/concepts/ai-and-agents/skills"
         },
         {
             "source": "/docs-new/boards/board-best-practices",
@@ -123,19 +123,19 @@
         },
         {
             "source": "/docs-new/custom-agents/agent-actions",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-actions"
+            "destination": "/concepts/ai-and-agents/custom-agents/agent-routines"
         },
         {
             "source": "/docs-new/custom-agents/agent-best-practices",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-best-practices"
+            "destination": "/concepts/ai-and-agents/custom-agents"
         },
         {
             "source": "/docs-new/custom-agents/agent-connections",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-connections"
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
         },
         {
             "source": "/docs-new/custom-agents/agent-context-and-knowledge",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-context-and-knowledge"
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
         },
         {
             "source": "/docs-new/custom-agents/agent-permissions",
@@ -143,7 +143,7 @@
         },
         {
             "source": "/docs-new/custom-agents/agent-safety-and-review",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-safety-and-review"
+            "destination": "/concepts/ai-and-agents/custom-agents/agent-permissions"
         },
         {
             "source": "/docs-new/custom-agents/create-a-custom-agent",
@@ -151,7 +151,7 @@
         },
         {
             "source": "/docs-new/custom-agents/what-are-custom-agents",
-            "destination": "/concepts/ai-and-agents/custom-agents/what-are-custom-agents"
+            "destination": "/concepts/ai-and-agents/custom-agents"
         },
         {
             "source": "/docs-new/databases/database-best-practices",
@@ -587,7 +587,7 @@
         },
         {
             "source": "/support-docs/ai/connectors",
-            "destination": "/concepts/ai-and-agents/context-and-connections"
+            "destination": "/concepts/ai-and-agents/context-and-connections/plugins-and-connectors"
         },
         {
             "source": "/support-docs/ai/mcp",
@@ -599,7 +599,7 @@
         },
         {
             "source": "/support-docs/ai/plan-mode",
-            "destination": "/concepts/ai-and-agents/ai-assistant"
+            "destination": "/concepts/ai-and-agents/ai-assistant/plan-mode"
         },
         {
             "source": "/support-docs/ai/reporting-with-ai",
@@ -607,7 +607,7 @@
         },
         {
             "source": "/support-docs/ai/skills",
-            "destination": "/concepts/ai-and-agents/ai-assistant"
+            "destination": "/concepts/ai-and-agents/skills"
         },
         {
             "source": "/support-docs/boards/board-best-practices",
@@ -643,19 +643,19 @@
         },
         {
             "source": "/support-docs/custom-agents/agent-actions",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-actions"
+            "destination": "/concepts/ai-and-agents/custom-agents/agent-routines"
         },
         {
             "source": "/support-docs/custom-agents/agent-best-practices",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-best-practices"
+            "destination": "/concepts/ai-and-agents/custom-agents"
         },
         {
             "source": "/support-docs/custom-agents/agent-connections",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-connections"
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
         },
         {
             "source": "/support-docs/custom-agents/agent-context-and-knowledge",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-context-and-knowledge"
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
         },
         {
             "source": "/support-docs/custom-agents/agent-permissions",
@@ -663,7 +663,7 @@
         },
         {
             "source": "/support-docs/custom-agents/agent-safety-and-review",
-            "destination": "/concepts/ai-and-agents/custom-agents/agent-safety-and-review"
+            "destination": "/concepts/ai-and-agents/custom-agents/agent-permissions"
         },
         {
             "source": "/support-docs/custom-agents/create-a-custom-agent",
@@ -671,7 +671,7 @@
         },
         {
             "source": "/support-docs/custom-agents/what-are-custom-agents",
-            "destination": "/concepts/ai-and-agents/custom-agents/what-are-custom-agents"
+            "destination": "/concepts/ai-and-agents/custom-agents"
         },
         {
             "source": "/support-docs/databases/database-best-practices",
@@ -984,6 +984,42 @@
         {
             "source": "/support-docs/your-sidebar/sidebar-customization",
             "destination": "/concepts/resources/sidebar-and-search"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-actions",
+            "destination": "/concepts/ai-and-agents/custom-agents/agent-routines"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-library",
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-connections",
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/what-are-custom-agents",
+            "destination": "/concepts/ai-and-agents/custom-agents"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-profile-and-instructions",
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-context-and-knowledge",
+            "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-triggers",
+            "destination": "/concepts/ai-and-agents/custom-agents/agent-routines"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-safety-and-review",
+            "destination": "/concepts/ai-and-agents/custom-agents/agent-permissions"
+        },
+        {
+            "source": "/concepts/ai-and-agents/custom-agents/agent-best-practices",
+            "destination": "/concepts/ai-and-agents/custom-agents"
         }
     ],
     "navigation": {
@@ -1211,41 +1247,41 @@
                         "group": "AI and agents",
                         "pages": [
                             "concepts/ai-and-agents/ai-overview",
-                            "concepts/ai-and-agents/workspace-ai",
                             {
                                 "group": "AI assistant",
-                                "expanded": true,
                                 "pages": [
                                     "concepts/ai-and-agents/ai-assistant",
+                                    "concepts/ai-and-agents/ai-assistant/chat-basics",
+                                    "concepts/ai-and-agents/ai-assistant/what-the-assistant-can-do",
+                                    "concepts/ai-and-agents/ai-assistant/plan-mode",
+                                    "concepts/ai-and-agents/ai-assistant/goal-mode",
+                                    "concepts/ai-and-agents/ai-assistant/approvals-and-checkpoints",
                                     "concepts/ai-and-agents/ai-assistant/modeling-with-ai",
                                     "concepts/ai-and-agents/ai-assistant/reporting-with-ai"
                                 ]
                             },
+                            "concepts/ai-and-agents/skills",
                             {
                                 "group": "Custom agents",
-                                "expanded": true,
                                 "pages": [
                                     "concepts/ai-and-agents/custom-agents",
-                                    "concepts/ai-and-agents/custom-agents/what-are-custom-agents",
                                     "concepts/ai-and-agents/custom-agents/create-a-custom-agent",
-                                    "concepts/ai-and-agents/custom-agents/agent-context-and-knowledge",
-                                    "concepts/ai-and-agents/custom-agents/agent-actions",
+                                    "concepts/ai-and-agents/custom-agents/agent-routines",
                                     "concepts/ai-and-agents/custom-agents/agent-permissions",
-                                    "concepts/ai-and-agents/custom-agents/agent-connections",
-                                    "concepts/ai-and-agents/custom-agents/agent-safety-and-review",
-                                    "concepts/ai-and-agents/custom-agents/agent-best-practices"
+                                    "concepts/ai-and-agents/custom-agents/agent-activity-and-runs"
                                 ]
                             },
+                            "concepts/ai-and-agents/feed",
+                            "concepts/ai-and-agents/knowledge-and-memory",
                             {
                                 "group": "Context and connections",
-                                "expanded": true,
                                 "pages": [
                                     "concepts/ai-and-agents/context-and-connections",
+                                    "concepts/ai-and-agents/context-and-connections/plugins-and-connectors",
                                     "concepts/ai-and-agents/context-and-connections/mcp"
                                 ]
                             },
-                            "concepts/ai-and-agents/knowledge-and-memory",
-                            "concepts/ai-and-agents/feed"
+                            "concepts/ai-and-agents/workspace-ai"
                         ]
                     },
                     {
@@ -1505,14 +1541,11 @@
                                 "group": "Custom agents",
                                 "expanded": false,
                                 "pages": [
-                                    "docs-new/custom-agents/what-are-custom-agents",
-                                    "docs-new/custom-agents/create-a-custom-agent",
-                                    "docs-new/custom-agents/agent-context-and-knowledge",
-                                    "docs-new/custom-agents/agent-actions",
-                                    "docs-new/custom-agents/agent-permissions",
-                                    "docs-new/custom-agents/agent-connections",
-                                    "docs-new/custom-agents/agent-safety-and-review",
-                                    "docs-new/custom-agents/agent-best-practices"
+                                    "concepts/ai-and-agents/custom-agents",
+                                    "concepts/ai-and-agents/custom-agents/create-a-custom-agent",
+                                    "concepts/ai-and-agents/custom-agents/agent-routines",
+                                    "concepts/ai-and-agents/custom-agents/agent-permissions",
+                                    "concepts/ai-and-agents/custom-agents/agent-activity-and-runs"
                                 ]
                             },
                             {

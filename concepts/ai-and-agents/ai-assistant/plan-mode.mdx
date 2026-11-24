@@ -1,0 +1,56 @@
+---
+title: Plan mode
+description: Draft and edit a plan with the AI assistant before it makes changes to your workspace.
+icon: list
+sidebarTitle: Plan mode
+---
+
+Plan mode lets the AI assistant draft an editable plan before it builds anything. You review the steps, change them, and only then let the assistant start the work.
+
+<Frame>
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full aspect-video"
+    src="/videos/ai-and-agents/plan-mode.mp4"
+    aria-label="A user asks Plan mode to prepare an FY27 budget proposal. The assistant drafts a plan with objectives, outputs, drivers, and a task list, and the plan panel shows Start Building."
+  />
+</Frame>
+
+Use Plan mode when a request touches several parts of your workspace at once, such as models, scenarios, and boards. For a large outcome you want the assistant to drive on its own, use [Goal mode](/concepts/ai-and-agents/ai-assistant/goal-mode) instead.
+
+Plan mode only reads your workspace while you plan. If you ask for a change, the assistant offers to switch to Agent mode. To compare all four modes, see [Chat basics](/concepts/ai-and-agents/ai-assistant/chat-basics).
+
+## Create a plan
+
+Open the AI assistant and select **+ → Mode → Plan** in the chat composer. Then describe what you want to build, such as `Build a driver-based revenue model for FY27 by region`, and send it.
+
+The assistant replies with a plan that has a title, a summary, and a list of tasks.
+
+## Review and edit the plan
+
+The plan opens in its own panel. You can edit the title and the task list before anything changes in your workspace, and your edits save automatically.
+
+As you review, make sure the plan targets the right model, scenario, and time range. Check that it uses the variables and dimensions your team already relies on, and that it doesn't change anything you want left alone.
+
+## Build from the plan
+
+When the plan looks right, select **Start Building** in the plan panel. The assistant works through the tasks and updates each one's status as it goes: pending, in progress, completed, or cancelled.
+
+If the work needs an approval, the assistant asks you in the chat before it continues. See [Approvals and checkpoints](/concepts/ai-and-agents/ai-assistant/approvals-and-checkpoints).
+
+## Plan a presentation deck
+
+When you ask for a presentation in Plan mode, the plan becomes the text version of the deck, with one section per slide. The plan panel also shows Look and feel, where you set the number of slides and pick a Deck theme, such as Studio, Ledger, or Editorial.
+
+Select **Generate** to build the deck. It opens as a presentation and fills in slide by slide. For more reporting ideas, see [Reporting with AI](/concepts/ai-and-agents/ai-assistant/reporting-with-ai).
+
+## Copy or download a plan
+
+To share the approach with your team before you build, select Copy markdown or Download plan in the plan panel. Select Close plan to return to the chat.
+
+<Note>
+  Plan mode is different from Settings → Planning, which sets workspace planning defaults such as fiscal year and granularity. See [Planning defaults](/concepts/settings-and-administration/workspace-settings/planning-defaults).
+</Note>

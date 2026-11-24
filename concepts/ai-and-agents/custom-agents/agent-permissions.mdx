@@ -1,26 +1,46 @@
 ---
-title: Agent permissions
-description: Control what custom agents can access and do with the right permissions.
-icon: shield
-sidebarTitle: Permissions
+title: Access and approvals
+description: Control who can use a custom agent, what the agent can access, and which changes need a person's approval.
+icon: shield-check
+sidebarTitle: Access and approvals
 ---
 
-Agent permissions should follow the same principle as user permissions: grant only what is needed.
+Custom agents run without anyone watching. Three things keep them safe: who can use the agent, what the agent itself can access, and which changes wait for a person's approval.
 
-## Scope access tightly
+## Share an agent
 
-Limit the models, boards, Transactions, or Spaces an agent can use. This reduces risk and makes its answers more predictable.
+Open the agent, select **Share**, add people or groups, and choose an access level.
 
-## Keep user and agent permissions aligned
+| Access level | What a person can do |
+| :--- | :--- |
+| Can view and interact | See the agent and its results, chat with it, and act on its feed cards |
+| Can edit | Also change its instructions, routines, files, and memory, and run routines manually |
+| Full access | Also share the agent, change permissions, and delete it |
 
-An agent should not become a shortcut around normal governance. If a user would not be allowed to see or change something directly, the agent should not expose it for them either.
+Whoever creates an agent gets Full access. Admins can limit who creates, shares, and uses agents in [Workspace AI](/concepts/ai-and-agents/workspace-ai).
 
-## Review permissions after each expansion
+## What the agent can access
 
-Any time you widen an agent's scope, review what new content, actions, and side effects that change introduces.
+An agent works with its own access, never the access of the person who created it or ran it. It can only use the resources someone has shared with it, and you need Full access to a resource to share it. Sharing something with an agent never gives a person access to it.
 
-## Related pages
+Share only what the routines need, and give view access unless the agent must change something. A routine set to Read only can't make changes, even if the agent has edit access.
 
-- [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions)
-- [Agent actions](/concepts/ai-and-agents/custom-agents/agent-actions)
-- [Workspace AI](/concepts/ai-and-agents/workspace-ai)
+## Approvals
+
+Each routine has an approval rule. With Request review, the run pauses before it makes a change until someone approves it. With Proceed automatically, the agent makes changes without waiting.
+
+{/* PRODUCT CHECK: Confirm whether high-risk actions (deletes, access changes) always pause for approval in agent runs, as they do in chat, even with Proceed automatically. If yes, say so here. */}
+
+Use Request review for any routine that changes models or Transactions. Keep Proceed automatically for routines that only read and report.
+
+People with Can edit access can approve changes. If the routine allows it, people with Can view and interact can approve from Feed too.
+
+When a run needs approval, it shows as Pending approval in [Feed](/concepts/ai-and-agents/feed) and Needs approval in the agent's [Activity](/concepts/ai-and-agents/custom-agents/agent-activity-and-runs). Open it, review what the agent wants to do, and select **Approve** or **Reject**. You can add a note to explain your decision. The run then picks up where it left off.
+
+To hear about approvals right away, turn on **Agent needs your input** under **My Account → Notifications → AI & Agents**.
+
+## Before you turn a routine on
+
+Make sure the instructions are narrow, the agent can reach only what it needs, changes go through Request review, and you've tested the routine with Run now. Every agent should also have a named owner who keeps it up to date.
+
+As an agent gets more routines or more access, tighten its review path to match.

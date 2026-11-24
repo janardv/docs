@@ -1,41 +1,82 @@
 ---
 title: Workspace AI
-description: Configure workspace-level AI defaults, agent access, approvals, and tools in Oculon.
+description: Set workspace-wide AI defaults, agent permissions, approval rules, and connector access in Oculon.
 icon: settings
 ---
 
-**Workspace AI** is the admin settings surface for how AI behaves across the workspace. Open it from Settings under Admin → **Workspace AI**.
+Workspace AI is where admins set how AI behaves for everyone in the workspace. Open **Settings → Admin → Workspace AI**.
 
-This page is about workspace policy. Day-to-day chat lives in the [AI assistant](/concepts/ai-and-agents/ai-assistant). Packaged workflows live in [Custom agents](/concepts/ai-and-agents/custom-agents).
+<Info>
+  Who can use this: Only workspace admins can open Workspace AI.
+</Info>
 
-## Workspace AI tabs
+{/* PRODUCT CHECK: In the current app build, Workspace AI settings are saved in the browser only and are not yet enforced on the server. Confirm enforcement before publishing, or add a preview callout. */}
 
-Workspace AI is organized into:
+Workspace AI has four tabs: Defaults, Agents, Approvals, and Tools & Connectors.
 
-| Tab | What you configure |
+## Defaults
+
+Default AI mode sets the model tier the workspace starts with. Lite is for quick checks, low cost, and basic insights. Pro gives deeper analysis with balanced cost and speed. Max is for full modeling, with the highest depth and accuracy.
+
+Default response style sets the default tone and level of detail for AI responses. Choose Default, Concise, Detailed, Bullet points, Formal, or Casual.
+
+Workspace AI instructions is free text that guides AI across the workspace.
+
+### Write workspace AI instructions
+
+Use workspace instructions for rules everyone should share, such as `Our fiscal year starts in April.`, `Report currency in USD thousands unless asked otherwise.`, or `Call the main forecast scenario "Base".`
+
+Keep instructions short and explicit. Personal preferences belong in each person's [memories](/concepts/ai-and-agents/knowledge-and-memory).
+
+## Agents
+
+These settings control how people work with [custom agents](/concepts/ai-and-agents/custom-agents).
+
+### Agent permissions
+
+Four settings decide who can work with agents: Who can create custom agents?, Who can edit shared agents, Who can share agents, and Who can use shared agents. Set each one to Everyone or Admins only.
+
+### Sharing & approval
+
+Default agent visibility decides whether new agents start as Private to creator or Shared with workspace. The default is Private to creator.
+
+Require approval before publishing means new agents must be reviewed before others can see them. It is on by default.
+
+Allow external sharing controls whether agents can be shared outside the workspace. It is off by default.
+
+### Agent execution
+
+Allow agents to take actions controls whether agents can act through connected tools and services. It is on by default.
+
+## Approvals
+
+These settings control when agent actions need a person's approval. For how approvals work in chat, see [Approvals and checkpoints](/concepts/ai-and-agents/ai-assistant/approvals-and-checkpoints).
+
+Require approval for agent actions turns approvals on or off. It is on by default.
+
+Default approval behavior can be Always ask, Auto-approve low risk, or Auto-deny. The default is Always ask.
+
+Allow users to approve actions decides who can approve: anyone who runs the agent, Workspace admins, or Specific users. The default is anyone who runs the agent.
+
+Under Approval required for, turn approval on or off for each kind of action:
+
+| Action | Default |
 | :--- | :--- |
-| **Defaults** | Workspace AI instructions and default AI behavior |
-| **Agents** | Who can create, edit, share, and use shared agents |
-| **Approvals** | Whether agents may take actions and related approval expectations |
-| **Tools & Connectors** | Who can connect tools, and whether external tools or MCP tools are allowed |
+| Read connected data | Off |
+| Create records | Off |
+| Update records | Off |
+| Delete records | On |
+| Send external messages | On |
+| Share information externally | On |
 
-## Model tier options
+## Tools & Connectors
 
-Workspace AI settings can include model tiers such as **Lite**, **Pro**, and **Max**. Use the tier that matches the sensitivity and quality needs of the workflow.
+Who can add connections can be Everyone or Admins only. Under Available connectors, set AI Access for each connector to Read only, Read and write, or No access.
 
-## Workspace AI instructions
+To add or manage connections, see [Plugins and connectors](/concepts/ai-and-agents/context-and-connections/plugins-and-connectors).
 
-Use **Workspace AI instructions** to set shared guidance that should apply across AI help in the workspace. Keep instructions short, explicit, and aligned with how your team plans.
+## How workspace settings relate to other controls
 
-## Keep policy separate from personal settings
+Workspace AI sets defaults and policy for the whole workspace. Personal settings such as memories apply only to you. See [Knowledge and memory](/concepts/ai-and-agents/knowledge-and-memory).
 
-- **Workspace AI** controls organization defaults and agent governance.
-- **My Account** personal AI options (including personal memories) apply to you.
-- Resource sharing and Space membership still decide what content a person or agent can reach.
-
-## Related pages
-
-- [AI overview](/concepts/ai-and-agents/ai-overview)
-- [Custom agents](/concepts/ai-and-agents/custom-agents)
-- [Context and connections](/concepts/ai-and-agents/context-and-connections)
-- [Knowledge and memory](/concepts/ai-and-agents/knowledge-and-memory)
+Sharing still decides what each person and agent can see. AI never widens access.

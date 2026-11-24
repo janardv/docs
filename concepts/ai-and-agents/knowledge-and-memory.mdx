@@ -1,34 +1,25 @@
 ---
 title: Knowledge and memory
-description: Understand personal and agent knowledge that stays visible in Oculon AI settings.
+description: Control what the Oculon AI assistant remembers about you and what context your custom agents use.
 icon: book-open
 ---
 
-Knowledge and memory help AI stay consistent across conversations when your workspace exposes those controls. Document only what you can see and manage in product settings.
+Memory lets the [AI assistant](/concepts/ai-and-agents/ai-assistant) remember facts and preferences about your work, so you don't have to repeat them in every chat.
 
-## Personal memories
+## Your memories
 
-Under **My Account** AI settings, you can manage personal memories when the surface is available. Typical actions include editing or deleting a memory.
+The assistant saves a memory when you ask it to, such as `Remember that I report in USD thousands`, or when you share a preference that's clearly useful later. It never saves passwords or other secrets, or text from files and web pages unless you say it in your own words.
 
-Personal memories apply to you. They are not a substitute for workspace policy in [Workspace AI](/concepts/ai-and-agents/workspace-ai).
+Your memories are private to you and stay in the workspace where they were saved. To see or change them, open **Settings → My Account → AI**. You can add a memory, edit or delete one, or delete them all. You can also ask the assistant in chat to forget something.
 
-## Agent knowledge
+Good memories are short and don't change often, such as `Our fiscal year starts in April.` For numbers that change every week, ask the assistant to read the model instead.
 
-Custom agents can carry scoped knowledge and context you assign to them. Keep that knowledge narrow and current. See [Agent context and knowledge](/concepts/ai-and-agents/custom-agents/agent-context-and-knowledge).
+## Other context the AI uses
 
-## What this page does not claim
+Admins can set shared instructions for everyone in [Workspace AI](/concepts/ai-and-agents/workspace-ai). Projects can hold their own instructions and memory for the AI working in that project. See [AI in projects](/concepts/workspace-and-collaboration/projects-and-tasks/ai-in-projects).
 
-Do not assume:
+Each [custom agent](/concepts/ai-and-agents/custom-agents) has its own instructions, memory, and the resources shared with it, separate from yours. See [Create an agent](/concepts/ai-and-agents/custom-agents/create-a-custom-agent).
 
-- Automatic memory of every chat turn
-- Workspace-wide shared memory unless a product control says so
-- Project memory behavior unless Projects are enabled and documented
+## Memory and permissions
 
-If a persistence or scope behavior is not visible in settings or agent configuration, treat it as undocumented.
-
-## Related pages
-
-- [AI assistant](/concepts/ai-and-agents/ai-assistant)
-- [Custom agents](/concepts/ai-and-agents/custom-agents)
-- [Workspace AI](/concepts/ai-and-agents/workspace-ai)
-- [Personal settings](/concepts/settings-and-administration/personal-settings)
+Memory never widens access. The assistant and your agents can only read what you, or the agent, already have permission to see.

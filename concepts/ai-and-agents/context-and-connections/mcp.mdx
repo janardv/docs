@@ -1,27 +1,105 @@
 ---
-title: MCP
-description: Learn how Model Context Protocol connects AI workflows in Oculon to approved tools and data sources.
-icon: plug
+title: Oculon MCP server
+description: Connect Claude, ChatGPT, Cursor, and other AI tools to your Oculon workspace through the Oculon MCP server.
+icon: server
+sidebarTitle: Oculon MCP server
 ---
 
-Model Context Protocol (MCP) is a way to connect AI systems to tools and data in a structured, permission-aware way. In Oculon, MCP can help AI experiences reach beyond one page or one answer and work with approved systems more directly.
+The Oculon MCP server lets AI tools outside Oculon work with your workspace. Once connected, a tool such as Claude, ChatGPT, or Cursor can read your models, scenarios, boards, and Transactions, and make changes when you allow it.
 
-Manage MCP from Settings → **Connectors & MCP**. Workspace policy for MCP tools also appears under [Workspace AI](/concepts/ai-and-agents/workspace-ai) → Tools & Connectors.
+The server uses Model Context Protocol (MCP), an open standard for connecting AI tools to data. To connect outside tools into Oculon instead, see [Plugins and connectors](/concepts/ai-and-agents/context-and-connections/plugins-and-connectors).
 
-## Why MCP matters
+## Before you start
 
-MCP is useful when AI needs access to trusted tools or structured context instead of only free-form text. It creates a cleaner bridge between the assistant and the systems the business actually uses.
+You need an Oculon account with access to the workspace you want to connect. You also need an AI tool that supports remote MCP servers over Streamable HTTP with browser sign-in (OAuth). You don't need an API key, access token, or workspace ID.
 
-## How to think about it in Oculon
+## Connection details
 
-If built-in AI helps inside the product, MCP extends what that AI can safely understand or act on through controlled connections.
+| Setting | Value |
+| :--- | :--- |
+| Name | `Oculon`, or any name you prefer |
+| Server URL | `https://app.oculon.ai/mcp` |
+| Transport | Streamable HTTP (remote HTTP) |
+| Authentication | OAuth (browser sign-in) |
 
-## Keep governance first
+You can also copy the URL from **Settings → My Account → Connectors & Plugins**, under Connect External AI Clients (MCP).
 
-Any MCP setup should be scoped, reviewed, and permission-aware. More tool access is not automatically better. The right MCP setup is the smallest one that supports the workflow well.
+{/* PRODUCT CHECK: The in-app "Connect External AI Clients (MCP)" snippets currently show Authorization and X-Workspace-ID headers. The server setup guide says OAuth only, with no headers. Align the in-app snippets before publishing. */}
 
-## Related pages
+## Connect your AI tool
 
-- [Context and connections](/concepts/ai-and-agents/context-and-connections)
-- [Workspace AI](/concepts/ai-and-agents/workspace-ai)
-- [Agent connections](/concepts/ai-and-agents/custom-agents/agent-connections)
+1. Open your AI tool's settings for MCP, Connectors, or Integrations.
+2. Add a remote MCP server.
+3. Enter the server URL: `https://app.oculon.ai/mcp`.
+4. Save, then select **Connect**, **Sign in**, or **Authorize**.
+5. Sign in to Oculon in the browser window that opens.
+6. On Choose a workspace, select Authorize next to the workspace this connection should use.
+7. Return to your AI tool and check that the Oculon tools are listed.
+
+### Configuration file example
+
+Some AI tools use a JSON configuration file. Field names can differ by tool, but the setup looks like this:
+
+```json
+{
+  "mcpServers": {
+    "oculon": {
+      "url": "https://app.oculon.ai/mcp"
+    }
+  }
+}
+```
+
+Use the remote HTTP form. Don't set up Oculon as a local command.
+
+## Check the connection
+
+Try a read-only request in your AI tool, such as `List the models in my Oculon workspace.` or `List the scenarios in my Oculon workspace.` If you see the models or scenarios you expect, the connection works.
+
+## Workspaces and access
+
+Each connection uses one workspace. To work with two workspaces at once, add a second Oculon connection and choose the other workspace when you sign in.
+
+The AI tool can only see and change what your Oculon account can access. Oculon checks your workspace membership on every request, so if your access is removed, the connection stops working. You can revoke the connection from your AI tool at any time.
+
+## Limit what the AI tool can do
+
+By default, a connection can use every tool the Oculon AI assistant uses. To see what that covers, read [What the assistant can do](/concepts/ai-and-agents/ai-assistant/what-the-assistant-can-do). Add `?toolset=` to the server URL to narrow it:
+
+| Server URL | What the AI tool can do |
+| :--- | :--- |
+| `https://app.oculon.ai/mcp` | Everything the Oculon AI assistant can do |
+| `https://app.oculon.ai/mcp?toolset=read` | Read only. Changes are refused. |
+| `https://app.oculon.ai/mcp?toolset=modeling` | Read everything, and change models |
+| `https://app.oculon.ai/mcp?toolset=reporting` | Read everything, and change boards |
+| `https://app.oculon.ai/mcp?toolset=data` | Read everything, and change Transactions |
+
+You can combine toolsets, such as `?toolset=read,reporting`. Other toolsets include `artifacts` and `workspace`.
+
+<Tip>
+  Start with `?toolset=read` while you try out a new AI tool. Switch to a wider toolset once you trust how it works.
+</Tip>
+
+## Approvals for high-risk changes
+
+High-risk changes never run on the first request. These include deletes, unlinks, scenario merges, and access changes.
+
+When the AI tool asks for one of these changes, Oculon holds it and returns a summary without changing anything. Your AI tool shows you the summary and asks you to confirm. If you agree, the AI tool confirms the change, and Oculon runs it once.
+
+A held change expires after 10 minutes. Set your AI tool to always ask before it runs the `confirm_change` tool.
+
+Every change the AI tool makes can be listed and undone, the same as changes from the Oculon AI assistant. For more on how this works, see [Approvals and checkpoints](/concepts/ai-and-agents/ai-assistant/approvals-and-checkpoints).
+
+## Limits
+
+Each user can make up to 300 tool calls per minute, with up to 12 running at the same time.
+
+## Troubleshooting
+
+| Problem | What to do |
+| :--- | :--- |
+| The AI tool can't connect to the server | Check that it supports remote Streamable HTTP MCP servers. Use the exact URL, including `/mcp`. |
+| You can't finish signing in | Sign in with your Oculon account, allow pop-ups for the AI tool, and try again. |
+| Your workspace isn't listed | Confirm that your account belongs to an active workspace. Ask a workspace admin to invite you. |
+| `Workspace not found or you don't have access` | Your access changed after you connected. Reconnect, or ask an admin to check your membership. |
+| The AI tool only supports local MCP servers | Use a tool that supports remote MCP servers with OAuth. |

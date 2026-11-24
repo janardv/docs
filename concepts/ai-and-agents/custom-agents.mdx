@@ -1,40 +1,77 @@
 ---
 title: Custom agents
-description: Package instructions, context, and allowed actions into repeatable agents in Oculon.
+description: Build AI agents that own a repeatable finance job, run on a schedule, and report back in Oculon.
 icon: bot
 ---
 
-Custom agents let you package instructions, approved context, and allowed actions into a repeatable assistant inside Oculon. Use them when the same analysis or workflow support is needed often.
+A custom agent is an AI teammate you set up once for a repeatable job, such as a weekly cash report or a month-end variance review. It runs on its own schedule, with the same instructions and the same access every time, and reports back when it's done.
 
-Custom agents are distinct from the general [AI assistant](/concepts/ai-and-agents/ai-assistant). The assistant is for open-ended help. A custom agent is for one scoped, reusable job.
+<Frame>
+  <img
+    src="/images/ai-and-agents/agents-directory.png"
+    alt="The Team tab in the Oculon sidebar, showing Feeds and a list of agents with each agent's latest message. The Board generator agent's chat is open on the right."
+  />
+</Frame>
 
-Open custom agents from `/custom-agents` when the feature is available in your workspace. Agent governance defaults live under [Workspace AI](/concepts/ai-and-agents/workspace-ai).
+## How an agent works
 
-## In this section
+An agent has a profile with its instructions, personality, and model. You share the models, Transactions, and files it needs, and it keeps its own memory as it works.
+
+The work itself lives in routines. Each routine is one task, such as a weekly bookings summary, and a trigger such as a schedule decides when it runs. Every time a routine runs, the result shows up in the agent's chat, its Activity, and [Feed](/concepts/ai-and-agents/feed). If a run needs to make an important change, it waits for a person to approve it first.
+
+## What agents are good for
+
+Agents work best for jobs that repeat on a schedule. An agent can summarize last week's bookings against plan every Monday, check the P&L model for formula errors at month-end, flag large variances between Budget and Actuals each morning, or refresh the Pipeline table from a CRM export.
+
+Keep each agent to one job. A `Close checker` and a `Cash reporter` are easier to trust than one agent that does both.
+
+## Where agents live
+
+Select **Team** in the sidebar to see your agents. The list includes agents you created and agents shared with you.
+
+Open an agent to chat with it. Each agent has one ongoing chat where you can ask questions, give feedback, or ask it to change its own setup, such as `Add a routine that runs every Friday at 16:00`. Routine results appear in the same chat as run cards.
+
+The gear icon opens Agent info, where you edit the agent's profile and routines. The clock icon opens Activity, where you see every run. Each agent also has an `@handle` and an avatar color, so it's easy to spot in Feed and chat.
+
+{/* ASSET TODO: An agent's page showing its chat with a routine run card and the Agent info panel open. Replace placeholder with /images/ai-and-agents/agent-workspace.png */}
+<Frame>
+  <img
+    src="/images/ai-and-agents/screenshot-placeholder.svg"
+    alt="Placeholder: agent page with its chat showing a routine run result, and the Agent info panel open on the side"
+  />
+</Frame>
+
+## Agents and the AI assistant
+
+Use the [AI assistant](/concepts/ai-and-agents/ai-assistant) for one-off questions and changes. It works with your own permissions and replies in chat.
+
+Use a custom agent when the same job comes up again and again. An agent runs on a schedule, uses only the resources shared with it, follows saved instructions, and asks for approval in Feed instead of in chat.
+
+## Who can do what
+
+What you can do with an agent depends on the access level it was shared with you at. See [Access and approvals](/concepts/ai-and-agents/custom-agents/agent-permissions). Admins can also limit who creates, shares, and uses agents in [Workspace AI](/concepts/ai-and-agents/workspace-ai).
+
+An agent never borrows its creator's access. It only sees what has been shared with it.
+
+## Pause or delete an agent
+
+To stop an agent without losing its setup, pause its routines. See [Routines and triggers](/concepts/ai-and-agents/custom-agents/agent-routines).
+
+To copy an agent, open **More actions → Duplicate**. To remove it for good, open **More actions → Delete**. Deleting an agent removes its tasks and access, and only people with Full access can do it.
+
+## Next steps
 
 <Columns cols={2}>
-  <Card title="What are custom agents" icon="circle-help" href="/concepts/ai-and-agents/custom-agents/what-are-custom-agents">
-    When a custom agent is the right tool.
+  <Card title="Create an agent" icon="circle-plus" href="/concepts/ai-and-agents/custom-agents/create-a-custom-agent">
+    Set up the profile, knowledge, and memory.
   </Card>
-  <Card title="Create a custom agent" icon="circle-plus" href="/concepts/ai-and-agents/custom-agents/create-a-custom-agent">
-    Set a narrow goal and test before sharing.
+  <Card title="Routines and triggers" icon="repeat" href="/concepts/ai-and-agents/custom-agents/agent-routines">
+    Give the agent tasks and a schedule.
   </Card>
-  <Card title="Agent context and knowledge" icon="book-open" href="/concepts/ai-and-agents/custom-agents/agent-context-and-knowledge">
-    Give the agent only the context it needs.
+  <Card title="Access and approvals" icon="shield-check" href="/concepts/ai-and-agents/custom-agents/agent-permissions">
+    Control who uses the agent and what it can change.
   </Card>
-  <Card title="Agent actions" icon="play" href="/concepts/ai-and-agents/custom-agents/agent-actions">
-    Limit what the agent can do beyond answering.
-  </Card>
-  <Card title="Agent permissions" icon="shield" href="/concepts/ai-and-agents/custom-agents/agent-permissions">
-    Keep agent access aligned with governance.
-  </Card>
-  <Card title="Agent connections" icon="plug" href="/concepts/ai-and-agents/custom-agents/agent-connections">
-    Connect only the sources the workflow needs.
-  </Card>
-  <Card title="Agent safety and review" icon="shield-check" href="/concepts/ai-and-agents/custom-agents/agent-safety-and-review">
-    Review agents like workflow automation.
-  </Card>
-  <Card title="Agent best practices" icon="badge-check" href="/concepts/ai-and-agents/custom-agents/agent-best-practices">
-    Keep agents specific, scoped, and owned.
+  <Card title="Runs and activity" icon="activity" href="/concepts/ai-and-agents/custom-agents/agent-activity-and-runs">
+    Track every run, its result, and its cost.
   </Card>
 </Columns>

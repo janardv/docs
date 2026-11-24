@@ -1,0 +1,77 @@
+---
+title: Plugins and connectors
+description: Connect Notion or any MCP server to your workspace so the Oculon AI assistant and agents can use its tools.
+icon: puzzle
+sidebarTitle: Plugins and connectors
+---
+
+Plugins give Oculon AI access to tools in other services. For example, with the Notion plugin connected, the AI assistant can read and write Notion pages for you.
+
+Plugins connect through MCP servers. You can add a ready-made plugin or connect any MCP server by URL.
+
+<Info>
+  Who can use this: Only workspace admins can add, connect, or remove plugins. Everyone in the workspace can see which plugins are connected.
+</Info>
+
+## Open Plugins & Connectors
+
+Go to **Settings → My Account → Connectors & Plugins**. The page has two tabs.
+
+The Plugins tab shows plugins you can connect and plugins already in the workspace. The Connectors tab shows the workspace's data connections, each with a Configured or Disconnected status.
+
+To manage data connections, select Manage data connections. This opens Library → Integrations.
+
+## Connect Notion
+
+1. Open the **Plugins** tab.
+2. On the Notion card, select **Connect**.
+3. Select **Connect with Notion**.
+4. Approve access in Notion. You return to Oculon automatically.
+
+No other setup is needed.
+
+## Add a custom plugin
+
+Use a custom plugin to connect any remote MCP server, such as your company's internal tools.
+
+1. Open the Plugins tab.
+2. Select **Custom Plugin**.
+3. Enter a short Name, such as `my-internal-tools`.
+4. Enter the Server URL, such as `https://mcp.example.com/mcp`.
+5. Choose a Transport: Streamable HTTP (default) or SSE.
+6. Save the plugin. Its status shows Setup required.
+7. Open the plugin card and select **Connect with OAuth** to finish setup.
+
+The server URL must use `https`. Private or internal network addresses aren't allowed.
+
+## Plugin statuses
+
+| Status | Meaning |
+| :--- | :--- |
+| Connected | The plugin works. The card shows how many tools it provides. |
+| Setup required | The plugin was added but not yet authorized |
+| Disabled | An admin turned the plugin off |
+| Error | Oculon can't reach the server or the authorization expired |
+
+## Manage a plugin
+
+Open a plugin card to manage it. Select Rediscover tools after the server adds new tools, or Reconnect if authorization expired. You can also Disable or Enable the plugin for the whole workspace, or Delete it.
+
+You can turn a whole plugin on or off. You can't turn off individual tools inside a plugin.
+
+## Use plugins in chat
+
+Connected plugins appear in the `/` menu in the chat composer, under Plugins. The AI assistant can also choose a plugin's tools on its own when your request needs them. For other ways to shape how the assistant works, see [Skills](/concepts/ai-and-agents/skills) and [Workspace AI](/concepts/ai-and-agents/workspace-ai).
+
+## Connect an AI tool to Oculon
+
+This page also shows the Oculon MCP server URL, under Connect External AI Clients (MCP). Use it to connect tools such as Claude or ChatGPT to Oculon. See [Oculon MCP server](/concepts/ai-and-agents/context-and-connections/mcp).
+
+## Troubleshooting
+
+| Problem | What to do |
+| :--- | :--- |
+| You can't add or connect a plugin | Ask a workspace admin. Only admins can manage plugins. |
+| The plugin shows Error | Select Reconnect. If it still fails, check that the server is online. |
+| New tools on the server don't appear | Select Rediscover tools. |
+| The server URL is rejected | Use a public `https` URL. |

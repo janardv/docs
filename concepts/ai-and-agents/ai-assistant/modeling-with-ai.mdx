@@ -1,29 +1,50 @@
 ---
 title: Modeling with AI
-description: Use AI to speed up model setup, clarify planning logic, and reduce repetitive model-building work.
+description: Use the AI assistant to build, extend, and explain models, with example prompts for common modeling tasks.
 icon: brain
-sidebarTitle: Modeling
+sidebarTitle: Modeling with AI
 ---
 
-Modeling with AI is most valuable when it helps you get to a better structure faster. That can include clarifying assumptions, drafting formula logic, suggesting helper variables, or helping a planner understand an unfamiliar model.
+The AI assistant can set up model structure, write formulas, and explain how an existing model works. Use it to get to a first draft faster, then review the logic yourself. For the full list of what it can do, see [What the assistant can do](/concepts/ai-and-agents/ai-assistant/what-the-assistant-can-do).
 
-## Good uses for AI in model building
+<Frame>
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full aspect-video"
+    src="/videos/ai-and-agents/modeling-with-ai.mp4"
+    aria-label="A user asks the AI assistant, open beside the SaaS P&L model, to add Gross margin as Revenue minus COGS and Gross margin % as Gross margin divided by Revenue. The assistant reads the model, updates the gross margin variables, and shows a summary with a Changed 1 model card."
+  />
+</Frame>
 
-- Turning a planning question into a structured model outline
-- Suggesting variable groupings or helper variables
-- Translating a business rule into formula-ready logic
-- Explaining how an existing model section works
+## Before you start
 
-## Keep the human judgment in the loop
+Open the model you want to work on, or `@` mention it in the composer. Check which scenario is active, because the assistant works in the scenario you're viewing.
 
-AI can help with speed and interpretation, but the final model structure still needs human review. The planner is responsible for making sure the logic matches the business reality.
+Use Agent mode to make changes, or Ask mode to explore without changes. For larger builds, start in [Plan mode](/concepts/ai-and-agents/ai-assistant/plan-mode) so you can review the approach first.
 
-## Best place to use it
+## Build a new model
 
-Use AI at moments where the work is repetitive or interpretive. Do not rely on it as a substitute for confirming ownership, aggregation behavior, or financial policy.
+Describe the business question, the time range, and the main drivers. For example, `Create a SaaS revenue model for FY27, monthly, driven by new customers, churn rate, and ARPA` gives the assistant all three. See [What is a model](/concepts/modeling/models/what-is-a-model) for how models are structured.
 
-## Related pages
+## Add variables and formulas
 
-- [AI assistant](/concepts/ai-and-agents/ai-assistant)
-- [What is a model](/concepts/modeling/models/what-is-a-model)
-- [Formula basics](/concepts/modeling/formulas/formula-basics)
+Tell the assistant what the variable represents and how it should calculate, such as `Add Gross margin as Revenue minus COGS, and Gross margin % as Gross margin divided by Revenue`. You can also ask it to `Break down Bookings by the Region dimension`.
+
+The assistant uses actual formula and planned formula logic relative to the model's [Last actual date](/concepts/data-and-structure/time/last-actual-date). A prompt like `Make Marketing spend 12% of Revenue in the planned formula, and keep actuals from the GL` changes only the planned side. Ask the assistant to explain which side of the cutoff it changed. For formula syntax, see [Formula basics](/concepts/modeling/formulas/formula-basics).
+
+## Understand an existing model
+
+Ask the assistant to trace logic you didn't build. `Explain how Net revenue is calculated, step by step` walks through a calculation, and `Why did Opex jump in March?` investigates a change. You can also ask it to `List any variables with formula errors`.
+
+## Explore scenarios
+
+The assistant can create and compare scenarios. Try `Create a scenario called Downside with 15% fewer new customers from Q2`, then `Compare Base and Downside for EBITDA in FY27`.
+
+## Review before you rely on it
+
+After the assistant makes changes, open the changes card and review each new or edited variable. Check the first periods before and after the Last actual date, and confirm aggregation and formats for new variables.
+
+If something is wrong, use **Undo** or **Restore Checkpoint**. See [Approvals and checkpoints](/concepts/ai-and-agents/ai-assistant/approvals-and-checkpoints).

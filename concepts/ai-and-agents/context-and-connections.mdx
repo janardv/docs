@@ -1,41 +1,34 @@
 ---
 title: Context and connections
-description: Connect AI workflows in Oculon to approved sources through Connectors and MCP.
+description: Connect Oculon AI to outside tools with plugins, and connect outside AI tools to Oculon with the Oculon MCP server.
 icon: plug
 ---
 
-Context and connections give AI access to the sources it needs to be useful. In Settings, this surface is labeled **Connectors & MCP** (also shown as **MCP & Connectors**).
+Connections let AI work across Oculon and the other tools your team uses. They work in two directions, and both use Model Context Protocol (MCP), an open standard for connecting AI to tools and data.
 
-This is different from Library **Integrations**, which connect source systems into planning data such as Transactions. Connectors and MCP ground AI workflows; Integrations feed planning data.
+The first direction brings outside tools into Oculon. With a plugin, Oculon AI can use tools from services such as Notion, or from any MCP server. You set these up under **Settings → My Account → Connectors & Plugins**.
 
-## Why connections matter
+The second direction brings Oculon into outside AI tools. Tools such as Claude, ChatGPT, or Cursor can work with your Oculon workspace. You set this up in your AI tool's MCP settings, using the Oculon MCP server URL.
 
-AI is most useful when it can work from the same trusted context your team already uses. Connections help bring that context into the workflow without forcing people to restate it manually every time.
+## Connections vs Integrations
 
-## Good connection design
+Plugins and connectors give AI live access to tools in other services. The AI assistant and custom agents use them, and you manage them under **Settings → Connectors & Plugins**.
 
-Good connections are:
-
-- Clearly scoped
-- Easy to review
-- Aligned with workspace permissions
-- Tied to a real business workflow
-
-Workspace AI → **Tools & Connectors** can control who may add tools and whether external tools or MCP tools are allowed.
+Integrations do a different job. They import and sync source data into Oculon for use in Transactions and models. You manage them under **Library → Integrations**. To learn how imported data is stored, see [Transactions](/concepts/data-and-structure/transactions).
 
 ## In this section
 
-<Card title="MCP" icon="plug" href="/concepts/ai-and-agents/context-and-connections/mcp">
-  Use Model Context Protocol for permission-aware tool access.
-</Card>
+<Columns cols={2}>
+  <Card title="Plugins and connectors" icon="puzzle" href="/concepts/ai-and-agents/context-and-connections/plugins-and-connectors">
+    Connect Notion or any MCP server so Oculon AI can use its tools.
+  </Card>
+  <Card title="Oculon MCP server" icon="server" href="/concepts/ai-and-agents/context-and-connections/mcp">
+    Connect Claude, ChatGPT, Cursor, and other AI tools to Oculon.
+  </Card>
+</Columns>
 
 ## Review connection impact
 
-Whenever you add or expand a connection, check what new data becomes visible, what workflows it supports, and what governance expectations should change with it. Do not infer that AI automatically receives every workspace resource.
+Before you add a connection, check which data it makes available to AI and who in the workspace can use it. Also check which actions it allows, such as reading versus writing.
 
-## Related pages
-
-- [MCP](/concepts/ai-and-agents/context-and-connections/mcp)
-- [Workspace AI](/concepts/ai-and-agents/workspace-ai)
-- [Agent connections](/concepts/ai-and-agents/custom-agents/agent-connections)
-- [Transactions](/concepts/data-and-structure/transactions)
+Connections never widen access inside Oculon. People and agents can still only use resources they have permission to see. Admins set broader AI policy in [Workspace AI](/concepts/ai-and-agents/workspace-ai). To set up an agent, see [Create a custom agent](/concepts/ai-and-agents/custom-agents/create-a-custom-agent).
