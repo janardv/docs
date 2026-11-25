@@ -1,93 +1,109 @@
 ---
 title: Glossary
-description: Look up the key terms used throughout Oculon documentation.
+description: Look up the product terms you see in Oculon and across these docs.
 icon: book-open
 ---
 
-Use this glossary when you need a quick definition of a product term that appears elsewhere in the docs.
+Short definitions of the terms you see in Oculon. Each section links to the page that explains the concept in depth.
 
-## Core terms
+## Workspace and organization
 
-**Variable**: A named line in a model that stores values, formulas, or both.
+**Workspace**: Your company's environment in Oculon. It holds members, settings, shared dimensions, integrations, scenarios, and all spaces. See [Workspaces](/concepts/workspace-and-collaboration/workspaces).
 
-**Helper variable**: A supporting variable that simplifies a longer calculation.
+**Spaces**: The sidebar section that lists your Private Space and the teamspaces you belong to. Spaces hold models, Transactions, boards, and folders.
 
-**Dimension**: A category used to break a variable into more detailed parts.
+**Teamspace**: A shared space for a team. A teamspace is **Open** (anyone in the workspace can join) or **Closed** (people request to join). See [Teamspaces and private space](/concepts/workspace-and-collaboration/teamspaces-and-private-space).
 
-**Dimension value**: An item inside a dimension, such as `North America` inside `Region`.
+**Private Space**: Your personal space. Only you can see its contents unless you share an item.
 
-**Model**: The planning surface where variables, formulas, time logic, and dimensions come together.
+**Folder**: A container inside a space for grouping related files.
 
-**Transactions**: Structured tables of records used for source data, analysis, or model inputs. Older docs and some routes still say **Databases**; the public product term is Transactions.
+**Library**: An index of every model, Transactions, board, dimension, and integration you can access across the workspace. You also manage dimensions and integrations from the Library.
 
-**Database**: Legacy alias for Transactions. Prefer Transactions in current docs.
+**Shared with me**: A list of the items other people have shared with you directly.
 
-**Integration**: A connection to an external system that brings data into Oculon (Library Integrations), distinct from AI [Connectors & MCP](/concepts/ai-and-agents/context-and-connections).
+## Data and structure
 
-**Library**: The hub for shared resources such as models, Transactions, dimensions, and boards.
+**Transactions**: Source records, such as ledger entries, invoices, or deals, that come from an integration, an uploaded file, or manual entry. See [Transactions](/concepts/data-and-structure/transactions).
 
-## Planning terms
+**Database**: The former name for Transactions. You may still see it in older content.
 
-**Scenario**: A branch of a model used to test assumptions without changing the shared baseline.
+**Integration**: A connection to an external system, such as Xero or QuickBooks, that brings records into Transactions. Integrations are separate from AI connectors.
 
-**Default Scenario**: The product default baseline scenario (older docs sometimes said Main Scenario).
+**Dimension**: A shared category, such as `Region` or `Product`, used to break variables down. Dimensions belong to the workspace, so any model can use them. See [Dimensions](/concepts/data-and-structure/dimensions).
 
-**Override**: A scenario-specific value that differs from the inherited baseline.
+**Dimension value**: One item in a dimension, such as `EMEA` in `Region`.
 
-**Last actual date**: The model cutoff where actual behavior ends and planned behavior begins.
+**Variable**: One line in a model that holds input values, a formula, or both. See [Variables](/concepts/data-and-structure/variables).
 
-**Actual formula**: Formula logic used on the actuals side of the Last actual date.
+## Modeling
 
-**Planned formula**: Formula logic used on the planned side of the Last actual date.
+**Model**: The planning surface where variables, formulas, time settings, and linked data come together. See [Models](/concepts/modeling/models).
 
-**Relative time**: A dynamic time reference such as `this month`, `last quarter`, or `month 1`.
+**Linked model**: Another model that the current model references, so values flow from one model to the other.
 
-**Granularity**: The level of time detail used in the model, such as monthly, quarterly, or yearly.
+**Formula**: The calculation that produces a variable's values. See [Formulas](/concepts/modeling/formulas).
 
-**Time rollup**: How lower-level periods are grouped into higher-level periods, such as months into quarters.
+**Actual formula**: The formula a variable uses for periods up to and including the Last actual date.
 
-**Time aggregation**: The business rule that determines what a metric should mean when shown at quarter or year level.
+**Planned formula**: The formula a variable uses for periods after the Last actual date. The formula editor labels this tab **Plan**.
 
-## Reporting terms
+**Helper variable**: A supporting variable that breaks a long calculation into readable steps.
 
-**View**: A saved way to look at model or Transactions content.
+**Scenario**: A branch of planning data that inherits values until you override them. See [Scenarios](/concepts/modeling/scenarios).
 
-**Board**: A collection of charts, tables, and summary blocks used to present results.
+**Default Scenario**: The baseline scenario every workspace starts with. It can't be deleted.
 
-**KPI block**: A summary tile that highlights one metric and its current value.
+**Override**: A value you enter in place of the calculated or inherited one. In a scenario, an override differs from the value it would inherit from the baseline. In a model or Transactions cell, an override replaces the formula result for that cell until you choose **Revert to original**.
 
-**Compare**: A side-by-side difference between scenarios or time selections.
+## Time
 
-## Organization and access terms
+**Granularity**: The time detail a model uses: `monthly`, `quarterly`, or `yearly`. See [Time granularity](/concepts/data-and-structure/time/time-granularity).
 
-**Workspace**: The top-level environment that holds people, settings, and content.
+**Date range**: The first and last period a model covers.
 
-**Spaces**: Sidebar umbrella for shared teamspaces and Private Space.
+**Last actual date**: The model setting that separates actual periods from planned periods. See [Last actual date](/concepts/data-and-structure/time/last-actual-date).
 
-**Teamspace**: A shared Space for team content.
+**Relative time**: A time reference that moves with each period, such as `This month`, `Previous month`, or `Last 3 months`. See [Relative time](/concepts/data-and-structure/time/relative-time).
 
-**Private Space**: A personal Space that is not shared with others.
+**Time rollup**: How lower-level periods group into higher-level ones, such as months into quarters. You choose rollups in a view with **Roll up**. See [Time rollups](/concepts/data-and-structure/time/time-aggregation#time-rollups).
 
-**Group**: A set of users managed together for access control.
+**Time aggregation**: What value represents a grouped period, set per variable as **Sum**, **Average**, **Initial**, or **Final**. See [Time aggregation](/concepts/data-and-structure/time/time-aggregation).
 
-**Role**: A workspace or admin permission level that controls what a user can do.
+## Analysis and reporting
 
-**View / Edit / Full Access**: Common item-level share permissions on a specific resource.
+**View**: A saved way of looking at a model or Transactions. Model views store the date range, filters, sorting, rollups, and comparison settings. Transactions views store filters, sorting, and grouping. See [Views](/concepts/analysis-and-reporting/views).
 
-## AI and work terms
+**Compare**: A view setting that shows scenarios or time periods side by side, with value, variance, and variance %. See [Compare](/concepts/analysis-and-reporting/compare).
 
-**AI assistant**: Built-in chat help for modeling, reporting, and day-to-day questions.
+**Board**: A reporting page that combines charts, tables, and KPI blocks. See [Boards](/concepts/analysis-and-reporting/boards).
 
-**Workspace AI**: Admin settings for workspace AI defaults, agents, approvals, and tools.
+**KPI block**: A board block that highlights one headline metric.
 
-**Custom agent**: A packaged assistant with scoped instructions, context, and allowed actions.
+## Access and sharing
 
-**Projects**: Work management for tasks and project activity when the feature is enabled in your environment.
+**Workspace Owner**: The workspace role that can manage members, settings, and billing.
 
-**Feed**: Sidebar activity surface for AI and agent updates when enabled in your environment.
+**Member**: The standard workspace role for people who build and use content.
 
-## Related pages
+**Guest**: A person with limited access to specific shared items, such as an external reviewer, without full member access.
+
+**Group**: A set of people you manage together for access.
+
+**Viewer / Editor / Full Access**: Access levels for a single item. Viewers can read. Editors can change content. Full Access adds sharing and permission control. See [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions).
+
+## AI and work
+
+**AI assistant**: The chat you can open from any page to ask questions or build and change content. See [AI assistant](/concepts/ai-and-agents/ai-assistant).
+
+**Custom agent**: An assistant with its own instructions, context, and allowed actions. Custom agents are listed on the sidebar **Team** tab. See [Custom agents](/concepts/ai-and-agents/custom-agents).
+
+**Projects**: Task and project tracking, available when enabled for your workspace. See [Projects and tasks](/concepts/workspace-and-collaboration/projects-and-tasks).
+
+**Feeds**: A stream of agent updates and approval requests, available when enabled for your workspace. See [Feed](/concepts/ai-and-agents/feed).
+
+## Related
 
 - [Core concepts overview](/concepts/core-concepts/core-concepts-overview)
-- [What is Oculon](/concepts/core-concepts/what-is-oculon)
 - [How Oculon is organized](/concepts/core-concepts/how-oculon-is-organized)
+- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)

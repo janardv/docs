@@ -8,3 +8,10 @@ drafts/
 
 # Internal migration planning artifacts (not published docs)
 docs-migration/
+
+# Docs backlog list (internal)
+docs-backlog.md
+
+# Hidden pages: features for later (see docs-backlog.md)
+concepts/data-and-structure/transactions/refresh-and-sync-behavior.mdx
+concepts/modeling/scenarios/versioning-and-snapshots.mdx

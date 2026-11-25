@@ -1,66 +1,48 @@
 ---
 title: Refresh and sync behavior
-description: Understand how refreshes and syncs affect Transactions source data and downstream work in Oculon.
+description: Understand how integration-backed Transactions refresh and what to check when the data looks out of date.
 icon: refresh-cw
 sidebarTitle: Refresh and sync
 ---
 
-Refresh behavior determines when Oculon pulls the latest data from a source and how quickly dependent workflows should reflect that change. For integration-backed Transactions, this is part of the operating rhythm, not just a technical detail.
+Integration-backed Transactions refresh on a schedule. Each refresh reruns the query and loads the results into the Transactions. Models that link to the Transactions then use the new values.
 
-<Frame caption="Connection and refresh status">
-  <img
-    src="/images/getting-started/fr-connection-status.png"
-    alt="Connection status area in Oculon showing Transactions refresh state and source status"
-  />
-</Frame>
+Manual Transactions don't have a source to refresh from. They change only when you edit them.
 
-## What a refresh should do
+{/* TODO: screenshot of Transactions Settings with the Refresh Frequency field */}
 
-A refresh should update the Transactions records first. After that, dependent models, views, and boards should reflect the new state according to their own calculation and display behavior.
+## Set the refresh schedule
 
-That is why source-first validation is so important. If the source dataset itself is not current, downstream review will usually waste time.
+In **Transactions Settings**, choose a **Refresh Frequency** in the **Source** section. Match it to how often the source data changes and how current your models need to be.
 
-## Manual and scheduled refreshes
+## What happens when you save
 
-Both refresh patterns are useful:
+When you click **Save** in **Transactions Settings**, Oculon runs the query and rebuilds the Transactions. The grid shows a loading state while this sync runs. The records appear when it finishes.
 
-- **Scheduled refreshes** help keep operational data current without manual effort.
-- **Manual refreshes** help when you need to validate a source change immediately or confirm a fix before the next normal cycle.
+If the sync fails, Oculon shows a message. You can still use **Preview** to check the source query results.
 
-The right choice depends on how often the source changes and how sensitive the downstream workflows are to stale data.
+## Your edits stay separate
+
+Cell values you edit in the grid are saved as overrides on top of the source values. See [Working with data](/concepts/data-and-structure/transactions/working-with-data).
 
 ## Check the source before the output
 
-If a board or model looks wrong after a sync, start with the Transactions record set and the connection status.
+If a model or board looks wrong after a refresh, start with the Transactions:
 
-Review:
+1. Check that the latest records arrived. Filter to the most recent period.
+2. Use **Preview** to see what the query returns.
+3. Check whether the query or the source fields changed.
+4. Check that the **Date Column** and **Segment by** mappings still point to the right fields.
 
-- whether the refresh actually completed
-- whether the expected records arrived
-- whether the source query changed
-- whether a mapping broke after the refresh
+## Common causes of stale or missing data
 
-## Keep refresh ownership clear
+- The source system changed a field name or type.
+- Someone changed the query.
+- The refresh hasn't run since the source updated.
 
-Teams move faster when everyone knows:
+## Related
 
-- who owns the source connection
-- who checks refresh failures
-- which Transactions require scheduled monitoring
-- which downstream workflows are most sensitive to stale data
-
-## Common failure modes
-
-The most common sync problems come from:
-
-- source schema changes
-- delayed refresh timing
-- missing records after a query change
-- teams checking the modeled output before checking the source
-
-## Related pages
-
-- [Working with data](/concepts/data-and-structure/transactions/working-with-data)
+- [Transaction sources](/concepts/data-and-structure/transactions/transaction-types)
 - [Linked data](/concepts/data-and-structure/transactions/linked-data)
-- [Data mismatches](/concepts/resources/troubleshooting)
+- [Troubleshooting](/concepts/resources/troubleshooting)
 - [Transaction best practices](/concepts/data-and-structure/transactions/transaction-best-practices)

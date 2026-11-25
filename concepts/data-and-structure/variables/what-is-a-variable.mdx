@@ -1,62 +1,57 @@
 ---
 title: What is a variable
-description: Learn what a variable is and why variables are central to every model.
-icon: circle-help
+description: Understand what a variable is, what it's made of, and how it calculates across time.
+icon: circle-question-mark
 sidebarTitle: Overview
 ---
 
-A variable is the basic building block of a model in Oculon. It represents a metric, driver, assumption, or calculated line that you want to track over time.
+A variable is one line in a model that holds input values, a formula, or both. For example, a revenue model might have `Units Sold` and `Price per Unit` as inputs, and `Revenue` as a calculated line that multiplies them.
 
-<Frame caption="A variable in a model">
+<Frame caption="A variable's actual and planned formulas">
   <img
-    src="/images/getting-started/fr-variable.png"
-    alt="Model grid showing a variable with values across time periods"
+    src="/images/start-here/variable-overview.png"
+    alt="Q4 Revenue Planning Model with the formula editor open on Beginning ARR in the Revenue Calculations section. The editor has Actual and Plan tabs, with Plan selected, and shows the formula IF(PERIOD() = 0, Opening ARR This month, Ending ARR by Location Previous Month)."
   />
 </Frame>
 
+## What a variable does
 
-## Where variables are used
+Each variable has a value for every period in the model's date range. You can enter those values yourself, calculate them with a formula, or combine both.
 
-You use variables everywhere in model building. They feed formulas, power views and boards, and often connect to data from Transactions or linked models.
+Variables are what the rest of Oculon reads:
 
-## Why variables matter
+- Formulas reference other variables to calculate results.
+- Views and boards display variables for analysis and reporting.
+- Transactions feed variables through their actual formulas.
+- Transactions and dimensions can also hold their own variable columns, such as `MRR` per customer or `Monthly Rent` per location.
+- Scenarios hold alternative values for the same variables.
 
-Variables give your model structure. If you name and organize them well, you make formulas easier to read, reports easier to trust, and changes easier to review.
-
-## A simple example
-
-A revenue model might include variables such as `Price`, `Volume`, `Discount`, and `Net revenue`. Some of those values are entered directly. Others are calculated from the rest.
+Because each variable is defined once, every report that uses it shows the same number.
 
 ## Parts of a variable
 
-Every variable in Oculon is made up of several properties that together define how it behaves, how it is calculated, and how its values are displayed across time.
+| Part | What it does |
+| --- | --- |
+| **Name** | Identifies the variable in the grid, in formulas, and in reports. |
+| **Type** | Sets what kind of value the variable holds: Number, Currency, Date, Percentage, or Boolean. The type icon appears next to the name. See [Variable types](/concepts/data-and-structure/variables/variable-types). |
+| **Breakdown** | The dimensions the variable is split by, such as `Region` or `Product`. See [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown). |
+| **Trend** | A sparkline in the **Trend** column that shows how values move over time. |
+| **Actual formula** | How the variable calculates for periods up to and including the [Last actual date](/concepts/data-and-structure/time/last-actual-date). |
+| **Planned formula** | How the variable calculates for periods after the Last actual date. The formula editor labels this tab **Plan**. |
+| **Time values** | The value in each period column. You can override a single period with a specific value. |
+| **Formatting** | How values display, such as decimal places or a currency symbol. See [Variable formatting](/concepts/data-and-structure/variables/variable-formatting). |
 
-### Variable type
+You can show or hide the **Trend**, **Actual Formula**, and **Plan Formula** columns in the model grid.
 
-The variable type determines what kind of data a variable holds and how it is displayed across the model. It controls formatting such as symbol, rounding, and alignment in views and reports.
+## Actual and planned formulas
 
-### Variable name
+One variable can show both history and forecast. The actual formula usually reads from source data, such as summing invoice amounts from Transactions. The planned formula usually combines drivers and assumptions, such as `Units Sold × Price per Unit`.
 
-The variable name is the label used to identify it across formulas, views, and reports. A clear, consistent name makes the model easier to read and collaborate on.
+When you move the Last actual date forward, more periods switch to the actual formula. See [Variable behavior](/concepts/data-and-structure/variables/variable-behavior) for details.
 
-### Variable breakdown
+## Related
 
-The variable breakdown defines the dimensionality of a variable, allowing you to slice and dice its data by categories like department, location, or product line. This provides a multi-dimensional view of your metrics beyond a single total value.
-
-### Trend
-
-The trend is a visual sparkline shown alongside each variable, giving a quick view of how its values move across time. It helps you spot growth, decline, or seasonality at a glance without reading each period individually.
-
-### Actual formula
-
-The actual formula defines how a variable's historical values are calculated or sourced. It is evaluated for time periods that fall on the actuals side of the model's [Last actual date](/concepts/data-and-structure/time/last-actual-date).
-
-### Planned formula
-
-The planned formula defines how a variable's future values are calculated for budgets and forecasts. It is evaluated for time periods that fall after the [Last actual date](/concepts/data-and-structure/time/last-actual-date), into the forecast horizon.
-
-### Time values
-
-Each variable holds a value for every period within the model's time range, typically stored monthly or quarterly. This lets you track performance over time, compare actuals against plan, and analyze trends across the full planning horizon.
-
-Values of these are calculated from the formula. Users can click on these time values to **override** the formula. Overriding cells is often necessary to adjust baseline projections with specific expectations (like a planned one-off expense, a specific sales target, or a contract adjustment) without altering the underlying formula logic for other periods.
+- [Variable types](/concepts/data-and-structure/variables/variable-types)
+- [Variable behavior](/concepts/data-and-structure/variables/variable-behavior)
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)

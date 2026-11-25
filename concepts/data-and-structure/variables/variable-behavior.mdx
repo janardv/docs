@@ -1,44 +1,61 @@
 ---
 title: Variable behavior
-description: Understand how variables behave across time, dimensions, calculations, and the Last actual date cutoff.
+description: Understand how a variable calculates across the Last actual date, period overrides, dimensions, scenarios, and totals.
 icon: activity
 sidebarTitle: Behavior
 ---
 
-A variable does not behave the same way in every context. Its result depends on time, dimensions, formulas, aggregation rules, and whether a cell value is calculated or overridden.
+A variable's value in a cell depends on context. The period, the dimension value, the scenario, and any override all affect the result.
 
-## Across time and the Last actual date
+## Across the Last actual date
 
-Every variable is evaluated across the model's date range. Historical periods and forecast periods can use different logic.
+The [Last actual date](/concepts/data-and-structure/time/last-actual-date) is a model setting that splits actual periods from planned periods.
 
-The [Last actual date](/concepts/data-and-structure/time/last-actual-date) is the model setting that marks where actual behavior ends and planned behavior begins:
+In the model grid, a **Last actual date** marker sits between the last actual period and the first planned period. Click the marker to pick a different month.
+
+<Frame caption="Choosing the Last actual date from the model grid">
+  <img
+    src="/images/start-here/variable-last-actual-date.png"
+    alt="Q4 Revenue Planning Model grid with the Last actual date marker between Nov'26 and Dec'26 and a month picker open for 2026, with Nov selected."
+  />
+</Frame>
 
 - Periods up to and including the Last actual date use the variable's **actual formula**.
-- Periods after that cutoff use the variable's **planned formula**.
-- Boards, views, and comparisons should reflect that split when they separate actuals from plan.
+- Periods after the Last actual date use the variable's **planned formula**.
 
-Update the Last actual date as part of close. After you move it, review the first period before and after the cutoff, then confirm key summaries still match the business rule.
+In the formula editor, these are the **Actual** and **Plan** tabs. For example, `Revenue` can sum invoice amounts from Transactions in actual periods, and use `Units Sold × Price per Unit` in planned periods.
 
-See [Time in Oculon](/concepts/data-and-structure/time/time-in-oculon) for the broader time setup, and [Formula basics](/concepts/modeling/formulas/formula-basics) for how actual and planned formulas work together.
+When you close a period, move the Last actual date forward. That period then uses the actual formula. Check the periods on each side of the Last actual date to confirm the switch looks right.
 
-## Overrides
+## Period overrides
 
-Time cells can be calculated from a formula or **overridden** with a specific value. Overrides are useful for one-off adjustments (for example a planned expense or sales target) without changing the formula for other periods. Treat overrides as intentional exceptions and review them when you move the Last actual date.
+You can override a single period with a specific value instead of the formula result. Use this for one-off adjustments, such as a planned one-time expense or a signed contract amount.
+
+- Overridden cells are marked in the grid, so you can find them.
+- To remove an override, use **Revert to original** on the cell.
+- Other periods keep using the formula.
+
+Review overrides when you move the Last actual date. An override can hide a change in the underlying data.
 
 ## Across dimensions
 
-When you attach a dimension to a variable, Oculon evaluates the same variable for each dimension value. A formula set at the aggregate level can still drive the detail rows when the structure supports it. See [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables) and [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown).
+When a variable has a [breakdown](/concepts/data-and-structure/variables/variable-breakdown), Oculon calculates it for each dimension value. A formula on the variable applies to every dimension value. See [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables).
 
-## In calculations
+## Across scenarios
 
-A variable can be an input, an intermediate step, or an output. If you use the same variable in several formulas, any change to that variable can affect multiple sections of the model. Prefer stable names and clear ownership for shared drivers. See [Variable references](/concepts/data-and-structure/variables/variable-references).
+A variable can hold different values in each [scenario](/concepts/modeling/scenarios/what-is-a-scenario). Values you don't change in a scenario keep following the `Default Scenario`. Values you change become scenario-specific overrides.
 
-## In reporting
+## In totals
 
-Boards, views, and comparisons reflect the variable's current effective state. That includes formatting, active scenario, selected dimensions, and time aggregation. If a summary looks wrong, check both the formula and [Time aggregation](/concepts/data-and-structure/time/time-aggregation).
+Quarters, years, and the variable's total row use the variable's **Aggregation** settings. For example, **Sum** adds the months in a quarter, while **Final** shows the last month's value. If a summary looks wrong, check the aggregation before the formula. See [Time aggregation](/concepts/data-and-structure/time/time-aggregation).
+
+## As an input to other variables
+
+One variable can feed many others. A change to a shared driver, such as `Price per Unit`, flows to every formula that references it, and to every view and board that shows those results. See [Variable references](/concepts/data-and-structure/variables/variable-references).
 
 ## Related
 
 - [What is a variable](/concepts/data-and-structure/variables/what-is-a-variable)
 - [Last actual date](/concepts/data-and-structure/time/last-actual-date)
 - [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Time aggregation](/concepts/data-and-structure/time/time-aggregation)

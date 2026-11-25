@@ -1,37 +1,52 @@
 ---
 title: Variable types
-description: Understand the different variable types and when to use each one.
-icon: "list"
+description: Understand the five variable types and choose the right one for each metric.
+icon: list
 sidebarTitle: Types
 ---
 
-Variable types control how Oculon displays and interprets values. Choosing the right type makes the model easier to read and helps downstream reports behave consistently.
+A variable's type tells Oculon what kind of value the variable holds. For example, `Revenue` is a Currency variable, while `Units Sold` is a Number variable.
 
-<Frame caption="Variable types">
+<Frame caption="Changing a variable's type">
   <img
-    src="/images/getting-started/fr-variable-type.png"
-    alt="Variable type selector in Oculon"
+    src="/images/start-here/variable-type.png"
+    alt="Variable menu open on Opening ARR with the Variable Type dropdown expanded, listing Number (selected), Currency, Date, Percentage, and Boolean, above the Format, Aggregation, Background, Text color, and Text style options."
   />
 </Frame>
 
-## Common variable types
+## Available types
 
-| Type | Use Case |
-| --- | --- |
-| **Number** | Use for counts, units, and general numeric values. |
-| **Currency** | Use for revenue, cost, cash flow, and other monetary values. |
-| **Percent** | Use for margin, conversion rate, growth rate, and share metrics. |
-| **Date** | Use when the output is a date or a date-based marker. |
-| **Boolean** | Use for true or false logic in formulas or workflow flags. |
+| Type | Icon | Use it for |
+| --- | --- | --- |
+| **Number** | `#` | Counts, units, headcount, and other plain numeric values. |
+| **Currency** | `$` | Revenue, costs, cash, and other monetary values. |
+| **Date** | Calendar | Values that are dates, such as a hire date or contract start. |
+| **Percentage** | `%` | Margins, growth rates, conversion rates, and shares. |
+| **Boolean** | Checkbox | True or false flags, such as whether a contract is active. |
 
-## What the type changes
+The type icon appears next to the variable name in the model grid. It also appears on variable references inside formulas.
 
-The type affects formatting, not just appearance. Currency and percent variables can carry different default display expectations from plain numbers. Date and boolean fields also communicate different intent to collaborators.
+The same five types apply to variable columns in [Transactions](/concepts/data-and-structure/transactions/transaction-structure) and [dimensions](/concepts/data-and-structure/dimensions/dimension-operations). On a dimension's **+ Add** menu, Number appears as **Variable** and Percentage appears as **Percent**.
+
+## Change a variable's type
+
+1. Click the type icon next to the variable name.
+2. In **Variable Type**, choose the new type.
+
+If you choose **Currency**, a **Currency** setting appears so you can pick the currency. See [Currency variables](/concepts/data-and-structure/variables/currency-and-conversion).
 
 ## How to choose
 
-Pick the type that matches the question you want the model to answer. If the same line is being used to make a financial decision, make the format obvious to the reader.
+Pick the type that matches what the value means, not just how it looks.
 
-## Keep formats consistent
+- Use **Currency** for anything measured in money, so the currency symbol is always visible.
+- Use **Percentage** for ratios and rates, so readers see them as percentages.
+- Use **Number** when the value is neither money nor a ratio.
 
-Within the same section of a model, use the same type and precision rules for similar variables. Consistency reduces review errors and makes comparisons easier.
+Keep similar variables on the same type. A reviewer can then compare lines in the same section without checking each one.
+
+## Related
+
+- [What is a variable](/concepts/data-and-structure/variables/what-is-a-variable)
+- [Variable formatting](/concepts/data-and-structure/variables/variable-formatting)
+- [Currency variables](/concepts/data-and-structure/variables/currency-and-conversion)

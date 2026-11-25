@@ -1,44 +1,53 @@
 ---
-title: "Variable breakdown"
-description: "Learn how to define the dimensionality of your variables to slice and dice data."
+title: Variable breakdown
+description: Break a variable down by one or more dimensions to see its values by category.
 icon: layout-grid
 sidebarTitle: Breakdown
 ---
 
-The variable breakdown defines the dimensionality of a variable, allowing you to slice and dice its data by categories like department, location, or product line. This provides a multi-dimensional view of your metrics beyond a single total value.
+A breakdown splits one variable by the values of a [dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension). For example, you break `New ARR` down by `Location` to hold a separate value for each office, such as `New York` and `London`.
 
-<Frame caption="Variable breakdown">
+<Frame caption="A variable broken down by one dimension">
   <img
-    src="/images/getting-started/fr-breakdown.png"
-    alt="Variable Breakdown"
+    src="/images/start-here/variable-breakdown-1.png"
+    alt="Q4 Revenue Planning Model with New ARR expanded into rows for the Location values New York, London, Remote, Dubai, and Mumbai, each with its own planned formula and monthly values."
   />
 </Frame>
 
-## Why use breakdowns
+## Why use a breakdown
 
-In planning models, metrics are rarely just a single number. You often need to see how revenue is split across regions, or how headcount is distributed among departments. Breakdowns allow you to:
+- **See the detail.** Find which region, product, or department drives a change.
+- **Keep one variable.** Hold all the detail in one variable instead of one variable per category.
+- **Write logic once.** A formula on the variable applies to every dimension value.
 
-- **Analyze performance**: Identify which segments are driving growth or falling behind.
-- **Maintain granularity**: Keep detailed data within a single variable instead of creating dozens of separate ones.
-- **Simplify formulas**: Write logic once and have it apply across all dimensions automatically.
+## Add a dimension to a variable
 
-## How it works
+1. Click the dimension control next to the variable name.
+2. In **Breakdown by**, click **+** to add a dimension.
+3. Search for a dimension from the Library and select it.
 
-When you add a breakdown to a variable, you choose one or more [dimensions](/concepts/data-and-structure/dimensions/what-is-a-dimension) to apply. Oculon then creates a value slot for every combination of those dimension members.
+The variable then shows one row for each dimension value. Expand the variable to see them. For more on choosing and attaching dimensions, see [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables).
 
-For example, if you break down `Salaries` by `Department`, you can enter or calculate different salary figures for Sales, Engineering, and Marketing.
+## Break down by more than one dimension
 
-## Multi-dimensional breakdowns
-
-<Frame caption="Multi-dimensional breakdown">
+<Frame caption="A variable broken down by two dimensions">
   <img
-    src="/images/getting-started/fr-multi-dim-breakdown.png"
-    alt="Variable broken down by multiple dimensions"
+    src="/images/start-here/variable-breakdown-2.png"
+    alt="New ARR broken down by Location and Status. The Breakdown by menu lists Location and Status, and the New York row is expanded into ACTIVE and ARCHIVED rows, followed by London, Remote, Dubai, and Mumbai."
   />
 </Frame>
 
-Variables can be broken down by multiple dimensions simultaneously. For instance, breaking down `Travel Expense` by both `Department` and `Region` allows you to track spending for "Sales in EMEA" separately from "Sales in APAC".
+You can add several dimensions to the same variable. Oculon creates a row for each combination of values. For example, `New ARR` broken down by `Location` and `Status` has a row for `ACTIVE` in `New York` and another for `ARCHIVED` in `New York`.
 
-## Totals and rollups
+The order of dimensions in **Breakdown by** sets how rows nest. Drag a dimension in the list to change the order.
 
-Oculon automatically handles the aggregation of breakdown values. You can view the individual segments or the consolidated total at any time, ensuring that your reports always stay in sync with the underlying details. You can also change the aggregation from the variable formatting option.
+## Totals
+
+The variable's top row shows the total across its dimension values. You choose how that total is calculated with the **Dimension** setting under **Aggregation**: **Sum**, **Average**, **Initial**, or **Final**. See [Variable formatting](/concepts/data-and-structure/variables/variable-formatting#aggregation).
+
+## Related
+
+- [What is a dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension)
+- [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables)
+- [Variable formatting](/concepts/data-and-structure/variables/variable-formatting)
+- [Variable behavior](/concepts/data-and-structure/variables/variable-behavior)

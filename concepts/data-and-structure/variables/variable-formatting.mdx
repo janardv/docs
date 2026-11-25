@@ -1,40 +1,57 @@
 ---
 title: Variable formatting
-description: Control how variable values appear so models are easier to read.
+description: Control how a variable's values display and how its totals aggregate.
 icon: ruler
 sidebarTitle: Formatting
 ---
 
-Variable formatting controls how values appear in your model. Use formatting to make numbers easier to scan and to show the right business context at a glance.
+Formatting controls how a variable's values look in the model grid. For example, you can show `Revenue` in millions with no decimals, and show negative values in red.
 
-<Frame caption="Variable formatting">
+To open formatting, click the type icon next to the variable name. The menu shows **Variable Type** at the top, followed by **Format**, **Aggregation**, **Background**, **Text color**, and **Text style**.
+
+<Frame caption="Format options for a variable">
   <img
-    src="/images/getting-started/fr-format.png"
-    alt="Variable formatting options in the model"
+    src="/images/start-here/variable-formatting.png"
+    alt="Variable menu open on ARR Growth % with Variable Type set to Percentage and the Format submenu showing Add Prefix/Suffix (None), Abbreviate (None), Decimal Places (2), Comma Separators, Integer (on), Negatives (Auto), and Zero as (Dash)."
   />
 </Frame>
 
-## Format options
+## Format
 
-You can customize how values display based on the variable's purpose.
-
-| Option | Description |
+| Option | What it does |
 | --- | --- |
-| **Prefix / suffix** | Add symbols or units such as `Mn`, `Cr`.. |
-| **Integer** | Remove decimals for whole-number values. |
-| **Comma separators** | Improve readability for large numbers such as `1,000,000`. |
-| **Zero handling** | Show zero as a dash or as `0`. |
-| **Negatives** | Control how negative values appear. |
-| **Precision** | Set the decimal style and number of decimal places. |
-| **Magnitude** | Scale values to `k`, `M`, and other larger units. |
-| **Relative time** | Adjust how time-based values display. |
-| **Currency** | When the variable type is currency, choose the display currency symbol. See [Currency and conversion](/concepts/data-and-structure/variables/currency-and-conversion). |
+| **Add Prefix/Suffix** | Adds text before or after each value, such as `Mn` or `units`. |
+| **Abbreviate** | Scales values to **Thousand**, **Million**, **Billion**, **Trillion**, **Lakh**, or **Crore**. **Auto** picks a scale for you. |
+| **Decimal Places** | Sets how many decimals to show, from `0` to `5`. |
+| **Comma Separators** | Groups digits, such as `1,000,000`. |
+| **Integer** | Shows values as whole numbers. |
+| **Negatives** | Shows negative values in **Red**, in **Accounting** style, or both. |
+| **Zero as** | Shows zero as a **Dash** or as **Zero**. |
 
+Formatting changes how values display. It doesn't change the stored values or the results of formulas.
 
-## Choose formatting that matches the metric
+## Aggregation
 
-Use formatting that reflects the meaning of the variable. A revenue line should look different from a headcount line or a percentage-based KPI.
+**Aggregation** sets how a variable's values combine into totals. It has two settings:
 
-## Keep related variables consistent
+- **Time** controls the value shown when months roll up into quarters and years.
+- **Dimension** controls the value shown on the variable's total row when it has a [breakdown](/concepts/data-and-structure/variables/variable-breakdown).
 
-Use the same formatting rules for similar variables in the same model. Consistent precision, separators, and units make reviews faster and reduce confusion.
+Each setting offers **Sum**, **Average**, **Initial**, and **Final**. For example, use **Sum** for `Revenue` and **Final** for `Headcount`, so a year shows closing headcount rather than the sum of twelve months. See [Time aggregation](/concepts/data-and-structure/time/time-aggregation).
+
+## Background, text color, and text style
+
+Use **Background**, **Text color**, and **Text style** (**Bold** or **Italic**) to highlight key lines, such as subtotals or outputs.
+
+## Keep formatting consistent
+
+Match formatting to what the metric means. A revenue line, a headcount line, and a margin should each look different.
+
+Use the same formatting for similar variables in the same model. Consistent decimals, scale, and separators make reviews faster.
+
+## Related
+
+- [Variable types](/concepts/data-and-structure/variables/variable-types)
+- [Currency variables](/concepts/data-and-structure/variables/currency-and-conversion)
+- [Time aggregation](/concepts/data-and-structure/time/time-aggregation)
+- [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown)

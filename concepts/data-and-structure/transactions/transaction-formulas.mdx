@@ -1,69 +1,42 @@
 ---
 title: Transaction formulas
-description: Use formulas in Transactions to keep row-level and column logic readable in Oculon.
+description: Use formulas in Transactions cells to calculate a value instead of typing it, and know when the logic belongs in a model.
 icon: sigma
+sidebarTitle: Formulas
 ---
 
-Transactions can carry calculated logic close to the records they describe. Use that when a field should follow a shared rule and only certain rows need exceptions.
+You can enter a formula in a Transactions cell instead of a fixed value. Type a value that starts with `=`, such as `=1200 * 12`, in a variable cell. Oculon saves it as a formula override on that cell.
 
-Older documentation called this surface **Databases**. In Concepts and product UI, the public name is **Transactions**.
+{/* TODO: screenshot of a Transactions cell with a formula override */}
 
-## When Transaction formulas help
+## How cell formulas work
 
-Use formula logic on Transactions when you want the calculation to live with the dataset itself rather than only in a downstream model.
+- A formula applies to one cell in a variable column, such as `Amount` or `MRR`.
+- Oculon saves the formula as an override. The source value for that cell stays unchanged underneath.
+- To remove the formula, clear the cell.
+- Formulas use the same syntax as model formulas. See [Formula basics](/concepts/modeling/formulas/formula-basics).
 
-Common uses include:
+Dimension columns and date columns don't take formulas. In a dimension cell, you pick a dimension value instead.
 
-- Calculated Variable columns derived from other Transactions fields
-- Default row or cell logic shared across many records
-- Controlled exceptions for one row or segment
+## When to use a cell formula
 
-Transactions add columns such as **Variable** and **Dimension**. Planning-wide assumptions, scenario behavior, and cross-record model rules usually belong in [model formulas](/concepts/modeling/formulas) instead.
+Use a cell formula for a small, record-level correction. For example, you can annualize one monthly amount, or split a value that a source system recorded as one total.
 
-## Start with a shared rule
-
-A good default gives most records one shared rule.
-
-That helps because:
-
-- The logic stays consistent
-- New records inherit the intended behavior
-- Reviewers can tell what is standard versus what is an exception
-
-If most rows should calculate the same way, start there before you introduce one-off overrides.
-
-## Override only where the business rule changes
-
-Some datasets need one-off logic for a specific row, category, or segment. Use that sparingly.
-
-If overrides become common, the structure or the base formula may need to be redesigned.
-
-## Keep time-aware behavior explicit
-
-If a Transactions calculation behaves differently across historical and forward-looking periods, make that split intentional.
-
-Prefer clear **actual formula** and **planned formula** intent where the field supports it, and keep the relationship to the [Last actual date](/concepts/data-and-structure/time/last-actual-date) readable. Deep planning cutoff patterns are covered under [Conditional logic](/concepts/modeling/formulas/conditional-logic) and [Variable behavior](/concepts/data-and-structure/variables/variable-behavior).
+If many rows need the same correction, fix it at the source or in the query instead. One-off formulas are hard to review when they spread across a table.
 
 ## Transaction formula versus model formula
 
-| Prefer Transactions logic when | Prefer model formulas when |
+| Use a Transactions cell formula when | Use a model formula when |
 | :--- | :--- |
-| The rule belongs to the record itself | The rule is a planning assumption |
-| Reviewers need to see calculated fields next to source rows | Logic spans scenarios, linked models, or model-wide rules |
-| Exceptions are rare and justifiable | Cross-record allocation or forecast structure drives the result |
+| The fix belongs to one record | The rule applies to a whole variable |
+| Reviewers need to see the correction next to the source row | The logic depends on drivers, scenarios, or other models |
+| The value is an actual that the source got wrong | The value is a plan for periods after the Last actual date |
 
-## A practical review workflow
+Models decide how values behave across the [Last actual date](/concepts/data-and-structure/time/last-actual-date). A variable's **actual formula** reads Transactions values up to that date. Its **planned formula** calculates the periods after it. Keep that logic in the model, not in Transactions cells.
 
-When a Transactions formula looks wrong:
-
-1. Check the raw record values first
-2. Review the shared rule or Variable formula
-3. Confirm whether the row is inheriting that rule or using an exception
-4. Confirm the result still behaves correctly downstream in models, views, or boards
-
-## Related pages
+## Related
 
 - [Working with data](/concepts/data-and-structure/transactions/working-with-data)
 - [Formula basics](/concepts/modeling/formulas/formula-basics)
-- [Formula best practices](/concepts/modeling/formulas/formula-best-practices)
+- [Linked data](/concepts/data-and-structure/transactions/linked-data)
 - [Last actual date](/concepts/data-and-structure/time/last-actual-date)

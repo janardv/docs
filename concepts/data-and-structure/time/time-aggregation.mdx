@@ -1,78 +1,80 @@
 ---
-title: Time aggregation
-description: Understand what a metric should mean when you review it at quarter or year level.
+title: Time rollups and aggregation
+description: Understand how periods group into quarters and years, and how each variable decides the value a grouped period shows.
 icon: workflow
-sidebarTitle: Aggregation
+sidebarTitle: Rollups and aggregation
 ---
 
-Time aggregation defines how a metric should behave when you review it at a coarser time level. It answers a business question: once several periods are grouped together, what number should represent that group?
+When you review a monthly model by quarter or year, two separate settings decide what you see. **Time rollups** decide which periods group together. **Time aggregation** decides what value represents each group. For example, a rollup groups January, February, and March into Q1. Aggregation decides whether Q1 revenue is the sum of those months and whether Q1 headcount is the March value.
 
-## Why it matters
+## Time rollups
 
-Not every metric should behave the same way in a quarter or year summary.
+A time rollup adds higher-level period columns to a view. You choose rollups from **Roll up** in the view toolbar, or from **Rollup** in the **Table Columns** menu next to the variable name header. Each view keeps its own rollup choice, so two views of one model can show different groupings.
 
-- A revenue line often needs a summed total.
-- A headcount line often needs an end-of-period view.
-- A percentage or rate often needs to be recalculated or weighted, not summed.
+For a monthly model, the options are:
 
-If the higher-level value is wrong, users lose trust quickly even when the monthly data is correct.
+<Frame caption="Rollup options in the Table Columns menu">
+  <img
+    src="/images/start-here/time-rollup.png"
+    alt="Table Columns menu open beside the Variable Name header, listing Trend, Actual Formula, Plan Formula, Timeline, and Rollup. The Rollup submenu shows Month (selected), Quarter, Year, Month → Quarter, Month → Year, and Month → Quarter → Year."
+  />
+</Frame>
 
-## Aggregation versus rollups
+| Option | What the view shows |
+| --- | --- |
+| **Month** | Monthly columns only, with no rollup |
+| **Quarter** | Quarter columns only |
+| **Year** | Year columns only |
+| **Month → Quarter** | Monthly columns plus quarter columns |
+| **Month → Year** | Monthly columns plus year columns |
+| **Month → Quarter → Year** | Monthly columns plus quarter and year columns |
 
-It helps to separate two related concepts:
+A quarterly model can roll up to years. A yearly model has no coarser period to roll up to. If the model uses a fiscal year, quarters and years follow it.
 
-- [`Time rollups`](/concepts/data-and-structure/time/time-aggregation) decide which lower-level periods belong together.
-- `Time aggregation` decides what value should represent that grouped result.
+## Time aggregation
 
-For example, a quarter may roll up three months. Aggregation decides whether the quarter should show the sum of those months, the ending value, or another business-appropriate interpretation.
+Time aggregation is a property of each variable. It tells Oculon how to turn several period values into one rollup value. You set it from the variable's formatting options, under **Aggregation** → **Time**. The variable detail panel shows the same setting as **Rollup/Aggregation**.
 
-## Common aggregation patterns
+<Frame caption="Setting time aggregation for a variable">
+  <img
+    src="/images/start-here/time-aggregation.png"
+    alt="Variable menu open on Beginning ARR with Aggregation expanded. The Time setting is open with Sum selected and Average, Initial, and Final listed, above the Dimension setting."
+  />
+</Frame>
 
-Use the business meaning of the metric to guide the rule:
+| Option | Rollup value | Typical metrics |
+| --- | --- | --- |
+| **Sum** | The total of the grouped periods | Revenue, expenses, units sold |
+| **Average** | The average of the grouped periods | Average price, utilization rate |
+| **Initial** | The value of the first period in the group | Opening balance, opening ARR |
+| **Final** | The value of the last period in the group | Headcount, cash balance, ending ARR |
 
-- `Flow metrics` such as revenue, expense, and units sold often make sense as sums.
-- `Point-in-time metrics` such as end-of-month headcount, cash balance, or open pipeline often make more sense as an ending value.
-- `Rates and percentages` often need a weighted or recomputed result instead of a simple period sum.
+Rollup columns use each variable's own time aggregation. One rollup can sum revenue and show the final headcount in the same quarter column.
 
-The right answer is not "the default." The right answer is the one a finance reviewer would expect to see in the summary.
+The same menu also has a **Dimension** setting. It controls how values combine across dimension values, not across time. See [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown).
 
-## How to choose the right behavior
+## Choose the right aggregation
 
-Ask these questions for each important metric:
+Match the aggregation to what the metric means:
 
-- Is this metric additive across time?
-- Is this metric a balance at a point in time?
-- Would a reviewer expect a period-end number or a blended number?
-- Does the quarter or year view tell the same story as the monthly view?
+- **Flow metrics** build up over a period, such as revenue or expenses. Use **Sum**.
+- **Balance metrics** describe a point in time, such as headcount or cash. Use **Final**, or **Initial** for an opening balance.
+- **Rates and percentages**, such as gross margin %, shouldn't be summed. **Average** gives a simple average of the period rates. If you need a rate based on the grouped totals, calculate it from the summed components and compare.
 
-If you cannot explain the quarter total in plain language, the aggregation approach probably needs more work.
+If you can't explain a quarter value in one sentence, check the aggregation.
 
-## Examples
+## Troubleshoot a wrong quarter or year value
 
-### Revenue
+1. Confirm what the metric means: flow, balance, or rate.
+2. Check the variable's time aggregation.
+3. Check the view's rollup and whether the model uses a fiscal year.
+4. Check whether the group spans the Last actual date. Its periods may mix actual and planned formulas.
+5. Check filters applied in the view.
 
-Revenue is usually a flow metric, so quarter and year views typically sum the lower-level periods.
+## Related
 
-### Headcount
-
-Headcount often behaves like an end-of-period metric. A yearly summary usually needs to show the closing value or another clearly defined business interpretation, not the sum of all months.
-
-### Margin percentage
-
-A margin percentage usually should not be summed across periods. Review whether the summary should be recalculated from the underlying values instead.
-
-## Troubleshooting a wrong quarter or year total
-
-If a higher-level value looks wrong, check these in order:
-
-1. confirm the metric's business meaning
-2. confirm the grouped periods are correct in the rollup
-3. review whether the actual and planned formulas behave differently around the cutoff
-4. recheck any dimensions or filters applied in the view
-
-## Related pages
-
-- [Time rollups](/concepts/data-and-structure/time/time-aggregation)
 - [Time granularity](/concepts/data-and-structure/time/time-granularity)
-- [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- [Views](/concepts/analysis-and-reporting/views)
+- [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown)
+- [Time in Oculon](/concepts/data-and-structure/time/time-in-oculon)
 - [Time best practices](/concepts/data-and-structure/time/time-best-practices)

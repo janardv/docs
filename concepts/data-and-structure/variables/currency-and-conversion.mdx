@@ -1,57 +1,44 @@
 ---
-title: Currency and conversion
-description: Choose how currency variables display monetary values in models, views, and boards.
+title: Currency variables
+description: Choose which currency a monetary variable displays in your model.
 icon: coins
 sidebarTitle: Currency
 ---
 
-When a variable uses the **Currency** type, you can choose which currency symbol Oculon displays for its values. This keeps financial lines readable when collaborators review models, views, and boards.
+A Currency variable shows its values with a currency symbol. You choose the currency for each variable. For example, `Revenue` can display in USD while `Payroll India` displays in INR.
 
-<Frame caption="Currency display">
+<Frame caption="Choosing the Currency type for a variable">
   <img
-    src="/images/getting-started/currency.png"
-    alt="Currency selector in variable format settings"
+    src="/images/start-here/variable-currency.png"
+    alt="Variable menu open on Beginning ARR with the Variable Type dropdown expanded, listing Number, Currency (selected), Date, Percentage, and Boolean, with the Currency and Exchange Rate Aggregation settings below."
   />
 </Frame>
 
-## Why it matters
+## Set the currency
 
-Using a clear currency display helps when you work with multi-currency models or executive reports.
+1. Click the type icon next to the variable name.
+2. In **Variable Type**, choose **Currency**.
+3. In **Currency**, choose a currency.
 
-- Keeps values consistent across models and dashboards
-- Helps distinguish currencies such as USD, INR, and EUR
-- Improves readability in time-based tables and reports
+New Currency variables use USD until you choose another currency.
 
-## How to change currency
+## Available currencies
 
-Update the currency from the variable format settings:
-
-1. Select the variable in the model.
-2. Open **Format**.
-3. Choose the **Currency** control.
-4. Select the desired currency (for example USD, INR, or EUR).
-
-You can also start from a Currency [variable type](/concepts/data-and-structure/variables/variable-types), then refine display options under [Variable formatting](/concepts/data-and-structure/variables/variable-formatting).
+You can choose USD, EUR, GBP, INR, JPY, CNY, AUD, CAD, CHF, SEK, NOK, or DKK.
 
 ## What changes
 
-- The currency symbol updates across the variable's time cells.
-- The display applies consistently in models, views, and boards.
-- Changing the display currency does **not** convert the underlying numeric values. It changes how those values are shown.
-
-## Example
-
-If you change the display currency from USD to INR, a value shown as `$1,000` can appear as `₹1,000` across the model. The stored number stays the same unless you change the data or formula.
-
-## Workspace Planning defaults
-
-Workspace admins can also configure planning-related defaults (including currency-related preferences) in admin **Planning** settings. Variable-level format choices still control how each currency variable displays in a model.
+- The currency symbol updates on the variable's values, such as `$` for USD or `₹` for INR.
+- The stored values don't change.
 
 <Note>
-Display currency on a variable is separate from any future FX conversion workflows. This page covers display selection only.
+Changing the currency changes the symbol, not the amount. If you switch a variable from USD to INR, `$1,000` displays as `₹1,000`. Oculon doesn't convert the value at an exchange rate.
 </Note>
+
+Currency variables also show an **Exchange Rate Aggregation** setting with **Default**, **Average**, and **Closing** options. Choosing an option doesn't convert the variable's values.
 
 ## Related
 
 - [Variable types](/concepts/data-and-structure/variables/variable-types)
 - [Variable formatting](/concepts/data-and-structure/variables/variable-formatting)
+- [What is a variable](/concepts/data-and-structure/variables/what-is-a-variable)

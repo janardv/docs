@@ -1,77 +1,75 @@
 ---
-title: Transaction types
-description: Understand the main Transactions patterns in Oculon and when each one fits best.
+title: Transaction sources
+description: Choose how records get into Transactions, whether from an integration, an uploaded file, or manual entry.
 icon: list
-sidebarTitle: Types
+sidebarTitle: Sources
 ---
 
-Transactions can start from different ownership models. The most common choice is between a dataset you manage directly in Oculon and one created from an integration workflow.
+Every Transactions table gets its records from a source. You can connect an integration, upload a file, or enter rows yourself. Choose the source based on which system owns the records.
 
-<Frame caption="Manual and integration-backed Transactions">
+{/* TODO: screenshot of the Transactions Settings Source section with the Integration and Query fields */}
+
+## Integration
+
+An integration connects Oculon to an external system. Examples include Xero, QuickBooks, HubSpot, and Google Sheets. The connectors available to you depend on your workspace.
+
+<Frame caption="A Xero integration with its queries">
   <img
-    src="/images/databases/database-types-placeholder.svg"
-    alt="Placeholder showing manual and integration-backed Transactions creation options"
+    src="/images/start-here/integration.png"
+    alt="Xero integration open from Library / Integrations, with a Queries list including Accounts, Bank Transactions, Contacts, Invoices, Journals, and Payments. The grid previews the selected query's records with Code, Name, AccountID, Type, and Status columns, a Configure panel lists the query fields, and a Create Transactions button sits above the grid."
   />
 </Frame>
 
-## Manual Transactions
+Records reach Transactions in three steps:
 
-Use manual Transactions when your team wants to define and maintain the structure directly in Oculon.
+1. **Connection.** You set up the integration in the Library **Integrations** tab.
+2. **Query.** A query on that integration selects which records to pull, such as invoices or customers.
+3. **Transactions.** In **Transactions Settings**, you choose the integration in **Integration** and the query in **Query**. You then set a **Refresh Frequency**.
 
-Create them from the Library with **Create Transactions**.
+Click **Preview** to check the query results before you save.
 
-This works well for:
+Use an integration when another system owns the records and they change often.
 
-- planning support tables
-- controlled reference lists
-- operational records that do not need an external source system
-- shared tables that a team updates directly in the app
+## File upload
 
-## Integration-backed Transactions
+You can upload a CSV or Excel file. In the **Upload Excel File** dialog, click **Choose CSV or XLSX file** or drag the file in. If the workbook has several sheets, you pick the sheet to use.
 
-Use integration-backed Transactions when the data should come from an external source through an integration.
+<Frame caption="Uploading a file to a Local-spreadsheet integration">
+  <img
+    src="/images/start-here/upload-source.png"
+    alt="Local-spreadsheet integration open from Integrations, with a Configure panel showing an Upload File area that reads Drag and drop or click to upload file(s), a size limit of less than 25MB and file types csv and xlsx, a Header row selector, and an empty Fields section. The main area prompts you to run the query to see results."
+  />
+</Frame>
 
-From an integration, you can **Create Transactions** so the source can refresh over time.
+Use a file upload for one-off imports, such as a historical export from a system you don't connect directly.
 
-This works well when:
+## Manual entry
 
-- another system owns the records
-- refresh timing matters
-- the same source should feed several downstream workflows
-- you want a repeatable import path instead of manual updates
+You can create Transactions without a source and enter the records yourself. Click **Create Transactions** in the Library. You then add a date column, variables, and dimension columns, and insert rows.
+
+<Frame caption="Setting up Transactions for manual entry">
+  <img
+    src="/images/start-here/manual-transactions.png"
+    alt="New Transactions with no integration chosen. The Transactions Settings panel shows Source with Integration set to Choose an integration, Variables Transaction ID, Transaction Date, and Amount, Date Column set to Date, and an empty Segment by section. The grid behind it has Date, Transaction Date, and Amount columns and no rows yet."
+  />
+</Frame>
+
+Use manual entry for small tables your team maintains in Oculon, such as a list of one-off adjustments.
+
+See [Working with data](/concepts/data-and-structure/transactions/working-with-data) for how to add rows and edit values.
 
 ## How to choose
 
-Choose based on ownership first.
+| Source | Use it when |
+| :--- | :--- |
+| Integration | Another system owns the records, and you want them to stay current. |
+| File upload | You have a one-off export or a system you don't connect directly. |
+| Manual entry | Your team owns the records and maintains them in Oculon. |
 
-- If Oculon is where the team maintains the records, use manual Transactions.
-- If another system owns the records, use integration-backed Transactions.
+Many workspaces use more than one source. For example, invoices might come from Xero while a small adjustments table is maintained by hand.
 
-That choice usually matters more than convenience because it affects refresh behavior, change control, and who is responsible for data quality.
-
-## Mixed workflows are common
-
-Many teams use both patterns in the same workspace.
-
-For example:
-
-- integration-backed Transactions for CRM opportunity data
-- manual Transactions for planning assumptions or mapping tables
-
-That is often a healthy setup as long as each dataset has a clear owner.
-
-## What to review before you create one
-
-Before you choose a type, confirm:
-
-- where the source of truth should live
-- how often the records change
-- who is allowed to edit the records
-- whether the dataset will later feed models or dimensions
-
-## Related pages
+## Related
 
 - [What is a transaction](/concepts/data-and-structure/transactions/what-is-a-transaction)
 - [Working with data](/concepts/data-and-structure/transactions/working-with-data)
-- [Refresh and sync behavior](/concepts/data-and-structure/transactions/refresh-and-sync-behavior)
-- [Transaction best practices](/concepts/data-and-structure/transactions/transaction-best-practices)
+- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)

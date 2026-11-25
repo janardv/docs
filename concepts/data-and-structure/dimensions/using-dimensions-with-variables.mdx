@@ -1,48 +1,65 @@
 ---
 title: Using dimensions with variables
-description: Attach dimensions to variables so one metric expands by category across models, views, and boards.
+description: Link a dimension to a model and break a variable down by it so one metric shows a value for each category.
 icon: link
 sidebarTitle: With variables
 ---
 
-Dimensions and variables work together. A variable defines the metric. The dimension defines how that metric is broken down.
+A variable defines a metric. A dimension defines how that metric is broken down. When you break a variable down by a dimension, one `Headcount` variable shows a separate row for each `Department` value.
 
-## Attach a dimension to a variable
+## Link a dimension to a model
 
-<Frame caption="Attaching a dimension to a variable">
+A model uses a dimension through one of the dimension's views. You link the dimension once, and every variable in the model can then use it.
+
+1. In the model's left panel, find **Dimension**.
+2. Click **Add Dimension** and search for the dimension.
+3. Choose the dimension view the model should use.
+
+Linked dimensions appear under **Dimension** in the left panel. To remove one, open its menu and choose **Unlink**.
+
+## Break a variable down by a dimension
+
+<Frame caption="Adding a dimension to a variable">
   <img
-    src="/images/getting-started/fr-attach-dim.png"
-    alt="Model UI for attaching a dimension to a variable so the metric breaks down by category"
+    src="/images/start-here/dimension-with-variables.png"
+    alt="Q4 Revenue Planning Model with the Beginning ARR variable selected. The dimension icon next to its name opens a Search dimension box, a New Dimension option, and existing dimensions such as OrganisationType, Edition, Version, Phones, and BaseCurrency."
   />
 </Frame>
 
-Attach a dimension when you want one variable to return separate values for each category. For example, one `Headcount` variable can expand into department-level rows.
+1. Select the variable and click the dimension icon next to its name. You can also open the variable's **Breakdown by** menu and click **Add Dimension**.
+2. Search for a dimension and choose it, or click **New Dimension** to create one.
 
-In a model, open the variable's dimension controls and use **Add Dimension**. You can search for an existing Library dimension or create one as part of the **Breakdown by** flow.
+When you create a new dimension here, Oculon also links it to the model. You can add more than one dimension to a variable and drag them to change their order. For details on multi-dimension breakdowns, see [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown).
 
-## Formulas usually belong at the aggregate level
+## Formulas across dimension values
 
-<Frame caption="Aggregate formula applied across dimension values">
+You usually write a variable's formula once. Oculon evaluates it for each dimension value, so you don't maintain a formula per region or product. See [Variable behavior](/concepts/data-and-structure/variables/variable-behavior).
+
+## Set how values combine into a total
+
+<Frame caption="Time and dimension aggregation for a variable">
   <img
-    src="/images/getting-started/fr-dim-aggregation.png"
-    alt="Model grid showing a formula defined at the aggregate row and applied across dimension values"
+    src="/images/start-here/dimension-aggregation.png"
+    alt="Variable menu for Beginning ARR showing Variable Type set to Currency, Currency set to USD, Exchange Rate Aggregation, and Format, Aggregation, and Background options. The Aggregation submenu shows a Time setting of Sum and a Dimension setting."
   />
 </Frame>
 
-In many cases, you can define the formula once at the aggregate row and let Oculon apply the logic to each dimension value. This keeps the model compact and easier to maintain.
+A dimensioned variable also has a total across its values. Click the variable's type icon to open its menu, then open **Aggregation** to set how that total is calculated. The **Dimension** setting controls the total across dimension values. The **Time** setting controls [time aggregation](/concepts/data-and-structure/time/time-aggregation) across periods.
 
-## Watch the impact on reporting
+## Use dimensions in reports
 
-<Frame caption="Dimensioned data on boards">
+<Frame caption="Filtering a board chart by Location">
   <img
-    src="/images/getting-started/fr-boards-dim.png"
-    alt="Board using dimensioned model data for filtered and grouped reporting"
+    src="/images/start-here/dimension-in-reports.png"
+    alt="Q4 2026 Revenue Board with an ARR Components chart showing New, Expansion, and Churned ARR by month. A Location filter is open with All checked and options for New York, London, Remote, Dubai, and Mumbai."
   />
 </Frame>
 
-Once a variable is dimensioned, views and boards can filter and group by that dimension. This makes the model more powerful, but it also means naming and hierarchy choices matter more.
+Once a variable is dimensioned, views and boards can filter, group, and break it down by that dimension. For example, a board chart can offer a **Location** filter, so viewers can switch between `All` and a single location such as `London`. Clear value names matter more once stakeholders see them in reports.
 
 ## Related
 
 - [What is a dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension)
+- [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown)
+- [Time aggregation](/concepts/data-and-structure/time/time-aggregation)
 - [Dimension best practices](/concepts/data-and-structure/dimensions/dimension-best-practices)

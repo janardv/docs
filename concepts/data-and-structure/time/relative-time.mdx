@@ -1,79 +1,70 @@
 ---
 title: Relative time
-description: Use dynamic time references so formulas and reporting keep working as periods move forward.
+description: Reference periods relative to the one being calculated, so one formula works across every period.
 icon: refresh-cw
-sidebarTitle: Relative time
 ---
 
-Relative time lets you define periods in relation to the current model context instead of hard-coding one fixed month, quarter, or year. It keeps formulas, filters, and reporting views reusable as time moves forward.
+Relative time describes a period by its position relative to the current one, not by a fixed date. For example, `Units Sold` at `previous month` always means the month before the period being calculated. The same formula then works in every column of the model.
 
-<Frame caption="Relative time">
+<Frame caption="Choosing a relative time reference in a formula">
   <img
-    src="/images/getting-started/fr-relative-time.png"
-    alt="Relative time options in Oculon"
+    src="/images/start-here/time-relative-time.png"
+    alt="Plan formula for Beginning ARR with a reference rule open. The rule reads Where Time Is This month, and the dropdown lists This month, Previous month, 3 months ago, 6 months ago, 1 year ago, Last 3 months, and Last 6 months."
   />
 </Frame>
 
-## Why it matters
+## Relative time in formulas
 
-Hard-coded dates create extra maintenance. Relative time helps you avoid rewriting formulas and filters every time the model advances by one period.
+When you add a variable to a formula, it refers to `This month` by default. Click the reference to open its rule, then choose a different period under **Where** **Time** **Is**.
 
-Use it when the same business rule should keep working in each close cycle, forecast update, or recurring report.
+The time options are:
 
-## How relative time works in Oculon
+| Option | Refers to |
+| --- | --- |
+| `This month` | The period being calculated |
+| `Previous month` | One period earlier |
+| `3 months ago` | Three periods earlier |
+| `6 months ago` | Six periods earlier |
+| `1 year ago` | Twelve periods earlier |
+| `Last 3 months` | The three periods before the current one |
+| `Last 6 months` | The six periods before the current one |
+| `Last 12 months` | The twelve periods before the current one |
 
-In Oculon, relative time usually shows up through helper variables, modifiers, and time-aware formulas. Instead of saying "March 2026," you define the logic relative to the current period, the selected window, or the `Last actual date`.
+For example, a month-over-month growth formula can reference `Revenue` at `This month` and at `Previous month`. You never edit a date when the model moves forward.
 
-This is especially useful when:
+## Relative period labels
 
-- the report should always show the current month or quarter
-- a formula should look back one period
-- a rolling window should keep moving forward
-- a forecast should react differently before and after the [`Last actual date`](/concepts/data-and-structure/time/last-actual-date)
+<Frame caption="Relative period labels turned on">
+  <img
+    src="/images/start-here/time-relative-period.png"
+    alt="Model Settings panel with Use relative dates turned on. The model grid columns now read Month 1, Month 2, and Month 3 instead of calendar months."
+  />
+</Frame>
 
-## Common patterns
+The **Use relative dates** setting in **Model Settings** changes how period columns are labeled. When it's on, columns show `Month 1`, `Month 2`, and so on instead of calendar labels such as `Jan'26`. Quarterly and yearly models show `Quarter 1` or `Year 1`.
 
-Common relative time patterns include:
+This setting only changes labels. Values and formulas stay the same. Use it for templates or plans that aren't tied to a calendar start date, such as a new-product launch plan.
 
-- `this month` or `this quarter`
-- `previous month` or `previous quarter`
-- `next quarter`
-- `last 3`, `last 6`, or `last 12` periods
-- `month 1`, `month 2`, and similar rolling references inside forecast logic
+## When to use relative time
 
-You do not need every model to use every pattern. The goal is to make repeated logic durable, not abstract for its own sake.
+Use relative time when the same rule should hold in every period:
 
-## Where to use it
+- Growth on the previous period
+- Year-over-year comparisons
+- Rolling totals or averages over the last few periods
+- Lagged effects, such as collections that arrive one period after billing
 
-Relative time is most helpful in:
-
-- formulas that should stay valid after each close
-- views and saved filters that should always show the latest relevant periods
-- boards and comparisons that use rolling windows or current-period context
-
-If the same time rule needs to work next month without manual edits, relative time is usually the better choice.
+If you need a value from one specific, fixed period, a relative reference isn't the right fit.
 
 ## Keep it readable
 
-Relative time is powerful, but hidden offsets can be hard to review. To keep it understandable:
+- Name variables so the time offset is clear, such as `Revenue Prior Month`.
+- Put complex offsets in a [helper variable](/concepts/modeling/formulas/helper-variables-and-modifiers) instead of one long formula.
+- Check the first periods of the model. A reference such as `Previous month` points before the date range in the first column, so confirm the result there is what you expect.
 
-- use clear variable names
-- keep helper variables small and focused
-- explain business-critical time logic in the model description or related docs
-- link users to [`Helper variables and modifiers`](/concepts/modeling/formulas/helper-variables-and-modifiers) when the logic depends on built-in time helpers
+## Related
 
-## Common pitfalls
-
-Watch for these issues:
-
-- mixing hard-coded dates with rolling logic in the same formula
-- assuming calendar time and fiscal time mean the same thing
-- using a rolling window without labeling it clearly in a board or saved view
-- hiding important cutoff logic instead of making the relationship to `Last actual date` explicit
-
-## Related pages
-
-- [Last actual date](/concepts/data-and-structure/time/last-actual-date)
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
 - [Helper variables and modifiers](/concepts/modeling/formulas/helper-variables-and-modifiers)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)
 - [Time granularity](/concepts/data-and-structure/time/time-granularity)
-- [Time best practices](/concepts/data-and-structure/time/time-best-practices)

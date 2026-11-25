@@ -1,47 +1,46 @@
 ---
 title: Create and edit dimensions
-description: Create dimensions from the Library or while you work in a model, then edit values and columns on the dimension details page.
+description: Create a dimension from the Library, a model, or Transactions, then edit it on the dimension page.
 icon: circle-plus
 sidebarTitle: Create and edit
 ---
 
-You can create dimensions from the Library or while you work in a model. Setting them up carefully keeps breakdowns consistent wherever you reuse them.
+You can create a dimension from the Library, from inside a model, or while you set up Transactions. Every dimension you create belongs to the workspace, so other models can reuse it.
 
-## Where to create a dimension
+{/* TODO: screenshot of the current Library Dimensions tab with the Create menu open. Existing fr-dimension-list.png shows an older Libraries layout. */}
 
-<Frame caption="Dimensions list in the Library">
+## Create a dimension
+
+- **From the Library.** Open **Library** → **Dimensions**, click **Create**, and choose **Create Dimension**. The new dimension page opens so you can add values.
+- **From a variable.** In a model, open a variable's **Breakdown by** menu and click **Add Dimension**. Type a name and choose **New Dimension**. Oculon creates the dimension, links it to the model, and breaks the variable down by it.
+- **From a model.** In the model's left panel, click **Add Dimension** next to **Dimension**. You can link an existing dimension or create a new one.
+- **From Transactions.** When you add a **Segment by** field, you can map it to an existing dimension or create a new one.
+
+Before you create a dimension, search the Library for an existing one. Reusing a dimension keeps categories consistent across models.
+
+## Edit a dimension
+
+Open the dimension from **Library** → **Dimensions**. On the dimension page, you can:
+
+- Add, rename, reorder, and delete values. See [Dimension values](/concepts/data-and-structure/dimensions/dimension-values).
+- Add variable columns, columns that link to other dimensions, or property columns. See [Dimension operations](/concepts/data-and-structure/dimensions/dimension-operations).
+- Create and switch between views of the dimension.
+- Click a column header to edit the column. For a linked dimension column, the menu offers **Edit Property**, **Sort ascending**, **Sort descending**, **View Dimension**, and **Unlink Dimension**.
+
+<Frame caption="Editing a column on a dimension page">
   <img
-    src="/images/getting-started/fr-dimension-list.png"
-    alt="Library Dimensions list with Create Dimension available for managing shared categories"
+    src="/images/start-here/dimension-edit.png"
+    alt="Location dimension open from Library / Dimensions in its Full dimension view, with values New York, London, Remote, Dubai, and Mumbai. The Customers column header menu is open, showing Edit Property, Sort ascending, Sort descending, View Dimension, and Unlink Dimension."
   />
 </Frame>
 
-There are two primary ways to create a new dimension:
+## Edit with care
 
-- **From the Library**: Open **Library** → **Dimensions**, then choose **Create Dimension** to create and manage the dimension centrally.
-- **From a model**: While you work with a variable, use **Add Dimension** (including the **Breakdown by** flow) to attach an existing dimension or create one as you build the model.
-
-## Add and edit values
-
-After you create a dimension, open it from the Library to manage its values. Use **+ New Value** to add members, then rename them to match your business language.
-
-Add as many values as you need. Prefer stable names so formulas, filters, and boards stay readable as the model grows.
-
-## The dimension details page
-
-<Frame caption="Dimension details page">
-  <img
-    src="/images/getting-started/fr-dim-details.png"
-    alt="Dimension details table listing values with controls to add new values and columns"
-  />
-</Frame>
-
-From the dimension details page, you can:
-
-- **Add values**: Continue adding members with **+ New Value**.
-- **Add columns**: Add columns for properties or relationships, including a **Linked dimension** or **Lookup**. This lets you store extra context about members or map dimensions to each other.
+A dimension is shared across the workspace. Renaming or deleting a value changes it in every model, Transactions, and board that uses the dimension. Check where the dimension is used before you make structural changes.
 
 ## Related
 
+- [What is a dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension)
 - [Dimension values](/concepts/data-and-structure/dimensions/dimension-values)
 - [Dimension operations](/concepts/data-and-structure/dimensions/dimension-operations)
+- [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables)

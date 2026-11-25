@@ -1,90 +1,59 @@
 ---
 title: Transaction best practices
-description: Use practical habits to keep Transactions reliable, reviewable, and safe to reuse in Oculon.
+description: Keep Transactions reliable, easy to review, and safe for models to read as actuals.
 icon: badge-check
 sidebarTitle: Best practices
 ---
 
-Good Transactions support planning without becoming another source of confusion. The best ones stay simple enough to trust and structured enough to reuse across several downstream workflows.
+Good Transactions are simple to read and safe to reuse. Several models may read the same records, so a small problem in Transactions can spread to many reports. These habits help you avoid that.
 
-<Frame caption="Review and governance habits">
-  <img
-    src="/images/databases/database-best-practices-placeholder.svg"
-    alt="Placeholder showing Transactions review checklist and governance controls"
-  />
-</Frame>
+## Keep one record per row
 
-## Start with the smallest useful structure
+Decide what one row represents, such as one invoice or one customer per month. Don't mix grains in the same table. Mixed grains double-count when a model sums the values.
 
-Do not add more fields, categories, or granularity than the workflow actually needs.
+## Bring in only what models need
 
-The smallest useful structure is often easier to maintain, easier to review, and easier to map into models later.
+Add only the variables and Segment by fields that a model or review uses. Fewer columns are easier to check and map.
 
-## Keep raw and modeled logic separate
+## Keep records raw and logic in models
 
-Use Transactions to store records, source values, and row-level logic that belongs to the data itself.
+Store source records in Transactions. Put calculations, drivers, and planning assumptions in the [model](/concepts/modeling/models/what-is-a-model).
 
-Use the [model](/concepts/modeling/models/what-is-a-model) for:
+Use [Transaction formulas](/concepts/data-and-structure/transactions/transaction-formulas) only for one-off, record-level corrections.
 
-- planning assumptions
-- scenario logic
-- business rules that span several records
-- outputs designed for decision-making
+## Set the Date Column and Segment by deliberately
 
-That split makes both layers easier to change safely.
+- Choose a Date Column that matches how you report, such as invoice date rather than payment date.
+- Map Segment by fields to the dimensions your models already use, such as `Region` or `Plan`.
+- Keep dimension values consistent. For example, don't mix `EMEA` and `Europe` for the same region.
 
-## Use stable names and clear field meaning
+## Treat structure changes as shared changes
 
-A dataset becomes harder to trust when field names drift or a single column starts carrying several meanings.
+Before you rename a variable, change the Date Column, or change a Segment by mapping, check the linked models. Tell the model owners what will change. See [Linked data](/concepts/data-and-structure/transactions/linked-data).
 
-Prefer:
+## Name an owner for each integration-backed table
 
-- business-readable field names
-- one clear meaning per column
-- clean date and category fields when they matter downstream
-- controlled structural changes instead of ad hoc edits
+Each integration-backed Transactions table should have someone who:
 
-## Govern change like shared infrastructure
+- picks the refresh frequency
+- reviews query changes
+- fixes connection problems
+- tells model owners when the data changes
 
-If several models or boards depend on the same Transactions, manage changes carefully.
+## Remove stale Transactions
 
-Review schema changes before you:
+Delete Transactions that no one uses anymore, after you check that no model links to them. Stale tables lead people to build on old data.
 
-- rename important fields
-- remove columns
-- change category meanings
-- alter the effective grain of the dataset
+## Checklist before models rely on Transactions
 
-## Make sync ownership explicit
+- One clear grain per row
+- A Date Column is set
+- Variables and Segment by fields have clear names
+- The refresh frequency matches how often the source changes
+- Linked models show the values you expect
 
-Every important dataset should have a clear owner for:
-
-- refresh timing
-- source query review
-- connection issues
-- downstream change communication
-
-That ownership matters just as much as the technical setup.
-
-## Retire stale Transactions deliberately
-
-Unused or outdated datasets create risk when teams assume they are still current.
-
-Archive or retire stale datasets deliberately so people do not build new work on top of old records.
-
-## Before you rely on Transactions broadly
-
-Use this checklist before you publish or reuse a dataset widely:
-
-- confirm the structure matches the intended workflow
-- confirm the grain is clear
-- confirm key fields are typed and named clearly
-- confirm refresh ownership is clear
-- confirm linked models, boards, or mappings still behave as expected
-
-## Related pages
+## Related
 
 - [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure)
-- [Refresh and sync behavior](/concepts/data-and-structure/transactions/refresh-and-sync-behavior)
-- [Data mismatches](/concepts/resources/troubleshooting)
+- [Linked data](/concepts/data-and-structure/transactions/linked-data)
 - [Model best practices](/concepts/modeling/models/model-best-practices)

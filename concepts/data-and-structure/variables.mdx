@@ -1,46 +1,53 @@
 ---
 title: Variables
-description: Learn how variables define metrics, drivers, and calculated lines across time and dimensions in Oculon models.
+description: Learn how variables hold the metrics, drivers, and calculated lines in your Oculon models.
 icon: chart-line
 ---
 
-Variables are the building blocks of every model in Oculon. Each variable represents a metric, driver, assumption, or calculated line that you track over time, often broken down by [dimensions](/concepts/data-and-structure/dimensions/what-is-a-dimension).
+A variable is one line in a model, such as `New ARR`, `Monthly Churn Rate %`, or `Headcount`. It holds input values, a formula, or both, with a value for every period in the model.
 
-<Frame caption="A variable in a model">
+<Frame caption="Variables in a revenue planning model">
   <img
-    src="/images/getting-started/fr-variable.png"
-    alt="Model grid showing a variable with values across time periods"
+    src="/images/start-here/variable-overview.png"
+    alt="Q4 Revenue Planning Model with Inputs such as New Customers (Monthly), Average Contract Value (Annual), and Monthly Churn Rate %, and a Revenue Calculations section with Beginning ARR, New ARR, Expansion ARR, Churned ARR, Net New ARR, and Ending ARR. The formula editor is open on Beginning ARR with Actual and Plan tabs."
   />
 </Frame>
 
 ## In this section
 
 <Columns cols={2}>
-  <Card title="What is a variable" icon="circle-help" href="/concepts/data-and-structure/variables/what-is-a-variable">
-    Core definition and the parts of a variable.
+  <Card title="What is a variable" icon="circle-question-mark" href="/concepts/data-and-structure/variables/what-is-a-variable">
+    The parts of a variable and how they fit together.
   </Card>
   <Card title="Variable types" icon="list" href="/concepts/data-and-structure/variables/variable-types">
-    Number, currency, percent, date, and boolean.
+    Number, Currency, Date, Percentage, and Boolean.
   </Card>
   <Card title="Create and edit variables" icon="pencil" href="/concepts/data-and-structure/variables/create-and-edit-variables">
-    Add, rename, reorder, and organize variables in a model.
+    Add, rename, and reorder variables in a model.
   </Card>
   <Card title="Variable breakdown" icon="layout-grid" href="/concepts/data-and-structure/variables/variable-breakdown">
-    Attach dimensions to slice a metric by category.
+    Break a variable down by one or more dimensions.
   </Card>
   <Card title="Variable formatting" icon="ruler" href="/concepts/data-and-structure/variables/variable-formatting">
-    Control how values display in the model.
+    Control how values display and aggregate.
   </Card>
   <Card title="Variable behavior" icon="activity" href="/concepts/data-and-structure/variables/variable-behavior">
-    How variables behave across time, dimensions, and the Last actual date.
+    How a variable calculates across the Last actual date, overrides, and dimensions.
   </Card>
   <Card title="Variable references" icon="link" href="/concepts/data-and-structure/variables/variable-references">
-    Reference variables in formulas and linked models.
+    Reference variables in formulas, including from linked models.
   </Card>
-  <Card title="Currency and conversion" icon="coins" href="/concepts/data-and-structure/variables/currency-and-conversion">
-    Choose currency display for monetary variables.
+  <Card title="Currency variables" icon="coins" href="/concepts/data-and-structure/variables/currency-and-conversion">
+    Choose the currency a monetary variable displays.
   </Card>
   <Card title="Variable best practices" icon="badge-check" href="/concepts/data-and-structure/variables/variable-best-practices">
     Naming, structure, and shared-logic habits.
   </Card>
 </Columns>
+
+## Related
+
+- [Core concepts overview](/concepts/core-concepts/core-concepts-overview)
+- [Dimensions](/concepts/data-and-structure/dimensions)
+- [Formulas](/concepts/modeling/formulas)
+- [Models](/concepts/modeling/models)

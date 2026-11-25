@@ -1,84 +1,66 @@
 ---
 title: Working with data
-description: Create, configure, maintain, and operate Transactions inside Oculon.
-icon: table
+description: Set up Transactions, add and edit rows, and manage Transactions in your workspace.
+icon: pencil
 ---
 
-Working with data in Oculon is usually a cycle of creating Transactions, confirming the structure, reviewing the incoming records, and keeping the dataset usable as the source changes.
+Working with Transactions follows a short cycle. You set up the source and columns, check the records, and then edit or add rows as needed. This page covers each step.
 
-<Frame caption="Transactions configuration">
+<Frame caption="A Transactions table with its settings open">
   <img
-    src="/images/getting-started/db-config.png"
-    alt="Transactions configuration panel in Oculon showing source and field settings"
+    src="/images/start-here/transactions.png"
+    alt="Customers Transactions synced from HubSpot, with rows for each customer and Plan, MRR, and Region columns. The Connections panel on the right shows the Hubspot integration, the Customers query, the run frequency, the Customer Name and MRR variables, the Date Column, and Segment by Plan and Region."
   />
 </Frame>
 
-## A practical workflow
+## Create Transactions
 
-Most work follows this pattern:
+Click **Create Transactions** in the Library. Oculon saves the new Transactions to your Private Space. Move them to a teamspace when others need them.
 
-1. Create Transactions manually or from an integration.
-2. Confirm the incoming fields and record shape.
-3. Review data quality before you connect the dataset to a model.
-4. Adjust columns, mappings, and structure where needed.
-5. Refresh and recheck the data as the source changes.
+## Configure the settings
 
-## Create and configure
+Open **Transactions Settings** from the Transactions header. The settings have these parts:
 
-If the data is managed in Oculon, use Library **Create Transactions** and define the columns directly.
+- **Source.** Choose an **Integration**, a **Query**, and a **Refresh Frequency**. Click **Preview** to see the query results. Skip this section for manual Transactions.
+- **Variables.** Add the value fields a model should be able to read, and set each one's type.
+- **Date Column.** Choose the field that dates each record.
+- **Segment by.** Map fields to workspace dimensions.
 
-If the data comes from an external source, set up the integration first, then **Create Transactions** from that integration workflow.
+Click **Save** to apply the settings. Oculon then loads the records into the grid.
 
-After the dataset exists, open it from the Library **Transactions** tab and review configuration carefully. This is usually where you confirm source settings, field selection, and how the structure should behave downstream.
+See [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure) for what each column role does.
 
-Use **Transactions Settings** and **Share Transactions** when you need settings or sharing controls on an open dataset.
+## Add rows
 
-## Add and edit rows and columns intentionally
+To add a row, select an existing row and choose **Insert row below**. Then fill in the date and the other cells.
 
-When you add or change data directly, think beyond the current table view.
+## Edit values
 
-Review:
+You can type over a cell value in the grid. Oculon saves your edit as an override on that cell. To remove the override, clear the cell.
 
-- whether the new field has one clear meaning
-- whether the column name will still make sense in a model or board
-- whether a row-level edit changes an important downstream mapping
-- whether the dataset still has one consistent grain
+If you type a value that starts with `=`, Oculon saves it as a formula. See [Transaction formulas](/concepts/data-and-structure/transactions/transaction-formulas).
 
-For filter, sort, and grouping controls while you review records, see [Filters, sorts, and grouping](/concepts/data-and-structure/transactions/filters-sorts-and-grouping).
+## Add columns
 
-For row-level calculated fields, see [Transaction formulas](/concepts/data-and-structure/transactions/transaction-formulas).
+Click **Add** at the end of the column headers. Choose **Variable** to add a value column, or **Dimension** to add a column mapped to a workspace dimension.
 
-## Rename with care
+## Rename, share, and delete
 
-Renaming Transactions or one of their fields can improve clarity, but it can also create confusion if other teams already rely on the current name.
+From the row menu in the Library, you can **Rename**, **Share**, or **Delete** Transactions. Inside the Transactions, click **Share** in the header to give people access.
 
-Rename when the improvement is meaningful, not just cosmetic.
+The **⋮** menu in the header also lets you **Copy Link**, **Copy to** or **Move to** another space, **Rename**, **View Comments**, or **Delete**.
 
-## Export and review
+<Frame caption="The Transactions header menu">
+  <img
+    src="/images/start-here/transaction-settings.png"
+    alt="Transactions header with Share, settings, and more-options buttons. The more-options menu is open with Copy Link, Copy to, Move to, Rename, View Comments, and Delete, and the Copy to submenu lists destination spaces Private space and Headcount Q2 with a search box."
+  />
+</Frame>
 
-Exports are useful when you need an offline review, a handoff, or a quick comparison against another source.
+Before you rename or delete Transactions, check which models link to them.
 
-Before you export:
+## Related
 
-- confirm the active filters and grouping
-- confirm the dataset is current
-- confirm the audience needs raw records rather than modeled output
-
-## Delete only when you are sure it is unused
-
-Deleting Transactions is a bigger decision than hiding them from a workflow.
-
-Review dependent models, boards, or team processes first. A stale dataset should usually be retired deliberately, not removed casually.
-
-## Keep raw and modeled logic separate
-
-Use Transactions to store and organize the records.
-
-Use the [model](/concepts/modeling/models/what-is-a-model) to decide what those records mean for planning, forecasting, and reporting. That split makes changes easier to review later.
-
-## Related pages
-
+- [Transaction sources](/concepts/data-and-structure/transactions/transaction-types)
 - [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure)
 - [Filters, sorts, and grouping](/concepts/data-and-structure/transactions/filters-sorts-and-grouping)
-- [Refresh and sync behavior](/concepts/data-and-structure/transactions/refresh-and-sync-behavior)
-- [Data mismatches](/concepts/resources/troubleshooting)

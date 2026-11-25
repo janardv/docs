@@ -1,38 +1,59 @@
 ---
 title: Variable references
-description: Reference variables correctly in formulas and across related model objects.
+description: Reference variables in formulas, choose which period they read, and reuse variables from linked models.
 icon: link
 sidebarTitle: References
 ---
 
-Variable references connect one part of the model to another. Good references make formulas readable and reduce duplicate logic.
+A reference is a variable used inside another variable's formula. For example, `Revenue` references `Units Sold` and `Price per Unit`. References let you define a value once and reuse it everywhere.
 
-<Frame caption="Variable references">
+This page covers how references work for variables. For formula syntax and functions, see [Formulas](/concepts/modeling/formulas).
+
+## Add a reference
+
+<Frame caption="Searching for a variable to reference">
   <img
-    src="/images/getting-started/fr-var-reference.png"
-    alt="Referencing another variable inside a formula"
+    src="/images/start-here/variable-references.png"
+    alt="Plan formula being edited on Monthly Expansion Rate % with monthly typed, and a Variables suggestion list showing Monthly Churn Rate %, Monthly Expansion Rate %, and New Customers (Monthly)."
   />
 </Frame>
 
-## Referencing inside a model
+Start typing a variable name in a formula. Oculon suggests matching variables and shows where each one lives. Select a suggestion to insert the reference.
 
-Use clear, stable variable names and rely on autocomplete where available. This reduces typing errors and keeps formulas aligned with the current structure.
+The reference appears as a chip with the variable's type icon and name. If the variable has a breakdown, the chip shows how many dimensions it has.
 
-## Referencing across linked models
+## Choose which period a reference reads
 
-<Frame caption="Linked model references">
+Each reference reads a period relative to the cell being calculated. By default, it reads `This month`, the same period as the cell.
+
+Click the reference chip to change the period. For example, `Previous month` reads the period before, and `Last 3 months` reads the three periods before. A growth rate might compare `Revenue` at `This month` with `Revenue` at `Previous month`.
+
+These are [relative time](/concepts/data-and-structure/time/relative-time) references. They move with each period, so the formula keeps working as time advances.
+
+## Filter a reference by dimension
+
+When the referenced variable has a breakdown, you can limit the reference to specific dimension values from the same chip. For example, reference only `Revenue` for `EMEA`.
+
+## Reference variables from other models
+
+<Frame caption="Linking another model from the Pages panel">
   <img
-    src="/images/getting-started/fr-linked-items.png"
-    alt="Linked items used to reuse variables across models"
+    src="/images/start-here/variable-references-other-models.png"
+    alt="Q4 Revenue Planning Model with the Pages panel open, showing Linked Models, Dimension (Status and Location), and Transactions sections. The + next to Linked Models opens a menu with a search box, Add new, and models such as Headcount Planning Model, Expense Tracker, and Revenue Planning Model."
   />
 </Frame>
 
-Oculon can reuse variables from linked models so you do not have to rebuild the same logic in multiple places. Use linked references when a metric should stay centrally owned but still feed another model.
+You can reference variables in other models. This keeps a metric owned in one place while it feeds other models. To link a model, open the **Pages** panel, click **+** next to **Linked Models**, and choose the model. For example, a P&L model can read `Salary Assessments` from a headcount model. See [Linked models](/concepts/modeling/models/linked-models).
 
-## Keep references intentional
+## Keep references maintainable
 
-Reference the smallest reliable building block. If a model depends on a single driver, reference that driver directly rather than a broad summary variable that can change for unrelated reasons.
+- Reference the specific driver you need, not a broad summary that can change for unrelated reasons.
+- Prefer stable business names, so references stay easy to read.
+- After you change a variable's breakdown or move it between models, check the formulas and boards that use it.
 
-## Review after structure changes
+## Related
 
-If you rename variables, move sections, or change dimensionality, review dependent formulas and boards. References are easiest to maintain when ownership and naming stay consistent.
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Relative time](/concepts/data-and-structure/time/relative-time)
+- [Linked models](/concepts/modeling/models/linked-models)
+- [Variable behavior](/concepts/data-and-structure/variables/variable-behavior)

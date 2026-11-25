@@ -1,52 +1,93 @@
 ---
 title: Core concepts overview
-description: Review the foundational concepts you need before you build in Oculon.
+description: Review the main Oculon concepts, what each one does, and why it matters before you build.
 icon: blocks
 ---
 
-Most work in Oculon comes down to a small set of concepts that build on each other. Once you understand how they connect, the rest of the product is easier to navigate.
+A small set of concepts explains most of how Oculon behaves. This page defines each one and says why it matters. To learn where these concepts live in the product, see [How Oculon is organized](/concepts/core-concepts/how-oculon-is-organized).
 
-## Variables
+## Model
 
-[Variables](/concepts/data-and-structure/variables) are the core lines in a model. They hold values, formulas, or both. A variable can represent a metric, a driver, an assumption, or a calculated result.
+A model is where your planning logic lives. It contains variables laid out across time, plus the settings that control how they calculate.
 
-## Dimensions
+**Why it matters:** the model is the single source for a number. Views, comparisons, and boards all read from it, so a change made once flows through to every report.
 
-[Dimensions](/concepts/data-and-structure/dimensions) add structure to a variable. Use them to break the same metric into categories such as region, department, product, or customer segment.
+[Models →](/concepts/modeling/models)
+
+## Variable
+
+A variable is one line in a model, such as `Revenue`, `Units Sold`, or `Headcount`. It can hold input values, a formula, or both.
+
+**Why it matters:** you define a metric once and reuse it everywhere. You don't rebuild the same calculation in each report.
+
+[Variables →](/concepts/data-and-structure/variables)
+
+## Formula
+
+A formula tells a variable how to calculate. It can reference other variables, Transactions, dimensions, and relative time such as `This month` or `Previous month`. Each variable can have an **actual formula** and a **planned formula**.
+
+**Why it matters:** formulas turn assumptions and source data into results. Splitting actual and planned logic lets one variable show real history and a forecast without manual switching.
+
+[Formulas →](/concepts/modeling/formulas)
 
 ## Time
 
-[Time](/concepts/data-and-structure/time) gives the model a planning horizon. It defines the date range, granularity, and the [Last actual date](/concepts/data-and-structure/time/last-actual-date) where actuals end and planned values begin.
+Every model has a time setup. The setup has a granularity (`monthly`, `quarterly`, or `yearly`), a date range, and a [Last actual date](/concepts/data-and-structure/time/last-actual-date). Periods up to the Last actual date use the actual formula. Later periods use the planned formula.
 
-## Formulas
+**Why it matters:** time settings decide which logic applies in each period. They also decide how monthly values roll up into quarters and years.
 
-[Formulas](/concepts/modeling/formulas) tell variables how to calculate. They can reference other variables, use helpers, and respond to time and dimension context. See also [conditional logic](/concepts/modeling/formulas/conditional-logic).
+[Time →](/concepts/data-and-structure/time)
 
-## Models, Transactions, scenarios, views, and boards
+## Dimension
 
-| Concept | Role |
-| :--- | :--- |
-| [Models](/concepts/modeling/models) | Hold planning logic |
-| [Transactions](/concepts/data-and-structure/transactions) | Hold source records (formerly Databases) |
-| [Scenarios](/concepts/modeling/scenarios) | Let you test changes safely |
-| [Views](/concepts/analysis-and-reporting/views) | Save filtered slices of model or Transactions content |
-| [Boards](/concepts/analysis-and-reporting/boards) | Present metrics and can embed views or other blocks |
+A dimension is a shared category, such as `Region`, `Product`, or `Department`, with values such as `EMEA` and `APAC`. Dimensions belong to the whole workspace, so many models can use the same one.
 
-## A good mental model
+**Why it matters:** one variable can be broken down by category, so you don't need a separate variable for each region or product.
 
-Think of Oculon as one connected system:
+[Dimensions →](/concepts/data-and-structure/dimensions)
 
-1. **Transactions** provide data
-2. **Models** create logic
-3. **Scenarios** test change
-4. **Views** and **Compare** narrow and explain
-5. **Boards** communicate the result
+## Transactions
 
-For the end-to-end path, see [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon). For term definitions, see the [Glossary](/concepts/core-concepts/glossary).
+Transactions hold your source records, such as ledger entries, invoices, or CRM deals. The records come from an integration, an uploaded file, or manual entry.
 
-## Related pages
+**Why it matters:** Transactions give models a reliable source for actuals. When the source data refreshes, linked models pick up the new values.
 
-- [What is Oculon](/concepts/core-concepts/what-is-oculon)
+[Transactions →](/concepts/data-and-structure/transactions)
+
+## Scenario
+
+A scenario is a branch of your planning data. Every workspace starts with **Default Scenario**. Other scenarios inherit its values until you override them.
+
+**Why it matters:** you can test a hiring plan or a pricing change without touching the baseline. You can then compare the results before you merge anything.
+
+[Scenarios →](/concepts/modeling/scenarios)
+
+## View and Compare
+
+A view is a saved way of looking at a model or Transactions. A model view stores the date range, filters, sorting, and rollups. A Transactions view stores filters, sorting, and grouping. Compare is a view setting that shows scenarios or time periods side by side, with the variance between them.
+
+**Why it matters:** different people need different slices of the same model. Views give each of them a focused, repeatable lens, and nobody has to copy data.
+
+[Views →](/concepts/analysis-and-reporting/views) · [Compare →](/concepts/analysis-and-reporting/compare)
+
+## Board
+
+A board is a reporting page. You combine charts, tables, and KPI blocks built from your models and data on one board.
+
+**Why it matters:** boards are how results reach stakeholders. Because boards read live from models, they stay current as the plan changes.
+
+[Boards →](/concepts/analysis-and-reporting/boards)
+
+## AI assistant
+
+The AI assistant is a chat you can open from any page. It can explain, build, and change models and reports. You choose whether it asks before it makes changes.
+
+**Why it matters:** routine modeling and reporting tasks go faster. The assistant works within your permissions and acts on the same objects you do.
+
+[AI overview →](/concepts/ai-and-agents/ai-overview)
+
+## Related
+
 - [How Oculon is organized](/concepts/core-concepts/how-oculon-is-organized)
 - [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)
 - [Glossary](/concepts/core-concepts/glossary)

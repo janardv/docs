@@ -1,71 +1,63 @@
 ---
 title: Linked data
-description: Use linked Transactions data across models, dimensions, and reporting in Oculon.
+description: Link Transactions to a model so its formulas can read Transactions values as actuals.
 icon: link
 ---
 
-Linked data keeps Transactions records connected to the parts of Oculon that need them. That makes the data more reusable, but it also means source changes can have wider downstream effects.
+You link Transactions to a model so the model can use their records. After you link them, the model's formulas can reference the Transactions variables. Most often, you reference them in a variable's **actual formula**.
 
-<Frame caption="Transactions linked into models and boards">
+{/* TODO: screenshot of the model left panel with the Transactions section and a linked Transactions table open in the bottom panel */}
+
+## Link Transactions to a model
+
+1. Open the model.
+2. In the left panel, find the **Transactions** section.
+3. Click **+** (**Link transactions**) and choose the Transactions to link.
+
+<Frame caption="Linking Transactions from a model's Pages panel">
   <img
-    src="/images/databases/linked-data-placeholder.svg"
-    alt="Placeholder showing Transactions fields linked into models, dimensions, and boards"
+    src="/images/start-here/db-linked-data.png"
+    alt="Q4 Revenue Planning Model with the Pages panel open, showing Linked Models, Dimension, and Transactions sections. The + next to Transactions opens a picker with a search box, an Add new option, and Transactions tables such as Users, Accounts, Organisation, and Revenue-Greenfield."
   />
 </Frame>
 
-## Where linked data shows up
+Click a linked Transactions table in the panel to open it below the model. A model can link several Transactions tables. Each one must be in the same workspace as the model.
 
-Transactions data may later be used in:
+## How values reach the model
 
-- [models](/concepts/modeling/models/what-is-a-model) and model inputs
-- [dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension) mappings
-- shared reporting views
-- boards that depend on the same underlying records
+When a model reads a Transactions variable, three settings decide where each value lands:
 
-This is why Transactions should not be treated as isolated infrastructure once they are in active use.
+- The **Date Column** places each record in a period at the model's granularity, such as `monthly`.
+- The **Segment by** mappings split values by dimension, such as `Region`.
+- The variable itself, such as `Amount`, provides the number.
 
-## Why linked data is valuable
+For example, `Revenue` in a model can use `Amount` from `Invoices` as its actual formula. Each month up to the [Last actual date](/concepts/data-and-structure/time/last-actual-date) then shows the invoice total for that month. After that date, the **planned formula** takes over.
 
-Linked data reduces duplicate maintenance.
+See [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure) for how to set these columns.
 
-When the source updates cleanly:
+## What else depends on Transactions
 
-- the same dataset can support several workflows
-- teams do not need to rebuild the same records repeatedly
-- source-level cleanup improves several downstream outputs at once
+Once a model reads Transactions, the data also reaches what the model feeds:
 
-## What breaks when the source changes
+- [Views](/concepts/analysis-and-reporting/views) and [Compare](/concepts/analysis-and-reporting/compare) on that model
+- [Boards](/concepts/analysis-and-reporting/boards) built from the model
+- Other models that link to that model
 
-Linked workflows become fragile when the source structure changes without review.
+When Transactions refresh, all of these pick up the new values.
 
-Common risks include:
+## Review dependencies before you change structure
 
-- renamed fields
-- changed category values
-- inconsistent date behavior
-- missing records after a refresh
-- structural changes that no longer match downstream mappings
+Changes to Transactions can break the models that read them. Check linked models before you:
 
-## Review dependencies after change
+- remove or rename a variable
+- change the Date Column
+- change a Segment by mapping
+- unlink the Transactions from a model
 
-If Transactions change, review the linked workflows before you assume everything still behaves correctly.
-
-Start with:
-
-- the mapped fields
-- any dependent dimensions
-- downstream models
-- key boards or tables used by other teams
-
-## Keep ownership visible
-
-Linked data works best when the source has a clear owner and the downstream consumers understand what they are inheriting.
-
-That reduces the chance that one team quietly changes a source structure that several other teams depend on.
-
-## Related pages
+## Related
 
 - [What is a transaction](/concepts/data-and-structure/transactions/what-is-a-transaction)
 - [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure)
-- [Working with data](/concepts/data-and-structure/transactions/working-with-data)
 - [Linked models](/concepts/modeling/models/linked-models)
+- [Variable behavior](/concepts/data-and-structure/variables/variable-behavior)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)

@@ -1,44 +1,44 @@
 ---
 title: Time
-description: Learn how model time settings, Last actual date, relative time, and aggregation shape planning and reporting in Oculon.
+description: Learn how time settings, the Last actual date, relative time, and time rollups and aggregation shape a model.
 icon: clock
 ---
 
-Time is one of the core systems that defines how a model behaves in Oculon. It sets the planning horizon, controls where actual logic stops, and determines how results are grouped when you review them at month, quarter, or year level.
+Every model has a time setup. It decides which periods the model covers, how detailed each period is, and where actual data stops and the plan begins. You set it in the **TIME** section of **Model Settings**.
 
-<Frame caption="Model time settings">
+<Frame caption="Time settings in the Model Settings panel">
   <img
-    src="/images/getting-started/model-settings.png"
-    alt="Model settings panel with time controls"
+    src="/images/start-here/time-overview.png"
+    alt="Q4 Revenue Planning Model with the Model Settings panel open. The TIME section shows Time Granularity set to Monthly, Date Range Oct '26 to Dec '27, Last Actual Date Nov '26, and Use fiscal year and Use relative dates toggled off. The grid shows a Last actual date marker between Nov'26 and Dec'26."
   />
 </Frame>
-
-The [Last actual date](/concepts/data-and-structure/time/last-actual-date) is the cutoff between actual and planned behavior. Pair it with clear actual and planned formulas so close and forecast updates stay reviewable.
 
 ## In this section
 
 <Columns cols={2}>
   <Card title="Time in Oculon" icon="clock" href="/concepts/data-and-structure/time/time-in-oculon">
-    How time settings shape formulas and reporting.
+    The time settings every model has and how they work together.
   </Card>
   <Card title="Last actual date" icon="split" href="/concepts/data-and-structure/time/last-actual-date">
-    Separate actuals from planned behavior across the model.
+    Separate actual periods from planned periods.
   </Card>
   <Card title="Time granularity" icon="calendar" href="/concepts/data-and-structure/time/time-granularity">
-    Choose monthly, quarterly, or yearly detail.
+    Choose monthly, quarterly, or yearly periods.
   </Card>
   <Card title="Relative time" icon="refresh-cw" href="/concepts/data-and-structure/time/relative-time">
-    Keep formulas and filters reusable as periods move.
+    Reference periods such as `previous month` instead of fixed dates.
   </Card>
-  <Card title="Time aggregation" icon="workflow" href="/concepts/data-and-structure/time/time-aggregation">
-    Decide what a metric means at quarter or year level.
+  <Card title="Time rollups and aggregation" icon="workflow" href="/concepts/data-and-structure/time/time-aggregation">
+    Group periods into quarters and years, and choose the value each group shows.
   </Card>
   <Card title="Time best practices" icon="badge-check" href="/concepts/data-and-structure/time/time-best-practices">
-    Keep time settings consistent and easy to maintain.
+    Keep time settings consistent and easy to review.
   </Card>
 </Columns>
 
 ## Related
 
-- [Time rollups](/concepts/data-and-structure/time/time-aggregation) (Concepts Legacy; related to aggregation)
+- [Model settings](/concepts/modeling/models/model-settings)
 - [Variable behavior](/concepts/data-and-structure/variables/variable-behavior)
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
+- [Views](/concepts/analysis-and-reporting/views)

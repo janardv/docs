@@ -1,64 +1,50 @@
 ---
 title: Filters, sorts, and grouping
-description: Use Transactions controls to review the right slice of records without changing the underlying data.
+description: Filter, sort, and group Transactions records, and save the result as a view, without changing the underlying data.
 icon: funnel
 sidebarTitle: Filters, sorts, and grouping
 ---
 
-Filters, sorting, and grouping help you turn a large Transactions dataset into something you can actually review. They do not change the source records. They change how you inspect the dataset.
+Filters, sorts, and grouping change how you see Transactions records. They don't change the records themselves. For example, you can filter `Customers` to `Region` = `EMEA`, sort by `MRR`, and group by `Plan`.
 
-These controls live on the Transactions grid and can be saved into a Transactions **view**. That is related to, but not the same as, [model and Transactions view concepts](/concepts/analysis-and-reporting/views/filters-sorts-and-grouping) used for reusable review surfaces.
+You can save that setup as a view. Each Transactions table keeps its own views, such as **Default View**, **Planning**, or **Revenue Billing**.
 
-## Why these controls matter
+<Frame caption="Filtering a Transactions view">
+  <img
+    src="/images/start-here/db-filter.png"
+    alt="Revenue from Rabbit Inc. Transactions in a Private space, with views All transactions, Revenue Billing, and Planning. A filter rule reads Where Vendor Is One Of AWS, with Add Rule, Clear All, and Apply buttons, and the grid shows only the AWS row."
+  />
+</Frame>
 
-Use them to answer practical questions quickly, such as:
+## Filter
 
-- Which records belong to one region or owner?
-- Which items are newest or highest value?
-- Which categories contain the most records?
-- Which rows need cleanup before the data feeds a model?
+Click **Filter** to show only the records that match. For example, show only one region or one plan.
 
-## Use filters to narrow the record set
+Use filters to check data quality before a model reads the records. For example, filter to the latest month to confirm that it arrived.
 
-Filters help you review only the rows that matter to the current question.
+## Sort
 
-Common examples include:
+Click **Sort** to order records by a column. For example, sort by `MRR` from largest to smallest to find your biggest customers.
 
-- One business unit
-- One status
-- One date window
-- Records missing a required field
+## Group
 
-Filters are especially useful when you check data quality before records flow into a model.
+Click **Group** to group records by a column, such as `Plan` or `Region`. Grouping helps you spot categories that are missing or used inconsistently.
 
-## Use sorting to surface priority
+## Save as a view
 
-Sorting makes the table easier to scan. You might sort by newest first, largest values first, alphabetical category order, or records most likely to need cleanup.
+A view saves the filters, sorts, and groups you applied. Views appear as tabs above the grid. From a view's menu, you can **Copy link**, **Duplicate**, or **Delete** it.
 
-Use a sort order that matches the review goal.
+Other people who open the Transactions see the same views. Your changes to the records show up in every view.
 
-## Use grouping to review structure
+For how views work across models and Transactions, see [What is a view](/concepts/analysis-and-reporting/views/what-is-a-view).
 
-Grouping helps when the same dataset needs to be reviewed by category, owner, status, or another shared field.
+## Keep views simple
 
-This helps when you want to:
+If a view needs many rules before the data makes sense, the structure may need cleanup. See [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure).
 
-- Compare the size of different groups
-- Check whether categories are used consistently
-- Spot missing mappings or outliers
-- Confirm the structure will make sense in downstream reporting
-
-## Review time-aware data carefully
-
-If Transactions contain time fields, confirm which time slice you are reviewing before you assume the records are wrong.
-
-## Keep review logic readable
-
-Too many hidden filters or layers of grouping can make a dataset hard to trust. If people need several hidden rules to understand the table, clean the structure or move the review into a clearer saved view.
-
-## Related pages
+## Related
 
 - [Working with data](/concepts/data-and-structure/transactions/working-with-data)
-- [Creating and configuring views](/concepts/analysis-and-reporting/views/creating-and-configuring-views)
+- [What is a view](/concepts/analysis-and-reporting/views/what-is-a-view)
 - [Views: Filters, sorts, and grouping](/concepts/analysis-and-reporting/views/filters-sorts-and-grouping)
 - [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure)

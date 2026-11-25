@@ -5,20 +5,37 @@ icon: badge-check
 sidebarTitle: Best practices
 ---
 
-Well-managed variables make the rest of the model easier to build and easier to trust.
+Well-organized variables make a model easier to build, review, and trust. Use these habits from the first draft.
 
-## Recommended practices
+## Name and type
 
-- Use business names that other people already understand.
+- Use business names your team already uses, such as `Gross Profit` rather than `GP calc 2`.
+- Choose the [type](/concepts/data-and-structure/variables/variable-types) that matches the meaning. Use **Currency** for money and **Percentage** for rates.
+- Use the same formatting for similar variables in a model.
+
+## Structure
+
 - Separate inputs, calculations, and outputs into different sections.
-- Choose one formatting standard for similar metrics.
-- Add dimensions only when they improve analysis. See [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables).
-- Prefer short formulas that call helper variables over one long formula. See [Formula best practices](/concepts/modeling/formulas/formula-best-practices).
+- Add a breakdown only when you need to analyze by that dimension. See [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables).
+- Split long formulas into short helper variables. See [Formula best practices](/concepts/modeling/formulas/formula-best-practices).
+
+## Actual and planned logic
+
+- Keep the actual formula tied to source data, such as Transactions.
+- Keep the planned formula tied to drivers and assumptions.
+- Use period overrides for true one-off exceptions, not as a substitute for a formula.
 
 ## Review before you scale
 
-Before a model grows, check whether variable names, section layout, and references still make sense. A small cleanup early is much easier than a large restructure later.
+Before a model grows, check that names, sections, and references still make sense. A small cleanup early is easier than a large restructure later.
 
 ## Protect shared logic
 
-If a variable feeds many reports or linked models, treat it as shared infrastructure. Changes should be reviewed with the people who depend on it.
+If a variable feeds many boards or other models, treat it as shared. Review changes with the people who depend on it.
+
+## Related
+
+- [Create and edit variables](/concepts/data-and-structure/variables/create-and-edit-variables)
+- [Variable references](/concepts/data-and-structure/variables/variable-references)
+- [Model best practices](/concepts/modeling/models/model-best-practices)
+- [Formula best practices](/concepts/modeling/formulas/formula-best-practices)

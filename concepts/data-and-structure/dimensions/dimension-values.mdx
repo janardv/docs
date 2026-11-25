@@ -1,32 +1,55 @@
 ---
 title: Dimension values
-description: Understand dimension values and how they define the categories your variables, views, and boards can use.
+description: Understand dimension values and how to add, rename, reorder, and delete them.
 icon: list
 sidebarTitle: Values
 ---
 
-Dimension values are the individual items inside a dimension. If the dimension is `Region`, the values might be `North America`, `EMEA`, and `APAC`.
+Dimension values are the individual items inside a dimension. If the dimension is `Location`, the values might be `New York`, `London`, and `Remote`. Each value becomes a row when you break a variable down by the dimension.
 
-<Frame caption="Dimension values for a Countries dimension, with related Products and category columns">
+Values also fill the columns of other dimensions. In a linked dimension column, you pick a value for each row. If the value you need doesn't exist yet, choose **Add new value** to create it without leaving the page.
+
+<Frame caption="Picking a value in a linked dimension column">
   <img
-    src="/images/getting-started/fr-dim-details.png"
-    alt="Countries dimension table listing India, U.S.A., France, and Italy, with a + New Value control to add more values"
+    src="/images/start-here/dimension-values.png"
+    alt="Location dimension with values New York, London, Remote, Dubai, and Mumbai. The Status cell for London is open, showing a Search value box, an Add new value option, and the values ACTIVE and ARCHIVED."
   />
 </Frame>
 
-## What dimension values control
+## What values control
 
-Dimension values determine the detail rows a variable can use. They also shape filters, groupings, and comparisons in views and boards.
+Values decide which detail rows a dimensioned variable has. They also decide which options appear when you filter or group by the dimension in views and boards.
+
+## Add values
+
+<Frame caption="Typing a new value at the end of a dimension">
+  <img
+    src="/images/start-here/dimension-add-values.png"
+    alt="Location dimension with values New York, London, Remote, Dubai, and Mumbai, and a new value being typed in the input row below the list."
+  />
+</Frame>
+
+Click **+ New Value** below the list and type a name. To add a value at a specific position, select a row and choose **Insert row below**.
+
+## Edit, reorder, and delete values
+
+- **Rename.** Click a value and type a new name.
+- **Reorder.** Drag a row to a new position, or choose **Move to top**.
+- **Duplicate.** Choose **Duplicate** to copy a value.
+- **Delete.** Choose **Delete** to remove a value.
+
+You can select several rows to apply an action to all of them.
+
+<Note>
+Renaming or deleting a value affects every model, Transactions, and board that uses the dimension. Check where the dimension is used before you delete values.
+</Note>
 
 ## Keep values stable
 
-Use names that will still make sense in six months. If business terminology changes often, agree on a controlled naming approach so formulas and reports stay readable.
-
-## Think about hierarchy
-
-Some dimensions need a flat list. Others need a parent-child structure so values can roll up into a total. In the dimension grid, you can add a **Hierarchy link** column when values need that structure. Choose the simplest option that still supports reporting.
+Use names that will still make sense in six months. If business terms change often, agree on naming rules first. Stable names keep formulas, filters, and reports readable.
 
 ## Related
 
+- [What is a dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension)
 - [Create and edit dimensions](/concepts/data-and-structure/dimensions/create-and-edit-dimensions)
 - [Dimension operations](/concepts/data-and-structure/dimensions/dimension-operations)

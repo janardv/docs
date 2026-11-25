@@ -1,94 +1,61 @@
 ---
 title: Last actual date
-description: Understand how Oculon separates historical and planned behavior across a model.
+description: Understand how the Last actual date separates actual periods from planned periods in a model.
 icon: split
 ---
 
-The **Last actual date** is the model setting that tells Oculon where actual behavior ends and planned behavior begins. It is one of the most important controls in any model that combines historicals with forecast logic.
+The **Last actual date** is the model setting that marks the last period with actual data. Periods up to and including it are actual periods. Later periods are planned periods. For example, with a Last actual date of `Nov '26`, October and November use actual logic and December onward uses plan logic.
 
-<Frame caption="Last actual date">
+<Frame caption="Choosing the Last Actual Date in Model Settings">
   <img
-    src="/images/getting-started/fr-last-actual.png"
-    alt="Last actual date control in model settings"
+    src="/images/start-here/time-last-actual-date.png"
+    alt="Model Settings panel with the Last Actual Date picker open for 2026 and Nov selected. The model grid beside it shows a Last actual date marker between the Nov'26 and Dec'26 columns."
   />
 </Frame>
 
-## Why it matters
-
-A clear cutoff helps you avoid mixing observed results with forward-looking assumptions. It also gives teams one shared reference point for close, forecast updates, and scenario reviews.
-
 ## How it works
 
-Oculon uses the **Last actual date** to decide which logic should apply in each period:
+You set the Last actual date in the **TIME** section of **Model Settings**, in the **Last Actual Date** field. The model grid marks that period's column header with a **Last actual Date** label.
 
-- Periods up to and including the Last actual date behave like actuals
-- Periods after that cutoff follow planned behavior
-- Variables can use different **actual formula** and **planned formula** logic on each side of the cutoff
-- Boards, views, and comparisons should read that split consistently when they show actual versus plan output
+Each variable can have two formulas:
 
-The same variable may calculate differently depending on which side of the cutoff you are reviewing.
+- The **actual formula** applies to periods up to and including the Last actual date.
+- The **planned formula** applies to periods after the Last actual date.
 
-## When to update it
+The formula editor shows these as the **Actual** and **Plan** tabs. One variable can show real history and a forecast without separate actuals and forecast copies.
 
-Update the Last actual date as part of the regular close cycle.
+## Why it matters
 
-Common triggers include:
+The Last actual date gives your team one shared cutoff for close, forecast updates, and scenario reviews. It keeps observed results and forward-looking assumptions from mixing in the same period.
 
-- A new month or quarter has closed
-- You refreshed source data and want the newly closed period treated as actuals
-- You need to move the cutoff back because a period is not final yet
+## Move it forward after close
 
-Keep ownership clear so the whole team works from the same baseline.
+Move the Last actual date forward when a period closes. For example, after you close June, change the Last actual date from `May '25` to `Jun '25`.
 
-## What happens when you move it forward
+When you move it forward:
 
-When you move the Last actual date forward:
+- The newly closed period switches from the planned formula to the actual formula.
+- The first planned period moves one period later.
+- Values in that period can change, because a different formula now applies.
 
-- One more period moves onto the actuals side of the model
-- The actual formula becomes the active logic for that period
-- The planned formula starts one period later
-- Reports that separate actuals from plan should reflect the new cutoff
+## Move it back
 
-After you change it, review the key views, charts, and board summaries leadership depends on.
+Move the Last actual date back when a period isn't final. For example, you reopen a period or correct source data.
 
-## What happens when you move it back
+When you move it back, the later periods switch back to their planned formulas. Comparisons that used the newer cutoff can change.
 
-When you move the Last actual date back:
+## What to check after you change it
 
-- Later periods return to planned behavior
-- Period comparisons can change because the baseline changed
-- Any close review that depended on the newer cutoff needs to be rechecked
+1. Confirm the period is closed.
+2. Refresh the Transactions the model reads from.
+3. Review the last actual period and the first planned period.
+4. Recheck the quarter and year totals your reports use.
+5. Confirm scenario comparisons still use the baseline you expect.
 
-Moving the cutoff back is useful when you reopen a period, correct source data, or pause a close that moved too early.
-
-## What to review during close
-
-After you update the Last actual date:
-
-1. Confirm the new period is truly closed
-2. Refresh any source data the model depends on
-3. Review the first period before and after the cutoff
-4. Recheck executive charts and summary tables
-5. Confirm scenario comparisons still use the intended baseline
-
-## FAQ
-
-### What if actual data is missing before the Last actual date?
-
-Oculon still evaluates the actuals side using the logic you defined there. If the actual formula depends on missing source data, review the result carefully before you publish or share the model.
-
-### Why does a number change when I move the Last actual date?
-
-The active logic may have changed. A period that previously used the planned formula may now use the actual formula, or the other way around.
-
-### Who should update the Last actual date?
-
-Use a clear owner. In most teams, the person who manages close or owns the model should make the change.
-
-## Related pages
+## Related
 
 - [Time in Oculon](/concepts/data-and-structure/time/time-in-oculon)
-- [Relative time](/concepts/data-and-structure/time/relative-time)
 - [Variable behavior](/concepts/data-and-structure/variables/variable-behavior)
+- [Formula basics](/concepts/modeling/formulas/formula-basics)
 - [Model settings](/concepts/modeling/models/model-settings)
-- [Conditional logic](/concepts/modeling/formulas/conditional-logic)
+- [Time best practices](/concepts/data-and-structure/time/time-best-practices)

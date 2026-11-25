@@ -47,3 +47,34 @@
     color: inherit !important;
     font-weight: 500 !important;
   }
+/* Frames: caption sits below (outside) the image container.
+   Container padding is 2px (a quarter of Mintlify's default 8px); caption is 12px (default 14px). */
+figure[data-name="frame"] {
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+/* Hide the default grid background and border overlay, which span the whole figure including the caption. */
+figure[data-name="frame"] > div.absolute {
+  display: none !important;
+}
+
+/* Rebuild the visible container around the image only. */
+figure[data-name="frame"] > div.relative {
+  padding: 2px;
+  border-radius: 1rem;
+  background: rgb(249 250 251 / 0.5);
+  border: 1px solid rgb(0 0 0 / 0.05);
+}
+
+.dark figure[data-name="frame"] > div.relative {
+  background: rgb(31 41 55 / 0.25);
+  border-color: rgb(255 255 255 / 0.05);
+}
+
+figure[data-name="frame"] > figcaption {
+  font-size: 12px !important;
+  margin-top: 0.5rem !important;
+  padding-bottom: 0 !important;
+}

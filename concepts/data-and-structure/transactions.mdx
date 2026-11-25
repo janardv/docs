@@ -1,48 +1,52 @@
 ---
 title: Transactions
-description: Learn how Transactions store structured source records that feed models, analysis, and reporting in Oculon.
+description: Learn how Transactions bring source records into Oculon and feed actuals into your models.
 icon: table
 ---
 
-Transactions hold structured source records you can review directly or reuse across models, views, and boards. You manage them from the Library **Transactions** tab and create them with **Create Transactions**.
+Transactions hold your source records, such as ledger entries, invoices, or CRM deals. Records come from an integration, an uploaded file, or manual entry. Models link to Transactions and use them as actuals.
 
-Older documentation called this surface **Databases**. In product UI and Concepts, the public name is **Transactions**.
+You find Transactions in the Library **Transactions** tab or in the space where they live.
 
-<Frame caption="Transactions in Oculon">
+<Frame caption="Customers Transactions synced from HubSpot">
   <img
-    src="/images/getting-started/fr-db.png"
-    alt="Transactions detail view showing structured source records in a grid"
+    src="/images/start-here/transactions.png"
+    alt="Customers Transactions synced from HubSpot, showing customer records with Plan, MRR, and Region columns, saved views such as Planning and Revenue Billing, and a Connections panel with the integration, query, run frequency, and Segment by Plan and Region settings"
   />
 </Frame>
 
 ## In this section
 
 <Columns cols={2}>
-  <Card title="What is a transaction" icon="circle-help" href="/concepts/data-and-structure/transactions/what-is-a-transaction">
-    How Transactions fit as the source layer in Oculon.
+  <Card title="What is a transaction" icon="circle-question-mark" href="/concepts/data-and-structure/transactions/what-is-a-transaction">
+    What Transactions hold and how they feed models.
   </Card>
-  <Card title="Transaction types" icon="list" href="/concepts/data-and-structure/transactions/transaction-types">
-    Choose manual ownership versus integration-backed sources.
+  <Card title="Transaction sources" icon="list" href="/concepts/data-and-structure/transactions/transaction-types">
+    Bring records in from an integration, a file, or manual entry.
   </Card>
-  <Card title="Transaction structure" icon="table" href="/concepts/data-and-structure/transactions/transaction-structure">
-    Design rows, columns, and grain for reuse.
+  <Card title="Transaction structure" icon="table-properties" href="/concepts/data-and-structure/transactions/transaction-structure">
+    How the Date Column, variables, and Segment by fields shape your records.
   </Card>
-  <Card title="Working with data" icon="table" href="/concepts/data-and-structure/transactions/working-with-data">
-    Create, configure, edit, and maintain records.
+  <Card title="Working with data" icon="pencil" href="/concepts/data-and-structure/transactions/working-with-data">
+    Set up Transactions, add rows, and edit values.
   </Card>
   <Card title="Transaction formulas" icon="sigma" href="/concepts/data-and-structure/transactions/transaction-formulas">
-    Keep calculated logic close to source records.
+    Use formulas in individual Transactions cells.
   </Card>
   <Card title="Filters, sorts, and grouping" icon="funnel" href="/concepts/data-and-structure/transactions/filters-sorts-and-grouping">
-    Review the right slice of records without changing source data.
+    Review a slice of records and save it as a view.
   </Card>
   <Card title="Linked data" icon="link" href="/concepts/data-and-structure/transactions/linked-data">
-    Connect Transactions into models, dimensions, and boards.
-  </Card>
-  <Card title="Refresh and sync behavior" icon="refresh-cw" href="/concepts/data-and-structure/transactions/refresh-and-sync-behavior">
-    Keep integration-backed sources current.
+    Link Transactions to models so they feed actual formulas.
   </Card>
   <Card title="Transaction best practices" icon="badge-check" href="/concepts/data-and-structure/transactions/transaction-best-practices">
     Keep source data reliable and safe to reuse.
   </Card>
 </Columns>
+
+## Related
+
+- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)
+- [Dimensions](/concepts/data-and-structure/dimensions)
+- [Models](/concepts/modeling/models)
+- [Last actual date](/concepts/data-and-structure/time/last-actual-date)

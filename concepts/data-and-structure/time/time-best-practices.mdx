@@ -1,90 +1,65 @@
 ---
 title: Time best practices
-description: Use practical guidance to keep time settings consistent, reviewable, and easy to maintain.
+description: Keep a model's time settings consistent, reviewable, and easy to maintain.
 icon: badge-check
 sidebarTitle: Best practices
 ---
 
-Time settings are easy to overlook when you are focused on formulas, inputs, and board design. In practice, they are part of the model's operating system. A clean time setup makes the rest of the model easier to trust.
+Time settings affect every formula and report in a model. A few habits keep them predictable as the model grows and changes hands.
 
-## Set time rules before you build deep logic
+## Set time before you build
 
-Confirm the date range, granularity, `Last actual date`, and fiscal year assumptions before you build complex formulas or share the model widely.
+Confirm the granularity, date range, Last actual date, and fiscal year setting before you write complex formulas. Changing these later affects formulas, views, and boards at once.
 
-Late changes to these settings are expensive because they affect formulas, reporting, and review workflows all at once.
+## Make close a routine
 
-## Standardize your core terms
+Move the Last actual date as a fixed step in each close:
 
-Use one shared language across the team:
+1. Refresh the Transactions the model reads from.
+2. Move the Last actual date to the newly closed period.
+3. Review the last actual period and the first planned period.
+4. Check the quarter and year totals your reports use.
 
-- `Last actual date` for the actuals cutoff
-- `Actual formula` for historical logic
-- `Planned formula` for forward-looking logic
-- `Relative time` for dynamic period references
-- `Time aggregation` for metric meaning at higher periods
-- `Time rollups` for how lower-level periods are grouped
+Give one person ownership of this step so the whole team works from the same cutoff.
 
-Consistent wording reduces confusion during reviews and handoffs.
+## Use relative time instead of fixed dates
 
-## Make close repeatable
+Use [relative time](/concepts/data-and-structure/time/relative-time) references such as `Previous month` when a rule should hold in every period. A formula that points at a fixed month needs editing each time the model moves forward.
 
-Treat the `Last actual date` as part of your regular close workflow.
+## Set aggregation for every non-additive metric
 
-A simple pattern works well:
+Time aggregation defaults to **Sum**. Before you share a model, check each balance and rate variable:
 
-1. refresh the relevant source data
-2. update the `Last actual date`
-3. review the first actual period and the first planned period
-4. confirm key quarter and year summaries
+- Set balances such as headcount or cash to **Final**.
+- Set opening balances to **Initial**.
+- Review rates and percentages so the quarter value isn't a sum.
 
-When the same steps happen every cycle, the model stays easier to audit.
+See [Time rollups and aggregation](/concepts/data-and-structure/time/time-aggregation).
 
-## Prefer reusable time logic
+## Review summaries, not only months
 
-Use [`Relative time`](/concepts/data-and-structure/time/relative-time) instead of hard-coded month references when the logic should keep working after each close.
+Monthly values can be correct while quarter or year values are wrong. Add a **Month → Quarter → Year** rollup to a view and check the totals before you share the model.
 
-This matters most in:
+## Common mistakes
 
-- rolling forecasts
-- recurring board filters
-- month-over-month and quarter-over-quarter comparisons
-- formulas that behave differently around the actuals cutoff
+- Changing granularity after formulas and boards are in use
+- Leaving fixed-date references in formulas that should roll forward
+- Summing a balance metric, such as headcount, across a quarter
+- Moving the Last actual date without checking the first planned period
+- Turning the fiscal year setting on or off after reports depend on quarter and year columns
 
-## Validate summaries before you publish
+## Checklist before you share a model
 
-Do not stop at the monthly view. Review quarter and year summaries before you publish the model or use it in leadership reporting.
+- The date range covers the planning horizon.
+- The granularity matches how often the team reviews and updates.
+- The Last actual date matches the last closed period.
+- Balance and rate variables use the right time aggregation.
+- Quarter and year rollups show the values you expect.
 
-That check catches:
-
-- the wrong aggregation meaning
-- rollup assumptions that do not match the fiscal calendar
-- formulas that behave differently than expected after the `Last actual date`
-
-## Common failure modes
-
-The most common time-related problems come from a small set of habits:
-
-- changing granularity after the model is already in use
-- leaving hard-coded dates inside formulas
-- treating a balance metric like a summed flow metric
-- updating the `Last actual date` without rechecking the first forecast period
-- assuming fiscal and calendar groupings are interchangeable
-
-## Before you publish a model
-
-Use this checklist before you hand a model to other users:
-
-- confirm the date range still matches the planning horizon
-- confirm the chosen granularity still matches the reporting cadence
-- confirm the `Last actual date` is current
-- confirm quarter and year summaries behave as expected
-- confirm business-critical formulas use readable relative time logic
-- confirm the main time assumptions are documented
-
-## Related pages
+## Related
 
 - [Time in Oculon](/concepts/data-and-structure/time/time-in-oculon)
 - [Last actual date](/concepts/data-and-structure/time/last-actual-date)
 - [Relative time](/concepts/data-and-structure/time/relative-time)
-- [Time aggregation](/concepts/data-and-structure/time/time-aggregation)
-- [Time rollups](/concepts/data-and-structure/time/time-aggregation)
+- [Time rollups and aggregation](/concepts/data-and-structure/time/time-aggregation)
+- [Model best practices](/concepts/modeling/models/model-best-practices)

@@ -1,42 +1,58 @@
 ---
 title: Create and edit variables
-description: Create variables, update their properties, and keep them organized.
+description: Create variables in a model, then rename, retype, and reorder them as the model grows.
 icon: pencil
 sidebarTitle: Create and edit
 ---
 
-You create variables directly in the model where the planning logic lives. Most teams create a first draft quickly, then refine naming, formatting, and grouping as the model becomes more stable.
+You create variables inside the model section where they belong. Most teams add a first draft quickly, then refine names, types, and order as the model settles.
 
 ## Create a variable
 
-<Frame caption="Create a variable in a model">
+<Frame caption="Creating or adding a variable">
   <img
-    src="/images/getting-started/fr-create-variable.png"
-    alt="Add variable control at the bottom of a model section"
+    src="/images/start-here/variable-create.png"
+    alt="Search or create a variable box open in a model section, with a Create New Variable option and a Recent list of variables from other places, such as Amount, Transaction Date, and Transaction ID from Private space / Revenue-Greenfield, IsSubscriber from Private space / Users, and FinancialYearEndDay from Private space / Organisation."
   />
 </Frame>
 
-Use **Add variable** at the bottom of a section to create an empty variable. Once created, you can name it immediately and start entering values or a formula.
+1. Click **+ Add Variable** at the bottom of a section.
+2. Type a name in **Search or create a variable**.
+3. Select **Create** followed by your name to add a new variable.
+
+The new variable starts empty. You can then enter values or write a formula.
+
+The same search also finds existing variables in other models, Transactions, and dimensions. Before you type, the list shows **Recent** variables and where each one lives, such as `Private space / Revenue-Greenfield`. Select one to bring it into this model instead of rebuilding it. See [Variable references](/concepts/data-and-structure/variables/variable-references).
 
 ## Edit a variable
 
-You can update the name, format, formula, dimensions, and position of an existing variable. If the variable is already used in formulas or boards, review dependent content before you make a structural change.
+You can change a variable's name, type, formatting, formulas, and breakdown after you create it.
 
-## Move a variable
+- To change the type or formatting, click the type icon next to the variable name. See [Variable types](/concepts/data-and-structure/variables/variable-types) and [Variable formatting](/concepts/data-and-structure/variables/variable-formatting).
+- To change the breakdown, use the dimension control next to the variable name. See [Variable breakdown](/concepts/data-and-structure/variables/variable-breakdown).
+- To change the calculation, edit the actual formula or planned formula. See [Formula editor](/concepts/modeling/formulas/formula-editor).
 
-<Frame caption="Reorder variables">
+Before you change a variable that other formulas or boards use, check what depends on it.
+
+## Reorder variables
+
+<Frame caption="The drag handle on a variable row">
   <img
-    src="/images/getting-started/fr-drag-drop.png"
-    alt="Dragging a variable to reorder it within a model"
+    src="/images/start-here/variable-reorder.png"
+    alt="Revenue Calculations section with the drag handle shown next to the Churned ARR row and a tooltip that reads Drag to move, Click to open menu."
   />
 </Frame>
 
-You can reorder variables to keep your model logical and easy to navigate. Simply click and drag any variable to move it to a new position within the same section or to a different section entirely.
+Hover a variable row to show its drag handle. Drag the handle to move the variable to another position in the same section or to a different section. Click the handle to open the row menu.
 
-## Organize variables as you go
+## Organize as you go
 
-Use sections and a consistent ordering pattern. Keep inputs, drivers, calculations, and outputs separate so the model is easy to scan.
+Group variables into sections by role. For example, keep inputs, drivers, calculations, and outputs in separate sections. A consistent order makes the model easier to scan and review.
 
-## Rename carefully
+Prefer stable business names over temporary labels. Collaborators search for variables by name, so frequent renames make them harder to find.
 
-If a variable is widely referenced, renaming it may affect how collaborators search for it or how formulas are understood. Prefer stable business names over temporary labels.
+## Related
+
+- [What is a variable](/concepts/data-and-structure/variables/what-is-a-variable)
+- [Model structure](/concepts/modeling/models/model-structure)
+- [Variable best practices](/concepts/data-and-structure/variables/variable-best-practices)

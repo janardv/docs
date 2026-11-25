@@ -1,32 +1,50 @@
 ---
 title: What is a dimension
-description: Learn what dimensions are and how they organize planning data across models, views, and boards in Oculon.
-icon: circle-help
+description: Understand what a dimension is, where it lives in your workspace, and how it connects to models, Transactions, and boards.
+icon: circle-question-mark
 sidebarTitle: Overview
 ---
 
-A dimension is a category you use to split the same metric into more detailed parts. Common examples include region, department, product, customer segment, or channel.
+A dimension is a shared category you use to break the same metric into more detailed parts. For example, a `Location` dimension with the values `New York`, `London`, `Remote`, `Dubai`, and `Mumbai` lets one `Revenue` variable show revenue for each location.
 
-<Frame caption="A dimension as a shared business category">
+Each dimension has its own page in the Library. Every value is a row, and columns can add details about each value, such as the customer it belongs to or its status.
+
+<Frame caption="A Location dimension in the Library">
   <img
-    src="/images/getting-started/fr-dimensions.png"
-    alt="Oculon dimensions overview showing category-based breakdown of planning data"
+    src="/images/start-here/dimension-overview.png"
+    alt="Location dimension open from Library / Dimensions in its Full dimension view. Rows for New York, London, Remote, Dubai, and Mumbai have a Customers column with values such as Rabbit Inc., Barry Intl., and Waree Industries, and a Status column showing ACTIVE for some locations. A + New Value control sits below the rows and + Add sits at the end of the column headers."
   />
 </Frame>
 
 ## Why dimensions matter
 
-Dimensions let you answer more specific questions without creating a separate variable for every variation. Instead of one `Revenue` line, you can keep one revenue variable and analyze it by region or product.
+Without dimensions, you would need a separate variable for every region, product, or department. With a dimension, you keep one variable and break it down by category. Formulas, filters, and reports then work across every value of that dimension.
 
-## Where dimensions are used
+## Where dimensions live
 
-You create and manage dimensions from the Library **Dimensions** tab (`/library/dimensions`). Dimensions also appear in models, formulas, views, and boards. They are especially useful when the same planning logic should apply across many business slices.
+Dimensions belong to the workspace, not to a space. Any model in the workspace can use the same dimension. You find and manage every dimension on the **Dimensions** tab of the **Library**.
 
-## When to add one
+Because a dimension is shared, a change to its values affects every model, Transactions, and board that uses it.
 
-Add a dimension when the breakdown changes decisions or reporting. If the detail is never reviewed and only makes the model heavier, keep the variable simple.
+## What a dimension contains
+
+- **Values.** The items in the category, such as `EMEA` and `APAC`. See [Dimension values](/concepts/data-and-structure/dimensions/dimension-values).
+- **Columns.** Extra information about each value. A column can be a variable, such as a `Monthly Rent` amount, a link to another dimension, such as each `Employee` belonging to a `Department`, or a property, such as an owner or a file. See [Dimension operations](/concepts/data-and-structure/dimensions/dimension-operations).
+- **Views.** Saved ways of looking at the dimension, with their own filters, sorting, and grouping.
+
+## How dimensions connect to the rest of Oculon
+
+- **Models.** You link a dimension to a model through one of the dimension's views. Variables in that model can then be broken down by the dimension. See [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables).
+- **Transactions.** A **Segment by** field in Transactions maps a source field, such as `Region`, to a dimension. This lets models break Transactions data down by the same categories. See [What is a transaction](/concepts/data-and-structure/transactions/what-is-a-transaction).
+- **Boards.** Charts and tables can break down or filter dimensioned data. You can also embed a dimension on a board with a [dimension block](/concepts/analysis-and-reporting/boards/dimension-block).
+
+## When to add a dimension
+
+Add a dimension when a breakdown changes decisions or reporting. If nobody reviews the detail, the extra rows only make the model heavier. In that case, keep the variable undimensioned.
 
 ## Related
 
 - [Create and edit dimensions](/concepts/data-and-structure/dimensions/create-and-edit-dimensions)
+- [Dimension values](/concepts/data-and-structure/dimensions/dimension-values)
 - [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables)
+- [Glossary](/concepts/core-concepts/glossary)

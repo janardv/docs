@@ -1,91 +1,72 @@
 ---
 title: Transaction structure
-description: Design Transactions structure in Oculon so records stay usable across models, analysis, and reporting.
-icon: table
+description: Understand how the Date Column, variables, and Segment by fields shape Transactions and what models can read from them.
+icon: table-properties
 sidebarTitle: Structure
 ---
 
-Structure determines how easy records are to review, map, and reuse later. A clean structure reduces downstream cleanup. A weak structure creates friction in every model or board that depends on it.
+A Transactions table is a grid of rows and columns. Each row is one record. Each column plays one of three roles: a date, a variable, or a dimension. Those roles decide how a linked model reads the records.
 
-<Frame caption="Rows, columns, and typed fields">
-  <img
-    src="/images/databases/database-structure-placeholder.svg"
-    alt="Placeholder showing Transactions rows, typed columns, date fields, and segmented data"
-  />
-</Frame>
+{/* TODO: screenshot of the Transactions Settings Variables, Date Column, and Segment by sections */}
 
-## Start with the downstream use case
+## Column roles
 
-Before you add fields, decide how the dataset will be used.
+You assign column roles in **Transactions Settings**:
 
-Common questions include:
+| Role | Setting | What it does | Example |
+| :--- | :--- | :--- | :--- |
+| Date | **Date Column** | Places each record in a time period | `Invoice Date` |
+| Variable | **Variables** | Holds values a model can use, such as amounts, counts, dates, rates, or flags | `Amount`, `MRR`, `Is Renewal` |
+| Dimension | **Segment by** | Maps a field to a workspace dimension, so values can break down by category | `Region`, `Plan` |
 
-- Will the records feed a model?
-- Will users filter or group the data directly?
-- Does the dataset need a date field for time-based review?
-- Should one or more fields later map to dimensions or categories?
+Fields you don't assign stay out of the variables and dimension columns.
 
-Those answers usually matter more than the raw source shape.
+## Date Column
 
-## Rows and columns
+The Date Column tells Oculon when each record happened. A linked model uses it to place values in the right month, quarter, or year.
 
-In most Transactions datasets:
+Integration-backed Transactions need a Date Column. If you don't set one, saving shows `Date Column must be configured`. For manual Transactions, you can create a date column in the same setting.
 
-- each row represents one record
-- each column represents one field on that record
+## Variables
 
-That sounds simple, but the record grain matters. A dataset becomes much harder to trust when one row mixes several business events or several time periods together.
+Variables are the value fields in Transactions, such as `Amount` or `MRR`. These are the values a model's formulas can reference after you link the Transactions.
 
-## Choose the right granularity
+Each variable has a type. Transactions use the same five types as model variables:
 
-Granularity is the level of detail each row represents.
+| Type | Use it for | Example |
+| :--- | :--- | :--- |
+| **Number** | Counts and plain quantities | `Units Sold` |
+| **Currency** | Money amounts | `Amount`, `MRR` |
+| **Date** | Calendar dates | `Renewal Date` |
+| **Percentage** | Rates and ratios | `Discount %` |
+| **Boolean** | True or false flags | `Is Renewal` |
 
-A useful dataset usually keeps one clear grain, such as:
+The type controls how values display, the same way it does in a model. See [Variable types](/concepts/data-and-structure/variables/variable-types).
 
-- one transaction per row
-- one customer per row
-- one employee per row
-- one opportunity snapshot per row
+In the grid, you can add a variable column with **Add** → **Variable**.
 
-If the grain is unclear, filters, formulas, and model mappings become harder to validate.
+## Segment by
 
-## Add date and category fields deliberately
+**Segment by** maps a field to a [dimension](/concepts/data-and-structure/dimensions). For each field, you pick an existing workspace dimension or add a new one. For example, you map the `Region` field to the `Region` dimension.
 
-Date and category fields often carry more downstream value than teams expect.
+Each dimension can map to only one field in the same Transactions table.
 
-They help with:
+Because dimensions belong to the workspace, a model that uses the same dimension can break Transactions values down by the same categories. In the grid, you can add a dimension column with **Add** → **Dimension**.
 
-- time-based review
-- sorting and filtering
-- grouping records into useful slices
-- mapping fields into models and dimensions
+## Keep one record per row
 
-If you need time-aware analysis later, include a clean date field now instead of rebuilding the structure later.
+Decide what one row represents, and keep it that way. For example, use one invoice per row, or one customer per month.
 
-## Keep column types readable
+When a single table mixes grains, such as invoice lines and invoice totals, the values double-count when a model sums them.
 
-A well-typed, well-named field is easier to review than a catch-all text field with mixed content.
+## Change structure carefully
 
-Prefer:
+Models, views, and boards may depend on your columns. Before you rename a field, remove a variable, or change a Segment by mapping, check which models use the Transactions. See [Linked data](/concepts/data-and-structure/transactions/linked-data).
 
-- one meaning per column
-- stable, business-readable names
-- separate numeric, text, date, and category fields where possible
+## Related
 
-## Treat structural changes carefully
-
-Once Transactions feed models, views, or boards, structural changes can have a wide effect.
-
-Be especially careful with:
-
-- renaming columns
-- removing fields
-- changing the meaning of a category
-- changing the effective grain of the records
-
-## Related pages
-
+- [What is a transaction](/concepts/data-and-structure/transactions/what-is-a-transaction)
 - [Working with data](/concepts/data-and-structure/transactions/working-with-data)
 - [Linked data](/concepts/data-and-structure/transactions/linked-data)
-- [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables)
-- [Transaction best practices](/concepts/data-and-structure/transactions/transaction-best-practices)
+- [What is a dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension)
+- [Time granularity](/concepts/data-and-structure/time/time-granularity)

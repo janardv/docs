@@ -179,7 +179,7 @@
         },
         {
             "source": "/docs-new/databases/refresh-and-sync-behavior",
-            "destination": "/concepts/data-and-structure/transactions/refresh-and-sync-behavior"
+            "destination": "/concepts/data-and-structure/transactions"
         },
         {
             "source": "/docs-new/databases/what-is-a-database",
@@ -355,7 +355,7 @@
         },
         {
             "source": "/docs-new/scenarios/versioning-and-snapshots",
-            "destination": "/concepts/modeling/scenarios/versioning-and-snapshots"
+            "destination": "/concepts/modeling/scenarios"
         },
         {
             "source": "/docs-new/scenarios/what-is-a-scenario",
@@ -691,7 +691,7 @@
         },
         {
             "source": "/support-docs/databases/refresh-and-sync-behavior",
-            "destination": "/concepts/data-and-structure/transactions/refresh-and-sync-behavior"
+            "destination": "/concepts/data-and-structure/transactions"
         },
         {
             "source": "/support-docs/databases/what-is-a-database",
@@ -819,7 +819,7 @@
         },
         {
             "source": "/support-docs/scenarios/versioning-and-snapshots",
-            "destination": "/concepts/modeling/scenarios/versioning-and-snapshots"
+            "destination": "/concepts/modeling/scenarios"
         },
         {
             "source": "/support-docs/scenarios/what-is-a-scenario",
@@ -992,14 +992,9 @@
                 "tab": "Concepts",
                 "groups": [
                     {
-                        "group": "Overview",
+                        "group": "Get started",
                         "pages": [
-                            "concepts/index"
-                        ]
-                    },
-                    {
-                        "group": "Core concepts",
-                        "pages": [
+                            "concepts/index",
                             "concepts/core-concepts/what-is-oculon",
                             "concepts/core-concepts/how-oculon-is-organized",
                             "concepts/core-concepts/core-concepts-overview",
@@ -1022,7 +1017,6 @@
                                     "concepts/data-and-structure/transactions/transaction-formulas",
                                     "concepts/data-and-structure/transactions/filters-sorts-and-grouping",
                                     "concepts/data-and-structure/transactions/linked-data",
-                                    "concepts/data-and-structure/transactions/refresh-and-sync-behavior",
                                     "concepts/data-and-structure/transactions/transaction-best-practices"
                                 ]
                             },
@@ -1112,7 +1106,6 @@
                                     "concepts/modeling/scenarios/scenario-overrides",
                                     "concepts/modeling/scenarios/scenario-governance-and-access",
                                     "concepts/modeling/scenarios/merge-scenarios",
-                                    "concepts/modeling/scenarios/versioning-and-snapshots",
                                     "concepts/modeling/scenarios/scenario-best-practices"
                                 ]
                             }

@@ -1,79 +1,67 @@
 ---
 title: What is a transaction
-description: Learn what Transactions are in Oculon and how they support models, analysis, and reporting.
-icon: circle-help
+description: Understand what Transactions hold, how records get into them, and how models use them as actuals.
+icon: circle-question-mark
 sidebarTitle: Overview
 ---
 
-Transactions store structured records that you can review directly or use as source data across models, views, and boards. They give you a stable place to manage operational data without rebuilding that data inside each model.
+Transactions (formerly Databases) are tables of source records in Oculon. Each row is one record, such as an invoice, a ledger entry, or a customer subscription. For example, a `Customers` table might list each customer with their `Plan`, `Region`, and `MRR`.
 
-Older docs referred to this concept as a **database**. The product label and Concepts term is **Transactions**.
+Transactions store records in their original detail. They don't hold plan values. Models link to Transactions and read from them in actual formulas.
 
-<Frame caption="Transactions detail view">
+<Frame caption="A Transactions table">
   <img
-    src="/images/getting-started/fr-db.png"
-    alt="Transactions detail view in Oculon showing structured source records"
+    src="/images/start-here/transactions.png"
+    alt="Customers Transactions with one row per customer and columns for Plan, MRR, and Region. Saved views Default View, Planning, and Revenue Billing appear above the grid. The Connections panel on the right shows Integration set to Hubspot, Query name Customers, a run frequency, the selected variables, the Date Column, and Segment by Plan and Region. The breadcrumb still reads Library / Databases / Customers."
   />
 </Frame>
 
-## Why Transactions matter
+## How records get in
 
-Transactions help you:
+You bring records into Transactions in one of three ways:
 
-- centralize source records
-- keep raw data separate from planning logic
-- refresh data from integrations and queries
-- reuse the same source data across several downstream workflows
-- reduce manual re-entry when multiple teams rely on the same records
+- **Integration.** You choose an integration and a query. Oculon loads the query results and refreshes them on a schedule.
+- **File upload.** You upload a CSV or Excel file.
+- **Manual entry.** You add rows and enter values yourself.
 
-## Where Transactions fit in Oculon
+See [Transaction sources](/concepts/data-and-structure/transactions/transaction-types) to choose between them.
 
-Think of Transactions as the source layer in the Oculon workflow:
+## How Transactions are structured
 
-- **Transactions** hold source records and imported data.
-- **Models** apply calculations, assumptions, and planning logic.
-- **Views** and **Boards** help teams review the result.
+The settings for a Transactions table decide how its columns behave:
 
-This separation matters because source data and planning logic usually need different owners and different change controls.
+- The **Date Column** places each record in a time period.
+- **Variables** are the value fields, such as `MRR` or `Amount`. Each has a type: Number, Currency, Date, Percentage, or Boolean.
+- **Segment by** fields map to [dimensions](/concepts/data-and-structure/dimensions), such as `Region` or `Plan`.
 
-You open existing Transactions from the Library **Transactions** tab. You create new ones with **Create Transactions** (or from an integration when the source should refresh from an external system).
+See [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure) for details.
 
-## Common ways to create Transactions
+## How models use Transactions
 
-Two common creation paths:
+You link Transactions to a [model](/concepts/modeling/models) from the model's **Transactions** panel. The model's formulas can then reference the Transactions variables.
 
-- **Manual Transactions** — create and manage the structure directly in Oculon (Library **Create Transactions**)
-- **Integration-backed Transactions** — create from an integration workflow so the source can refresh over time (including **Create Transactions** from an integration)
+You usually reference them in a variable's **actual formula**. For example, `Revenue` can read `MRR` from `Customers` for each month up to the [Last actual date](/concepts/data-and-structure/time/last-actual-date). After that date, the **planned formula** takes over.
 
-Both approaches create Transactions that can later support models, reporting, and review workflows.
+Because Segment by fields map to shared dimensions, the model can break the values down by the same categories. See [Linked data](/concepts/data-and-structure/transactions/linked-data).
+
+## Where Transactions live
+
+Transactions live in a space, like models and boards. The Library **Transactions** tab lists every Transactions table you can access. If you create Transactions from the Library, Oculon saves them to your Private Space.
+
+Each Transactions table can have its own saved views. See [Filters, sorts, and grouping](/concepts/data-and-structure/transactions/filters-sorts-and-grouping).
 
 ## Transactions versus models
 
-Use Transactions when you need row-level records, imported source data, or operational detail.
+| Use Transactions for | Use a model for |
+| :--- | :--- |
+| Row-level records from a source system | Calculations, drivers, and assumptions |
+| Actuals at their original detail | Planned values after the Last actual date |
+| Reviewing and cleaning source data | Scenarios and what-if analysis |
 
-Use a [model](/concepts/modeling/models/what-is-a-model) when you need:
+## Related
 
-- calculations and formulas
-- scenarios and planning assumptions
-- time-aware logic
-- outputs designed for planning and decision-making
-
-Transactions give the model a clean starting point. The model gives those records business meaning.
-
-## What Transactions usually feed
-
-Well-structured Transactions can later feed:
-
-- model inputs
-- dimension mappings
-- linked records and shared reporting inputs
-- board tables and supporting analysis
-
-Structure decisions inside Transactions often matter outside the grid itself.
-
-## Related pages
-
-- [Transaction types](/concepts/data-and-structure/transactions/transaction-types)
+- [Transaction sources](/concepts/data-and-structure/transactions/transaction-types)
 - [Transaction structure](/concepts/data-and-structure/transactions/transaction-structure)
-- [Working with data](/concepts/data-and-structure/transactions/working-with-data)
 - [Linked data](/concepts/data-and-structure/transactions/linked-data)
+- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)
+- [What is a model](/concepts/modeling/models/what-is-a-model)

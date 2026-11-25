@@ -1,53 +1,93 @@
 ---
 title: How Oculon is organized
-description: Understand the main parts of Oculon and how they fit together.
+description: Understand where content lives in Oculon, which resources are shared across a workspace, and how you move between them.
 icon: waypoints
 ---
 
-Oculon is organized so you can move from source data to decision-ready reporting without rebuilding the same logic in multiple places. The structure is workspace-level, and each layer has a clear purpose.
+Oculon isn't one strict tree. A workspace contains a few shared resources plus **Spaces** that hold your files. A **Library** lists everything you can access. An AI chat is available on every page. This page explains where each thing lives and how you move between them.
 
-## The main layers
+{/* TODO: screenshot of the current sidebar (Home | Chats | Team tabs, Library, Spaces). Existing fr-sidebar-full.png shows an older layout. */}
 
-| Layer | Purpose |
+## Workspace
+
+A workspace is your company's environment in Oculon. Everything else lives inside one.
+
+These belong to the workspace as a whole, not to any single space:
+
+| Resource | What it means |
 | :--- | :--- |
-| [**Workspace**](/concepts/workspace-and-collaboration/workspaces) | Top-level environment for people, permissions, and settings |
-| [**Spaces**](/concepts/workspace-and-collaboration/teamspaces-and-private-space) | Shared teamspaces and a Private Space that organize content |
-| [**Transactions**](/concepts/data-and-structure/transactions) | Structured source records (older docs said Databases) |
-| [**Models**](/concepts/modeling/models) | Planning logic, variables, dimensions, formulas, and time |
-| [**Scenarios**](/concepts/modeling/scenarios) | Safe branches for testing changes |
-| [**Views**](/concepts/analysis-and-reporting/views) | Saved ways to review a model or Transactions slice |
-| [**Compare**](/concepts/analysis-and-reporting/compare) | Side-by-side differences across time or scenarios |
-| [**Boards**](/concepts/analysis-and-reporting/boards) | Charts, tables, KPIs, and presentation layouts |
-| [**AI and agents**](/concepts/ai-and-agents/ai-overview) | Assistant help, Workspace AI policy, and custom agents |
-| [**Projects**](/concepts/workspace-and-collaboration/projects-and-tasks) | Task and activity coordination when Projects is enabled |
+| Members, groups, and roles | Who can enter the workspace and what they can administer |
+| [Dimensions](/concepts/data-and-structure/dimensions) | Shared categories, such as `Region` or `Department`, that any model can use |
+| Integrations | Connections to external systems that feed Transactions |
+| [Scenarios](/concepts/modeling/scenarios) | Branches such as **Default Scenario** that you can apply across models |
+| Settings | Planning defaults, security, billing, and other admin settings |
 
-## How the pieces relate
+If you belong to more than one workspace, switch between them from the profile menu. See [Workspaces](/concepts/workspace-and-collaboration/workspaces).
 
-- **Workspace** decides who can enter the environment. See [Workspace access and visibility](/concepts/workspace-and-collaboration/workspace-access-and-visibility).
-- **Spaces** organize where content lives. They are not the same as Projects.
-- **Transactions** hold records. **Models** turn those records and assumptions into planning logic.
-- **Views** and **Compare** help you review. **Boards** help you present.
-- **AI** works inside this structure. It does not replace models, sharing, or permissions.
-- **Projects** (when available) coordinate work around tasks and activity. They do not replace Spaces.
+## Spaces
 
-## Where you work day to day
+Spaces are where your files live. There are two kinds:
 
-The sidebar is the usual entry point. From there you open Library content (models, Transactions, boards, and related resources), Spaces, AI chat, and—when enabled—Projects and Feed.
+- **Private Space**: your personal area. Only you can see it unless you share an item from it.
+- **Teamspace**: a shared area for a team, such as Finance or Revenue Planning. A teamspace is either **Open** (anyone in the workspace can join) or **Closed** (people request to join).
 
-For navigation chrome, see [Sidebar and search](/concepts/resources/sidebar-and-search). The sidebar finds objects; the Concepts modules below explain what those objects mean.
+A space holds models, Transactions, boards, and folders. You can nest folders to organize content further. See [Teamspaces and private space](/concepts/workspace-and-collaboration/teamspaces-and-private-space).
 
-## A practical way to choose a surface
+## Library
 
-- Building logic → **model**
-- Shaping source records → **Transactions**
-- Narrowing a slice → **view**
-- Explaining variance → **Compare**
-- Presenting insights → **board**
-- Coordinating owned work → **Projects** (when enabled)
+The Library is an index of everything you can access, not a separate place to store files. Its tabs list **Models**, **Transactions**, **Boards**, **Dimensions**, and **Integrations**. The **Location** column shows which space each file lives in.
 
-## Related pages
+Dimensions and integrations are the exception. They belong to the workspace, so the Library is where you manage them.
+
+<Note>
+When you create a model, Transactions, or a board from the Library, it is saved to your Private Space. Move it to a teamspace when others need it.
+</Note>
+
+## Inside a model
+
+Many concepts you work with every day are parts of a model, not separate files:
+
+- **Variables and formulas.** Each variable can have an **actual formula** and a **planned formula**.
+- **Time settings.** Granularity, date range, and the **Last actual date** live in model settings.
+- **Linked data.** The model links to Transactions, dimensions, and other models.
+- **Views.** Saved views store a date range, filters, sorting, rollups, and comparison settings for that model.
+- **Scenario and Compare controls.** The model header lets you switch scenarios and compare scenarios or time periods.
+
+Transactions work the same way. Their saved views store filters, sorting, and grouping.
+
+See [Models](/concepts/modeling/models) and [Views](/concepts/analysis-and-reporting/views).
+
+## AI
+
+AI isn't a separate area you navigate to. You open a chat from **New Chat** in the sidebar or with a keyboard shortcut from any page. The chat knows which page you're on, so you can ask about the model or board in front of you. Past conversations are on the **Chats** tab of the sidebar, and custom agents are on the **Team** tab. See [AI overview](/concepts/ai-and-agents/ai-overview).
+
+## How you move around
+
+The sidebar is the main way to get around:
+
+| Sidebar area | What you use it for |
+| :--- | :--- |
+| **Search** | Jump to any file, chat, or setting you can access |
+| **Home** tab | Library, Spaces, **Shared with me**, and **Recents** |
+| **Chats** tab | Your AI conversation history |
+| **Team** tab | Custom agents |
+| Profile menu | **Settings**, **Switch Workspace**, and invitations |
+
+Some items, such as **Projects** and **Feeds**, appear only when they are enabled for your workspace. See [Sidebar and search](/concepts/resources/sidebar-and-search).
+
+## How access fits in
+
+Access works at three levels:
+
+1. **Workspace membership** decides who can enter the workspace at all.
+2. **Teamspace membership** decides who sees a teamspace's content.
+3. **Item sharing** gives a person or group access to a single model, Transactions, or board. You can share an item without adding the person to its space.
+
+See [Sharing and permissions](/concepts/workspace-and-collaboration/sharing-and-permissions).
+
+## Related
 
 - [What is Oculon](/concepts/core-concepts/what-is-oculon)
-- [How data flows through Oculon](/concepts/core-concepts/how-data-flows-through-oculon)
 - [Core concepts overview](/concepts/core-concepts/core-concepts-overview)
 - [Workspaces](/concepts/workspace-and-collaboration/workspaces)
+- [Teamspaces and private space](/concepts/workspace-and-collaboration/teamspaces-and-private-space)

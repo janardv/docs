@@ -1,44 +1,63 @@
 ---
 title: How data flows through Oculon
-description: Follow source data from Transactions through models, views, and boards in Oculon.
+description: Follow how source data and assumptions become model results, scenarios, and reports in Oculon.
 icon: workflow
 ---
 
-Data usually enters Oculon as structured records, becomes planning logic in a model, then reaches stakeholders through focused views and boards.
+Information in Oculon moves from source data and assumptions into models. From there, it reaches reports. This page traces that path. The path isn't fixed, so the end of the page covers the other ways teams use Oculon.
 
-## Typical path
+{/* TODO: diagram of the flow: sources → Transactions → model (actual formula ≤ Last actual date, planned formula after) → scenarios → views/Compare → boards */}
 
-1. **Ingest or create source records** in [Transactions](/concepts/data-and-structure/transactions) (manually or through integrations).
-2. **Connect that data into a [model](/concepts/modeling/models)** with [variables](/concepts/data-and-structure/variables), [dimensions](/concepts/data-and-structure/dimensions), [time](/concepts/data-and-structure/time), and [formulas](/concepts/modeling/formulas).
-3. **Separate actuals from plan** with the [Last actual date](/concepts/data-and-structure/time/last-actual-date).
-4. **Test alternatives** in [scenarios](/concepts/modeling/scenarios) without replacing the baseline.
-5. **Narrow the result** with [views](/concepts/analysis-and-reporting/views) and explain differences with [Compare](/concepts/analysis-and-reporting/compare).
-6. **Present the decision** on a [board](/concepts/analysis-and-reporting/boards).
+## 1. Data enters through Transactions
 
-## What stays separate on purpose
+Source records arrive in [Transactions](/concepts/data-and-structure/transactions) in one of three ways:
 
-| Keep here | Do not confuse with |
-| :--- | :--- |
-| Transactions | Model formulas and scenario branches |
-| Spaces | Projects (work management when enabled) |
-| Views | Boards (presentation) |
-| AI assistant help | Source-of-truth model logic |
-| Sharing a board or view | Automatic access to every underlying source |
+- **Integrations** connect to systems such as Xero, QuickBooks, HubSpot, or Google Sheets. A query decides which records come in, and a refresh schedule keeps them current.
+- **File uploads** import a CSV or Excel file.
+- **Manual entry** adds or edits rows by hand.
+
+Transactions keep the records in their original detail. They don't calculate plan values.
+
+## 2. Models use Transactions as actuals
+
+You link Transactions to a [model](/concepts/modeling/models). A variable's **actual formula** can then read from those records. For example, `Revenue` can sum invoice amounts for each month.
+
+[Dimensions](/concepts/data-and-structure/dimensions) break that data down by category, such as `Region` or `Product`. Dimensions are shared across the workspace, so every linked model uses the same categories.
+
+## 3. Assumptions and drivers fill the plan
+
+After the [Last actual date](/concepts/data-and-structure/time/last-actual-date), variables switch to their **planned formula**. Planned formulas usually combine drivers and assumptions. For example, `Units Sold × Price per Unit`.
+
+[Formulas](/concepts/modeling/formulas) can reference other variables, other linked models, and [relative time](/concepts/data-and-structure/time/relative-time) such as `Previous month`. When new actuals arrive, you move the Last actual date forward. Those periods then use actual data.
+
+## 4. Scenarios branch the plan
+
+[Scenarios](/concepts/modeling/scenarios) let you change assumptions without changing **Default Scenario**. A scenario inherits values until you override them. You can then compare it with the baseline and merge the changes you accept.
+
+## 5. Views and Compare focus the results
+
+A [view](/concepts/analysis-and-reporting/views) saves a slice of a model or Transactions. Model views store a date range, filters, sorting, and rollups. Transactions views store filters, sorting, and grouping. [Compare](/concepts/analysis-and-reporting/compare) puts scenarios or time periods side by side and shows the variance.
+
+## 6. Boards present the results
+
+[Boards](/concepts/analysis-and-reporting/boards) combine charts, tables, and KPI blocks from your models. Boards read live data, so they update when the model or its Transactions change.
+
+## Other paths
+
+You don't need every step, in this order:
+
+- **Assumption-only models.** A model can run entirely on inputs and drivers, without any Transactions, for example an early-stage budget.
+- **Analysis on Transactions alone.** You can filter, group, and save views of Transactions without a model.
+- **Linked models.** One model can feed another, such as a headcount model that feeds an operating expense model.
+- **Scenarios first.** You might branch a scenario before you change a model, then compare the results.
 
 ## Where AI fits
 
-[AI](/concepts/ai-and-agents/ai-overview) can help you build, explain, and report inside this flow. It still respects workspace policy, sharing, and the same objects above.
+The [AI assistant](/concepts/ai-and-agents/ai-overview) isn't a step in this flow. It works alongside every step. It can help you link Transactions, write formulas, set up scenarios, or build a board. It works on the same objects and within the same permissions you have.
 
-## Where to go next
-
-- New to the product → [What is Oculon](/concepts/core-concepts/what-is-oculon)
-- Need object definitions → [Core concepts overview](/concepts/core-concepts/core-concepts-overview) or the [Glossary](/concepts/core-concepts/glossary)
-- Building the model → [Models](/concepts/modeling/models), [Formulas](/concepts/modeling/formulas), [Scenarios](/concepts/modeling/scenarios)
-- Reporting → [Views](/concepts/analysis-and-reporting/views), [Boards](/concepts/analysis-and-reporting/boards)
-
-## Related pages
+## Related
 
 - [How Oculon is organized](/concepts/core-concepts/how-oculon-is-organized)
+- [Core concepts overview](/concepts/core-concepts/core-concepts-overview)
 - [Transactions](/concepts/data-and-structure/transactions)
 - [Models](/concepts/modeling/models)
-- [Boards](/concepts/analysis-and-reporting/boards)

@@ -5,22 +5,33 @@ icon: badge-check
 sidebarTitle: Best practices
 ---
 
-A strong dimension structure improves both model quality and reporting quality.
+Dimensions are shared across the workspace, so a clear structure helps every model and board that uses them. Use these guidelines when you design or clean up a dimension.
 
-## Recommended practices
+## Design the structure
 
-- Name dimensions after the business concept, not the current report.
-- Keep values mutually clear and easy to explain.
-- Avoid overlapping categories inside the same dimension.
-- Reuse shared Library dimensions instead of recreating the same list in multiple places.
-- Decide early whether you need a hierarchy or a flat list.
-- Prefer stable value names so filters, formulas, and boards stay readable after renames become costly.
+- Name a dimension after the business concept, such as `Department`, not after a single report.
+- Keep each value distinct. A value should belong to only one category within the same dimension.
+- Decide early whether you need a flat list or a hierarchy. Build a hierarchy by [linking dimensions](/concepts/data-and-structure/dimensions/dimension-operations), such as `Employee` → `Department` → `Entity`.
+- Store details that aren't categories as columns instead of separate dimensions. Use a variable column for amounts and rates, such as `Monthly Rent`, and a property for descriptive details, such as an email address.
+
+## Reuse before you create
+
+- Search **Library** → **Dimensions** before you create a new dimension.
+- Map **Segment by** fields in Transactions to the same dimensions your models use. Models can then break Transactions data down by the same categories.
+
+## Keep values clean
+
+- Use stable value names so formulas, filters, and boards stay readable.
+- Remove unused, duplicate, or temporary values from dimensions that live models use.
+- Check where a dimension is used before you rename or delete values.
 
 ## Keep the reporting audience in mind
 
-If a stakeholder cannot understand the dimension in a board or view without extra explanation, the structure is probably too complex.
+If a stakeholder can't understand a dimension on a board without extra explanation, the structure is probably too complex. Simplify the values or split the dimension.
 
 ## Related
 
 - [What is a dimension](/concepts/data-and-structure/dimensions/what-is-a-dimension)
+- [Dimension values](/concepts/data-and-structure/dimensions/dimension-values)
+- [Dimension operations](/concepts/data-and-structure/dimensions/dimension-operations)
 - [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables)

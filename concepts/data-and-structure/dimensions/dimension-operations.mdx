@@ -1,81 +1,106 @@
 ---
 title: Dimension operations
-description: Add and edit dimension values, link dimensions with columns, and use lookups to keep related data in sync.
+description: Add variable, dimension, and property columns to a dimension, link dimensions to each other, and save views of a dimension.
 icon: settings
 sidebarTitle: Operations
 ---
 
-Dimension operations are the actions you use to keep a dimension clean, accurate, and useful over time.
+Beyond its values, a dimension can store numbers, relationships, and other details about each value. For example, a `Location` dimension can hold a `Monthly Rent` amount for each office, link each office to the `Customers` it serves, and record who manages it. This page covers the columns and views you use to set that up.
 
-## Adding and editing dimension values
+## Add a column
 
-<Frame caption="Adding values in a dimension">
+Open the dimension page and click **+ Add** at the end of the column headers. The menu groups column types into three kinds:
+
+| Group | Options | Use it for |
+| :--- | :--- | :--- |
+| Variables | **Variable**, **Currency**, **Percent**, **Date**, **Boolean** | Values you track for each dimension value, such as `Monthly Rent` or `Target Margin` |
+| Dimensions | **Create new dimension**, **Link a dimension** | Relating each value to values in another dimension |
+| Other properties | **Text**, **Date**, **Person**, **Files & media**, **Checkbox** | Descriptive details, such as a note, an owner, or a contract file |
+
+Use the search box at the top of the menu to find a column type quickly.
+
+<Frame caption="The Add column menu on a dimension">
   <img
-    src="/images/getting-started/fr-add-dim-val.png"
-    alt="Dimension grid with + New Value used to add or insert dimension members"
+    src="/images/start-here/dimension-add-column.png"
+    alt="Location dimension in its Full dimension view with the + Add menu open. The menu has a search box and three groups: Variable, Currency, Percent, Date, and Boolean; Dimensions with Create new dimension and Link a dimension; and Other properties with Text, Date, Person, Files & media, and Checkbox."
   />
 </Frame>
 
-You manage members directly in the dimension view:
+## Add variables
 
-- **Add values**: Use **+ New Value** at the bottom of the list, or insert a value between existing items.
-- **Edit values**: Click into a cell to rename a value or update its properties.
+A variable column stores a value for each dimension value. The variable types match the types you use in models:
 
-## Linking dimensions
+| Menu option | Variable type | Example |
+| :--- | :--- | :--- |
+| **Variable** | Number | `Headcount Target` |
+| **Currency** | Currency | `Monthly Rent` |
+| **Percent** | Percentage | `Target Margin` |
+| **Date** | Date | `Lease End Date` |
+| **Boolean** | Boolean | `Is Remote` |
 
-<Frame caption="Adding a linked dimension column">
+See [Variable types](/concepts/data-and-structure/variables/variable-types) for how each type displays.
+
+## Link dimensions to each other
+
+A linked dimension column relates each value in one dimension to values in another. Linked dimensions are how you build a hierarchy, such as employees within departments within entities.
+
+To add one, click **+ Add** and choose one of the options under **Dimensions**:
+
+- **Link a dimension** to connect an existing dimension.
+- **Create new dimension** to create the other dimension and link it in one step.
+
+In each row, pick the linked value. For example, set `Ava Wilson` to `Engineering` in the `Department` column.
+
+## Control how many values a row can link to
+
+Click a linked column header and open **Edit Property** to set these options:
+
+- **Limit.** Choose **1** when each value belongs to exactly one linked value, such as one department per employee. Choose **No Limit** when a value can link to several, such as a campaign that runs on several channels.
+- **Default.** Choose a value to fill in for new rows, or **No Default**.
+
+## See the relationship from the other side
+
+<Frame caption="A Projects dimension showing its linked tasks">
   <img
-    src="/images/getting-started/fr-add-dim-col.png"
-    alt="Add column menu on a dimension used to connect another dimension as a linked column"
+    src="/images/start-here/dimension-linked-other-side.png"
+    alt="Projects dimension with the values Nov 2026 close and Revenue Planning. A Tasks column shows linked tasks such as Bank recon and Cash recon with a +8 count, and a tooltip lists the rest, including AR recon, AP accruals, and Close sign-off. Summary, Status, and Lead property columns sit alongside."
   />
 </Frame>
 
-Dimensions can be connected with columns so members relate to members in another dimension.
+When one dimension links to another, the other dimension shows the relationship too. For example, when tasks are linked to projects, the `Projects` dimension shows a column of the tasks in each project. If a row has more links than fit, hover the count, such as `+8`, to see the rest. The column on the other side is read-only. You edit the link in the dimension where you added the linked column.
 
-- **Create links**: Add a **Linked dimension** column on a base dimension to establish the relationship.
-- **Example**: On an **Employee** dimension, add a **Department** linked dimension column so each employee maps to a department.
+The linked column menu also includes **View Dimension**, which opens the linked dimension, and **Unlink Dimension**, which removes the relationship.
 
-## Dimension lookups
+## Add properties
 
-<Frame caption="Lookup columns across linked dimensions">
-  <img
-    src="/images/getting-started/fr-add-dim-map.png"
-    alt="Dimension grid showing lookup columns that pull values through linked dimension relationships"
-  />
-</Frame>
+Properties store descriptive details about each value that aren't values to track or another dimension. From **+ Add**, choose a type under **Other properties**:
 
-Lookups fill values automatically from relationships you already defined.
+- **Text** for notes or codes, such as an `Email ID` on an `Employee` dimension
+- **Date** for a date that describes the value, such as an office opening date
+- **Person** for an owner, such as the manager of each location
+- **Files & media** for attachments, such as a lease agreement
+- **Checkbox** for a simple yes or no marker
 
-- **Chain links**: Create a **Lookup** column that spans multiple links. For example, if **Employee** links to **Department**, and **Department** links to **Entity**, the Employee dimension can look up **Entity** from the linked department.
-- **Automatic sync**: When an employee's department changes, associated lookup columns (such as Entity) update to match.
+Use a variable column instead of a property when the value is a number, amount, or rate you want to track.
 
-## Multiple dimension values and relationships
+## Save views of a dimension
 
-<Frame caption="Mapping multiple values between dimensions">
-  <img
-    src="/images/getting-started/fr-mul-dim-val.png"
-    alt="Dimension relationship mapping showing how members can connect across dimensions"
-  />
-</Frame>
+Like models and Transactions, a dimension can have several saved views. Each view keeps its own settings:
 
-Depending on how you configure columns, members can map in different ways:
+- **Filter** shows only the values that match your rules.
+- **Sort** orders the values.
+- **Group** groups values, for example by a linked dimension.
+- **Properties** shows or hides columns.
 
-- **Many-to-one**: Multiple items in one dimension map to a single item in another. This is the most common relationship.
-  - *Example*: Mapping multiple **Sales Reps** to a single **Sales Region**.
-- **One-to-one**: One item maps strictly to one other item.
-  - *Example*: Mapping an **Employee ID** uniquely to a **Cost Center**.
-- **One-to-many**: A single item maps to multiple values.
-  - *Example*: A single **Marketing Campaign** that spans multiple **Advertising Channels**.
+From a view's menu, you can **Duplicate**, **Share**, or **Delete** it. You can't delete the default view, which shows the full dimension. When you link a dimension to a model, you choose which view the model uses. See [Using dimensions with variables](/concepts/data-and-structure/dimensions/using-dimensions-with-variables).
 
-## Edit with caution
+## Change structure with care
 
-If a dimension is already used in models or boards, changing the structure can affect formulas, filters, and saved views. Make structural changes carefully and review the downstream impact.
-
-## Use operations to reduce clutter
-
-Do not keep unused values, duplicate categories, or temporary naming in a production dimension. Clean dimensions make filtering and comparison much easier.
+Variable columns, linked columns, properties, and views can be used by models, boards, and other dimensions. Before you unlink a dimension or delete a view, check what depends on it.
 
 ## Related
 
 - [Dimension values](/concepts/data-and-structure/dimensions/dimension-values)
 - [Create and edit dimensions](/concepts/data-and-structure/dimensions/create-and-edit-dimensions)
+- [Dimension best practices](/concepts/data-and-structure/dimensions/dimension-best-practices)
+- [Views](/concepts/analysis-and-reporting/views)
