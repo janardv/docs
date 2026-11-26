@@ -14,260 +14,28 @@
       "destination": "/concepts"
     },
     {
-      "source": "/docs-new/admin-guide/audit-logs",
-      "destination": "/concepts/settings-and-administration/workspace-settings"
-    },
-    {
-      "source": "/docs-new/admin-guide/billing-and-plans",
-      "destination": "/concepts/settings-and-administration/billing-and-usage"
-    },
-    {
-      "source": "/docs-new/admin-guide/groups",
-      "destination": "/concepts/settings-and-administration/roles-and-access"
-    },
-    {
-      "source": "/docs-new/admin-guide/login-methods",
-      "destination": "/concepts/settings-and-administration/workspace-settings"
-    },
-    {
-      "source": "/docs-new/admin-guide/members-and-roles",
-      "destination": "/concepts/settings-and-administration/users-guests-and-invitations"
-    },
-    {
-      "source": "/docs-new/admin-guide/security",
-      "destination": "/concepts/settings-and-administration/workspace-settings"
-    },
-    {
-      "source": "/docs-new/admin-guide/usage-and-limits",
-      "destination": "/concepts/settings-and-administration/billing-and-usage/usage-and-limits"
-    },
-    {
-      "source": "/docs-new/admin-guide/workspace-settings",
-      "destination": "/concepts/settings-and-administration/workspace-settings"
-    },
-    {
-      "source": "/docs-new/ai/ai-in-oculon",
-      "destination": "/concepts/ai-and-agents/ai-overview"
-    },
-    {
-      "source": "/docs-new/ai/connectors",
-      "destination": "/concepts/ai-and-agents/context-and-connections"
-    },
-    {
-      "source": "/docs-new/ai/mcp",
-      "destination": "/concepts/ai-and-agents/context-and-connections/mcp"
-    },
-    {
-      "source": "/docs-new/ai/modeling-with-ai",
-      "destination": "/concepts/ai-and-agents/ai-assistant/modeling-with-ai"
-    },
-    {
-      "source": "/docs-new/ai/plan-mode",
-      "destination": "/concepts/ai-and-agents/ai-assistant"
-    },
-    {
-      "source": "/docs-new/ai/reporting-with-ai",
-      "destination": "/concepts/ai-and-agents/ai-assistant/reporting-with-ai"
-    },
-    {
-      "source": "/docs-new/ai/skills",
-      "destination": "/concepts/ai-and-agents/ai-assistant"
-    },
-    {
-      "source": "/docs-new/boards/board-best-practices",
-      "destination": "/concepts/analysis-and-reporting/boards/board-best-practices"
-    },
-    {
       "source": "/docs-new/boards/board-interaction",
       "destination": "/concepts/analysis-and-reporting/boards/chart-interaction"
-    },
-    {
-      "source": "/docs-new/boards/board-layout",
-      "destination": "/concepts/analysis-and-reporting/boards/board-layout"
-    },
-    {
-      "source": "/docs-new/boards/chart-interaction",
-      "destination": "/concepts/analysis-and-reporting/boards/chart-interaction"
-    },
-    {
-      "source": "/docs-new/boards/charts",
-      "destination": "/concepts/analysis-and-reporting/boards/charts"
-    },
-    {
-      "source": "/docs-new/boards/kpi-and-summary-blocks",
-      "destination": "/concepts/analysis-and-reporting/boards/kpi-and-summary-blocks"
-    },
-    {
-      "source": "/docs-new/boards/sharing-boards",
-      "destination": "/concepts/analysis-and-reporting/boards/sharing-boards"
-    },
-    {
-      "source": "/docs-new/boards/tables-on-boards",
-      "destination": "/concepts/analysis-and-reporting/boards/tables-on-boards"
-    },
-    {
-      "source": "/docs-new/boards/what-is-a-board",
-      "destination": "/concepts/analysis-and-reporting/boards/what-is-a-board"
-    },
-    {
-      "source": "/docs-new/compare/scenario-compare",
-      "destination": "/concepts/analysis-and-reporting/compare/scenario-compare"
-    },
-    {
-      "source": "/docs-new/compare/time-compare",
-      "destination": "/concepts/analysis-and-reporting/compare/time-compare"
-    },
-    {
-      "source": "/docs-new/compare/what-is-a-compare",
-      "destination": "/concepts/analysis-and-reporting/compare/what-is-a-compare"
-    },
-    {
-      "source": "/docs-new/custom-agents/agent-actions",
-      "destination": "/concepts/ai-and-agents/custom-agents/agent-actions"
-    },
-    {
-      "source": "/docs-new/custom-agents/agent-best-practices",
-      "destination": "/concepts/ai-and-agents/custom-agents/agent-best-practices"
-    },
-    {
-      "source": "/docs-new/custom-agents/agent-connections",
-      "destination": "/concepts/ai-and-agents/custom-agents/agent-connections"
-    },
-    {
-      "source": "/docs-new/custom-agents/agent-context-and-knowledge",
-      "destination": "/concepts/ai-and-agents/custom-agents/agent-context-and-knowledge"
-    },
-    {
-      "source": "/docs-new/custom-agents/agent-permissions",
-      "destination": "/concepts/ai-and-agents/custom-agents/agent-permissions"
-    },
-    {
-      "source": "/docs-new/custom-agents/agent-safety-and-review",
-      "destination": "/concepts/ai-and-agents/custom-agents/agent-safety-and-review"
-    },
-    {
-      "source": "/docs-new/custom-agents/create-a-custom-agent",
-      "destination": "/concepts/ai-and-agents/custom-agents/create-a-custom-agent"
-    },
-    {
-      "source": "/docs-new/custom-agents/what-are-custom-agents",
-      "destination": "/concepts/ai-and-agents/custom-agents/what-are-custom-agents"
-    },
-    {
-      "source": "/docs-new/databases/database-best-practices",
-      "destination": "/concepts/data-and-structure/transactions/transaction-best-practices"
     },
     {
       "source": "/docs-new/databases/database-formulas",
       "destination": "/concepts/data-and-structure/transactions/transaction-formulas"
     },
     {
-      "source": "/docs-new/databases/database-structure",
-      "destination": "/concepts/data-and-structure/transactions/transaction-structure"
-    },
-    {
-      "source": "/docs-new/databases/database-types",
-      "destination": "/concepts/data-and-structure/transactions/transaction-types"
-    },
-    {
       "source": "/docs-new/databases/filters-sorts-and-grouping",
       "destination": "/concepts/data-and-structure/transactions/filters-sorts-and-grouping"
-    },
-    {
-      "source": "/docs-new/databases/linked-data",
-      "destination": "/concepts/data-and-structure/transactions/linked-data"
-    },
-    {
-      "source": "/docs-new/databases/refresh-and-sync-behavior",
-      "destination": "/concepts/data-and-structure/transactions"
-    },
-    {
-      "source": "/docs-new/databases/what-is-a-database",
-      "destination": "/concepts/data-and-structure/transactions/what-is-a-transaction"
-    },
-    {
-      "source": "/docs-new/databases/working-with-data",
-      "destination": "/concepts/data-and-structure/transactions/working-with-data"
-    },
-    {
-      "source": "/docs-new/dimensions/create-and-edit-dimension",
-      "destination": "/concepts/data-and-structure/dimensions/create-and-edit-dimensions"
-    },
-    {
-      "source": "/docs-new/dimensions/dimension-best-practices",
-      "destination": "/concepts/data-and-structure/dimensions/dimension-best-practices"
-    },
-    {
-      "source": "/docs-new/dimensions/dimension-operations",
-      "destination": "/concepts/data-and-structure/dimensions/dimension-operations"
-    },
-    {
-      "source": "/docs-new/dimensions/dimension-values",
-      "destination": "/concepts/data-and-structure/dimensions/dimension-values"
-    },
-    {
-      "source": "/docs-new/dimensions/using-dimensions-with-variables",
-      "destination": "/concepts/data-and-structure/dimensions/using-dimensions-with-variables"
-    },
-    {
-      "source": "/docs-new/dimensions/what-is-a-dimension",
-      "destination": "/concepts/data-and-structure/dimensions/what-is-a-dimension"
-    },
-    {
-      "source": "/docs-new/formulas/common-formula-patterns",
-      "destination": "/concepts/modeling/formulas/common-formula-patterns"
     },
     {
       "source": "/docs-new/formulas/conditional-logic",
       "destination": "/concepts/modeling/formulas/conditional-logic"
     },
     {
-      "source": "/docs-new/formulas/formula-basics",
-      "destination": "/concepts/modeling/formulas/formula-basics"
-    },
-    {
-      "source": "/docs-new/formulas/formula-best-practices",
-      "destination": "/concepts/modeling/formulas/formula-best-practices"
-    },
-    {
-      "source": "/docs-new/formulas/formula-editor",
-      "destination": "/concepts/modeling/formulas/formula-editor"
-    },
-    {
-      "source": "/docs-new/formulas/formula-errors",
-      "destination": "/concepts/modeling/formulas/formula-errors"
-    },
-    {
-      "source": "/docs-new/formulas/functions",
-      "destination": "/concepts/modeling/formulas/functions"
-    },
-    {
-      "source": "/docs-new/formulas/helper-variables-and-modifiers",
-      "destination": "/concepts/modeling/formulas/helper-variables-and-modifiers"
-    },
-    {
       "source": "/docs-new/getting-started/core-concepts",
       "destination": "/concepts/core-concepts/core-concepts-overview"
     },
     {
-      "source": "/docs-new/getting-started/core-concepts-overview",
-      "destination": "/concepts/core-concepts/core-concepts-overview"
-    },
-    {
-      "source": "/docs-new/getting-started/glossary",
-      "destination": "/concepts/core-concepts/glossary"
-    },
-    {
-      "source": "/docs-new/getting-started/how-oculon-is-organized",
-      "destination": "/concepts/core-concepts/how-oculon-is-organized"
-    },
-    {
       "source": "/docs-new/getting-started/index",
       "destination": "/concepts"
-    },
-    {
-      "source": "/docs-new/getting-started/keyboard-shortcuts",
-      "destination": "/concepts/resources/keyboard-shortcuts"
     },
     {
       "source": "/docs-new/getting-started/navigating-oculon",
@@ -290,104 +58,24 @@
       "destination": "/concepts/core-concepts/what-is-oculon"
     },
     {
-      "source": "/docs-new/getting-started/what-is-oculon",
-      "destination": "/concepts/core-concepts/what-is-oculon"
-    },
-    {
       "source": "/docs-new/models/cloning-and-versioning",
       "destination": "/concepts/modeling/models/model-history"
-    },
-    {
-      "source": "/docs-new/models/linked-models",
-      "destination": "/concepts/modeling/models/linked-models"
-    },
-    {
-      "source": "/docs-new/models/model-best-practices",
-      "destination": "/concepts/modeling/models/model-best-practices"
     },
     {
       "source": "/docs-new/models/model-organization",
       "destination": "/concepts/modeling/models"
     },
     {
-      "source": "/docs-new/models/model-settings",
-      "destination": "/concepts/modeling/models/model-settings"
-    },
-    {
-      "source": "/docs-new/models/model-structure",
-      "destination": "/concepts/modeling/models/model-structure"
-    },
-    {
       "source": "/docs-new/models/versioning",
       "destination": "/concepts/modeling/models/model-history"
-    },
-    {
-      "source": "/docs-new/models/what-is-a-model",
-      "destination": "/concepts/modeling/models/what-is-a-model"
-    },
-    {
-      "source": "/docs-new/scenarios/compare-scenarios",
-      "destination": "/concepts/analysis-and-reporting/compare/scenario-compare"
-    },
-    {
-      "source": "/docs-new/scenarios/create-and-manage-scenarios",
-      "destination": "/concepts/modeling/scenarios/create-and-manage-scenarios"
     },
     {
       "source": "/docs-new/scenarios/merge-scenarios",
       "destination": "/concepts/modeling/scenarios/merge-scenarios"
     },
     {
-      "source": "/docs-new/scenarios/scenario-best-practices",
-      "destination": "/concepts/modeling/scenarios/scenario-best-practices"
-    },
-    {
       "source": "/docs-new/scenarios/scenario-governance-and-access",
       "destination": "/concepts/modeling/scenarios/scenario-governance-and-access"
-    },
-    {
-      "source": "/docs-new/scenarios/scenario-overrides",
-      "destination": "/concepts/modeling/scenarios/scenario-overrides"
-    },
-    {
-      "source": "/docs-new/scenarios/scenario-sync-behavior",
-      "destination": "/concepts/modeling/scenarios/scenario-sync-behavior"
-    },
-    {
-      "source": "/docs-new/scenarios/versioning-and-snapshots",
-      "destination": "/concepts/modeling/scenarios"
-    },
-    {
-      "source": "/docs-new/scenarios/what-is-a-scenario",
-      "destination": "/concepts/modeling/scenarios/what-is-a-scenario"
-    },
-    {
-      "source": "/docs-new/sharing-and-permissions/comments-and-collaboration",
-      "destination": "/concepts/workspace-and-collaboration/sharing-and-permissions/comments-and-collaboration"
-    },
-    {
-      "source": "/docs-new/sharing-and-permissions/external-sharing-and-exports",
-      "destination": "/concepts/workspace-and-collaboration/sharing-and-permissions/exports"
-    },
-    {
-      "source": "/docs-new/sharing-and-permissions/members-guests-and-groups",
-      "destination": "/concepts/settings-and-administration/users-guests-and-invitations"
-    },
-    {
-      "source": "/docs-new/sharing-and-permissions/permission-inheritance",
-      "destination": "/concepts/workspace-and-collaboration/sharing-and-permissions/permission-inheritance"
-    },
-    {
-      "source": "/docs-new/sharing-and-permissions/roles-and-permissions",
-      "destination": "/concepts/workspace-and-collaboration/sharing-and-permissions/roles-and-permissions"
-    },
-    {
-      "source": "/docs-new/sharing-and-permissions/sensitive-data-controls",
-      "destination": "/concepts/workspace-and-collaboration/sharing-and-permissions"
-    },
-    {
-      "source": "/docs-new/sharing-and-permissions/sharing-basics",
-      "destination": "/concepts/workspace-and-collaboration/sharing-and-permissions"
     },
     {
       "source": "/docs-new/time/actuals-and-forecast-boundary",
@@ -398,100 +86,12 @@
       "destination": "/concepts/data-and-structure/time/last-actual-date"
     },
     {
-      "source": "/docs-new/time/relative-time",
-      "destination": "/concepts/data-and-structure/time/relative-time"
-    },
-    {
-      "source": "/docs-new/time/time-aggregation",
-      "destination": "/concepts/data-and-structure/time/time-aggregation"
-    },
-    {
-      "source": "/docs-new/time/time-best-practices",
-      "destination": "/concepts/data-and-structure/time/time-best-practices"
-    },
-    {
-      "source": "/docs-new/time/time-granularity",
-      "destination": "/concepts/data-and-structure/time/time-granularity"
-    },
-    {
-      "source": "/docs-new/time/time-in-oculon",
-      "destination": "/concepts/data-and-structure/time/time-in-oculon"
-    },
-    {
       "source": "/docs-new/time/time-rollups",
       "destination": "/concepts/data-and-structure/time/time-aggregation"
     },
     {
-      "source": "/docs-new/troubleshooting/agent-issues",
-      "destination": "/concepts/resources/troubleshooting"
-    },
-    {
-      "source": "/docs-new/troubleshooting/common-errors",
-      "destination": "/concepts/resources/troubleshooting"
-    },
-    {
-      "source": "/docs-new/troubleshooting/data-mismatches",
-      "destination": "/concepts/resources/troubleshooting"
-    },
-    {
-      "source": "/docs-new/troubleshooting/formula-issues",
-      "destination": "/concepts/resources/troubleshooting"
-    },
-    {
-      "source": "/docs-new/troubleshooting/performance-issues",
-      "destination": "/concepts/resources/troubleshooting"
-    },
-    {
-      "source": "/docs-new/troubleshooting/permissions-issues",
-      "destination": "/concepts/resources/troubleshooting"
-    },
-    {
-      "source": "/docs-new/troubleshooting/scenario-issues",
-      "destination": "/concepts/resources/troubleshooting"
-    },
-    {
-      "source": "/docs-new/variables/create-and-edit-variables",
-      "destination": "/concepts/data-and-structure/variables/create-and-edit-variables"
-    },
-    {
-      "source": "/docs-new/variables/variable-behavior",
-      "destination": "/concepts/data-and-structure/variables/variable-behavior"
-    },
-    {
-      "source": "/docs-new/variables/variable-best-practices",
-      "destination": "/concepts/data-and-structure/variables/variable-best-practices"
-    },
-    {
-      "source": "/docs-new/variables/variable-breakdown",
-      "destination": "/concepts/data-and-structure/variables/variable-breakdown"
-    },
-    {
-      "source": "/docs-new/variables/variable-formatting",
-      "destination": "/concepts/data-and-structure/variables/variable-formatting"
-    },
-    {
-      "source": "/docs-new/variables/variable-references",
-      "destination": "/concepts/data-and-structure/variables/variable-references"
-    },
-    {
-      "source": "/docs-new/variables/variable-types",
-      "destination": "/concepts/data-and-structure/variables/variable-types"
-    },
-    {
-      "source": "/docs-new/variables/what-is-a-variable",
-      "destination": "/concepts/data-and-structure/variables/what-is-a-variable"
-    },
-    {
-      "source": "/docs-new/views/compare-in-views",
-      "destination": "/concepts/analysis-and-reporting/views/compare-in-views"
-    },
-    {
       "source": "/docs-new/views/creating-and-configuring-views",
       "destination": "/concepts/analysis-and-reporting/views/creating-and-configuring-views"
-    },
-    {
-      "source": "/docs-new/views/filters-sorts-and-grouping",
-      "destination": "/concepts/analysis-and-reporting/views/filters-sorts-and-grouping"
     },
     {
       "source": "/docs-new/views/private-vs-shared-views",
@@ -508,46 +108,6 @@
     {
       "source": "/docs-new/views/view-behavior",
       "destination": "/concepts/analysis-and-reporting/views/what-is-a-view"
-    },
-    {
-      "source": "/docs-new/views/view-best-practices",
-      "destination": "/concepts/analysis-and-reporting/views/view-best-practices"
-    },
-    {
-      "source": "/docs-new/views/what-is-a-view",
-      "destination": "/concepts/analysis-and-reporting/views/what-is-a-view"
-    },
-    {
-      "source": "/docs-new/workspace-and-organization/profile-and-preferences",
-      "destination": "/concepts/settings-and-administration/personal-settings"
-    },
-    {
-      "source": "/docs-new/workspace-and-organization/teamspaces-and-organization",
-      "destination": "/concepts/workspace-and-collaboration/teamspaces-and-private-space"
-    },
-    {
-      "source": "/docs-new/workspace-and-organization/what-is-a-workspace",
-      "destination": "/concepts/workspace-and-collaboration/workspaces"
-    },
-    {
-      "source": "/docs-new/workspace-and-organization/workspace-access-and-visibility",
-      "destination": "/concepts/workspace-and-collaboration/workspace-access-and-visibility"
-    },
-    {
-      "source": "/docs-new/your-sidebar/navigate-the-sidebar",
-      "destination": "/concepts/resources/sidebar-and-search"
-    },
-    {
-      "source": "/docs-new/your-sidebar/organize-your-workspace",
-      "destination": "/concepts/resources/sidebar-and-search"
-    },
-    {
-      "source": "/docs-new/your-sidebar/search-and-quick-access",
-      "destination": "/concepts/resources/sidebar-and-search"
-    },
-    {
-      "source": "/docs-new/your-sidebar/sidebar-customization",
-      "destination": "/concepts/resources/sidebar-and-search"
     },
     {
       "source": "/support-docs/admin-guide/audit-logs",
