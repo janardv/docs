@@ -4,34 +4,61 @@ description: Understand how users interact with filters, controls, and linked el
 icon: mouse-pointer
 ---
 
-<Frame caption="Chart interactions">
+A board is most useful when the viewer can explore the data without losing the main story. Chart cards support on-card controls and a right-side **Data** / **Format** panel.
+
+<Frame caption="Chart card with scenario and date controls">
   <img
-    src="/images/getting-started/fr-chart-interactions.png"
-    alt="Interactive board chart with filters and exploration controls"
+    src="/images/start-here/boards-chart-interaction.png"
+    alt="Chart card on a board showing scenario, date range, filter, and config controls"
   />
 </Frame>
 
-A board is most useful when the viewer can explore the data without losing the main story. Chart cards support on-the-fly filters and deeper inspection.
-
-## Renaming and top panel actions
+## Card header actions
 
 - **Rename** — Click the chart title to edit it.
-- **Date** — Add time-based filters or adjust rollup.
-- **Compare** — Turn on side-by-side comparisons across time ranges or scenarios. See [Compare](/concepts/analysis-and-reporting/compare/what-is-a-compare).
-- **Filter** — Add a Dimension or Scenario filter.
-- **Config** — Open the right-side configuration panel.
+- **Scenario** — Change the scenario used on the card when Scenario is in **Filters**.
+- **Date range** — Adjust the card date range from the calendar control on the card.
+- **Filter** — Open dimension or scenario filters placed on the card.
+- **Config** — Open the right-side panel (**Data** and **Format**).
 
-## Active filter management
+Board-level scenario and date range controls above the cards can apply to the whole board. A card can use the board date range or set its own under **Data** → **Date**.
 
-When dimensions or scenarios are filtered, they appear as interactive tags on the card.
+## Compare on a chart
 
-- Click a filter tag to adjust selected values.
-- Use **+ Add Filter** to layer additional dimensions or scenarios.
+Turn on **Compare** in the **Data** tab to stack scenarios or time periods on the card. See [Compare](/concepts/analysis-and-reporting/compare/what-is-a-compare), [Scenario compare](/concepts/analysis-and-reporting/compare/scenario-compare), and [Time compare](/concepts/analysis-and-reporting/compare/time-compare).
+
+<Frame caption="Compare on a chart">
+  <img
+    src="/images/start-here/boards-chart-compare.png"
+    alt="Chart card with Compare open to stack scenarios or time periods"
+  />
+</Frame>
+
+## Active filters
+
+When dimensions or scenarios are on **Filters**, they appear as controls on the card.
+
+- Click a filter control to adjust selected values.
+- Add another field from **Data** → **Filters**.
+
+<Frame caption="Active filters on a chart">
+  <img
+    src="/images/start-here/boards-chart-filters.png"
+    alt="Chart card showing active filter controls for changing the data slice"
+  />
+</Frame>
 
 ## Data exploration tools
 
 - **Hover tooltips** — Inspect precise time and value details.
-- **Legends and labels** — Match series to variables or dimension slices.
+- **Legends and labels** — Match series to variables. Turn labels and values on under **Format**.
+
+<Frame caption="Data exploration on a chart">
+  <img
+    src="/images/start-here/boards-chart-explore.png"
+    alt="Chart card with hover tooltip and legend used to inspect series values"
+  />
+</Frame>
 
 ## Keep interactions predictable
 
@@ -44,5 +71,5 @@ Some people only want the headline. Others want to investigate. A good board wor
 ## Related pages
 
 - [Charts](/concepts/analysis-and-reporting/boards/charts)
-- [Time compare](/concepts/analysis-and-reporting/compare/time-compare)
 - [Scenario compare](/concepts/analysis-and-reporting/compare/scenario-compare)
+- [Time compare](/concepts/analysis-and-reporting/compare/time-compare)

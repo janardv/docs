@@ -15,3 +15,8 @@ docs-backlog.md
 # Hidden pages: features for later (see docs-backlog.md)
 concepts/data-and-structure/transactions/refresh-and-sync-behavior.mdx
 concepts/modeling/scenarios/versioning-and-snapshots.mdx
+concepts/analysis-and-reporting/views/sharing-views.mdx
+concepts/workspace-and-collaboration/projects-and-tasks.mdx
+concepts/workspace-and-collaboration/projects-and-tasks/
+concepts/settings-and-administration/security.mdx
+concepts/settings-and-administration/security/
